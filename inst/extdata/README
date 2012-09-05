@@ -1,0 +1,111 @@
+Supplementary data files used to construct data sets -*- mode:org; -*-
+
+* From Foster et al 2006 
+
+Supplemental data file from http://www.cell.com/supplemental/S0092-8674(06)00369-2
+
+** Table S1 -- PIIS0092867406003692.mmc2.xls
+All proteins identified in this study, including the IPI and UniProt accession numbers (hyperlinked to the UniProt Knowledgebase) and a description of the protein. Following these entries are the sequence coverage (as percent) and the number of unique peptides observed for each protein, as well as the sequences of those unique peptides.
+
+xls2csv PIIS0092867406003692.mmc2.xls > PIIS0092867406003692.mmc2.csv
+
+** Table S2 -- PIIS0092867406003692.mmc3.xls
+All peptides identified in this study, including their sequences in the single letter IUPAC nomenclature, the best relative mass error measured for each (in parts per million), the highest Mascot IonsScore recorded for each and the number of amino acids in each.
+
+xls2csv PIIS0092867406003692.mmc3.xls  > PIIS0092867406003692.mmc3.csv
+
+** Table S3 -- PIIS0092867406003692.mmc4.xls
+Protein correlation profiles for each measured protein from three different sets of experiments: high and low-density sucrose gradients, and cytoplasm versus nucleus. In each worksheet the IPI and UniProt codes, as well as protein names and measured abundances (expressed as  log10[ion intensity]), are listed before the normalized abundances of each protein in each 2 fraction. The high-density page contains ion intensities for only the first eight fractions (Fr01-08) while the low-density page contains information for fractions 09 through 30 (Fr25-29 were not included as they are equivalent to Fr30).
+
+Each worksheet has been opened in gnumeric and saved as a csv file.
+Sheet 1 (PCP-High density): PIIS0092867406003692.mmc4-highDensity.csv
+Sheet 2 (PCP-Low density):  PIIS0092867406003692.mmc4-lowDensity.csv
+Sheet 3 (Cytoplasm or Nucleus): not used here
+
+** Table S4 -- PIIS0092867406003692.mmc5.xls
+Peptide correlation profiles for each measured peptide from three different sets of experiments: high and low-density sucrose gradients, and cytoplasm versus nucleus (three separate worksheets). In each worksheet the charge state, molecular weight and amino acid sequence  of each peptide precede the measured ion volumes (in Da·s). The high-density page contains ion intensities for only the first eight fractions (Fr01-08) while the low-density page contains information for fractions 09 through 30 (Fr25-29 were not included as they are equivalent to Fr30).
+
+Each worksheet has been opened in gnumeric and saved as a csv file.
+Sheet 1 (PCP-High density): PIIS0092867406003692.mmc5-highDensity.csv
+Sheet 2 (PCP-Low density):  PIIS0092867406003692.mmc5-lowDensity.csv
+Sheet 3 (Cytoplasm or Nucleus): not used here
+
+** Table S5 -- PIIS0092867406003692.mmc6.xls
+Localizations for all proteins measured in this study. IPI and UniProt accession codes, protein descriptions, abundances and the number of peptides upon which the localization was based are listed in the first five columns of each sheet. In the Localizations Sheet the subsequent columns contain the χ2 values for that protein’s PCP versus the marker for the given organelle where the protein met the assignment criteria (see Experimental Procedures). Where the assignment criteria were not met (e.g., where the χ2 value was higher than the cutoff) no value is shown. The fold enrichments for proteins in the nucleus are indicated in the Cytoplasm/Nucleus column (only those proteins enriched more than two-fold). In the Refined Locations Sheet the result of evaluating our measured localizations versus the published literature is shown (see Experimental Procedures). 'Yes' was assigned where annotation indicated the protein was in the organelle but also in the case where secreted proteins were identified in the secretory pathway (ER, ERGDV, Golgi). 'No' was assigned where the measured location was not among the annotated locations for a protein. 'Probably' was assigned in several instances: 1) where no location was otherwise annotated, 2) where a protein annotated as cytosolic was measured in an organelle since it would encounter than organelle and could be specifically associated with it, 3) where a protein annotated as nuclear was found in the cytosol since most proteins are not completely excluded by the nuclear pore, 4) where a non-proteasomal protein was found in the proteasome since most proteins are degraded by this machinery at some point, 5) where cytoskeletal proteins were measured in an organelle. 'Co-migrating' was assigned for ribosomal proteins that peaked in fractions 17 and/or 19.
+
+Each worksheet has been opened in gnumeric and saved as a csv file.
+Sheet 1 (Localizations): PIIS0092867406003692.mmc6-localizations.csv
+Sheet 2 (Refined localizations):PIIS0092867406003692.mmc6-refinedLoc.csv
+
+Marker proteins have been extracted from the paper, second paragraph on page 188:
+
+To determine the PCP of well-studied organelles, we
+examined the profiles of several well-characterized
+marker proteins, including 130 kDa Golgi phosphoprotein
+(GPP130, Golgi), AP-2 assembly subunit AP17 (plasma
+membrane [PM]), early endosome antigen 1 (EEA1, early
+endosomes [EE]), transferrin receptor 2 (TfR2, recycling
+endosome [RE]), calnexin (ER), p115 (ER/Golgi-derived
+vesicles [ERGDV]), and F1-F0 ATP synthase b subunit (mi-
+tochondria). Each of these markers peaked in different
+gradient fractions and had distinct profiles; thus at least
+these seven organelles could be distinguished with confi-
+dence (Figure 2B). Markers of other compartments were
+also observed, but their profiles matched closely to one
+of the seven mentioned above. In particular, ERGIC-53,
+a marker for the ER-Golgi intermediate compartment,
+overlapped very closely with the ER, as has been reported
+previously (Breuza et al., 2004). Likewise, the profiles of
+cation-independent mannose 6-phosphate receptor and
+adaptor-related protein 1b, markers of the late endosome
+and trans-Golgi network, respectively, largely overlapped
+with TfR2 (Tables S3 and S4). This suggests that these
+compartments migrate similarly in rate-zonal centrifuga-
+tion and is in agreement with the specialized conditions re-
+quired for even partial segregation reported by others
+(Tulp et al., 1998; Hashiramoto and James, 2000).
+
+Organelle marker had a chi2 scores of 0 for the expected organelle, except where otherwise noted:
+- Golgi: 130 kDa Golgi phosphoprotein (GPP130) - IPI00269029 
+- PM: AP-2 assembly subunit AP17 (AP-2 assembly subunit AP17) - IPI00118022 
+- EE (early endosome): early endosome antigen 1 - IPI00453776 [a]
+- TGN/RE (recycling endosome): Transferrin receptor protein 2 - IPI00223651
+- ER: Calnexin precursor - IPI00119618
+- ERGDV (ER/Golgi-derived vesicles): Vesicle docking protein - IPI00128071 [b]
+- Mito: ATP synthase beta chain, mitochondrial precursor - IPI00113801
+- Proteasome: Proteasome subunit beta type 1 - IPI00113845  [c]
+              Proteasome subunit alpha type 6 - IPI00131845 [d]
+              Proteasome subunit alpha type 7 - IPI00131406 [e]
+
+[a] Also chi2 of 0.048 for ERGDV
+[b] General vesicular transport factor p115 in UniProt, 
+    also chi2 value of 0.027 for Golgi.
+[c] chi2 value of 0.0018 for proteasome
+[d] chi2 value of 0.0055 for proteasome 
+[e] chi2 value of 0.0057 for proteasome
+
+
+* From Dunkley et al 2006 
+
+Supporting Information from http://www.pnas.org/content/103/17/6518/suppl/DC1
+
+** Supporting Table 2 -- 06958Table2.xls
+Table 2. Spreadsheet of protein found in both comparison A and B in terms of protein identification data, predicted subcellular location, and GFP fusion data.
+This table contains the 6 possible ratios for each iTRAQ 4-plex run. Not used here
+
+** Supporting Table 3 -- 06958Table3.xls
+Table 3. Spreadsheet containing normalized reported ion intensities.
+This table has been converted to Dunkley2006.csv for easy input into R.
+
+
+* From Tan et al 2009
+
+Supporting Information from http://pubs.acs.org/doi/suppl/10.1021/pr800866n
+
+File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n][pr800866n_si_004.xls]] contains relative quantitation data for the 3 replicates in separate sheets, that have been saved to 3 csv files 
+pr800866n_si_004-rep1.csv
+pr800866n_si_004-rep2.csv
+pr800866n_si_004-rep3.csv
+
+File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n/suppl_file/pr800866n_si_007.xls][pr800866n_si_007.xls]] (available as csv file) contains the original markers.
+
