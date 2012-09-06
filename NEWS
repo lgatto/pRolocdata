@@ -2,3 +2,4 @@ CHANGES IN VERSION 0.99.0
 -------------------------
  o Initial commit with data from Dunkley et al. (2006), 
    Foster et al. (2006) and Tan et al. (2009). <2012-09-05 Wed>
+ o Removing pRoloc from Depends <2012-09-06 Thu>

@@ -7,6 +7,6 @@ Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: Mass-spectrometry based organelle proteomics data sets 
 	     from Dunkley et al. (2006), Foster et al. (2006) and 
 	     Tan et al. (2009).	     
-Depends: R (>= 2.15), pRoloc, MSnbase
+Depends: R (>= 2.15), MSnbase
 License: GPL-2
 biocViews: ExperimentData, MassSpectrometry, Proteomics
