@@ -109,3 +109,8 @@ pr800866n_si_004-rep3.csv
 
 File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n/suppl_file/pr800866n_si_007.xls][pr800866n_si_007.xls]] (available as csv file) contains the original markers.
 
+
+* From Ferro et al 2010
+
+The file AT_CHLORO_table_120906.xls was email by Myriam Ferro to be included in the pRolocdata package. The first sheet (README) ws used to prepare feature annotation. The second sheet was converted to AT_CHLORO_table_120906.csv and used to generate the at_chloro MSnSet.
+
