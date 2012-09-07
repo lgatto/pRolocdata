@@ -28,20 +28,20 @@
 \source{
   Myriam Ferro
   Exploring the Dynamics of Proteomes (EDyP)
-  Laboratoire Biologie à Grande Echelle (BGE)
+  Laboratoire Biologie a Grande Echelle (BGE)
   U1038 INSERM/CEA/UJF
   Institut de Recherches en Technologies et Sciences pour le Vivant (iRTSV)
   CEA/Grenoble
 }
 
 \references{
-  Ferro M, Brugière S, Salvi D, Seigneurin-Berny D, Court M, Moyet L,
+  Ferro M, Brugiere S, Salvi D, Seigneurin-Berny D, Court M, Moyet L,
   Ramus C, Miras S, Mellal M, Le Gall S, Kieffer-Jaquinod S, Bruley C,
-  Garin J, Joyard J, Masselon C, Rolland N. AT_CHLORO, a comprehensive
+  Garin J, Joyard J, Masselon C, Rolland  N. AT_CHLORO, a comprehensive
   chloroplast proteome database with subplastidial localization and
   curated information on envelope proteins. Mol Cell Proteomics. 2010
-  Jun;9(6):1063-84. Epub 2010 Jan 10.
-  PubMed PMID: 20061580; PubMed Central PMCID: PMC2877971
+  Jun;9(6):1063-84. Epub 2010 Jan 10. PubMed PMID: 20061580; PubMed
+  Central PMCID: PMC2877971 
 }
 
 \examples{
@@ -50,7 +50,7 @@ dim(at_chloro)
 pData(at_chloro)
 head(exprs(at_chloro))
 fvarLabels(at_chloro)
-table(fData(tan2009r1)$markers)
+table(fData(at_chloro)$markers)
 }
 
 \keyword{datasets}
