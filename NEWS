@@ -1,3 +1,10 @@
+CHANGES IN VERSION 0.99.2
+-------------------------
+ o updated pRolocdata to use data (does 
+   not return a dataframe anymore) and 
+   startup message  <2012-09-08 Sat>
+ o updated at_chloro exmaple <2012-09-08 Sat>
+
 CHANGES IN VERSION 0.99.1
 -------------------------
  o New at_chloro data set <2012-09-07 Fri>

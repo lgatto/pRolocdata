@@ -51,6 +51,8 @@ pData(at_chloro)
 head(exprs(at_chloro))
 fvarLabels(at_chloro)
 table(fData(at_chloro)$markers)
+## check exprs data and 'TotalSpectralCount' feature meta data
+all(fData(at_chloro)$TotalSpectralCount == rowSums(exprs(at_chloro)))
 }
 
 \keyword{datasets}

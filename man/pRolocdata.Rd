@@ -6,16 +6,12 @@ List of pRolocdata data sets
 }
 
 \description{
-  This function returns a \code{dataframe} with the data sets name and
-  description that are available within the \code{pRolocdata} package.
+  This function lists the data sets available in \code{pRolocdata}
+  package by calling \code{data(package = "pRolocdata")}. 
 }
 
 \usage{
 pRolocdata()
-}
-
-\value{
-  A \code{dataframe} with data sets names and descriptions.  
 }
 
 \references{
