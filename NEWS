@@ -1,3 +1,7 @@
+CHANGES IN VERSION 0.99.4
+-------------------------
+ o Added pRoloc to Suggests <2012-09-16 Sun>
+
 CHANGES IN VERSION 0.99.3
 -------------------------
  o fixed at_chloro fvarMetadata reference and updated 
