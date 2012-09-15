@@ -43,7 +43,7 @@ metaData <- data.frame(labelDescription = c(
                          "Percentage of occurrence in each of the THY sub-chloroplast compartment, as calculated in Ferro et al., 2010",
                          "Total Spectral count, for the whole set of data",
                          "Annotated sub-plastidial localization for the training set used to set up the logistic regression model; see Ferro et al., 2010",
-                         "Annotated sub-plastidial localization for the benchmark set used to test the logistic regression model; see Ferro et al., 2011",
+                         "Annotated sub-plastidial localization for the benchmark set used to test the logistic regression model; see Ferro et al., 2010",
                          "Prediction of a plastidial transit peptide by the ChloroP software (http://www.cbs.dtu.dk/services/ChloroP/)",
                          "Subcellular localization predicted by TargetP (information retrieved from the Plant Proteome Database - http://ppdb.tc.cornell.edu/)",
                          "Protein description as found in TAIR (information retrieved from PPDB)",

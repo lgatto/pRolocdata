@@ -1,3 +1,9 @@
+CHANGES IN VERSION 0.99.3
+-------------------------
+ o fixed at_chloro fvarMetadata reference and updated 
+   at_chloro example to produce at_chloro2 with percentages 
+   as in Ferro et al. 2010 <2012-09-15 Sat>
+
 CHANGES IN VERSION 0.99.2
 -------------------------
  o updated pRolocdata to use data (does 
