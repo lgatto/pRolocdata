@@ -1,3 +1,8 @@
+CHANGES IN VERSION 0.99.5
+-------------------------
+ o renamed script names to be consistent with 
+   data names <2012-11-14 Wed>
+
 CHANGES IN VERSION 0.99.4
 -------------------------
  o Added pRoloc to Suggests <2012-09-16 Sun>
