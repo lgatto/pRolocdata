@@ -1,0 +1,31 @@
+CHANGES IN VERSION 0.99.5
+-------------------------
+ o renamed script names to be consistent with 
+   data names <2012-11-14 Wed>
+
+CHANGES IN VERSION 0.99.4
+-------------------------
+ o Added pRoloc to Suggests <2012-09-16 Sun>
+
+CHANGES IN VERSION 0.99.3
+-------------------------
+ o fixed at_chloro fvarMetadata reference and updated 
+   at_chloro example to produce at_chloro2 with percentages 
+   as in Ferro et al. 2010 <2012-09-15 Sat>
+
+CHANGES IN VERSION 0.99.2
+-------------------------
+ o updated pRolocdata to use data (does 
+   not return a dataframe anymore) and 
+   startup message  <2012-09-08 Sat>
+ o updated at_chloro exmaple <2012-09-08 Sat>
+
+CHANGES IN VERSION 0.99.1
+-------------------------
+ o New at_chloro data set <2012-09-07 Fri>
+
+CHANGES IN VERSION 0.99.0
+-------------------------
+ o Initial commit with data from Dunkley et al. (2006), 
+   Foster et al. (2006) and Tan et al. (2009). <2012-09-05 Wed>
+ o Removing pRoloc from Depends <2012-09-06 Thu>
