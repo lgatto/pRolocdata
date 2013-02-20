@@ -11,7 +11,7 @@
 }
 
 \description{
-  This is the data fromTtan et al., \emph{Mapping organelle proteins and
+  This is the data from Tan et al., \emph{Mapping organelle proteins and
     protein complexes in Drosophila melanogaster}, J Proteome Res. 2009
   Jun;8(6):2667-78. See below for more details. 
 }
