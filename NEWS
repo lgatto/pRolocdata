@@ -1,3 +1,12 @@
+CHANGES IN VERSION 0.99.7
+-------------------------
+ o New Andy2011 dataset on HEK293T added <2013-02-26 Tue>
+ o Updated all existing LOPIT datasets used in Breckels et al.
+   (dunkley2006, tan2009r1) to include a column in the featureData
+   of the phenoDisco output. <2013-02-26 Tue>
+ o Updated documentation for LOPIT datasets <2013-02-26 Tue> 
+ o L Breckels added as author <2013-02-26 Tue>
+
 CHANGES IN VERSION 0.99.6
 -------------------------
  o Typo in tan man <2013-02-20 Wed>

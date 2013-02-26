@@ -15,9 +15,18 @@ makeTan <- function(csvfile, markers = mrk) {
   fd$PLSDA[grep("asma membrane", fd$PLSDA)] <- "PM" ## r2/3 and 'Plasma membrane'/'plasma membrane'
   fd$PLSDA <- factor(fd$PLSDA)
   fd$markers <- "unknown"
-  fd$markers[match(rownames(mrk), featureNames(tan2009r1))] <- mrk$Organelle
+  getNA <- is.na(match(rownames(mrk), rownames(xx)))
+  if (any(getNA)) {
+    foo <- na.omit(match(rownames(mrk), rownames(xx)))
+    fd$markers[foo] <- mrk$Organelle[-na.action(foo)]
+  } else {
+    fd$markers[match(rownames(mrk), rownames(xx))] <- mrk$Organelle
+  }
   fd$markers[fd$markers == "mito"] <- "mitochondrion"
   fd$markers <- factor(fd$markers)
+  if (any(names(xx)=="pd.2013")) {
+    fd$pd.2013 <- xx[,14]
+  }
   pd <- data.frame(Fractions = c("4/5", "12/13", "19", "21"),
                    row.names = paste0("X", 114:117))
   exp <- new("MIAPE",
@@ -29,7 +38,7 @@ makeTan <- function(csvfile, markers = mrk) {
                tissue = "Embryos (0-16 h old)"
                ),
              title = "Mapping Organelle Proteins and Protein Complexes in Drosophila melanogaster",
-             abstract = "Many proteins within eukaryotic cells are organized spatially and functionally into membrane bound organelles and complexes. A protein’s location thus provides information about its function. Here, we apply LOPIT, a mass-spectrometry based technique that simultaneously maps proteins to specific subcellular compartments, to Drosophila embryos. We determine the subcellular distribution of hundreds of proteins, and protein complexes. Our results reveal the potential of LOPIT to provide average snapshots of cells.",
+             abstract = "Many proteins within eukaryotic cells are organized spatially and functionally into membrane bound organelles and complexes. A protein's location thus provides information about its function. Here, we apply LOPIT, a mass-spectrometry based technique that simultaneously maps proteins to specific subcellular compartments, to Drosophila embryos. We determine the subcellular distribution of hundreds of proteins, and protein complexes. Our results reveal the potential of LOPIT to provide average snapshots of cells.",
              pubMedIds = "19317464",
              url = "http://www.bio.cam.ac.uk/proteomics/",
              instrumentModel = "QSTAR",

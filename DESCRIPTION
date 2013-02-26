@@ -1,8 +1,8 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 0.99.6
-Author: Laurent Gatto
+Version: 0.99.7
+Author: Laurent Gatto and Lisa M. Breckels
 Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: Mass-spectrometry based organelle proteomics data sets 
 	     from Dunkley et al. (2006), Foster et al. (2006), 

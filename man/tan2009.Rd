@@ -29,10 +29,16 @@ data(tan2009r3)
 \details{
   This is a LOPIT experiment. Normalised intensities for proteins
   for four iTRAQ 4-plex labelled fractions are available for 3
-  replicates (r1, r2 and r3 respectively). The markers used in the
-  papers are available as \code{markers} feature meta-data and the
-  partial least square discriminant analysis results as \code{PLSDA}
-  feature meta-data.
+  replicates (r1, r2 and r3 respectively). The partial least square discriminant 
+  analysis results from the paper are available as \code{PLSDA} feature 
+  meta-data and the markers used in analysis are available as \code{markers} 
+  feature meta-data (Note: the ER and Golgi organelle markers were combined in
+  original PLSDA analysis). 
+  Replicate 1 was also used in testing the phenotype discovery algorithm from 
+  Breckels et al., \emph{The Effect of Organelle Discovery upon Sub-Cellular 
+  Protein Localisation}, J Proteomics, \emph{In Press.}, see \code{phenoDisco}. 
+  New phenotype clusters identified from algorithm application are available as 
+  \code{pd.2013} feature meta-data.
 }
 
 \source{
@@ -45,6 +51,10 @@ data(tan2009r3)
   melanogaster. Tan DJ, Dvinge H, Christoforou A, Bertone P, Martinez 
   Arias A, Lilley KS. J Proteome Res. 2009 Jun;8(6):2667-78.
   PMID: 19317464
+
+  Breckels LM, Gatto L, Christoforou A, Groen AJ, Lilley KS and Trotter MWB. 
+  \emph{The Effect of Organelle Discovery upon Sub-Cellular Protein Localisation}
+   J Proteomics. \emph{In Press.}
 }
 
 \examples{
@@ -52,7 +62,9 @@ data(tan2009r1)
 tan2009r1
 pData(tan2009r1)
 head(exprs(tan2009r1))
+# Organelle markers
 table(fData(tan2009r1)$markers)
+# PLSDA assignment results
 table(fData(tan2009r1)$PLSDA)
 }
 
