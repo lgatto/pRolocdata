@@ -38,7 +38,7 @@ makeTan <- function(csvfile, markers = mrk) {
                tissue = "Embryos (0-16 h old)"
                ),
              title = "Mapping Organelle Proteins and Protein Complexes in Drosophila melanogaster",
-             abstract = "Many proteins within eukaryotic cells are organized spatially and functionally into membrane bound organelles and complexes. A protein’s location thus provides information about its function. Here, we apply LOPIT, a mass-spectrometry based technique that simultaneously maps proteins to specific subcellular compartments, to Drosophila embryos. We determine the subcellular distribution of hundreds of proteins, and protein complexes. Our results reveal the potential of LOPIT to provide average snapshots of cells.",
+             abstract = "Many proteins within eukaryotic cells are organized spatially and functionally into membrane bound organelles and complexes. A protein's location thus provides information about its function. Here, we apply LOPIT, a mass-spectrometry based technique that simultaneously maps proteins to specific subcellular compartments, to Drosophila embryos. We determine the subcellular distribution of hundreds of proteins, and protein complexes. Our results reveal the potential of LOPIT to provide average snapshots of cells.",
              pubMedIds = "19317464",
              url = "http://www.bio.cam.ac.uk/proteomics/",
              instrumentModel = "QSTAR",
