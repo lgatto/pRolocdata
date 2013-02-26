@@ -15,9 +15,18 @@ makeTan <- function(csvfile, markers = mrk) {
   fd$PLSDA[grep("asma membrane", fd$PLSDA)] <- "PM" ## r2/3 and 'Plasma membrane'/'plasma membrane'
   fd$PLSDA <- factor(fd$PLSDA)
   fd$markers <- "unknown"
-  fd$markers[match(rownames(mrk), featureNames(tan2009r1))] <- mrk$Organelle
+  getNA <- is.na(match(rownames(mrk), rownames(xx)))
+  if (any(getNA)) {
+    foo <- na.omit(match(rownames(mrk), rownames(xx)))
+    fd$markers[foo] <- mrk$Organelle[-na.action(foo)]
+  } else {
+    fd$markers[match(rownames(mrk), rownames(xx))] <- mrk$Organelle
+  }
   fd$markers[fd$markers == "mito"] <- "mitochondrion"
   fd$markers <- factor(fd$markers)
+  if (any(names(xx)=="pd.2013")) {
+    fd$pd.2013 <- xx[,14]
+  }
   pd <- data.frame(Fractions = c("4/5", "12/13", "19", "21"),
                    row.names = paste0("X", 114:117))
   exp <- new("MIAPE",

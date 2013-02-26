@@ -4,7 +4,7 @@ library("MSnbase")
 ## From Dunkey et al. 2006 PMID:16618929
 dunkley <- read.csv("../extdata/Dunkley2006.csv",row.names=1)
 .exprs <- as.matrix(dunkley[,4:19])
-.fData <- dunkley[,2:3]
+.fData <- dunkley[,c(2:3)]
 names(.fData) <-c("markers","assigned")
 .fData$evidence <- rep("unknown",nrow(.fData))
 .fData$evidence[grep("predicted",.fData$markers)] <- "predicted"
@@ -23,6 +23,7 @@ tmp[tmp=="not classified"] <- "unknown"
 .fData$new[.fData[,1]==.fData[,2]] <- "known"
 .fData$new[.fData[,2]=="unknown"] <- "unknown"
 .fData$new <- as.factor(.fData$new)
+.fData$pd.2013 <- dunkley[,20]
 .fData <- new("AnnotatedDataFrame",data=data.frame(as.matrix(.fData)))
 .pData <- new("AnnotatedDataFrame",
               data=data.frame(membrane.prep=rep(1:2,each=8),
