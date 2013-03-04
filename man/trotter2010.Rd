@@ -1,7 +1,7 @@
 \name{trotter20010}
 \alias{trotter20010}
-\alias{trotter20010steep}
-\alias{trotter20010shallow}
+\alias{trotter2010steep}
+\alias{trotter2010shallow}
 
 \docType{data}
 
