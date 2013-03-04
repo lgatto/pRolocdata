@@ -49,6 +49,7 @@ data(trotter2010steep)
 }
 
 \examples{
+library(pRoloc)
 ## Replication of figure 4 from Trotter et al.
 ## individual data sets
 data(trotter2010steep)

@@ -45,15 +45,17 @@ steep@experimentData <-
       email = "k.s.lilley@bioc.cam.ac.uk",
       url = "http://www.bio.cam.ac.uk/proteomics/")
 
-shallow <- updateSampleNames(shallow)
-steep <- updateSampleNames(steep)
+trotter2010shallow <- updateSampleNames(shallow)
+trotter2010steep <- updateSampleNames(steep)
 
-if (validObject(shallow))
-  save(shallow, file = "../../data/trotter2010shallow.rda",
+if (validObject(trotter2010shallow))
+  save(trotter2010shallow,
+       file = "../../data/trotter2010shallow.rda",
        compress = "xz", compression_level = 9)
 
-if (validObject(steep))
-    save(steep, file = "../../data/trotter2010steep.rda",
+if (validObject(trotter2010steep))
+    save(trotter2010steep,
+         file = "../../data/trotter2010steep.rda",
          compress = "xz", compression_level = 9)
 
 
