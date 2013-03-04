@@ -1,3 +1,9 @@
+CHANGES IN VERSION 0.99.8
+-------------------------
+ o added shallow (from Dunkley 2006) and steep 
+   (from Sadowski 2008) data set used in 
+   Trotter et al 2010. <2013-03-04 Mon>
+
 CHANGES IN VERSION 0.99.7
 -------------------------
  o New Andy2011 dataset on HEK293T added <2013-02-26 Tue>
