@@ -55,12 +55,14 @@ library(pRoloc)
 data(trotter2010steep)
 data(trotter2010shallow)
 ## combined data
-combined <- combine(shallow, steep)
+combined <- combine(trotter2010shallow,
+                    trotter2010steep)
 par(mfrow = c(1,3))
-plot2D(shallow, fcol = "TAIR8", main = "Shallow")
-plot2D(steep, fcol = "TAIR8", main = "Steep")
+plot2D(trotter2010shallow, fcol = "TAIR8", main = "Shallow")
+plot2D(trotter2010steep, fcol = "TAIR8", main = "Steep")
 plot2D(combined, fcol = "TAIR8", main = "Combined")
-addLegend(combined, where = "bottomleft", fcol = "TAIR8", bty = "n", ncol = 2)
+addLegend(combined, where = "bottomleft",
+          fcol = "TAIR8", bty = "n", ncol = 2)
 }
 
 \keyword{datasets}
