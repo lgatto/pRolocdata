@@ -27,6 +27,9 @@ makeTan <- function(csvfile, markers = mrk) {
   if (any(names(xx)=="pd.2013")) {
     fd$pd.2013 <- xx[,14]
   }
+  if (any(names(xx)=="pd.validated")) {
+    fd$pd.validated <- xx[,15]
+  }
   pd <- data.frame(Fractions = c("4/5", "12/13", "19", "21"),
                    row.names = paste0("X", 114:117))
   exp <- new("MIAPE",
