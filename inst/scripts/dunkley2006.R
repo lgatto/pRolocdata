@@ -24,6 +24,7 @@ tmp[tmp=="not classified"] <- "unknown"
 .fData$new[.fData[,2]=="unknown"] <- "unknown"
 .fData$new <- as.factor(.fData$new)
 .fData$pd.2013 <- dunkley[,20]
+.fData$pd.validated <- dunkley[,21]
 .fData <- new("AnnotatedDataFrame",data=data.frame(as.matrix(.fData)))
 .pData <- new("AnnotatedDataFrame",
               data=data.frame(membrane.prep=rep(1:2,each=8),
