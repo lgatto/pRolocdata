@@ -114,3 +114,10 @@ File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n/suppl_file/pr800866n_si_0
 
 The file AT_CHLORO_table_120906.xls was email by Myriam Ferro to be included in the pRolocdata package. The first sheet (README) ws used to prepare feature annotation. The second sheet was converted to AT_CHLORO_table_120906.csv and used to generate the at_chloro MSnSet.
 
+
+
+* From Nikolovski 2012
+Reformated manually and fixed column names
+ - S1: Summary of the 1385 proteins observed at least twice in any of the 4 LOPIT experiments with normalized reporter ion intensities
+ - S2: Functional annotations, classification results, and fractionation profiles of the 1385 proteins studied
+ - S3: List of the 12 novel putative GT families with their members
