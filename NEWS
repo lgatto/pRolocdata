@@ -1,15 +1,14 @@
 CHANGES IN VERSION 0.99.9
 -------------------------
- o 
+ o added column 'pd.validated' to datasets used in Breckels et al. 
+  with the organelle/protein family assignments manually assigned
+   to each phenotype from UniprotKB. <2013-03-05 Tue>
 
 CHANGES IN VERSION 0.99.8
 -------------------------
  o added shallow (from Dunkley 2006) and steep 
    (from Sadowski 2008) data set used in 
    Trotter et al 2010. <2013-03-04 Mon>
- o added column 'pd.validated' to datasets used in Breckels et al.
-   with the organelle/protein family assignments manually assigned
-   to each phenotype from UniprotKB. <2013-03-05 Tue>
 
 CHANGES IN VERSION 0.99.7
 -------------------------
