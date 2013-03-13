@@ -3,6 +3,7 @@ CHANGES IN VERSION 0.99.9
  o added column 'pd.validated' to datasets used in Breckels et al. 
   with the organelle/protein family assignments manually assigned
    to each phenotype from UniprotKB. <2013-03-05 Tue>
+ o added data from Nikolovski et al 2012. <2013-03-13 Wed>
 
 CHANGES IN VERSION 0.99.8
 -------------------------

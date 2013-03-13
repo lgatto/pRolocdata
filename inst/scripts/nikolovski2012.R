@@ -1,7 +1,7 @@
 library("MSnbase")
 
 makeSet <- function(filename) {
-  x1 <- read.csv(filename)
+  x1 <- read.csv(filename, stringsAsFactors = FALSE)
   es <- as.matrix(x1[, grep("_11", names(x1))])
   fd <- new("AnnotatedDataFrame",
             data = x1[, -grep("_11", names(x1))])
@@ -32,13 +32,29 @@ makeSet <- function(filename) {
 
 f1 <- "../extdata/Nikolovski2012_SupplTable1.csv"
 nikolovski2012 <- makeSet(f1)
+featureNames(nikolovski2012) <- fData(nikolovski2012)$Protein.ID
+
+
+f2 <- "../extdata/Nikolovski2012_SupplTable2.csv"
+nikolovski2012imp <- makeSet(f2)
+featureNames(nikolovski2012imp) <- fData(nikolovski2012imp)$Protein.ID
+sel <- fData(nikolovski2012imp)$markers == ""
+fData(nikolovski2012imp)$markers[sel] <- "unknown"
+
+idx <- match(featureNames(nikolovski2012),
+             featureNames(nikolovski2012imp))
+fData(nikolovski2012)$markers <- fData(nikolovski2012imp)$markers[idx]
+
+stopifnot(all.equal(sort(featureNames(nikolovski2012)),
+                    sort(featureNames(nikolovski2012imp))))
+
+stopifnot(validObject(nikolovski2012))
+stopifnot(validObject(nikolovski2012imp))
+
 save(nikolovski2012,
      file="../../data/nikolovski2012.RData",
      compress = "xz",
      compression_level = 9)
-
-f2 <- "../extdata/Nikolovski2012_SupplTable2.csv"
-nikolovski2012imp <- makeSet(f2)
 save(nikolovski2012imp,
      file="../../data/nikolovski2012imp.RData",
      compress = "xz",
