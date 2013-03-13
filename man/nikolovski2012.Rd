@@ -16,8 +16,8 @@
 }
 
 \usage{
-data(nikolovksi2012)
-data(nikolovksi2012imp)
+data(nikolovski2012)
+data(nikolovski2012imp)
 }
 
 \format{
