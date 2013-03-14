@@ -10,9 +10,8 @@
 
 
 \description{
-  This is the data from Dunkley et al., \emph{Mapping the Arabidopsis
-    organelle proteome}, PNAS 2006 (PMID 16618929). See below for more
-  details. 
+  This is the data used in Nikolovksi et al. (2012). See below for
+  details and references.  
 }
 
 \usage{
@@ -39,7 +38,9 @@ data(nikolovski2012imp)
   partial least-squares regression.
 
   The training set used for the Naive Bayesian classifier is available
-  as the \code{markers} feature meta-data.
+  as the \code{markers} feature meta-data. Note that Nikolovksi included
+  a group of markers labelled 'others', which has been retained in these
+  data sets.
 }
 
 \source{
@@ -73,5 +74,6 @@ table(fData(nikolovski2012)$markers)
 all.equal(sort(featureNames(nikolovski2012)),
           sort(featureNames(nikolovski2012imp)))
 }
-
+plot2D(nikolovski2012imp)
+addLegend(nikolovski2012imp, where = "topright", bty = "b", cex =.7)
 \keyword{datasets}
