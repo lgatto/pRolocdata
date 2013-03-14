@@ -10,7 +10,7 @@
 
 
 \description{
-  This is the data used in Nikolovksi et al. (2012). See below for
+  This is the data used in Nikolovksi et al. (2012). See below for 
   details and references.  
 }
 
@@ -73,7 +73,8 @@ phenoData(nikolovski2012)
 table(fData(nikolovski2012)$markers)
 all.equal(sort(featureNames(nikolovski2012)),
           sort(featureNames(nikolovski2012imp)))
-}
+library("pRoloc")
 plot2D(nikolovski2012imp)
 addLegend(nikolovski2012imp, where = "topright", bty = "b", cex =.7)
+}
 \keyword{datasets}
