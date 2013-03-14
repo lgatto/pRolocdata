@@ -64,8 +64,8 @@ Sci U S A. 2006 Apr 25;103(17):6518-23. Epub 2006 Apr 17. PubMed PMID:
 }
 
 \examples{
-data(nikolovksi2012)
-data(nikolovksi2012imp)
+data(nikolovski2012)
+data(nikolovski2012imp)
 table(is.na(nikolovski2012))
 table(is.na(nikolovski2012imp))
 phenoData(nikolovski2012)
