@@ -75,6 +75,6 @@ all.equal(sort(featureNames(nikolovski2012)),
           sort(featureNames(nikolovski2012imp)))
 library("pRoloc")
 plot2D(nikolovski2012imp)
-addLegend(nikolovski2012imp, where = "topright", bty = "b", cex =.7)
+addLegend(nikolovski2012imp, where = "topright", bty = "n", cex =.7)
 }
 \keyword{datasets}
