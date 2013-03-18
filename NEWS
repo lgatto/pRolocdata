@@ -4,6 +4,12 @@ CHANGES IN VERSION 0.99.9
   with the organelle/protein family assignments manually assigned
    to each phenotype from UniprotKB. <2013-03-05 Tue>
  o added data from Nikolovski et al 2012. <2013-03-13 Wed>
+ o removed column pd.validated and added new column to fData called
+   pd.markers which contains all original organelle markers plus
+   new protein markers found using phenoDisco as described in Breckels
+   et al paper. <2013-03-18 Mon>
+ o updated fvarMetaData slot for all datasets used in Breckels et al 
+   paper <2013-03-18 Mon>
 
 CHANGES IN VERSION 0.99.8
 -------------------------

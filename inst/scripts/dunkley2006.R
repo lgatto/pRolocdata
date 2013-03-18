@@ -24,8 +24,15 @@ tmp[tmp=="not classified"] <- "unknown"
 .fData$new[.fData[,2]=="unknown"] <- "unknown"
 .fData$new <- as.factor(.fData$new)
 .fData$pd.2013 <- dunkley[,20]
-.fData$pd.validated <- dunkley[,21]
+.fData$pd.markers <- dunkley[,21]
 .fData <- new("AnnotatedDataFrame",data=data.frame(as.matrix(.fData)))
+.fData@varMetadata[,1] <- c("Original protein markers used in Dunkley et al 2006 PNAS paper",
+                            "Protein localisation assigned by PLSDA and manually by Dunkley as described in Dunkley et al 2006 PNAS paper",
+                            "Evidence for original proteins markers in column 'markers'",
+                            "Method of assignment for each protein in column 'assigned'",
+                            "Protein status following new assignment",
+		            "PhenoDisco output as described in Breckels et al (2013) Journal of Proteomics. Accepted February 2013",	                          
+                            "Updated protein markers (original markers see column 'markers' plus new protein markers found by phenoDisco and verified by Uniprot/literature as described in Breckels et al)")
 .pData <- new("AnnotatedDataFrame",
               data=data.frame(membrane.prep=rep(1:2,each=8),
                 fraction=rep(c(1,4,7,11,2,5,8,11),2),
