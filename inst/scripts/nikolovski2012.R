@@ -8,10 +8,11 @@ makeSet <- function(filename) {
   obj <- new("MSnSet",
              exprs = es,
              featureData = fd)  
-  pd <- data.frame(experiment = paste0("LOPIT", rep(1:4, each = 4)),
+  pd <- data.frame(experiment = paste0("LOPIT", rep(1:4, each = 8)),
                    replicate = rep(rep(c("A", "B"), each = 4), 4),
                    tags = rep("iTRAQ4", 32),
                    reporter = rep(114:117, 8),
+                   original = rep(c("Dunkley2006", "Nikolovski2012"), each = 16),
                    row.names = sampleNames(obj))
   phenoData(obj) <- new("AnnotatedDataFrame", data = pd)
   .experiment <- new("MIAPE",
