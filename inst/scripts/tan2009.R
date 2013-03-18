@@ -27,6 +27,9 @@ makeTan <- function(csvfile, markers = mrk) {
   if (any(names(xx)=="pd.2013")) {
     fd$pd.2013 <- xx[,14]
   }
+  if (any(names(xx)=="pd.markers")) {
+    fd$pd.markers <- xx[,15]
+  }
   pd <- data.frame(Fractions = c("4/5", "12/13", "19", "21"),
                    row.names = paste0("X", 114:117))
   exp <- new("MIAPE",
@@ -46,10 +49,30 @@ makeTan <- function(csvfile, markers = mrk) {
              ionSource = "ESI",
              analyser = "TOF",
              detectorType = "PMT")                           
+  fd.Ann <- new("AnnotatedDataFrame", data = fd)
+  if (any(names(xx)=="pd.markers")) {
+  	fd.Ann@varMetadata[,1] <- c("FlyBase identifier",
+                            "FlyBase symbol/name",
+                            "Peptides",
+                            "Mascot score",
+                            "Number of peptides quantified",
+                            "Protein localisation assigned by PLSDA experiment described in Tan et al 2009",
+                            "Original protein markers used in PLSDA analysis in Tan et al 2009",
+			     "PhenoDisco output as described in Breckels et al (2013) Journal of Proteomics. Accepted February 2013",
+                            "Updated protein markers (original markers see column 'markers' plus new protein markers found by phenoDisco and verified by UniprotKB/literature as described in Breckels et al)") 
+  } else {
+  fd.Ann@varMetadata[,1] <- c("FlyBase identifier",
+                            "FlyBase symbol/name",
+                            "Peptides",
+                            "Mascot score",
+                            "Number of peptides quantified",
+                            "Protein localisation assigned by PLSDA experiment described in Tan et al 2009",
+                            "Original protein markers used in PLSDA analysis in Tan et al 2009")
+  }
   ans <- new("MSnSet",
              exprs = eset,
              experimentData = exp,
-             featureData = new("AnnotatedDataFrame", data = fd),
+             featureData = fd.Ann,
              phenoData = new("AnnotatedDataFrame", data = pd))  
   if (validObject(ans))
     return(ans)

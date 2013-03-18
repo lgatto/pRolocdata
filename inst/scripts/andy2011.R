@@ -4,16 +4,16 @@ library("MSnbase")
 ## From Andy's protein file "ispy_results_proteins_stringent.csv"
 ## Peptides were merged into proteins by intensity weighted mean
 andy <- read.csv("../extdata/andy2011_ispy_results_proteins_stringent.csv",
-                 row.names=1, sep="")
+                 row.names=1)
 .exprs <- as.matrix(andy[,5:12])
-.fData <- andy[,c(1:4,14,13)]
-names(.fData)[5] <- "pd.2013"
+.fData <- andy[,c(1:4,14,15,13)]
 .fData <- new("AnnotatedDataFrame",data=data.frame(as.matrix(.fData)))
 .fData@varMetadata[,1] <- c("UniProtKB accession number", 
                             "Full protein name", 
                             "Peptides", 
                             "Peptide spectrum match", 
                             "PhenoDisco output as described in Breckels et al (2013) Journal of Proteomics. Accepted February 2013", 
+                            "Updated protein markers (original markers see column 'markers' plus new protein markers found by phenoDisco and verified by UniprotKB/literature as described in Breckels et al)",
                             "Protein markers")
 .pData <- new("AnnotatedDataFrame",
               data=data.frame(Fraction.information=c(rep("High Density", 7), 
