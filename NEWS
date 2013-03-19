@@ -1,3 +1,7 @@
+CHANGES IN VERSION 0.99.10
+--------------------------
+ o Fixed non ASCII warning <2013-03-19 Tue>
+
 CHANGES IN VERSION 0.99.9
 -------------------------
  o added column 'pd.validated' to datasets used in Breckels et al. 
