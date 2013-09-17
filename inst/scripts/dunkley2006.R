@@ -68,6 +68,9 @@ dunkley2006 <- new("MSnSet",
                    phenoData = .pData,
                    experimentData = .experiment,
                    featureData = .fData)
+
+featureNames(dunkley2006) <- toupper(featureNames(dunkley2006))
+
 dunkley2006@processingData <- .process
 
 if (validObject(dunkley2006))
