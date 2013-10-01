@@ -15,6 +15,7 @@ fd$PLSDA[match(rownames(plsda), rownames(fd))] <- plsda[, "PLS.DA.prediction"]
 pd <- data.frame(
     fractions = rep(c('1', '4', '13+14', '21',
         '1', '9+10', '16', '18'), 2),
+    replicate = rep(1:2, each = 8),
     row.names = colnames(e))
 
 .experiment <- new("MIAPE",
