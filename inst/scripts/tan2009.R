@@ -1,10 +1,10 @@
 mrk <- read.csv("../extdata/pr800866n_si_007.csv",
-                row.names = 1,
+                row.names = 2,
                 stringsAsFactors = FALSE)
 
 makeTan <- function(csvfile, markers = mrk) {
   require("MSnbase")
-  xx <- read.csv(csvfile, row.names = 1, stringsAsFactors = FALSE)
+  xx <- read.csv(csvfile, row.names = 2, stringsAsFactors = FALSE)
   eset <- as.matrix(xx[, grep("area", names(xx))])
   colnames(eset) <- paste0("X", 114:117)
   fd <- xx[, c(1:5,10)]
@@ -51,7 +51,7 @@ makeTan <- function(csvfile, markers = mrk) {
              detectorType = "PMT")                           
   fd.Ann <- new("AnnotatedDataFrame", data = fd)
   if (any(names(xx)=="pd.markers")) {
-  	fd.Ann@varMetadata[,1] <- c("FlyBase identifier",
+  	fd.Ann@varMetadata[,1] <- c("CG number",
                             "FlyBase symbol/name",
                             "Peptides",
                             "Mascot score",
@@ -61,7 +61,7 @@ makeTan <- function(csvfile, markers = mrk) {
 			     "PhenoDisco output as described in Breckels et al (2013) Journal of Proteomics. Accepted February 2013",
                             "Updated protein markers (original markers see column 'markers' plus new protein markers found by phenoDisco and verified by UniprotKB/literature as described in Breckels et al)") 
   } else {
-  fd.Ann@varMetadata[,1] <- c("FlyBase identifier",
+  fd.Ann@varMetadata[,1] <- c("CG number",
                             "FlyBase symbol/name",
                             "Peptides",
                             "Mascot score",

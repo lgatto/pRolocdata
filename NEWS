@@ -1,3 +1,15 @@
+CHANGES IN VERSION 1.0.5
+------------------------
+ o changed featureNames(tan2006r*) to FBgn numbers <2013-12-16 Mon> 
+
+CHANGES IN VERSION 1.0.4
+------------------------
+ o Bioc 2.14 version bump
+
+CHANGES IN VERSION 1.0.3
+------------------------
+ o Bioc 2.13 version bump
+
 CHANGES IN VERSION 1.0.2
 ------------------------
  o new data from Hall et al 2009 <2013-10-01 Tue>
