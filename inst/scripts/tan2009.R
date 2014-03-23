@@ -82,6 +82,23 @@ tan2009r1 <- makeTan("../extdata/pr800866n_si_004-rep1.csv")
 tan2009r2 <- makeTan("../extdata/pr800866n_si_004-rep2.csv")
 tan2009r3 <- makeTan("../extdata/pr800866n_si_004-rep3.csv")
 
+## Function for adding Uniprot IDs to the Tan datasets
+source("addTanIds.R")
+tan2009r1 <- addTanIds(tan2009r1)
+tan2009r2 <- addTanIds(tan2009r2)
+tan2009r3 <- addTanIds(tan2009r3)
+
+fData(tan2009r1) <- fData(tan2009r1)[, c(1:2, 10:13, 3:9)]
+fData(tan2009r2) <- fData(tan2009r2)[, c(1:2, 8:11, 3:7)]
+fData(tan2009r3) <- fData(tan2009r3)[, c(1:2, 8:11, 3:7)]
+
+fvarMetadata(tan2009r1)$labelDescription[c(3, 5)] <- rep("Uniprot Accession Number converted from FlyBase using CG numbers as input (see README for details)", 2) 
+fvarMetadata(tan2009r2)$labelDescription[c(3, 5)] <- rep("Uniprot Accession Number converted from FlyBase using CG numbers as input (see README for details)", 2) 
+fvarMetadata(tan2009r3)$labelDescription[c(3, 5)] <- rep("Uniprot Accession Number converted from FlyBase using CG numbers as input (see README for details)", 2) 
+fvarMetadata(tan2009r1)$labelDescription[c(4, 6)] <- rep("Uniprot Entry Name converted from FlyBase using CG numbers as input (see README for details)", 2) 
+fvarMetadata(tan2009r2)$labelDescription[c(4, 6)] <- rep("Uniprot Entry Name converted from FlyBase using CG numbers as input (see README for details)", 2) 
+fvarMetadata(tan2009r3)$labelDescription[c(4, 6)] <- rep("Uniprot Entry Name converted from FlyBase using CG numbers as input (see README for details)", 2) 
+
 save(tan2009r1, file="../../data/tan2009r1.RData",
      compress = "xz", compression_level = 9)
 save(tan2009r2, file="../../data/tan2009r2.RData",

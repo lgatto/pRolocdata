@@ -109,6 +109,11 @@ pr800866n_si_004-rep3.csv
 
 File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n/suppl_file/pr800866n_si_007.xls][pr800866n_si_007.xls]] (available as csv file) contains the original markers.
 
+The two following csv files contain Uniprot ID and Entry Names for the the proteins that appear in the above 3 datasets. This information has been downloaded from www.flymine.org using the 'list analysis' tool using the protein CG numbers as input. 
+TanFlyMineFiltered.csv 
+TanFlyMineUnfiltered.csv 
+The filtered dataset contains only Uniprot IDs that have been reviewed i.e. that come from Swiss-Prot. Some CG numbers give rise to more than one reviewed Uniprot ID. The unfiltered dataset contains all Uniprot IDs per CG number which includes corresponding IDs from both Swiss-Prot (reveiwed) and TrEMBl (unreviewed), again some CG numbers have multiple IDs. Four columns have been added to the Tan MSnSet instances to include this information which are called ProteinAccession, EntryName, ProteinAccessionAll and EntryNameAll. ProteinAccession contains a single Uniprot accession ID per protein, for proteins with multiple Uniprot IDs the ID which is reveiwed appears here, if none are reviewed (or multiple are reviewed) the ID that appears first in the csv file for that protein is used. The column ProteinAccessionAll contains all UniprotIDs per protein (both reviewed and unreviewed). Similarly the columns EntryName and EntryNameAll conatin the Uniprot entry names for each protein with EntryName containing only one name and EntryNameAll containing all names per protein. 
+
 
 * From Ferro et al 2010
 
