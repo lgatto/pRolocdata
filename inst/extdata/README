@@ -1,6 +1,6 @@
 Supplementary data files used to construct data sets -*- mode:org; -*-
 
-* pRolocMetadata
+* pRolocmetadata
 - species: see experimentData(.)@samples
 - tissue: see experimentData(.)@samples
 - PMID: see pubMedIds(.)
