@@ -84,7 +84,6 @@ Organelle marker had a chi2 scores of 0 for the expected organelle, except where
 [d] chi2 value of 0.0055 for proteasome 
 [e] chi2 value of 0.0057 for proteasome
 
-
 * From Dunkley et al 2006 
 
 Supporting Information from http://www.pnas.org/content/103/17/6518/suppl/DC1
@@ -96,7 +95,6 @@ This table contains the 6 possible ratios for each iTRAQ 4-plex run. Not used he
 ** Supporting Table 3 -- 06958Table3.xls
 Table 3. Spreadsheet containing normalized reported ion intensities.
 This table has been converted to Dunkley2006.csv for easy input into R.
-
 
 * From Tan et al 2009
 
@@ -114,11 +112,9 @@ TanFlyMineFiltered.csv
 TanFlyMineUnfiltered.csv 
 The filtered dataset contains only Uniprot IDs that have been reviewed i.e. that come from Swiss-Prot. Some CG numbers give rise to more than one reviewed Uniprot ID. The unfiltered dataset contains all Uniprot IDs per CG number which includes corresponding IDs from both Swiss-Prot (reveiwed) and TrEMBl (unreviewed), again some CG numbers have multiple IDs. Four columns have been added to the Tan MSnSet instances to include this information which are called ProteinAccession, EntryName, ProteinAccessionAll and EntryNameAll. ProteinAccession contains a single Uniprot accession ID per protein, for proteins with multiple Uniprot IDs the ID which is reveiwed appears here, if none are reviewed (or multiple are reviewed) the ID that appears first in the csv file for that protein is used. The column ProteinAccessionAll contains all UniprotIDs per protein (both reviewed and unreviewed). Similarly the columns EntryName and EntryNameAll conatin the Uniprot entry names for each protein with EntryName containing only one name and EntryNameAll containing all names per protein. 
 
-
 * From Ferro et al 2010
 
 The file AT_CHLORO_table_120906.xls was email by Myriam Ferro to be included in the pRolocdata package. The first sheet (README) ws used to prepare feature annotation. The second sheet was converted to AT_CHLORO_table_120906.csv and used to generate the at_chloro MSnSet.
-
 
 
 * From Nikolovski 2012
@@ -144,9 +140,25 @@ BD = membrane protein-enriched pellet and soluble/preripheral proteins from frac
 |   117 |                               21 |   18 |                           21 |   18 |
 |-------+----------------------------------+------+------------------------------+------|
 
-
 ** S3 - iTRAQ ratios (21 ?) - not considered.
 ** S4 - markers, converted from xls to csv with xls2csv
 ** S5 - PLS-DA assignments, converted from xls to csv with xls2csv
+
+* From Nikolovski et al 2014
+
+Nikolovski N, Shliaha PV, Gatto L, Dupree P, Lilley KS. Label free
+protein quantification for plant Golgi protein localisation and
+abundance. Plant Physiol.  2014 Aug 13. pii: pp.114.245589. [Epub
+ahead of print] PubMed PMID: 25122472.
+
+- 245589ST2_protein_distributions.csv: Supplementary Table 2. List of
+  all proteins observed in both biological replicates (A and B) and
+  their distribution profiles
+
+- 245589ST3_MarkerList_250614.csv: Supplementary Table 3. List of
+  organellar marker proteins used in this study
+
+- 245589ST4_SVMLocalisation_280514.csv: Supplementary Table 4. List of
+  proteins classified as Golgi residents by SVM classification
 
 
