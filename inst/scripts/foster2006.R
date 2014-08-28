@@ -82,6 +82,9 @@ fdata <- new("AnnotatedDataFrame",data=fdata)
 
 .experiment <- new("MIAPE",
                    lab="Center for Experimental BioInformatics (CEBI)",
+                   samples = list(
+                       species = "Mus musculus",
+                       tissue = "liver"), 
                    title="A mammalian organelle map by protein correlation profiling.",
                    abstract="Protein localization to membrane-enclosed organelles is a central feature of cellular organization. Using protein correlation profiling, we have mapped 1,404 proteins to ten subcellular locations in mouse liver, and these correspond with enzymatic assays, marker protein profiles, and confocal microscopy. These localizations allowed assessment of the specificity in published organellar proteomic inventories and demonstrate multiple locations for 39% of all organellar proteins. Integration of proteomic and genomic data enabled us to identify networks of coexpressed genes, cis-regulatory motifs, and putative transcriptional regulators involved in organelle biogenesis. Our analysis ties biochemistry, cell biology, and genomics into a common framework for organelle analysis.",
                    pubMedIds="16615899")

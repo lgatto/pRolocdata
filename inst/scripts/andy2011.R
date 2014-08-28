@@ -33,7 +33,7 @@ andy <- read.csv("../extdata/andy2011_ispy_results_proteins_stringent.csv",
                    title="",
                    abstract = "",
                    pubMedIds = "",
-                   url = "",
+                   url = "http://proteomics.bio.cam.ac.uk/",
                    instrumentModel = "LTQ Orbitrap Velos",
                    instrumentManufacturer = "ThermoScientific",
                                 

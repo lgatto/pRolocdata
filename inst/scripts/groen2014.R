@@ -23,7 +23,7 @@ makeGroen <- function(csvfile, fractions, rep) {
              email = "k.s.lilley@bioc.cam.ac.uk",
              samples = list(
                species = "Arabidopsis thaliana",
-               tissue = "Callus"
+               tissue = "callus"
                ),
              title = "Identification of Trans Golgi Network proteins in Arabidopsis thaliana root tissue",
              abstract = "Knowledge of protein subcellular localisation assists in the elucidation of protein function and understanding of different biological mechanisms which occur at discrete subcellular niches.  Organelle-centric proteomics, enables localisation of thousands of proteins simultaneously. Although such techniques have enabled successful organelle protein catalogues, they rely on purification or significant enrichment of the organelle of interest, which is not achievable for many organelles. Incomplete separation of organelles leads to false discoveries, with erroneous assignments. Proteomics methods that measure the distribution patterns of specific organelle markers along density gradients are able to assign proteins of unknown localisation based on co-migration, when coupled with sophisticated computational tools to determine organelle specific co-clusters, without organelle purification. 
