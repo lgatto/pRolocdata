@@ -37,6 +37,10 @@ library("pRolocdata")
 
 ### Available datasets
 
+Currently, there are 17 datasets available in
+`pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
+names and their description.
+
 
 ```r
 pRolocdata()
@@ -94,7 +98,16 @@ respectively). Additional MIAPE data
 [[1](https://en.wikipedia.org/wiki/Minimum_Information_About_a_Proteomics_Experiment),
 [2](http://www.nature.com/nbt/journal/v25/n8/abs/nbt1329.html)]
 experimental data is available in the `experimentData` slot, as
-described below.
+described in section 'Required metadata' below.
+
+The source of these data is generally one of several text-based
+spreadsheet (`csv`, `tsv`) produced by a third-party
+application. These orginal files are often distributed as
+supplementary material to the research paper and used to generate the
+`R` objects. These source spreadsheets are available in the package's
+`inst/extdata` directory. The `R` script files, that read the
+spreatsheets and creates the `R` data is distributed in the
+`inst/scripts` directory. 
 
 ### Required metadata
 
