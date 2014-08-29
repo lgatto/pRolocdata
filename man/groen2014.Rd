@@ -8,7 +8,8 @@
 \docType{data}
 
 \title{
-  Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (Accepted, Dec 2013)
+  Data from LOPIT experiments on Arabidopsis thaliana callus roots,
+  taken from Groen et al (2014)
 }
 
 \description{ This is the data from Groen et al. \emph{Identification of
