@@ -47,25 +47,25 @@ pRolocdata()
 ```
 
 
-|Data               |Description                                                                                                   |
-|:------------------|:-------------------------------------------------------------------------------------------------------------|
-|andy2011           |Data from LOPIT experiment on Human Embryonic Kidney fibroblast cells                                         |
-|at_chloro          |The AT_CHLORO data base                                                                                       |
-|dunkley2006        |LOPIT data from Dunkley et al. 2006                                                                           |
-|foster2006         |PCP data from Foster et al, 2006                                                                              |
-|groen2014cmb       |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (Accepted, Dec 2013) |
-|groen2014r1        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (Accepted, Dec 2013) |
-|groen2014r2        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (Accepted, Dec 2013) |
-|groen2014r3        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (Accepted, Dec 2013) |
-|hall2009           |LOPIT data from Hall et al. 2009                                                                              |
-|nikolovski2012     |Data from Nikolovski et al. 2012                                                                              |
-|nikolovski2012imp  |Data from Nikolovski et al. 2012                                                                              |
-|nikolovski2014     |Data from Nikolovski et al. 2014                                                                              |
-|tan2009r1          |LOPIT data from Tan et al. 2009                                                                               |
-|tan2009r2          |LOPIT data from Tan et al. 2009                                                                               |
-|tan2009r3          |LOPIT data from Tan et al. 2009                                                                               |
-|trotter2010shallow |LOPIT data sets used in Trotter et al. 2010.                                                                  |
-|trotter2010steep   |LOPIT data sets used in Trotter et al. 2010.                                                                  |
+|Data               |Description                                                                                     |
+|:------------------|:-----------------------------------------------------------------------------------------------|
+|andy2011           |Data from LOPIT experiment on Human Embryonic Kidney fibroblast cells                           |
+|at_chloro          |The AT_CHLORO data base                                                                         |
+|dunkley2006        |LOPIT data from Dunkley et al. 2006                                                             |
+|foster2006         |PCP data from Foster et al, 2006                                                                |
+|groen2014cmb       |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
+|groen2014r1        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
+|groen2014r2        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
+|groen2014r3        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
+|hall2009           |LOPIT data from Hall et al. 2009                                                                |
+|nikolovski2012     |Data from Nikolovski et al. 2012                                                                |
+|nikolovski2012imp  |Data from Nikolovski et al. 2012                                                                |
+|nikolovski2014     |Data from Nikolovski et al. 2014                                                                |
+|tan2009r1          |LOPIT data from Tan et al. 2009                                                                 |
+|tan2009r2          |LOPIT data from Tan et al. 2009                                                                 |
+|tan2009r3          |LOPIT data from Tan et al. 2009                                                                 |
+|trotter2010shallow |LOPIT data sets used in Trotter et al. 2010.                                                    |
+|trotter2010steep   |LOPIT data sets used in Trotter et al. 2010.                                                    |
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for
@@ -168,7 +168,20 @@ otherInfo(experimentData(dunkley2006))
 ```
 
 ```
-## list()
+## $MS
+## [1] "iTRAQ4"
+## 
+## $spatexp
+## [1] "LOPIT"
+## 
+## $type
+## [1] "new"
+## 
+## $markers.fcol
+## [1] "pd.markers"
+## 
+## $prediction.fcol
+## [1] "pd.2013"
 ```
 
 ```r
@@ -177,7 +190,55 @@ pRolocmetadata(dunkley2006)
 ```
 
 ```
-## Error: could not find function "pRolocmetadata"
+## $Species
+## [1] "Arabidopsis thaliana"
+## 
+## $Tissue
+## [1] "Callus"
+## 
+## $CellLine
+## [1] NA
+## 
+## $PMID
+## [1] "16618929"
+## 
+## $MS
+## [1] "iTRAQ4"
+## 
+## $Experiment
+## [1] "LOPIT"
+## 
+## $Type
+## [1] "new"
+## 
+## $MarkerCol
+## [1] "pd.markers"
+## 
+## $PredictionCol
+## [1] "pd.2013"
+## 
+## attr(,"class")
+## [1] "list"           "pRolocmetadata"
 ```
 
 ### Adding new data
+
+New data consists of
+
+- the source data (generally a `csv` file) in `inst/extdata` and its
+  description (including source of the files) in
+  `inst/extdata/README`.
+
+- the `R` script, names `newdata.R` in the `inst/scripts` directory,
+  that reads the source files and generates a valid `MSnSet` instance
+  (with appropriate pRolocmetadata fields) in the `data` package
+  directory. The `R` data file should be names `newdata.rda`.
+
+- A dcoumentation file for the new data `man/newdata.Rd`.
+
+A [github pull request](https://github.com/lgatto/pRolocdata) with the
+above can be send directly.
+
+Alternatively, if you do not have the `R` skills to prepare the data,
+send me an email at `lg390<AT>cam<dot>ac<dot>uk` with the source `csv`
+files and appropriate metadata and I will add it for you.
