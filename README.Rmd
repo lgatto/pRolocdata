@@ -81,14 +81,14 @@ respectively). Additional MIAPE data
 experimental data is available in the `experimentData` slot, as
 described in section *Required metadata* below.
 
-The source of these data is generally one of several text-based
+The source of these data is generally one or several text-based
 spreadsheet (`csv`, `tsv`) produced by a third-party
 application. These original files are often distributed as
 supplementary material to the research paper and used to generate the
 `R` objects. These source spreadsheets are available in the package's
 `inst/extdata` directory. The `R` script files, that read the
-spreadsheets and creates the `R` data is distributed in the
-`inst/scripts` directory. 
+spreadsheets and create the `R` data is distributed in the
+`inst/scripts` directory.
 
 ### Required metadata
 
@@ -109,7 +109,7 @@ Documented in `pubMedIds(.)`.
 
 #### Spatial proteomics experiment annotation
 
-Documented in `experimentData(.)@other$pRolocMetadata`:
+Documented in `experimentData(.)@other`:
   - **MS** (`$MS`) type of mass spectrometry experiment: iTRAQ8,
     iTRAQ4, TMT6, LF, SC, ...
   - **Experiment** (`$spatexp`) type of spatial proteomics
@@ -136,16 +136,17 @@ pRolocmetadata(dunkley2006)
 
 New data consists of
 
-- the source data (generally a `csv` file) in `inst/extdata` and its
-  description (including source of the files) in
-  `inst/extdata/README`.
+- the source data (generally a `csv` file) in `inst/extdata` and their
+  description (including origin of the files) in
+  `inst/extdata/README`. The name of the source files should, if
+  possible, not be modified (except for the file extension).
 
-- the `R` script, names `newdata.R` in the `inst/scripts` directory,
+- the `R` script, named `newdata.R` in the `inst/scripts` directory,
   that reads the source files and generates a valid `MSnSet` instance
   (with appropriate pRolocmetadata fields) in the `data` package
   directory. The `R` data file should be names `newdata.rda`.
 
-- A documentation file for the new data `man/newdata.Rd`.
+- A documentation file for the new data: `man/newdata.Rd`.
 
 A [github pull request](https://github.com/lgatto/pRolocdata) with the
 above can be send directly. 

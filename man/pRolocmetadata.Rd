@@ -18,8 +18,10 @@ Extracts relevant metadata from an \code{MSnSet} instance. See
 fields.
 }
 \examples{
-data(x)
-pRolocmetadata(x)
+library("pRolocdata")
+data(dunkley2006)
+data(dunkley2006)
+pRolocmetadata(dunkley2006)
 }
 \author{
 Laurent Gatto

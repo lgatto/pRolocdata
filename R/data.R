@@ -12,8 +12,10 @@ pRolocdata <- function()
 ##' @author Laurent Gatto
 ##' @aliases print.pRolocmetadata
 ##' @examples
-##' data(x)
-##' pRolocmetadata(x)
+##' library("pRolocdata")
+##' data(dunkley2006)
+##' data(dunkley2006)
+##' pRolocmetadata(dunkley2006)
 pRolocmetadata <- function(x) {
     ans <- list(Species = experimentData(x)@samples$species,
                 Tissue = experimentData(x)@samples$tissue,
