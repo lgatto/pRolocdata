@@ -20,52 +20,37 @@ software for spatial proteomics data analysis and visualisation.
 
 ### Installation
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library("knitr")
+library("pRolocdata")
+x <- data.frame(pRolocdata()$results[, -(1:2)])
+colnames(x) <- c("Data", "Description")
+```
 
-
-
-```r
+```{r, eval=FALSE}
 source("http://bioconductor.org/biocLite.R")
 biocLite("pRolocdata")
 ```
 
 Once installed, the package needs to be loaded
 
-
-```r
+```{r, eval=FALSE}
 library("pRolocdata")
 ```
 
 ### Available datasets
 
-Currently, there are 17 datasets available in
+Currently, there are `r nrow(x)` datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
-
-```r
+```{r, eval=FALSE}
 pRolocdata()
 ```
 
-
-|Data               |Description                                                                                     |
-|:------------------|:-----------------------------------------------------------------------------------------------|
-|andy2011           |Data from LOPIT experiment on Human Embryonic Kidney fibroblast cells                           |
-|at_chloro          |The AT_CHLORO data base                                                                         |
-|dunkley2006        |LOPIT data from Dunkley et al. 2006                                                             |
-|foster2006         |PCP data from Foster et al, 2006                                                                |
-|groen2014cmb       |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|groen2014r1        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|groen2014r2        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|groen2014r3        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|hall2009           |LOPIT data from Hall et al. 2009                                                                |
-|nikolovski2012     |Data from Nikolovski et al. 2012                                                                |
-|nikolovski2012imp  |Data from Nikolovski et al. 2012                                                                |
-|nikolovski2014     |Data from Nikolovski et al. 2014                                                                |
-|tan2009r1          |LOPIT data from Tan et al. 2009                                                                 |
-|tan2009r2          |LOPIT data from Tan et al. 2009                                                                 |
-|tan2009r3          |LOPIT data from Tan et al. 2009                                                                 |
-|trotter2010shallow |LOPIT data sets used in Trotter et al. 2010.                                                    |
-|trotter2010steep   |LOPIT data sets used in Trotter et al. 2010.                                                    |
+```{r, echo=FALSE, results='asis'}
+kable(x, format = "markdown")
+```
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for
@@ -73,15 +58,13 @@ instance, to get the data from
 [Dunkley et al (2006)](http://www.pnas.org/content/103/17/6518.abstract),
 one would type
 
-
-```r
+```{r}
 data(dunkley2006)
 ```
 
 To get more information about a given dataset, see its manual page
 
-
-```r
+```{r, eval=FALSE}
 ?dunkley2006
 ## or
 help("dunkley2006")
@@ -140,64 +123,13 @@ Documented in `experimentData(.)@other$pRolocMetadata`:
 
 #### Example
 
-
-```r
+```{r}
 experimentData(dunkley2006)@samples
-```
-
-```
-## $species
-## [1] "Arabidopsis thaliana"
-## 
-## $tissue
-## [1] "Callus"
-```
-
-```r
 pubMedIds(dunkley2006)
-```
-
-```
-## [1] "16618929"
-```
-
-```r
 otherInfo(experimentData(dunkley2006))
-```
 
-```
-## $MS
-## [1] "iTRAQ4"
-## 
-## $spatexp
-## [1] "LOPIT"
-## 
-## $type
-## [1] "new"
-## 
-## $markers.fcol
-## [1] "pd.markers"
-## 
-## $prediction.fcol
-## [1] "pd.2013"
-```
-
-```r
 ## all at once
 pRolocmetadata(dunkley2006)
-```
-
-```
-## pRoloc experiment metadata:
-##  Species: Arabidopsis thaliana
-##  Tissue: Callus
-##  CellLine: NA
-##  PMID: 16618929
-##  MS: iTRAQ4
-##  Experiment: LOPIT
-##  Type: new
-##  MarkerCol: pd.markers
-##  PredictionCol: pd.2013
 ```
 
 ### Adding new data

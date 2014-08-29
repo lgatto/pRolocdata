@@ -1,16 +1,5 @@
 Supplementary data files used to construct data sets -*- mode:org; -*-
 
-* pRolocmetadata
-- species: see experimentData(.)@samples
-- tissue: see experimentData(.)@samples
-- PMID: see pubMedIds(.)
-
-- experimentData(.)@other$pRolocMetadata
-  - $MS: iTRAQ8, iTRAQ4, TMT6, LF, SC, ...
-  - $spatexp: LOPIT, LOPIMS, substractive, PCP, other, PCP-SILAC, ...
-  - $type: new, meta, both
-  - $fcol: default is markers
-
 * From Foster et al 2006 
 
 Supplemental data file from http://www.cell.com/supplemental/S0092-8674(06)00369-2
