@@ -1,4 +1,5 @@
 library("MSnbase")
+library("pRolocdata")
 library("Vennerable")
 
 ###########################################################
@@ -9,10 +10,10 @@ library("Vennerable")
 ## and proceed as below
 
 ## Create protein-level MSnSet
-pep2Prot <- read.csv("../extdata/PIIS0092867406003692.mmc2.csv")
-##pepInfo <- read.csv("../extdata/PIIS0092867406003692.mmc3.csv")
-protIntHD <- read.csv("../extdata/PIIS0092867406003692.mmc4-highDensity.csv")
-protIntLD <- read.csv("../extdata/PIIS0092867406003692.mmc4-lowDensity.csv")
+pep2Prot <- read.csv("../extdata/PIIS0092867406003692.mmc2.csv.gz")
+##pepInfo <- read.csv("../extdata/PIIS0092867406003692.mmc3.csv.gz")
+protIntHD <- read.csv("../extdata/PIIS0092867406003692.mmc4-highDensity.csv.gz")
+protIntLD <- read.csv("../extdata/PIIS0092867406003692.mmc4-lowDensity.csv.gz")
 rownames(protIntHD) <- sub("\\.","",make.names(protIntHD[,"IPI"]))
 rownames(protIntLD) <- sub("\\.","",make.names(protIntLD[,"IPI"]))
 
@@ -59,8 +60,8 @@ fdata["IPI00131845","markers"] <- "PS"
 fdata["IPI00131406","markers"] <- "PS" 
 
 ## Chi2 assignments
-chi2vals <- read.csv("../extdata/PIIS0092867406003692.mmc6-localizations.csv")
-chi2loc <- read.csv("../extdata/PIIS0092867406003692.mmc6-refinedLoc.csv")
+chi2vals <- read.csv("../extdata/PIIS0092867406003692.mmc6-localizations.csv.gz")
+chi2loc <- read.csv("../extdata/PIIS0092867406003692.mmc6-refinedLoc.csv.gz")
 rownames(chi2vals) <- sub(".","",make.names(chi2vals$IPI),fixed=TRUE)
 rownames(chi2loc) <- sub(".","",make.names(chi2loc$IPI),fixed=TRUE)
 loccols <- 6:14
@@ -82,16 +83,25 @@ fdata <- new("AnnotatedDataFrame",data=fdata)
 
 .experiment <- new("MIAPE",
                    lab="Center for Experimental BioInformatics (CEBI)",
+                   samples = list(
+                       species = "Mus musculus",
+                       tissue = "Liver"), 
                    title="A mammalian organelle map by protein correlation profiling.",
                    abstract="Protein localization to membrane-enclosed organelles is a central feature of cellular organization. Using protein correlation profiling, we have mapped 1,404 proteins to ten subcellular locations in mouse liver, and these correspond with enzymatic assays, marker protein profiles, and confocal microscopy. These localizations allowed assessment of the specificity in published organellar proteomic inventories and demonstrate multiple locations for 39% of all organellar proteins. Integration of proteomic and genomic data enabled us to identify networks of coexpressed genes, cis-regulatory motifs, and putative transcriptional regulators involved in organelle biogenesis. Our analysis ties biochemistry, cell biology, and genomics into a common framework for organelle analysis.",
-                   pubMedIds="16615899")
+                   pubMedIds="16615899",
+                   other = list(
+                       MS = "LF",
+                       spatexp = "PCP",
+                       type = "new",
+                       markers.fcol = "markers",
+                       prediction.fcol = NA))
 
 .process <- new("MSnProcess",
                 processing=c(
                   paste("Loaded on ",date(),".",sep="")),
                 normalised=TRUE,
-                files=c("PIIS0092867406003692.mmc4-highDensity.csv",
-                  "PIIS0092867406003692.mmc4-lowDensity.csv"))
+                files=c("PIIS0092867406003692.mmc4-highDensity.csv.gz",
+                  "PIIS0092867406003692.mmc4-lowDensity.csv.gz"))
 
 foster2006 <- new("MSnSet",
                   exprs=eset,
@@ -99,6 +109,8 @@ foster2006 <- new("MSnSet",
                   phenoData=pdata,
                   experimentData=.experiment,
                   processingData=.process)
+
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(foster2006)))
 
 if (validObject(foster2006))
   save(foster2006,file="../../data/foster2006.RData",

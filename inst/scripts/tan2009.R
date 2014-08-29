@@ -1,4 +1,6 @@
-mrk <- read.csv("../extdata/pr800866n_si_007.csv",
+library("pRolocdata")
+
+mrk <- read.csv("../extdata/pr800866n_si_007.csv.gz",
                 row.names = 2,
                 stringsAsFactors = FALSE)
 
@@ -38,7 +40,7 @@ makeTan <- function(csvfile, markers = mrk) {
              email = "k.s.lilley@bioc.cam.ac.uk",
              samples = list(
                species = "Drosophila melanogaster",
-               tissue = "Embryos (0-16 h old)"
+               tissue = "Embryos"
                ),
              title = "Mapping Organelle Proteins and Protein Complexes in Drosophila melanogaster",
              abstract = "Many proteins within eukaryotic cells are organized spatially and functionally into membrane bound organelles and complexes. A protein's location thus provides information about its function. Here, we apply LOPIT, a mass-spectrometry based technique that simultaneously maps proteins to specific subcellular compartments, to Drosophila embryos. We determine the subcellular distribution of hundreds of proteins, and protein complexes. Our results reveal the potential of LOPIT to provide average snapshots of cells.",
@@ -48,7 +50,13 @@ makeTan <- function(csvfile, markers = mrk) {
              instrumentManufacturer = "Applied Biosystems",
              ionSource = "ESI",
              analyser = "TOF",
-             detectorType = "PMT")                           
+             detectorType = "PMT",
+             other = list(
+                 MS = "iTRAQ4",
+                 spatexp = "LOPIT",
+                 type = "new",
+                 markers.fcol = "markers",
+                 prediction.fcol = "PLSDA"))
   fd.Ann <- new("AnnotatedDataFrame", data = fd)
   if (any(names(xx)=="pd.markers")) {
   	fd.Ann@varMetadata[,1] <- c("CG number",
@@ -78,9 +86,9 @@ makeTan <- function(csvfile, markers = mrk) {
     return(ans)
 }
 
-tan2009r1 <- makeTan("../extdata/pr800866n_si_004-rep1.csv")
-tan2009r2 <- makeTan("../extdata/pr800866n_si_004-rep2.csv")
-tan2009r3 <- makeTan("../extdata/pr800866n_si_004-rep3.csv")
+tan2009r1 <- makeTan("../extdata/pr800866n_si_004-rep1.csv.gz")
+tan2009r2 <- makeTan("../extdata/pr800866n_si_004-rep2.csv.gz")
+tan2009r3 <- makeTan("../extdata/pr800866n_si_004-rep3.csv.gz")
 
 ## Function for adding Uniprot IDs to the Tan datasets
 source("addTanIds.R")
@@ -98,6 +106,14 @@ fvarMetadata(tan2009r3)$labelDescription[c(3, 5)] <- rep("Uniprot Accession Numb
 fvarMetadata(tan2009r1)$labelDescription[c(4, 6)] <- rep("Uniprot Entry Name converted from FlyBase using CG numbers as input (see README for details)", 2) 
 fvarMetadata(tan2009r2)$labelDescription[c(4, 6)] <- rep("Uniprot Entry Name converted from FlyBase using CG numbers as input (see README for details)", 2) 
 fvarMetadata(tan2009r3)$labelDescription[c(4, 6)] <- rep("Uniprot Entry Name converted from FlyBase using CG numbers as input (see README for details)", 2) 
+
+tan2009r1@experimentData@other$markers.fcol <- "pd.markers"
+tan2009r1@experimentData@other$prediction.fcol <- "pd.2013"
+
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r1)))
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r2)))
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r3)))
+
 
 save(tan2009r1, file="../../data/tan2009r1.RData",
      compress = "xz", compression_level = 9)

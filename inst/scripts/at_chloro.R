@@ -1,5 +1,7 @@
-library(MSnbase)
-xx <- read.csv("../extdata/AT_CHLORO_table_120906.csv", row.names = 1)
+library("MSnbase")
+library("pRolocdata")
+
+xx <- read.csv("../extdata/AT_CHLORO_table_120906.csv.gz", row.names = 1)
 
 eset <- as.matrix(xx[, 6:9])
 colnames(eset) <- c("ENV", "STR", "THY", "TOT")
@@ -66,9 +68,17 @@ fd <- new("AnnotatedDataFrame", data = fd, varMetadata = metaData)
 ed <- new("MIAPE",
           title = "AT_CHLORO, a comprehensive chloroplast proteome database with subplastidial localization and curated information on envelope proteins.",
           url = "http://www.grenoble.prabi.fr/at_chloro/",
+          samples = list(
+              species = "Arabidopsis thaliana",
+              tissue = "Leaves"),
           abstract = "Recent advances in the proteomics field have allowed a series of high throughput experiments to be conducted on chloroplast samples, and the data are available in several public databases. However, the accurate localization of many chloroplast proteins often remains hypothetical. This is especially true for envelope proteins. We went a step further into the knowledge of the chloroplast proteome by focusing, in the same set of experiments, on the localization of proteins in the stroma, the thylakoids, and envelope membranes. LC-MS/MS-based analyses first allowed building the AT_CHLORO database (http://www.grenoble.prabi.fr/protehome/grenoble-plant-proteomics/), a comprehensive repertoire of the 1323 proteins, identified by 10,654 unique peptide sequences, present in highly purified chloroplasts and their subfractions prepared from Arabidopsis thaliana leaves. This database also provides extensive proteomics information (peptide sequences and molecular weight, chromatographic retention times, MS/MS spectra, and spectral count) for a unique chloroplast protein accurate mass and time tag database gathering identified peptides with their respective and precise analytical coordinates, molecular weight, and retention time. We assessed the partitioning of each protein in the three chloroplast compartments by using a semiquantitative proteomics approach (spectral count). These data together with an in-depth investigation of the literature were compiled to provide accurate subplastidial localization of previously known and newly identified proteins. A unique knowledge base containing extensive information on the proteins identified in envelope fractions was thus obtained, allowing new insights into this membrane system to be revealed. Altogether, the data we obtained provide unexpected information about plastidial or subplastidial localization of some proteins that were not suspected to be associated to this membrane system. The spectral counting-based strategy was further validated as the compartmentation of well known pathways (for instance, photosynthesis and amino acid, fatty acid, or glycerolipid biosynthesis) within chloroplasts could be dissected. It also allowed revisiting the compartmentation of the chloroplast metabolism and functions.",
-          pubMedIds = "20061580")
-
+          pubMedIds = "20061580",
+          other = list(
+              MS = "SC",
+              spatexp = "other",
+              type = "new",
+              markers.fcol = "markers",
+              prediction.fcol = NA))
 
 at_chloro <- new("MSnSet",
                  exprs = eset,
@@ -77,6 +87,8 @@ at_chloro <- new("MSnSet",
                  experimentData = ed)
 
 stopifnot(rowSums(exprs(at_chloro)) == fData(at_chloro)$TotalSpectralCount)
+
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(at_chloro)))
 
 if (validObject(at_chloro))
   save(at_chloro,

@@ -1,8 +1,9 @@
 library("MSnbase")
+library("pRolocdata")
 
 ###########################################################
 ## From Dunkey et al. 2006 PMID:16618929
-dunkley <- read.csv("../extdata/Dunkley2006.csv",row.names=1)
+dunkley <- read.csv("../extdata/Dunkley2006.csv.gz",row.names=1)
 .exprs <- as.matrix(dunkley[,4:19])
 .fData <- dunkley[,c(2:3)]
 names(.fData) <-c("markers","assigned")
@@ -54,7 +55,13 @@ tmp[tmp=="not classified"] <- "unknown"
                    instrumentManufacturer = "Applied Biosystems",
                    ionSource = "ESI",
                    analyser = "TOF",
-                   detectorType = "PMT")               
+                   detectorType = "PMT",
+                   other = list(
+                       MS = "iTRAQ4",
+                       spatexp = "LOPIT",
+                       type = "new",
+                       markers.fcol = "pd.markers",
+                       prediction.fcol = "pd.2013"))
 
 .process <- new("MSnProcess",
                 processing=c(
@@ -72,6 +79,8 @@ dunkley2006 <- new("MSnSet",
 featureNames(dunkley2006) <- toupper(featureNames(dunkley2006))
 
 dunkley2006@processingData <- .process
+
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(dunkley2006)))
 
 if (validObject(dunkley2006))
   save(dunkley2006,file="../../data/dunkley2006.RData",
