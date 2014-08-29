@@ -12,4 +12,6 @@ Description: Mass-spectrometry based organelle proteomics data sets
 Depends: R (>= 2.15), MSnbase
 Suggests: pRoloc
 License: GPL-2
+BugReports: https://github.com/lgatto/pRolocdata/issues
+URL: https://github.com/lgatto/pRolocdata
 biocViews: ExperimentData, MassSpectrometry, Proteomics
