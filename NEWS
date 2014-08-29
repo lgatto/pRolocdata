@@ -1,6 +1,9 @@
 CHANGES IN VERSION 1.3.3
 ------------------------
+ o Updated README.md (generated from README.Rmd) [2014-08-29 Fri]
  o pRolocmetadata infrastructure [2014-08-29 Fri]
+ o updated all datasets with appropriate pRolocmetadata
+   [2014-08-29 Fri]
 
 CHANGES IN VERSION 1.3.2
 ------------------------

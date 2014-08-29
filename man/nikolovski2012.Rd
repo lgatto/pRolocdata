@@ -40,7 +40,10 @@ data(nikolovski2012imp)
   The training set used for the Naive Bayesian classifier is available
   as the \code{markers} feature meta-data. Note that Nikolovksi included
   a group of markers labelled 'others', which has been retained in these
-  data sets.
+  data sets. The results produced in this work are available in the
+  \code{preds} feature variable (note that some organelles are
+  marked with a '*', which is undefined here).
+  
 }
 
 \source{

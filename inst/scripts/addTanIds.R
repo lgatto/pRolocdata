@@ -4,8 +4,8 @@ addTanIds <- function(object) {
   ## csvF = the filtered dataset from FlyMine that contains *only* Uniprot Ids that are reviewed
   ## csvU = the unfiltered dataset from Flymine that conatins *all* Uniprot Ids per CG number
   ##        this includes multiple IDs per CG both unreviewed and reviewed entries
-  csvF <- read.csv("../extdata/TanFlyMineFiltered.csv")
-  csvU <- read.csv("../extdata/TanFlyMineUnfiltered.csv")
+  csvF <- read.csv("../extdata/TanFlyMineFiltered.csv.gz")
+  csvU <- read.csv("../extdata/TanFlyMineUnfiltered.csv.gz")
   
   ## Remove any duplicated Uniprot IDs in filtered set
   .rm <- which(duplicated(csvF[,5]))

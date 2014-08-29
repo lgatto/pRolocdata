@@ -1,4 +1,5 @@
 library("MSnbase")
+library("pRolocdata")
 
 ###########################################################
 ## From Dunkey et al. 2006 PMID:16618929
@@ -78,6 +79,8 @@ dunkley2006 <- new("MSnSet",
 featureNames(dunkley2006) <- toupper(featureNames(dunkley2006))
 
 dunkley2006@processingData <- .process
+
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(dunkley2006)))
 
 if (validObject(dunkley2006))
   save(dunkley2006,file="../../data/dunkley2006.RData",

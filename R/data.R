@@ -10,7 +10,7 @@ pRolocdata <- function()
 ##' @param x A \code{pRolocdata} data.
 ##' @return An instance of class \code{pRolocmetadata}.
 ##' @author Laurent Gatto
-##' @aliases show.pRolocmetadata
+##' @aliases print.pRolocmetadata
 ##' @examples
 ##' data(x)
 ##' pRolocmetadata(x)
@@ -34,4 +34,9 @@ print.pRolocmetadata <- function(x, ...) {
     nx <- names(x)
     for (i in nx)
         cat(paste0(" ", i, ": ", x[[i]], "\n"))
+}
+
+valid.pRolocmetadata <- function(x) {
+    stopifnot(inherits(x, "pRolocmetadata"))
+    !any(sapply(x, is.null))
 }
