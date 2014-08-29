@@ -98,7 +98,7 @@ respectively). Additional MIAPE data
 [[1](https://en.wikipedia.org/wiki/Minimum_Information_About_a_Proteomics_Experiment),
 [2](http://www.nature.com/nbt/journal/v25/n8/abs/nbt1329.html)]
 experimental data is available in the `experimentData` slot, as
-described in section 'Required metadata' below.
+described in section *Required metadata* below.
 
 The source of these data is generally one of several text-based
 spreadsheet (`csv`, `tsv`) produced by a third-party
@@ -110,6 +110,9 @@ spreatsheets and creates the `R` data is distributed in the
 `inst/scripts` directory. 
 
 ### Required metadata
+
+Additional metadata is available with the `pRolocmetadata()` function
+and detailed below.
 
 #### Species
 Documented in `experimentData(.)@samples$species`
@@ -126,10 +129,55 @@ Documented in `pubMedIds(.)`.
 #### Spatial proteomics experiment annotation
 
 Documented in `experimentData(.)@other$pRolocMetadata`:
-  - `$MS`: iTRAQ8, iTRAQ4, TMT6, LF, SC, ...
-  - `$spatexp`: LOPIT, LOPIMS, substractive, PCP, other, PCP-SILAC, ...
-  - `$type`: new, meta, both
-  - `$markers.fcol`: default is `markers`
-  - `$prediction.fcol`
+  - **MS** (`$MS`) type of mass spectrometry experiment: iTRAQ8,
+    iTRAQ4, TMT6, LF, SC, ...
+  - **Experiment** (`$spatexp`) type of spatial proteomics
+    experiment: LOPIT, LOPIMS, substractive, PCP, other, PCP-SILAC,
+    ...
+  - **Type** (`$type`) type of data: new, meta, both
+  - **MarkerCol** (`$markers.fcol`) name of the markers feature
+    data. Default is `markers`.
+  - **PredictionCol** (`$prediction.fcol`) name of the localisation
+    prediction feature data.
+
+#### Example
+
+
+```r
+experimentData(dunkley2006)@samples
+```
+
+```
+## $species
+## [1] "Arabidopsis thaliana"
+## 
+## $tissue
+## [1] "Callus"
+```
+
+```r
+pubMedIds(dunkley2006)
+```
+
+```
+## [1] "16618929"
+```
+
+```r
+otherInfo(experimentData(dunkley2006))
+```
+
+```
+## list()
+```
+
+```r
+## all at once
+pRolocmetadata(dunkley2006)
+```
+
+```
+## Error: could not find function "pRolocmetadata"
+```
 
 ### Adding new data
