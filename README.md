@@ -190,35 +190,16 @@ pRolocmetadata(dunkley2006)
 ```
 
 ```
-## $Species
-## [1] "Arabidopsis thaliana"
-## 
-## $Tissue
-## [1] "Callus"
-## 
-## $CellLine
-## [1] NA
-## 
-## $PMID
-## [1] "16618929"
-## 
-## $MS
-## [1] "iTRAQ4"
-## 
-## $Experiment
-## [1] "LOPIT"
-## 
-## $Type
-## [1] "new"
-## 
-## $MarkerCol
-## [1] "pd.markers"
-## 
-## $PredictionCol
-## [1] "pd.2013"
-## 
-## attr(,"class")
-## [1] "list"           "pRolocmetadata"
+## pRoloc experiment metadata:
+##  Species: Arabidopsis thaliana
+##  Tissue: Callus
+##  CellLine: NA
+##  PMID: 16618929
+##  MS: iTRAQ4
+##  Experiment: LOPIT
+##  Type: new
+##  MarkerCol: pd.markers
+##  PredictionCol: pd.2013
 ```
 
 ### Adding new data
