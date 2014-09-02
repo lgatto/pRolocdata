@@ -27,7 +27,7 @@ andy <- read.csv("../extdata/andy2011_ispy_results_proteins_stringent.csv.gz",
                    contact = "Kathryn S. Lilley",
                    email = "k.s.lilley@bioc.cam.ac.uk",
                    samples = list(
-                       species = "Human",
+                       species = "Homo sapiens",
                        tissue = "Cell",
                        cellLine = "Embryonic Kidney Fibroblast Cells (HEK293T)",
                        operator = "Andy Christoforou"),
