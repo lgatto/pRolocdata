@@ -30,7 +30,6 @@ experimentData(nikolovski2014) <-
         other = list(
             MS = "LF",
             spatexp = "LOPIMS",
-            type = "new",
             markers.fcol = "markers",
             prediction.fcol = "Consensus"
         ))

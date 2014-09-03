@@ -38,7 +38,6 @@ Here we apply multiple approaches to establish a high confidence dataset of Arab
                other = list(
                    MS = "iTRAQ4",
                    spatexp = "LOPIT",
-                   type = "new",
                    markers.fcol = "markers",
                    prediction.fcol = NA,
                    datasetInformation = paste("Expt", i, "from Groen et al")))

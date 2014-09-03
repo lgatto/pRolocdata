@@ -115,7 +115,6 @@ Documented in `experimentData(.)@other`:
   - **Experiment** (`$spatexp`) type of spatial proteomics
     experiment: LOPIT, LOPIMS, subtractive, PCP, other, PCP-SILAC,
     ...
-  - **Type** (`$type`) type of data: new, meta, both
   - **MarkerCol** (`$markers.fcol`) name of the markers feature
     data. Default is `markers`.
   - **PredictionCol** (`$prediction.fcol`) name of the localisation

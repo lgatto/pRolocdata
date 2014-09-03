@@ -59,7 +59,6 @@ tmp[tmp=="not classified"] <- "unknown"
                    other = list(
                        MS = "iTRAQ4",
                        spatexp = "LOPIT",
-                       type = "new",
                        markers.fcol = "pd.markers",
                        prediction.fcol = "pd.2013"))
 

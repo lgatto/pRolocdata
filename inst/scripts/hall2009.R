@@ -41,7 +41,6 @@ pd <- data.frame(
                    other = list(
                        MS = "iTRAQ4",
                        spatexp = "LOPIT",
-                       type = "new",
                        markers.fcol = "markers",
                        prediction.fcol = "PLSDA"
                    ))

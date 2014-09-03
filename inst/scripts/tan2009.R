@@ -54,7 +54,6 @@ makeTan <- function(csvfile, markers = mrk) {
              other = list(
                  MS = "iTRAQ4",
                  spatexp = "LOPIT",
-                 type = "new",
                  markers.fcol = "markers",
                  prediction.fcol = "PLSDA"))
   fd.Ann <- new("AnnotatedDataFrame", data = fd)

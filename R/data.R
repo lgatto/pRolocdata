@@ -24,7 +24,6 @@ pRolocmetadata <- function(x) {
                 PMID = pubMedIds(x),
                 MS = otherInfo(experimentData(x))$MS,
                 Experiment = otherInfo(experimentData(x))$spatexp,
-                Type = otherInfo(experimentData(x))$type,
                 MarkerCol = otherInfo(experimentData(x))$markers.fcol,
                 PredictionCol = otherInfo(experimentData(x))$prediction.fcol)
     class(ans) <- c("list", "pRolocmetadata")
