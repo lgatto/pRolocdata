@@ -69,6 +69,12 @@ andy2011 <- new("MSnSet",
                    featureData = .fData)
 andy2011@processingData <- .process
 
+## Add updated markers
+load("../extdata/markersHuman.rda")
+fData(andy2011)$markers.orig <- fData(andy2011)$markers
+fData(andy2011)$markers <- NULL
+andy2011 <- addMarkers(andy2011, markers = mrk, verbose = FALSE)
+
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(andy2011)))
 
 if (validObject(andy2011))

@@ -81,7 +81,13 @@ dunkley2006@processingData <- .process
 
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(dunkley2006)))
 
+## Add updated markers
+load("../extdata/markersDunkley.rda")
+fData(dunkley2006)$markers.orig <- fData(dunkley2006)$markers
+fData(dunkley2006)$markers <- NULL
+dunkley2006 <- addMarkers(dunkley2006, mrk)
+plot2D(dunkley2006)
+
 if (validObject(dunkley2006))
   save(dunkley2006,file="../../data/dunkley2006.RData",
        compress = "xz", compression_level = 9)
-
