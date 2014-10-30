@@ -1,10 +1,14 @@
-CHANGES IN VERSION 1.5.1
+CHANGES IN VERSION 1.3.7
 ------------------------
  o Updated all markers in andy, dunkley and tan datasets and
    old marker column in fData renamed markers.orig [2014-10-30 Thu]
  o New E14TG2a datasets added [2014-10-30 Thu]
  o Doc on boosting markers [2014-10-30 Thu]
 
+CHANGES IN VERSION 1.3.7
+------------------------
+ o new devel version
+ 
 CHANGES IN VERSION 1.3.5
 ------------------------
  o Remove new/meta pRolocmetadata <2014-09-03 Wed>
