@@ -7,6 +7,7 @@ makeAndy <- function(filename, date, stringency) {
   rownames(csv) <- Accession.No
   ind <- grep("n1", colnames(csv))
   .exprs <- csv[,ind]
+  .exprs <- as.matrix(.exprs)
   ind <- c(grep("GO", colnames(csv)), grep("Train", colnames(csv)))
   .fData <- cbind(Uniprot.ID, csv[,c(1:3,ind)])
   null <- which(.fData$GOannotation=="null")
