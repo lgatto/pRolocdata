@@ -29,7 +29,6 @@ makeSet <- function(filename) {
                      other = list(
                          MS = "iTRAQ4",
                          spatexp = "LOPIT",
-                         type = "meta",
                          markers.fcol = "markers",
                          prediction.fcol = NA))
 

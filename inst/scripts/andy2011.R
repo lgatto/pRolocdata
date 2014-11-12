@@ -49,7 +49,6 @@ andy <- read.csv("../extdata/andy2011_ispy_results_proteins_stringent.csv.gz",
                      postProcessing = "Maximum Parent Proteins: 1. Unquantifiable spectra (E-value for PSM > 0.05, non-unique sequences, very low ion counts, >2 zero value reporter ions ) removed. Spectra filtered based on several criteria (precursor relative signal, position of switch relative to peak apex, reporter ion intensity) to pick a single peptidotypic spectrum per peptide. Peptides were merged into proteins by intensity weighted mean",
                        MS = "iTRAQ8",
                        spatexp = "LOPIT",
-                       type = "new",
                        markers.fcol = "pd.markers",
                        prediction.fcol = "pd.2013"
                      ),
@@ -69,6 +68,12 @@ andy2011 <- new("MSnSet",
                    experimentData = .experiment,
                    featureData = .fData)
 andy2011@processingData <- .process
+
+## Add updated markers
+load("../extdata/markersHuman.rda")
+fData(andy2011)$markers.orig <- fData(andy2011)$markers
+fData(andy2011)$markers <- NULL
+andy2011 <- addMarkers(andy2011, markers = mrk, verbose = FALSE)
 
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(andy2011)))
 

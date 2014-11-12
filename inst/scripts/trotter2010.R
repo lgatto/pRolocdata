@@ -29,7 +29,6 @@ shallow@experimentData <-
       other = list(
           MS = "iTRAQ4",
           spatexp = "LOPIT",
-          type = "meta",
           markers.fcol = NA,
           prediction.fcol = NA          
       ),

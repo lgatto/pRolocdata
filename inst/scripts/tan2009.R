@@ -54,7 +54,6 @@ makeTan <- function(csvfile, markers = mrk) {
              other = list(
                  MS = "iTRAQ4",
                  spatexp = "LOPIT",
-                 type = "new",
                  markers.fcol = "markers",
                  prediction.fcol = "PLSDA"))
   fd.Ann <- new("AnnotatedDataFrame", data = fd)
@@ -114,6 +113,45 @@ stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r1)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r2)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r3)))
 
+## Make Uniprot accession number the featureNames as it is the most stable ID
+fData(tan2009r1)$FBgn <- featureNames(tan2009r1)
+fData(tan2009r2)$FBgn <- featureNames(tan2009r2)
+fData(tan2009r3)$FBgn <- featureNames(tan2009r3)
+featureNames(tan2009r1) <- fData(tan2009r1)$AccessionNo
+featureNames(tan2009r2) <- fData(tan2009r2)$AccessionNo
+featureNames(tan2009r3) <- fData(tan2009r3)$AccessionNo
+fData(tan2009r1) <- fData(tan2009r1)[c(length(fvarLabels(tan2009r1)), 1:(length(fvarLabels(tan2009r1))-1))]
+fData(tan2009r2) <- fData(tan2009r2)[c(length(fvarLabels(tan2009r2)), 1:(length(fvarLabels(tan2009r2))-1))]
+fData(tan2009r3) <- fData(tan2009r3)[c(length(fvarLabels(tan2009r3)), 1:(length(fvarLabels(tan2009r3))-1))]
+
+## Add updated marker lists
+load("../extdata/markersTan.rda")
+fData(tan2009r1)$markers.orig <- fData(tan2009r1)$markers
+fData(tan2009r1)$markers <- NULL
+tan2009r1 <- addMarkers(tan2009r1, mrk, verbose = FALSE)
+# remove any marker mismatches
+# c("P38979", "O76927")
+ind <- c(195, 339, 654)
+fData(tan2009r1)$markers[ind] <- rep("unknown", length(ind))
+
+fData(tan2009r2)$markers.orig <- fData(tan2009r2)$markers
+fData(tan2009r2)$markers <- NULL
+tan2009r2 <- addMarkers(tan2009r2, mrk, verbose = FALSE)
+# remove the below as only 4 members in each that do not cluster
+nuc <- which(fData(tan2009r2)$markers == "Nucleus")
+cyt <- which(fData(tan2009r2)$markers == "Cytoskeleton")
+per <- which(fData(tan2009r2)$markers == "Peroxisome")
+fData(tan2009r2)$markers[c(cyt, nuc, per)] <- rep("unknown", length(c(cyt,nuc, per)))
+
+fData(tan2009r3)$markers.orig <- fData(tan2009r3)$markers
+fData(tan2009r3)$markers <- NULL
+tan2009r3 <- addMarkers(tan2009r3, mrk, verbose = FALSE)
+ga <- which(fData(tan2009r3)$markers == "Golgi")
+cyt <- which(fData(tan2009r3)$markers == "Cytoskeleton")
+per <- which(fData(tan2009r3)$markers == "Peroxisome")
+fData(tan2009r3)$markers[c(cyt, ga, per)] <- rep("unknown", length(c(cyt, ga, per)))
+ind <- c(132, 650)
+fData(tan2009r3)$markers[ind] <- rep("unknown", length(ind))
 
 save(tan2009r1, file="../../data/tan2009r1.RData",
      compress = "xz", compression_level = 9)
@@ -121,5 +159,3 @@ save(tan2009r2, file="../../data/tan2009r2.RData",
      compress = "xz", compression_level = 9)
 save(tan2009r3, file="../../data/tan2009r3.RData",
      compress = "xz", compression_level = 9)
-
-

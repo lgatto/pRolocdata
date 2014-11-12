@@ -76,7 +76,6 @@ ed <- new("MIAPE",
           other = list(
               MS = "SC",
               spatexp = "other",
-              type = "new",
               markers.fcol = "markers",
               prediction.fcol = NA))
 

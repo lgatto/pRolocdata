@@ -2,7 +2,7 @@
 \alias{andy2011}
 \docType{data}
 \title{
-  Data from LOPIT experiment on Human Embryonic Kidney fibroblast cells
+  Data from a LOPIT experiment on Human Embryonic Kidney fibroblast cells
 }
 
 \description{
@@ -21,7 +21,7 @@
   for eight iTRAQ 8-plex labelled fractions.
   This dataset was used in testing the phenotype discovery algorithm from 
   Breckels et al., \emph{The Effect of Organelle Discovery upon Sub-Cellular 
-  Protein Localisation}, J Proteomics, \emph{In Press.}, see \code{phenoDisco}. 
+  Protein Localisation}, J Proteomics, 2013, 88:129-40, see \code{phenoDisco}. 
   New phenotype clusters identified from algorithm application are available as 
   \code{pd.2013} feature meta-data and the markers used as input for the analysis 
   are available as \code{markers} feature meta-data.
@@ -34,10 +34,7 @@
 }
 
 \references{
-  Breckels LM, Gatto L, Christoforou A, Groen AJ, Lilley KS and Trotter MWB. 
-  \emph{The Effect of Organelle Discovery upon Sub-Cellular Protein Localisation}
-   J Proteomics. \emph{In Press.}
-  
+  Breckels LM, Gatto L, Christoforou A, Groen AJ, Lilley KS and Trotter MWB. \emph{The Effect of Organelle Discovery upon Sub-Cellular Protein Localisation.} J Proteomics. 2013 Aug 2;88:129-40. doi: 10.1016/j.jprot.2013.02.019. Epub 2013 Mar 21. PubMed PMID: 23523639  
 }
 
 \examples{

@@ -92,7 +92,6 @@ fdata <- new("AnnotatedDataFrame",data=fdata)
                    other = list(
                        MS = "LF",
                        spatexp = "PCP",
-                       type = "new",
                        markers.fcol = "markers",
                        prediction.fcol = NA))
 
