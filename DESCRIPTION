@@ -1,7 +1,7 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.5.1
+Version: 1.5.2
 Author: Laurent Gatto and Lisa M. Breckels
 Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: Mass-spectrometry based organelle proteomics data sets 
@@ -14,4 +14,4 @@ Suggests: pRoloc
 License: GPL-2
 BugReports: https://github.com/lgatto/pRolocdata/issues
 URL: https://github.com/lgatto/pRolocdata
-biocViews: ExperimentData, MassSpectrometry, Proteomics
+biocViews: ExperimentData, Homo_sapiens_Data, MassSpectrometryData
