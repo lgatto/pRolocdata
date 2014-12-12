@@ -14,4 +14,7 @@ Suggests: pRoloc
 License: GPL-2
 BugReports: https://github.com/lgatto/pRolocdata/issues
 URL: https://github.com/lgatto/pRolocdata
-biocViews: ExperimentData, MassSpectrometry, Proteomics
+biocViews: ExperimentData, Homo_sapiens_Data, MassSpectrometryData,
+	   Arabidopsis_thaliana_Data, Drosophila_melanogaster_Data,
+	   Mus_musculus_Data, StemCell
+
