@@ -29,8 +29,8 @@ Enzyme: Trypsin
 Max. Missed Cleavages: 2
 Decoy Type: None (see Percolator parameters below)
 Peptide Charge: 5+
-Peptide Tolerance: ± 10 ppm
-MS/MS Tolerance: ± 0.2 Da
+Peptide Tolerance: +/- 10 ppm
+MS/MS Tolerance: +/- 0.2 Da
 Instrument: ESI-ORBITRAP-HCD
 
 Percolator Parameters:

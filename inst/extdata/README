@@ -23,7 +23,15 @@ Sheet 2 (PCP-Low density):  PIIS0092867406003692.mmc4-lowDensity.csv
 Sheet 3 (Cytoplasm or Nucleus): not used here
 
 ** Table S4 -- PIIS0092867406003692.mmc5.xls
-Peptide correlation profiles for each measured peptide from three different sets of experiments: high and low-density sucrose gradients, and cytoplasm versus nucleus (three separate worksheets). In each worksheet the charge state, molecular weight and amino acid sequence  of each peptide precede the measured ion volumes (in Da·s). The high-density page contains ion intensities for only the first eight fractions (Fr01-08) while the low-density page contains information for fractions 09 through 30 (Fr25-29 were not included as they are equivalent to Fr30).
+Peptide correlation profiles for each measured peptide from three
+different sets of experiments: high and low-density sucrose gradients,
+and cytoplasm versus nucleus (three separate worksheets). In each
+worksheet the charge state, molecular weight and amino acid sequence
+of each peptide precede the measured ion volumes (in Da). The
+high-density page contains ion intensities for only the first eight
+fractions (Fr01-08) while the low-density page contains information
+for fractions 09 through 30 (Fr25-29 were not included as they are
+equivalent to Fr30).
 
 Each worksheet has been opened in gnumeric and saved as a csv file.
 Sheet 1 (PCP-High density): PIIS0092867406003692.mmc5-highDensity.csv
@@ -163,3 +171,9 @@ ahead of print] PubMed PMID: 25122472.
   proteins classified as Golgi residents by SVM classification
 
 
+
+* Protein complexe separation profiles
+- fabre2015r1 and r2
+- kristensen2012r1, r2, and r3
+- kirkwood2013
+- havugimana2012
