@@ -10,7 +10,8 @@ and
 [devel](http://bioconductor.org/packages/devel/data/experiment/html/pRolocdata.html)
 pages) that collects published (mainly, although some unpublished
 datasets are also available) mass spectrometry-based spatial/organelle
-dataset. The data are distributed as `MSnSet` instances (see the
+and protein-complex dataset. The data are distributed as `MSnSet`
+instances (see the
 [`MSnbase`](http://www.bioconductor.org/packages/release/bioc/html/MSnbase.html)
 for details) and are used throughout the
 [`pRoloc`](http://bioconductor.org/packages/release/data/experiment/html/pRolocdata.html)
@@ -115,7 +116,6 @@ Documented in `experimentData(.)@other`:
   - **Experiment** (`$spatexp`) type of spatial proteomics
     experiment: LOPIT, LOPIMS, subtractive, PCP, other, PCP-SILAC,
     ...
-  - **Type** (`$type`) type of data: new, meta, both
   - **MarkerCol** (`$markers.fcol`) name of the markers feature
     data. Default is `markers`.
   - **PredictionCol** (`$prediction.fcol`) name of the localisation

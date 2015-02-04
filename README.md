@@ -10,7 +10,8 @@ and
 [devel](http://bioconductor.org/packages/devel/data/experiment/html/pRolocdata.html)
 pages) that collects published (mainly, although some unpublished
 datasets are also available) mass spectrometry-based spatial/organelle
-dataset. The data are distributed as `MSnSet` instances (see the
+and protein-complex dataset. The data are distributed as `MSnSet`
+instances (see the
 [`MSnbase`](http://www.bioconductor.org/packages/release/bioc/html/MSnbase.html)
 for details) and are used throughout the
 [`pRoloc`](http://bioconductor.org/packages/release/data/experiment/html/pRolocdata.html)
@@ -37,7 +38,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 17 datasets available in
+Currently, there are 27 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -47,25 +48,35 @@ pRolocdata()
 ```
 
 
-|Data               |Description                                                                                     |
-|:------------------|:-----------------------------------------------------------------------------------------------|
-|andy2011           |Data from LOPIT experiment on Human Embryonic Kidney fibroblast cells                           |
-|at_chloro          |The AT_CHLORO data base                                                                         |
-|dunkley2006        |LOPIT data from Dunkley et al. 2006                                                             |
-|foster2006         |PCP data from Foster et al, 2006                                                                |
-|groen2014cmb       |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|groen2014r1        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|groen2014r2        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|groen2014r3        |Data from LOPIT experiments on Arabidopsis thaliana callus roots, taken from Groen et al (2014) |
-|hall2009           |LOPIT data from Hall et al. 2009                                                                |
-|nikolovski2012     |Data from Nikolovski et al. 2012                                                                |
-|nikolovski2012imp  |Data from Nikolovski et al. 2012                                                                |
-|nikolovski2014     |Data from Nikolovski et al. 2014                                                                |
-|tan2009r1          |LOPIT data from Tan et al. 2009                                                                 |
-|tan2009r2          |LOPIT data from Tan et al. 2009                                                                 |
-|tan2009r3          |LOPIT data from Tan et al. 2009                                                                 |
-|trotter2010shallow |LOPIT data sets used in Trotter et al. 2010.                                                    |
-|trotter2010steep   |LOPIT data sets used in Trotter et al. 2010.                                                    |
+|Data               |Description                                                                              |
+|:------------------|:----------------------------------------------------------------------------------------|
+|E14TG2aR           |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                       |
+|E14TG2aS1          |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                       |
+|E14TG2aS2          |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                       |
+|andy2011           |Data from a LOPIT experiment on Human Embryonic Kidney fibroblast cells                  |
+|at_chloro          |The AT_CHLORO data base                                                                  |
+|dunkley2006        |LOPIT data from Dunkley et al. 2006                                                      |
+|fabre2015r1        |Data from Fabre et al. 2015                                                              |
+|fabre2015r2        |Data from Fabre et al. 2015                                                              |
+|foster2006         |PCP data from Foster et al, 2006                                                         |
+|groen2014cmb       |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
+|groen2014r1        |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
+|groen2014r2        |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
+|groen2014r3        |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
+|hall2009           |LOPIT data from Hall et al. 2009                                                         |
+|havugimana2012     |Data from Havugimana et al. 2012                                                         |
+|kirkwood2013       |Data from Kirkwood et al. 2013.                                                          |
+|kristensen2012r1   |Data from Kristensen et al. 2012                                                         |
+|kristensen2012r2   |Data from Kristensen et al. 2012                                                         |
+|kristensen2012r3   |Data from Kristensen et al. 2012                                                         |
+|nikolovski2012     |Data from Nikolovski et al. 2012                                                         |
+|nikolovski2012imp  |Data from Nikolovski et al. 2012                                                         |
+|nikolovski2014     |Data from Nikolovski et al. 2014                                                         |
+|tan2009r1          |LOPIT data from Tan et al. 2009                                                          |
+|tan2009r2          |LOPIT data from Tan et al. 2009                                                          |
+|tan2009r3          |LOPIT data from Tan et al. 2009                                                          |
+|trotter2010shallow |LOPIT data sets used in Trotter et al. 2010.                                             |
+|trotter2010steep   |LOPIT data sets used in Trotter et al. 2010.                                             |
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for
@@ -132,7 +143,6 @@ Documented in `experimentData(.)@other`:
   - **Experiment** (`$spatexp`) type of spatial proteomics
     experiment: LOPIT, LOPIMS, subtractive, PCP, other, PCP-SILAC,
     ...
-  - **Type** (`$type`) type of data: new, meta, both
   - **MarkerCol** (`$markers.fcol`) name of the markers feature
     data. Default is `markers`.
   - **PredictionCol** (`$prediction.fcol`) name of the localisation
@@ -172,9 +182,6 @@ otherInfo(experimentData(dunkley2006))
 ## $spatexp
 ## [1] "LOPIT"
 ## 
-## $type
-## [1] "new"
-## 
 ## $markers.fcol
 ## [1] "pd.markers"
 ## 
@@ -195,7 +202,6 @@ pRolocmetadata(dunkley2006)
 ##  PMID: 16618929
 ##  MS: iTRAQ4
 ##  Experiment: LOPIT
-##  Type: new
 ##  MarkerCol: pd.markers
 ##  PredictionCol: pd.2013
 ```

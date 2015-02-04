@@ -1,4 +1,5 @@
 import("MSnbase")
+import("Biobase")
 
 export(pRolocdata,
        pRolocmetadata,
