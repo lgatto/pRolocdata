@@ -38,7 +38,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 20 datasets available in
+Currently, there are 27 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -56,12 +56,19 @@ pRolocdata()
 |andy2011           |Data from a LOPIT experiment on Human Embryonic Kidney fibroblast cells                  |
 |at_chloro          |The AT_CHLORO data base                                                                  |
 |dunkley2006        |LOPIT data from Dunkley et al. 2006                                                      |
+|fabre2015r1        |Data from Fabre et al. 2015                                                              |
+|fabre2015r2        |Data from Fabre et al. 2015                                                              |
 |foster2006         |PCP data from Foster et al, 2006                                                         |
 |groen2014cmb       |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
 |groen2014r1        |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
 |groen2014r2        |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
 |groen2014r3        |Data from LOPIT experiments on Arabidopsis thaliana roots, taken from Groen et al (2014) |
 |hall2009           |LOPIT data from Hall et al. 2009                                                         |
+|havugimana2012     |Data from Havugimana et al. 2012                                                         |
+|kirkwood2013       |Data from Kirkwood et al. 2013.                                                          |
+|kristensen2012r1   |Data from Kristensen et al. 2012                                                         |
+|kristensen2012r2   |Data from Kristensen et al. 2012                                                         |
+|kristensen2012r3   |Data from Kristensen et al. 2012                                                         |
 |nikolovski2012     |Data from Nikolovski et al. 2012                                                         |
 |nikolovski2012imp  |Data from Nikolovski et al. 2012                                                         |
 |nikolovski2014     |Data from Nikolovski et al. 2014                                                         |
