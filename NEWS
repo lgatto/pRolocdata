@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.5.5
+------------------------
+ o added GO CC auxiliary data [2015-02-05 Thu]
+ o added pData(havugimana2012) [2015-02-10 Tue]
+ 
 CHANGES IN VERSION 1.5.4
 ------------------------
  o protein complex gradient data: fabre2015 (2 reps), havugimana2012,
