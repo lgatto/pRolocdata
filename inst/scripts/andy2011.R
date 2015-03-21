@@ -1,4 +1,5 @@
 library("MSnbase")
+library("pRoloc")
 library("pRolocdata")
 
 ###########################################################
@@ -76,6 +77,10 @@ fData(andy2011)$markers <- NULL
 andy2011 <- addMarkers(andy2011, markers = mrk, verbose = FALSE)
 
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(andy2011)))
+
+## Using stable UniProt accession numbers as feature names
+fData(andy2011)$UniProtKB.entry.name <- featureNames(andy2011)
+featureNames(andy2011) <- fData(andy2011)$Accession.No.
 
 if (validObject(andy2011))
   save(andy2011,file="../../data/andy2011.RData",
