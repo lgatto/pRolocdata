@@ -143,6 +143,33 @@ fData(E14TG2aR)$markers6 <- NULL
 ind<- c(203,  810, 1029, 1402, 1643, 1799, 248, 1448)
 fData(E14TG2aR)$markers[ind] <- rep("unknown", length(ind))
 
+## Add results from Breckels et al 2015 to feature data of E14TG2aS1 dataset
+load("../extdata/breckels2015.rda")
+if (!all(featureNames(E14TG2aS1) == featureNames(breckels2015))) 
+  stop("Feature names do not match between E14TG2aS1 and Breckels et al 2015 data")
+fData(E14TG2aS1)$markers.tl <- fData(breckels2015)$markers.tl
+fData(E14TG2aS1)$knntl.breckels2015 <- fData(breckels2015)$knntl.breckels2015
+fData(E14TG2aS1)$knntl.scores.breckels2015 <- fData(breckels2015)$knntl.scores.breckels2015
+fData(E14TG2aS1)$knntl.final.assignment <- fData(breckels2015)$knntl.final.assignment
+fData(E14TG2aS1)$svmtl.breckels2015 <- fData(breckels2015)$svmtl.breckels2015
+fData(E14TG2aS1)$svmtl.scores.breckels2015 <- fData(breckels2015)$svmtl.scores.breckels2015
+fData(E14TG2aS1)$svmtl.final.assignment <- fData(breckels2015)$svmtl.final.assignment
+
+## Update fvarMetaData slots
+fvarMetadata(E14TG2aS1)["markers.orig", 1] <- "Initial markers defined by Christoforou"
+fvarMetadata(E14TG2aS2)["markers.orig", 1] <- "Initial markers defined by Christoforou"
+fvarMetadata(E14TG2aR)["markers.orig", 1] <- "Initial markers defined by Christoforou"
+fvarMetadata(E14TG2aS1)["markers", 1] <- "Hand curated updated marker list defined by Christoforou, Mulvey and Breckels"
+fvarMetadata(E14TG2aS2)["markers", 1] <- "Hand curated updated marker list defined by Christoforou, Mulvey and Breckels"
+fvarMetadata(E14TG2aR)["markers", 1] <- "Hand curated updated marker list defined by Christoforou, Mulvey and Breckels"
+fvarMetadata(E14TG2aS1)["markers.tl", 1] <- "Markers used for transfer learning in Breckels et al 2015, this is a subset of markers from using minMarkers function to set a minimum of 13 proteins per cluster"
+fvarMetadata(E14TG2aS1)["knntl.breckels2015", 1] <- "Classification results from using the knntl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["knntl.scores.breckels2015", 1] <- "Scores output from using the knntl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["knntl.final.assignment", 1] <- "Final assignment from using the knntl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["svmtl.breckels2015", 1] <- "Classification results from using the svmtl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["svmtl.scores.breckels2015", 1] <- "Scores output from using the svmtl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["svmtl.final.assignment", 1] <- "Final assignment from using the svmtl algorithm as detailed in Breckels et al 2015"
+
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aR)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aS1)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aS2)))
