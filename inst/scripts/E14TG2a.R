@@ -1,4 +1,5 @@
 library("MSnbase")
+library("pRoloc")
 
 makeAndy <- function(filename, date, stringency) {
   csv <- read.csv(filename, row.names=1, header = TRUE, stringsAsFactors=FALSE)
@@ -35,7 +36,8 @@ makeAndy <- function(filename, date, stringency) {
                     email = "k.s.lilley@bioc.cam.ac.uk",
                     samples = list(
                       species = "Mouse",
-                      tissue = "E14TG2a embryonic stem cells",
+                      tissue = "Cell",
+                      cellLine = "Murine pluripotent embryonic stem cells (E14Tg2a)",
                       operator = "Andy Christoforou"
                      ),
                     title="",
@@ -142,6 +144,51 @@ fData(E14TG2aR)$markers6 <- NULL
 # c("P06745", "P52503", "Q99N87", "Q3UMR5", "Q8R0G7", "Q9CXW2", "Q8VDF2", "Q62315")
 ind<- c(203,  810, 1029, 1402, 1643, 1799, 248, 1448)
 fData(E14TG2aR)$markers[ind] <- rep("unknown", length(ind))
+
+## Add results from Breckels et al 2015 to feature data of E14TG2aS1 dataset
+load("../extdata/breckels2015.rda")
+if (!all(featureNames(E14TG2aS1) == featureNames(breckels2015))) 
+  stop("Feature names do not match between E14TG2aS1 and Breckels et al 2015 data")
+fData(E14TG2aS1)$markers.tl <- fData(breckels2015)$markers.tl
+fData(E14TG2aS1)$knntl.breckels2015 <- fData(breckels2015)$knntl.breckels2015
+fData(E14TG2aS1)$knntl.scores.breckels2015 <- fData(breckels2015)$knntl.scores.breckels2015
+fData(E14TG2aS1)$knntl.final.assignment <- fData(breckels2015)$knntl.final.assignment
+fData(E14TG2aS1)$svmtl.breckels2015 <- fData(breckels2015)$svmtl.breckels2015
+fData(E14TG2aS1)$svmtl.scores.breckels2015 <- fData(breckels2015)$svmtl.scores.breckels2015
+fData(E14TG2aS1)$svmtl.final.assignment <- fData(breckels2015)$svmtl.final.assignment
+
+## Update fvarMetaData slots
+fvarMetadata(E14TG2aS1)["markers.orig", 1] <- "Initial markers defined by Christoforou"
+fvarMetadata(E14TG2aS2)["markers.orig", 1] <- "Initial markers defined by Christoforou"
+fvarMetadata(E14TG2aR)["markers.orig", 1] <- "Initial markers defined by Christoforou"
+fvarMetadata(E14TG2aS1)["markers", 1] <- "Hand curated updated marker list defined by Christoforou, Mulvey and Breckels"
+fvarMetadata(E14TG2aS2)["markers", 1] <- "Hand curated updated marker list defined by Christoforou, Mulvey and Breckels"
+fvarMetadata(E14TG2aR)["markers", 1] <- "Hand curated updated marker list defined by Christoforou, Mulvey and Breckels"
+fvarMetadata(E14TG2aS1)["markers.tl", 1] <- "Markers used for transfer learning in Breckels et al 2015, this is a subset of markers from using minMarkers function to set a minimum of 13 proteins per cluster"
+fvarMetadata(E14TG2aS1)["knntl.breckels2015", 1] <- "Classification results from using the knntl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["knntl.scores.breckels2015", 1] <- "Scores output from using the knntl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["knntl.final.assignment", 1] <- "Final assignment from using the knntl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["svmtl.breckels2015", 1] <- "Classification results from using the svmtl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["svmtl.scores.breckels2015", 1] <- "Scores output from using the svmtl algorithm as detailed in Breckels et al 2015"
+fvarMetadata(E14TG2aS1)["svmtl.final.assignment", 1] <- "Final assignment from using the svmtl algorithm as detailed in Breckels et al 2015"
+
+## Add knntl experimental information to experiment data
+experimentData(E14TG2aS1)@other$knntl$markers.fcol = "markers.tl"
+experimentData(E14TG2aS1)@other$knntl$prediction.fcol = "knntl.final.assignment"
+experimentData(E14TG2aS1)@other$knntl$thetas = c("40S Ribosome" = 1/3, 
+                                                  "60S Ribosome" = 2/3,
+                                                  "Cytosol" = 2/3,
+                                                  "Endoplasmic reticulum" = 1,
+                                                  "Lysosome" = 1/3,
+                                                  "Mitochondrion" = 1,
+                                                  "Nucleus - Chromatin" = 1,
+                                                  "Nucleus - Nucleolus" = 1/3,
+                                                  "Plasma membrane" = 2/3,
+                                                  "Proteasome" = 0)
+experimentData(E14TG2aS1)@other$knntl$k <- c(kp = 5, ka = 5)
+experimentData(E14TG2aS1)@other$svmtl$prediction.fcol = "svmtl.final.assignment"
+experimentData(E14TG2aS1)@other$svmtl$cost <- 16
+experimentData(E14TG2aS1)@other$svmtl$sigmas <- c(s1 = 1, s2 = 0.1)
 
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aR)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aS1)))
