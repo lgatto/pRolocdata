@@ -76,6 +76,18 @@ fData(andy2011)$markers.orig <- fData(andy2011)$markers
 fData(andy2011)$markers <- NULL
 andy2011 <- addMarkers(andy2011, markers = mrk, verbose = FALSE)
 
+## Add transfer learning results from Breckels et al 2015
+load("../extdata/human-tl.rda")
+andy2011 <- minMarkers(andy2011, 13)
+ind = which(fvarLabels(andy2011) == "markers13")
+fvarLabels(andy2011)[ind] <- "markers.tl"
+experimentData(andy2011)@other$knntl <- human.tl$knntl
+experimentData(andy2011)@other$svmtl <- human.tl$svmtl
+
+## Update fvarMetaData slots
+fvarMetadata(andy2011)["markers", 1] <- "Updated and curated marker list following Breckels et al 2013"
+fvarMetadata(andy2011)["markers.tl", 1] <- "Markers used for transfer learning classification in Breckels et al 2015"
+
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(andy2011)))
 
 ## Using stable UniProt accession numbers as feature names
