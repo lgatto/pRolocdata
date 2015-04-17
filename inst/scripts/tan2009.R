@@ -1,4 +1,5 @@
 library("pRolocdata")
+library("pRoloc")
 
 mrk <- read.csv("../extdata/pr800866n_si_007.csv.gz",
                 row.names = 2,
@@ -159,3 +160,4 @@ save(tan2009r2, file="../../data/tan2009r2.RData",
      compress = "xz", compression_level = 9)
 save(tan2009r3, file="../../data/tan2009r3.RData",
      compress = "xz", compression_level = 9)
+
