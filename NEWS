@@ -1,6 +1,8 @@
 CHANGES IN VERSION 1.7.1
 ------------------------
  o update tan2009 data [2015-04-17 Fri]
+ o update dunkley2006, fixing named fData()$fcol fvars
+   [2015-04-18 Sat]
  
 CHANGES IN VERSION 1.7.0
 ------------------------
