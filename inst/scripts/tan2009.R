@@ -153,6 +153,25 @@ fData(tan2009r3)$markers[c(cyt, ga, per)] <- rep("unknown", length(c(cyt, ga, pe
 ind <- c(132, 650)
 fData(tan2009r3)$markers[ind] <- rep("unknown", length(ind))
 
+## Add transfer learning results from Breckels et al 2015
+load("../extdata/tl-res/tan-tl.rda")
+tan2009r1 <- minMarkers(tan2009r1, 13)
+ind <- which(fvarLabels(tan2009r1) == "markers13")
+fvarLabels(tan2009r1)[ind] <- "markers.tl"
+#experimentData(tan2009r1)@other$knntl <- tan.tl$knntl
+#experimentData(tan2009r1)@other$svmtl <- tan.tl$svmtl
+# Now added to GO CC equivalent set
+
+## Update fvarMetaData slots
+fvarMetadata(tan2009r1)[c(1, 14:16),1]  <- c("FBgn number from FlyBase",
+                                             "Original markers from Tan (2009) et al",
+                                             "Updated and curated protein markers, same as pd.markers",
+                                             "Markers used in transfer learning paper by Breckels et al (2015)") 
+
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r1)))
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r2)))
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(tan2009r3)))
+
 save(tan2009r1, file="../../data/tan2009r1.RData",
      compress = "xz", compression_level = 9)
 save(tan2009r2, file="../../data/tan2009r2.RData",

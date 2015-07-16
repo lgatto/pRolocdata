@@ -37,7 +37,10 @@ Here we apply multiple approaches to establish a high confidence dataset of Arab
              analyser = "Orbitrap",
              detectorType = "Orbitrap",
              other = list(
-               datasetInformation = "Expt 1 from Groen et al"))
+               MS = "iTRAQ4",
+               spatexp = "LOPIT",
+               markers.fcol = "knn.markers",
+               prediction.fcol = "knn.tgn.vs.all"))
   fd.Ann <- new("AnnotatedDataFrame", data = fd)
   fd.Ann@varMetadata[,1] <- c("TAIR Arabidopsis Thaliana (AT) number",
                             "Protein description",
@@ -107,6 +110,25 @@ cmb <- addMarkers(cmb, markers = mm, verbose = FALSE, mcol = "pd.markers")
 cmb <- addMarkers(cmb, mrk, verbose=FALSE)
 
 groen2014cmb <- cmb
+
+## Add transfer learning results from Breckels et al 2015
+#load("../extdata/tl-res/groen-tl.rda")
+#experimentData(groen2014r1)@other$svmtl <- groen.tl$svmtl
+#experimentData(groen2014r1)@other$knntl <- groen.tl$knntl
+
+fvarMetadata(groen2014r1)["markers",1] <- fvarMetadata(groen2014r2)["markers",1] <-
+  fvarMetadata(groen2014r3)["markers",1] <- 
+    "Updated marker list including TGN markers identified from Groen et al (2014)"
+
+fvarMetadata(groen2014cmb)[c(3:6), 1] <- c("Input markers for phenotype discovery analysis for Groen et al (2014)",
+                                           "Output from phenotype discovery analysis from Groen et al (2014)",
+                                           "Curated output from phenotype discovery analysis from Groen et al (2014)",
+                                           "Final curated marker list from Groen et al (2014)")
+
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(groen2014r1)))
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(groen2014r2)))
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(groen2014r3)))
+stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(groen2014cmb)))
 
 save(groen2014r1, file="../../data/groen2014r1.RData",
      compress = "xz", compression_level = 9)

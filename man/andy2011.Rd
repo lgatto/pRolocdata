@@ -1,6 +1,8 @@
 \name{andy2011}
 \alias{andy2011}
 \alias{andy2011goCC}
+\alias{andy2011hpa}
+
 
 \docType{data}
 \title{
@@ -15,6 +17,7 @@
 \usage{
 data(andy2011)
 data(andy2011goCC)
+data(andy2011hpa)
 }
 
 \format{
@@ -31,11 +34,18 @@ data(andy2011goCC)
   \code{pd.2013} feature meta-data and the markers used as input for the analysis 
   are available as \code{markers} feature meta-data.
 
-  The \code{andy2011goCC} instance contains a binary assay data. Its
+  The \code{andy2011goCC} instance contains binary assay data. Its
   columns represent GO CC terms that have been observed for the object's
   features. A 1 indicates that a GO term has been associated to a given
   feature (protein); a 0 means not such association was found in the GO
   ontology.
+  
+  The \code{andy2011hpa} instance contains binary assay data. Its
+  columns represent subcellular locations that have been observed from 
+  microscopy images from the Human Protein Atlas, for each protein. A 1 indicates that a subcellular term has been associated to a given
+  feature (protein); a 0 means not such association was found. This matrix 
+  of terms was generated from version 13, released on 11/06/2014 of the Human
+  Protein Atlas. 
   
 }
 
