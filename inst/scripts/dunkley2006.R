@@ -1,5 +1,6 @@
 library("MSnbase")
 library("pRolocdata")
+library("pRoloc")
 
 ###########################################################
 ## From Dunkey et al. 2006 PMID:16618929
@@ -26,7 +27,8 @@ tmp[tmp=="not classified"] <- "unknown"
 .fData$new <- as.factor(.fData$new)
 .fData$pd.2013 <- dunkley[,20]
 .fData$pd.markers <- dunkley[,21]
-.fData <- new("AnnotatedDataFrame",data=data.frame(as.matrix(.fData)))
+.fData <- new("AnnotatedDataFrame", data=.fData)
+
 .fData@varMetadata[,1] <- c("Original protein markers used in Dunkley et al 2006 PNAS paper",
                             "Protein localisation assigned by PLSDA and manually by Dunkley as described in Dunkley et al 2006 PNAS paper",
                             "Evidence for original proteins markers in column 'markers'",
