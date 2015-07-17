@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.7.2
+------------------------
+ o added HPA, GOCC and YLOC datasets from Breckels et al 2015
+   and all optimised parameters [2015-07-16 Thu]
+ 
 CHANGES IN VERSION 1.7.1
 ------------------------
  o update tan2009 data [2015-04-17 Fri]
@@ -11,7 +16,7 @@ CHANGES IN VERSION 1.7.0
 CHANGES IN VERSION 1.5.8
 ------------------------
  o added transfer learning results from Breckels et al 2015 to
-   andy2011 experimentData [2015-04-07 Thu]
+   experimentData [2015-04-07 Thu] 
 
 CHANGES IN VERSION 1.5.7
 ------------------------

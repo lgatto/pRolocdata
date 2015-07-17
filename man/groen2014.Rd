@@ -4,24 +4,26 @@
 \alias{groen2014r2}
 \alias{groen2014r3}
 \alias{groen2014cmb}
+\alias{groen2014r1goCC}
 
 \docType{data}
 
 \title{
   Data from LOPIT experiments on Arabidopsis thaliana roots,
-  taken from Groen et al (2014)
+  from Groen et al (2014)
 }
 
 \description{ This is the data from Groen et al. \emph{Identification of
   Trans Golgi Network proteins in Arabidopsis thaliana root tissue}
-  J. Proteome Res., Just Accepted. Publication Date (Web): December 17,
-  2013 (Article) DOI: 10.1021/pr4008464 }
+  J. Proteome Res, 2014, Feb 7; 13(2):763-776. See below for more details.}
 
 
-\usage{data(groen2014r1)
+\usage{
+data(groen2014r1)
 data(groen2014r2)
 data(groen2014r3)
 data(groen2014cmb)
+data(groen2014r1goCC)
 }
 
 
@@ -34,7 +36,13 @@ data(groen2014cmb)
   replicates (\code{r1}, \code{r2} and \code{r3} respectively). The 3
   replicates have also been combined as described in Groen et al. and
   Trotter et al. (2010) to generate a fourth dataset (\code{cmb}), also
-  shown in the example code below.  }
+  shown in the example code below.  
+    
+  The \code{groen2014r1goCC} instance contains binary assay data. Its
+  columns represent GO CC terms that have been observed for the object's
+  features. A 1 indicates that a GO term has been associated to a given
+  feature (protein); a 0 means not such association was found in the GO
+  ontology.}
 
 \source{
   http://pubs.acs.org/doi/abs/10.1021/pr4008464
@@ -43,9 +51,8 @@ data(groen2014cmb)
 \references{
   Groen AJ, Sancho-Andres G, Breckels LM, Gatto L, Aniento F,
   and Lilley KS. \emph{Identification of Trans Golgi Network proteins in
-  Arabidopsis thaliana root tissue}. J. Proteome Res., Just
-  Accepted. Publication Date (Web): December 17, 2013 (Article). DOI:
-  10.1021/pr4008464
+  Arabidopsis thaliana root tissue}. J. Proteome Res, 2014, Feb 7; 13(2):763-776. 
+  DOI:10.1021/pr4008464, PMID: 24344820.
 
   Trotter MWB, Sadowski PG, Dunkley TPJ, Groen AJ and Lilley KS.
   \emph{Improved sub-cellular resolution via simultaneous analysis of

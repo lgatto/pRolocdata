@@ -3,6 +3,7 @@
 \alias{tan2009r1}
 \alias{tan2009r2}
 \alias{tan2009r3}
+\alias{tan2009r1goCC}
 
 \docType{data}
 
@@ -20,6 +21,7 @@
 data(tan2009r1)
 data(tan2009r2)
 data(tan2009r3)
+data(tan2009r1goCC)
 }
 
 \format{
@@ -34,11 +36,18 @@ data(tan2009r3)
   meta-data and the markers used in analysis are available as \code{markers} 
   feature meta-data (Note: the ER and Golgi organelle markers were combined in
   original PLSDA analysis). 
+  
   Replicate 1 was also used in testing the phenotype discovery algorithm from 
   Breckels et al., \emph{The Effect of Organelle Discovery upon Sub-Cellular 
   Protein Localisation}, J Proteomics, \emph{In Press.}, see \code{phenoDisco}. 
   New phenotype clusters identified from algorithm application are available as 
-  \code{pd.2013} feature meta-data.
+  \code{pd.2013} feature meta-data.  
+  
+  The \code{tan2009r1goCC} instance contains binary assay data. Its
+  columns represent GO CC terms that have been observed for the object's
+  features. A 1 indicates that a GO term has been associated to a given
+  feature (protein); a 0 means not such association was found in the GO
+  ontology.
 }
 
 \source{

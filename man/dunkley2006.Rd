@@ -1,5 +1,6 @@
 \name{dunkley2006}
 \alias{dunkley2006}
+\alias{dunkley2006goCC}
 \docType{data}
 \title{
   LOPIT data from Dunkley et al. 2006
@@ -11,7 +12,10 @@
   details. 
 }
 
-\usage{data(dunkley2006)}
+\usage{
+data(dunkley2006)
+data(dunkley2006goCC)
+}
 
 \format{
   The data is an instance of class \code{MSnSet} from package \code{MSnbase}.
@@ -22,14 +26,22 @@
   for four iTRAQ 4-plex labelled fraction and 2 membrane preparation in
   duplicate (16 samples, see \code{phenoData(dunkley2006)} for more
   details) are provided.
+  
   Partial least square discriminant analysis (PLSDA) has originally been
   applied to the test data \code{fData(dunkley)$markers)}; assignment results are
   available with \code{fData(dunkley)$assigned)} for 5 organelles.
+  
   This dataset was also used in testing the phenotype discovery algorithm from 
   Breckels et al., \emph{The Effect of Organelle Discovery upon Sub-Cellular 
   Protein Localisation}, J Proteomics, \emph{In Press.}, see \code{phenoDisco}. 
   New phenotype clusters identified from algorithm application are available as 
   \code{pd.2013} feature meta-data.
+  
+  The \code{dunkley2006goCC} instance contains binary assay data. Its
+  columns represent GO CC terms that have been observed for the object's
+  features. A 1 indicates that a GO term has been associated to a given
+  feature (protein); a 0 means not such association was found in the GO
+  ontology.
 }
 
 \source{
