@@ -28,7 +28,7 @@ data(groen2014r1goCC)
 
 
 \format{
-  An instance of class \code{MSnSet} from package \code{MSbase}.
+  An instance of class \code{MSnSet} from package \code{MSnbase}.
 }
 
 \details{ This is a LOPIT experiment. Normalised intensities for
