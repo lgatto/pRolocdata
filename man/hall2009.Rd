@@ -17,7 +17,7 @@
 
 
 \format{
-  An instance of class \code{MSnSet} from package \code{MSbase}.
+  An instance of class \code{MSnSet} from package \code{MSnbase}.
 }
 
 \details{

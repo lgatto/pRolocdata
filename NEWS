@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.7.3
+------------------------
+ o Fix typo in man pages [2015-09-08 Tue]
+ 
 CHANGES IN VERSION 1.7.2
 ------------------------
  o added HPA, GOCC and YLOC datasets from Breckels et al 2015
