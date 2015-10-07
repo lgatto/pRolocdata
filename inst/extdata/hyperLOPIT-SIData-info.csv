@@ -1,0 +1,35 @@
+UniProt Accession for Protein Group,,Unique UniProt accession for quantified protein group reported by Proteome Discoverer (1% FDR)
+UniProt ID for Protein Group,,UniProt identifier for quantified protein group reported by Proteome Discoverer.
+UniProt Protein Description,,UniProt description for protein accession.
+Quantified Peptides,Experiment 1,Number of quantified peptides. Only peptides that were unique to the a single protein group were used for quantification.
+,Experiment 2,
+Quantified PSMs,Experiment 1,Number of quantified peptide-spectrum matches.
+,Experiment 2,
+Normalized TMT 10-plex reporter ion distribution,126,"Normalized TMT 10-plex reporter ion values, representing the distribution of each protein across the fractionation scheme. Protein-level reporter ion values were calculated by taking the median of all quantifiable PSMs for the protein group, then normalized so that the sum of all 10 channels was equal to 1. The numeric value in the tag name corresponds to the nominal mass of each TMT reporter ion. The N and C suffixes differentiates between the 15N or 13C isotopologue variants of TMT 10-plex reporter ions of the same nominal mass."
+,127N,
+,127C,
+,128N,
+,128C,
+,129N,
+,129C,
+,130N,
+,130C,
+,131,
+Phenotype discovery and SVM classification of protein localization,phenoDisco Input,Input training data for semi-supervised novelty detection with the phenoDisco algorithm.
+,phenoDisco Output,Output of the phenoDisco algorithm. New and stable phenotypes identified by the algorithm are labeled numerically.
+,Curated phenoDisco Output,Curation of phenotypes identified by phenoDisco.
+,SVM marker set,Final marker set used for SVM classification of protein subcellular localization to 14 subcellular compartments.
+,SVM classification,Subcellular class to which the protein group was assigned by SVM classification. All proteins are assigned to a single class by SVM.
+,SVM score,"Confidence score for localization assignment, ranging from 0 to 1. A score close to 0 represents a very low confidence assignment, whereas a score of 1 indicates a very high confidence assignment."
+,SVM classification (top quartile),"Predicted localization, with SVM score thresholds set so that the highest scoring quartile for each subcellular class are treated as genuine residents, and the remaining proteins treated as unclassified."
+,Final Localization Assignment,"Predicted localization, with SVM score thresholds determined empirically by comparison to GO annotation and protein database annotation. The SVM score thresholds were set individually for each class so that the rate of corroboration between the SVM classification and GO annotation was approximately 80%."
+,First localization evidence?,Proteins for which there is no organelle-specific GO annotation or UniProt database annotation. HyperLOPIT therefore provides the first localization evidence for these proteins.
+Subcellular Curation,Curated Organelles,Small organellar phenotypes that were not included in the SVM classification.
+,Cytoskeletal Components,Curation of cytoskeletal components.
+,Trafficking Proteins,Curated examples of trafficking proteins.
+,Protein Complexes,Curated examples of co-localizing protein complex components.
+,Signaling Cascades,Curated examples of signaling cascade families of proteins.
+,"Oct4 Interactome (van den Berg, 2010)","Interaction partners of key pluripotency factor Oct4 identified in a high-throughput study by van Den Berg et al., 2010."
+,"Nanog Interactome (Gagliardi, 2013)","Interaction partners of key pluripotency factor Nanog identified in a high-throughput study by Gagliardi et al., 2013."
+,"Sox2 Interactome (Gao, 2012)","Interaction partners of key pluripotency factor Sox2 identified in a high-throughput study by Gao et al., 2012."
+,"Cell surface proteins     (Bausch-Fluck, 2015)","Cell surface proteins in E14TG2a cells, identified by surface biotinylation and affinity purification-MS (Bausch-Fluck et al., 2015). Identified proteins were grouped into three categories - High Confidence, Putative, and Non-Specific."
