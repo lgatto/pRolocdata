@@ -112,7 +112,7 @@ makeFusion <- function(filename, repNo = 1, method = "MS3",
 }
 
 ## Manually make intersect MSnSet from .csv
-csv <- read.csv("../extdata/hyperLOPIT-SIData-ms3-rep12-intersect.csv",
+csv <- read.csv("../extdata/hyperLOPIT-SIData-ms3-rep12-intersect.csv.gz",
                 row.names=1, header = TRUE, skip = 1, stringsAsFactors=FALSE)
 l <- colnames(csv)
 l <- c("EntryName", "ProteinDescription", "Peptides.r1", "Peptides.r2", 
@@ -126,7 +126,7 @@ tokeep <- grep("X1", l)
 uns <- which(.fData$Final.Localization.Assignment == "unclassified")
 .fData$Final.Localization.Assignment[uns] <- "unknown"
 .fData <- new("AnnotatedDataFrame", .fData)
-info <- read.csv("../extdata/hyperLOPIT-SIData-info.csv",      ## Add meta data
+info <- read.csv("../extdata/hyperLOPIT-SIData-info.csv.gz",      ## Add meta data
                  stringsAsFactors = FALSE)
 metadata <- info[c(1:6, 17:34), 3]
 metadata[3:6] <- c(paste0("Replicate 1: ", metadata[3]),
@@ -156,10 +156,10 @@ ids <- featureNames(markerMSnSet(hyperLOPIT2015, "markers"))
 names(mrk) <- ids
 
 ## Make MSnSets for each replicate
-f1 <- "../extdata/hyperLOPIT-SIData-ms3-rep1.csv"
-f2 <- "../extdata/hyperLOPIT-SIData-ms3-rep2.csv"
-f3 <- "../extdata/hyperLOPIT-SIData-ms3-rep3.csv"
-f4 <- "../extdata/hyperLOPIT-SIData-ms2-rep1.csv"
+f1 <- "../extdata/hyperLOPIT-SIData-ms3-rep1.csv.gz"
+f2 <- "../extdata/hyperLOPIT-SIData-ms3-rep2.csv.gz"
+f3 <- "../extdata/hyperLOPIT-SIData-ms3-rep3.csv.gz"
+f4 <- "../extdata/hyperLOPIT-SIData-ms2-rep1.csv.gz"
 
 hyperLOPIT2015ms3r1 <- makeFusion(f1, 1, "MS3")
 hyperLOPIT2015ms3r2 <- makeFusion(f2, 2, "MS3")
