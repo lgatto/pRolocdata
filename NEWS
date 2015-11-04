@@ -2,6 +2,8 @@ CHANGES IN VERSION 1.7.4
 ------------------------
  o new hyperLOPIT datasets on mouse stem cells
    [2015-10-07 Wed] 
+ o added fraction information to hyperLOPIT data and
+   re-ordered exprs data [2015-11-04 Wed] 
 
 CHANGES IN VERSION 1.7.3
 ------------------------
