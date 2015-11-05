@@ -1,12 +1,22 @@
+CHANGES IN VERSION 1.9.1
+------------------------
+ o added fraction information to hyperLOPIT data [2015-11-04 Wed] 
+ o reverted fraction order, fixed bug in hyperLOPIT
+   make script [2015-11-05 Thu]
+ o Added fraction number order [2015-11-05 Thu]
+
+CHANGES IN VERSION 1.9.0
+------------------------
+ o New version for Bio devel 3.3
+ 
+CHANGES IN VERSION 1.8.0
+------------------------
+ o New version for Bio release 3.2
+ 
 CHANGES IN VERSION 1.7.4
 ------------------------
  o new hyperLOPIT datasets on mouse stem cells
    [2015-10-07 Wed] 
- o added fraction information to hyperLOPIT data and
-   re-ordered exprs data [2015-11-04 Wed] 
- o reverted fraction order, fixed bug in hyperLOPIT
-   make script [2015-11-05 Thu]
- o Added fraction number order [2015-11-05 Thu]
 
 CHANGES IN VERSION 1.7.3
 ------------------------
