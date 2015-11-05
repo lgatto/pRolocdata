@@ -69,15 +69,12 @@ finfo <- read.csv("../extdata/hyperLOPIT-SIData-fraction-info.csv",
                   row.names=1, skip = 1, stringsAsFactors = FALSE,
                   header = TRUE)
 rownames(finfo) <- paste0("X", rownames(finfo))
-if (all.equal(sampleNames(hyperLOPIT2015ms3r1), 
-              rownames(finfo))) {
   exp1 <- cbind(finfo[, 1], finfo[, 4])
   exp2 <- cbind(finfo[, 2], finfo[, 5])
   exp3 <- cbind(finfo[, 3], finfo[, 6])
   colnames(exp1) <- colnames(exp2) <- 
     colnames(exp3) <- c("Density.Gradient.Fraction.Number",
                         "Subcellular.Fraction.Density") 
-}
 gradData <- vector("list", 3)
 gradData[[1]] <- exp1
 gradData[[2]] <- exp2
@@ -215,9 +212,6 @@ aa <- fvarLabels(hyperLOPIT2015)
 for (i in 16:24) {
   hyperLOPIT2015 <- fDataToUnknown(hyperLOPIT2015, fcol = aa[i])
 }
-
-## Re-order fractions so that fractions from each replicate are next to each other
-hyperLOPIT2015 <- hyperLOPIT2015[, c(1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19, 10, 20)]
 
 save(hyperLOPIT2015,file="../../data/hyperLOPIT2015.RData", compress = "xz", compression_level = 9)
 save(hyperLOPIT2015ms3r1,file="../../data/hyperLOPIT2015ms3r1.RData", compress = "xz", compression_level = 9)

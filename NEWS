@@ -4,6 +4,8 @@ CHANGES IN VERSION 1.7.4
    [2015-10-07 Wed] 
  o added fraction information to hyperLOPIT data and
    re-ordered exprs data [2015-11-04 Wed] 
+ o reverted fraction order, fixed bug in hyperLOPIT
+   make script [2015-11-05 Thu]
 
 CHANGES IN VERSION 1.7.3
 ------------------------
