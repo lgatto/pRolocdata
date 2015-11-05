@@ -59,8 +59,8 @@ addExperimentInfo <- function(date = "Autumn 2013",
 ## Experiment info
 addPhenoData <- function(exprs, reps = c(1, 2), method = "MS3") {
   .pData <- data.frame(Replicate = rep(reps, each = 10), 
-                       TMT.Reagent = rep(colnames(exprs)[1:10], each = length(reps)),
-                       AcquisitonMethod = method,
+                       TMT.Reagent = colnames(exprs),
+                       Acquisiton.Method = method,
                        row.names=colnames(exprs))
   return(.pData)
 }
@@ -69,12 +69,12 @@ finfo <- read.csv("../extdata/hyperLOPIT-SIData-fraction-info.csv",
                   row.names=1, skip = 1, stringsAsFactors = FALSE,
                   header = TRUE)
 rownames(finfo) <- paste0("X", rownames(finfo))
-  exp1 <- cbind(finfo[, 1], finfo[, 4])
-  exp2 <- cbind(finfo[, 2], finfo[, 5])
-  exp3 <- cbind(finfo[, 3], finfo[, 6])
+  exp1 <- data.frame(finfo[, 1], finfo[, 4], stringsAsFactors = FALSE)
+  exp2 <- data.frame(finfo[, 2], finfo[, 5], stringsAsFactors = FALSE)
+  exp3 <- data.frame(finfo[, 3], finfo[, 6], stringsAsFactors = FALSE)
   colnames(exp1) <- colnames(exp2) <- 
-    colnames(exp3) <- c("Density.Gradient.Fraction.Number",
-                        "Subcellular.Fraction.Density") 
+    colnames(exp3) <- c("Gradient.Fraction",
+                        "Iodixonal.Density") 
 gradData <- vector("list", 3)
 gradData[[1]] <- exp1
 gradData[[2]] <- exp2
@@ -205,6 +205,10 @@ fvarMetadata(hyperLOPIT2015ms3r1)$labelDescription[6]  <-
 ## Change fvarLabels
 fvarLabels(hyperLOPIT2015) <- tolower(fvarLabels(hyperLOPIT2015))
 fvarLabels(hyperLOPIT2015)[c(13, 14, 15, 20)] <- c("svm.top.quartile", "final.assignment", "first.evidence", "signalling.cascades")
+
+## Update phenoData
+pData(hyperLOPIT2015)[, 4] <- as.character(pData(hyperLOPIT2015)[, 4]) 
+#pData(hyperLOPIT2015)[, 5] <- as.numeric(pData(hyperLOPIT2015)[, 5]) 
 
 ## Add unknown instead of "" for data plotting, change unclassified to unknown for completeness
 hyperLOPIT2015 <- fDataToUnknown(hyperLOPIT2015, fcol = "svm.top.quartile", from = "unclassified")
