@@ -59,11 +59,26 @@ addExperimentInfo <- function(date = "Autumn 2013",
 ## Experiment info
 addPhenoData <- function(exprs, reps = c(1, 2), method = "MS3") {
   .pData <- data.frame(Replicate = rep(reps, each = 10), 
-                       TMT.Reagent = rep(colnames(exprs)[1:10], each = length(reps)),
-                       AcquisitonMethod = method,
+                       TMT.Reagent = colnames(exprs),
+                       Acquisiton.Method = method,
                        row.names=colnames(exprs))
   return(.pData)
 }
+
+finfo <- read.csv("../extdata/hyperLOPIT-SIData-fraction-info.csv", 
+                  row.names=1, skip = 1, stringsAsFactors = FALSE,
+                  header = TRUE)
+rownames(finfo) <- paste0("X", rownames(finfo))
+  exp1 <- data.frame(finfo[, 1], finfo[, 4], stringsAsFactors = FALSE)
+  exp2 <- data.frame(finfo[, 2], finfo[, 5], stringsAsFactors = FALSE)
+  exp3 <- data.frame(finfo[, 3], finfo[, 6], stringsAsFactors = FALSE)
+  colnames(exp1) <- colnames(exp2) <- 
+    colnames(exp3) <- c("Gradient.Fraction",
+                        "Iodixonal.Density") 
+gradData <- vector("list", 3)
+gradData[[1]] <- exp1
+gradData[[2]] <- exp2
+gradData[[3]] <- exp3
 
 makeFusion <- function(filename, repNo = 1, method = "MS3",
                        date = "Autumn 2013",
@@ -94,6 +109,9 @@ makeFusion <- function(filename, repNo = 1, method = "MS3",
     .fData@varMetadata[,1] <- featuresinfo
   }
   .pData <- addPhenoData(.exprs, reps = repNo, method = method)
+  if (method == "MS3") {
+    .pData <- cbind(.pData, gradData[[repNo]])
+  }
   .pData <- new("AnnotatedDataFrame", .pData)
   .experiment <- addExperimentInfo(date = date, instrument = instrument)
   .process <- new("MSnProcess",
@@ -115,8 +133,9 @@ makeFusion <- function(filename, repNo = 1, method = "MS3",
 csv <- read.csv("../extdata/hyperLOPIT-SIData-ms3-rep12-intersect.csv.gz",
                 row.names=1, header = TRUE, skip = 1, stringsAsFactors=FALSE)
 l <- colnames(csv)
-l <- c("EntryName", "ProteinDescription", "Peptides.r1", "Peptides.r2", 
-       "PSMs.r1", "PSMs.r2", l[7:16], paste0(l[7:16], ".r2"), l[27:44])
+l <- c("entry.name", "protein.description", "Peptides.rep1", "Peptides.rep2", 
+       "PSMs.rep1", "PSMs.rep2", paste0(l[7:16], ".rep1"), 
+       paste0(l[7:16], ".rep2"), l[27:44])
 l[grep("SVM.marker.set", l)] <- "markers"
 colnames(csv) <- l
 tokeep <- grep("X1", l)
@@ -135,6 +154,10 @@ metadata[3:6] <- c(paste0("Replicate 1: ", metadata[3]),
                    paste0("Replicate 2: ", metadata[5]))
 .fData@varMetadata[,1] <- metadata
 .pData <- addPhenoData(.exprs, reps = c(1, 2))
+.pData[, 2] <- as.character(.pData[, 2])
+.pData[, 2] <- sapply(1:length(.pData[, 2]), 
+                      function(z) strsplit(.pData[, 2][z], ".rep")[[1]][1])
+.pData <- cbind(.pData, rbind(gradData[[1]], gradData[[2]]))
 .pData <- new("AnnotatedDataFrame", .pData)
 .experiment <- addExperimentInfo()
 .process <- new("MSnProcess",
@@ -161,11 +184,13 @@ f2 <- "../extdata/hyperLOPIT-SIData-ms3-rep2.csv.gz"
 f3 <- "../extdata/hyperLOPIT-SIData-ms3-rep3.csv.gz"
 f4 <- "../extdata/hyperLOPIT-SIData-ms2-rep1.csv.gz"
 
+## make data
 hyperLOPIT2015ms3r1 <- makeFusion(f1, 1, "MS3")
 hyperLOPIT2015ms3r2 <- makeFusion(f2, 2, "MS3")
-hyperLOPIT2015ms3r3 <- makeFusion(f3, 1, "MS3", date = "Summer 2015")
+hyperLOPIT2015ms3r3 <- makeFusion(f3, 3, "MS3", date = "Summer 2015")
 hyperLOPIT2015ms2 <- makeFusion(f4, 1, "MS2", instrument = "Q Exactive") 
-  
+
+## add markers
 hyperLOPIT2015ms3r1 <- addMarkers(hyperLOPIT2015ms3r1, markers = mrk, verbose = FALSE)
 hyperLOPIT2015ms3r2 <- addMarkers(hyperLOPIT2015ms3r2, markers = mrk, verbose = FALSE)
 hyperLOPIT2015ms3r3 <- addMarkers(hyperLOPIT2015ms3r3, markers = mrk, verbose = FALSE)
@@ -176,6 +201,21 @@ fvarMetadata(hyperLOPIT2015ms3r1)$labelDescription[6]  <-
   fvarMetadata(hyperLOPIT2015ms3r2)$labelDescription[6] <- 
   fvarMetadata(hyperLOPIT2015ms3r3)$labelDescription[6] <- 
   "Marker set, curated by AC and CMM, covering protein subcellular localizations to 14 subcellular compartments."
+
+## Change fvarLabels
+fvarLabels(hyperLOPIT2015) <- tolower(fvarLabels(hyperLOPIT2015))
+fvarLabels(hyperLOPIT2015)[c(13, 14, 15, 20)] <- c("svm.top.quartile", "final.assignment", "first.evidence", "signalling.cascades")
+
+## Update phenoData
+pData(hyperLOPIT2015)[, 4] <- as.character(pData(hyperLOPIT2015)[, 4]) 
+#pData(hyperLOPIT2015)[, 5] <- as.numeric(pData(hyperLOPIT2015)[, 5]) 
+
+## Add unknown instead of "" for data plotting, change unclassified to unknown for completeness
+hyperLOPIT2015 <- fDataToUnknown(hyperLOPIT2015, fcol = "svm.top.quartile", from = "unclassified")
+aa <- fvarLabels(hyperLOPIT2015)
+for (i in 16:24) {
+  hyperLOPIT2015 <- fDataToUnknown(hyperLOPIT2015, fcol = aa[i])
+}
 
 save(hyperLOPIT2015,file="../../data/hyperLOPIT2015.RData", compress = "xz", compression_level = 9)
 save(hyperLOPIT2015ms3r1,file="../../data/hyperLOPIT2015ms3r1.RData", compress = "xz", compression_level = 9)
