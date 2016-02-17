@@ -3,6 +3,6 @@ test_that("data validity", {
     e <- environment()
     for (it in items) {
         data(list = it, envir = e)
-        expect_true(validObject(get(it)))
-    }    
+        expect_true(validObject(get(it, envir = e)))
+    }
 })
