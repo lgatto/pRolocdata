@@ -1,6 +1,7 @@
 CHANGES IN VERSION 1.9.4
 ------------------------
- o
+ o Added the STRING-db tab delimitated PPI data for transfer learning
+   example <2016-02-29 Mon>
  
 CHANGES IN VERSION 1.9.3
 ------------------------
