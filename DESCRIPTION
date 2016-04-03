@@ -11,8 +11,8 @@ Description: Mass-spectrometry based spatial proteomics data sets from
 	     Breckels et al. (2013), Groen et al. (2014) and
 	     Christoforou et al. (2015), and protein complex
 	     separation data from Kristensen et al. (2012), Havugimana
-	     et al. (2012), Kirkwood et al. (2013) and Fabre et
-	     al. (2015).	     
+	     et al. (2012), Kirkwood et al. (2013) Fabre et
+	     al. (2015) and Mulvey et al. (2015).
 Depends: R (>= 2.15), MSnbase
 Imports: Biobase
 Suggests: pRoloc, testthat
