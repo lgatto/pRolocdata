@@ -14,7 +14,7 @@ Description: Mass-spectrometry based spatial proteomics data sets from
 	     et al. (2012), Kirkwood et al. (2013) Fabre et
 	     al. (2015) and Mulvey et al. (2015).
 Depends: R (>= 2.15), MSnbase
-Imports: Biobase
+Imports: Biobase, utils
 Suggests: pRoloc, testthat
 License: GPL-2
 BugReports: https://github.com/lgatto/pRolocdata/issues

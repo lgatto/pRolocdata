@@ -1,5 +1,6 @@
 import("MSnbase")
 import("Biobase")
+importFrom("utils", "data", "packageVersion")
 
 export(pRolocdata,
        pRolocmetadata,

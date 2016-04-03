@@ -72,6 +72,7 @@ data(mulvey2015norm)
 
 \examples{
 data(mulvey2015)
+library("pRoloc")
 plot2D(mulvey2015)
 
 data(mulvey2015norm)
