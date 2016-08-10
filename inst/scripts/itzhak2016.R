@@ -24,5 +24,5 @@ itzhak2016stcSILAC <- fDataToUnknown(itzhak2016stcSILAC,
 
 stopifnot(validObject(itzhak2016stcSILAC))
 save(itzhak2016stcSILAC,
-     file = "../extdata/itzhak2016stcSILAC.rda",
+     file = "../../data/itzhak2016stcSILAC.rda",
      compress = "xz", compression_level = 9)
