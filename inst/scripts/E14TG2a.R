@@ -172,6 +172,26 @@ fvarMetadata(E14TG2aS1)["svmtl.breckels2015", 1] <- "Classification results from
 fvarMetadata(E14TG2aS1)["svmtl.scores.breckels2015", 1] <- "Scores output from using the svmtl algorithm as detailed in Breckels et al 2015"
 fvarMetadata(E14TG2aS1)["svmtl.final.assignment", 1] <- "Final assignment from using the svmtl algorithm as detailed in Breckels et al 2015"
 
+## TL results from Breckels et al 2016
+experimentData(E14TG2aS1)@other$knntl$go$markers.fcol = "markers.tl"
+experimentData(E14TG2aS1)@other$knntl$go$prediction.fcol = "knntl.final.assignment"
+experimentData(E14TG2aS1)@other$knntl$go$thetas = c("40S Ribosome" = 1/3, 
+                                                 "60S Ribosome" = 2/3,
+                                                 "Cytosol" = 2/3,
+                                                 "Endoplasmic reticulum" = 1,
+                                                 "Lysosome" = 1/3,
+                                                 "Mitochondrion" = 1,
+                                                 "Nucleus - Chromatin" = 1,
+                                                 "Nucleus - Nucleolus" = 1/3,
+                                                 "Plasma membrane" = 2/3,
+                                                 "Proteasome" = 0)
+experimentData(E14TG2aS1)@other$knntl$go$k <- c(kp = 5, ka = 5)
+experimentData(E14TG2aS1)@other$svmtl$go$prediction.fcol = "svmtl.final.assignment"
+experimentData(E14TG2aS1)@other$svmtl$go$cost <- 16
+experimentData(E14TG2aS1)@other$svmtl$go$sigmas <- c(s1 = 1, s2 = 0.1)
+
+
+
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aR)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aS1)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(E14TG2aS2)))

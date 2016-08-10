@@ -1,7 +1,10 @@
 CHANGES IN VERSION 1.11.1
 -------------------------
+ o Added TL parameters for E15TG2a from Breckels et al. 2016 
+   [2016-06-29 Wed]
+ o Added hyperLOPIT2015goCC binary GO CC [2016-06-29 Wed]
  o Added data from Itzhak et al. 2016 <2016-08-10 Wed>
- 
+
 CHANGES IN VERSION 1.9.5
 ------------------------
  o Added data from Mulvey et al. 2015 <2016-04-04 Mon>
