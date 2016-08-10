@@ -1,7 +1,7 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.9.6
+Version: 1.11.1
 Author: Laurent Gatto and Lisa M. Breckels
 Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: Mass-spectrometry based spatial proteomics data sets from
@@ -12,10 +12,11 @@ Description: Mass-spectrometry based spatial proteomics data sets from
 	     Christoforou et al. (2015), and protein complex
 	     separation data from Kristensen et al. (2012), Havugimana
 	     et al. (2012), Kirkwood et al. (2013) Fabre et
-	     al. (2015) and Mulvey et al. (2015).
+	     al. (2015), Mulvey et al. (2015) and Itzhak et
+	     al. (2016).	     
 Depends: R (>= 2.15), MSnbase
 Imports: Biobase, utils
-Suggests: pRoloc, testthat
+Suggests: pRoloc (>= 1.13.8), testthat
 License: GPL-2
 BugReports: https://github.com/lgatto/pRolocdata/issues
 URL: https://github.com/lgatto/pRolocdata
