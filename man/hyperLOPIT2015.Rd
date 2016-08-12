@@ -4,6 +4,8 @@
 \alias{hyperLOPIT2015ms3r2}
 \alias{hyperLOPIT2015ms3r3}
 \alias{hyperLOPIT2015ms2}
+\alias{hyperLOPIT2015goCC}
+
 
 \docType{data}
 
@@ -13,7 +15,7 @@
 
 \description{
   This is a spatial proteomics dataset from a hyperLOPIT experimental
-  design on Mouse E14TG2a embryonic stem cells
+  design on Mouse E14TG2a embryonic stem cells.
 }
 
 \usage{
