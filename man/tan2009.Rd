@@ -8,7 +8,7 @@
 \docType{data}
 
 \title{
-  LOPIT data from Tan et al. 2009
+  LOPIT data from Tan et al. (2009)
 }
 
 \description{

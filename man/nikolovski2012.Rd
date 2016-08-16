@@ -5,7 +5,7 @@
 \docType{data}
 
 \title{
-  Data from Nikolovski et al. 2012
+  Data from Nikolovski et al. (2012)
 }
 
 

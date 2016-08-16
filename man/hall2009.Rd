@@ -3,7 +3,7 @@
 \docType{data}
 
 \title{
-  LOPIT data from Hall et al. 2009
+  LOPIT data from Hall et al. (2009)
 }
 
 \description{

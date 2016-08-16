@@ -4,7 +4,7 @@
 \docType{data}
 
 \title{
-  Data from Nikolovski et al. 2014
+  LOPIMS data from Nikolovski et al. (2014)
 }
 
 
