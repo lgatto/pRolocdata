@@ -11,8 +11,8 @@
 
 \title{
   
-  Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem
-  cells from Christoforou et al. (2016)
+  hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from
+  Christoforou et al. (2016)
   
 }
 
