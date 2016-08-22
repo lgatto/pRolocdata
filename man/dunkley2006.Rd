@@ -3,7 +3,7 @@
 \alias{dunkley2006goCC}
 \docType{data}
 \title{
-  LOPIT data from Dunkley et al. 2006
+  LOPIT data from Dunkley et al. (2006)
 }
 
 \description{

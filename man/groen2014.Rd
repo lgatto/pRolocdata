@@ -9,8 +9,8 @@
 \docType{data}
 
 \title{
-  Data from LOPIT experiments on Arabidopsis thaliana roots,
-  from Groen et al (2014)
+  LOPIT experiments on Arabidopsis thaliana roots,
+  from Groen et al. (2014)
 }
 
 \description{ This is the data from Groen et al. \emph{Identification of

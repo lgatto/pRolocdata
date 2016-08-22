@@ -3,7 +3,7 @@
 \docType{data}
 
 \title{
-  PCP data from Foster et al, 2006
+  PCP data from Foster et al. (2006)
 }
 
 \description{

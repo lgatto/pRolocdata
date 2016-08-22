@@ -5,17 +5,32 @@ Supplementary data files used to construct data sets -*- mode:org; -*-
 Supplemental data file from http://www.cell.com/supplemental/S0092-8674(06)00369-2
 
 ** Table S1 -- PIIS0092867406003692.mmc2.xls
-All proteins identified in this study, including the IPI and UniProt accession numbers (hyperlinked to the UniProt Knowledgebase) and a description of the protein. Following these entries are the sequence coverage (as percent) and the number of unique peptides observed for each protein, as well as the sequences of those unique peptides.
+All proteins identified in this study, including the IPI and UniProt
+accession numbers (hyperlinked to the UniProt Knowledgebase) and a
+description of the protein. Following these entries are the sequence
+coverage (as percent) and the number of unique peptides observed for
+each protein, as well as the sequences of those unique peptides.
 
 xls2csv PIIS0092867406003692.mmc2.xls > PIIS0092867406003692.mmc2.csv
 
 ** Table S2 -- PIIS0092867406003692.mmc3.xls
-All peptides identified in this study, including their sequences in the single letter IUPAC nomenclature, the best relative mass error measured for each (in parts per million), the highest Mascot IonsScore recorded for each and the number of amino acids in each.
+All peptides identified in this study, including their sequences in
+the single letter IUPAC nomenclature, the best relative mass error
+measured for each (in parts per million), the highest Mascot IonsScore
+recorded for each and the number of amino acids in each.
 
 xls2csv PIIS0092867406003692.mmc3.xls  > PIIS0092867406003692.mmc3.csv
 
 ** Table S3 -- PIIS0092867406003692.mmc4.xls
-Protein correlation profiles for each measured protein from three different sets of experiments: high and low-density sucrose gradients, and cytoplasm versus nucleus. In each worksheet the IPI and UniProt codes, as well as protein names and measured abundances (expressed as  log10[ion intensity]), are listed before the normalized abundances of each protein in each 2 fraction. The high-density page contains ion intensities for only the first eight fractions (Fr01-08) while the low-density page contains information for fractions 09 through 30 (Fr25-29 were not included as they are equivalent to Fr30).
+Protein correlation profiles for each measured protein from three
+different sets of experiments: high and low-density sucrose gradients,
+and cytoplasm versus nucleus. In each worksheet the IPI and UniProt
+codes, as well as protein names and measured abundances (expressed as
+log10[ion intensity]), are listed before the normalized abundances of
+each protein in each 2 fraction. The high-density page contains ion
+intensities for only the first eight fractions (Fr01-08) while the
+low-density page contains information for fractions 09 through 30
+(Fr25-29 were not included as they are equivalent to Fr30).
 
 Each worksheet has been opened in gnumeric and saved as a csv file.
 Sheet 1 (PCP-High density): PIIS0092867406003692.mmc4-highDensity.csv
@@ -97,8 +112,10 @@ Organelle marker had a chi2 scores of 0 for the expected organelle, except where
 Supporting Information from http://www.pnas.org/content/103/17/6518/suppl/DC1
 
 ** Supporting Table 2 -- 06958Table2.xls
-Table 2. Spreadsheet of protein found in both comparison A and B in terms of protein identification data, predicted subcellular location, and GFP fusion data.
-This table contains the 6 possible ratios for each iTRAQ 4-plex run. Not used here
+Table 2. Spreadsheet of protein found in both comparison A and B in
+terms of protein identification data, predicted subcellular location,
+and GFP fusion data.  This table contains the 6 possible ratios for
+each iTRAQ 4-plex run. Not used here
 
 ** Supporting Table 3 -- 06958Table3.xls
 Table 3. Spreadsheet containing normalized reported ion intensities.
@@ -108,24 +125,51 @@ This table has been converted to Dunkley2006.csv for easy input into R.
 
 Supporting Information from http://pubs.acs.org/doi/suppl/10.1021/pr800866n
 
-File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n][pr800866n_si_004.xls]] contains relative quantitation data for the 3 replicates in separate sheets, that have been saved to 3 csv files 
+File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n][pr800866n_si_004.xls]] contains relative quantitation data for the
+3 replicates in separate sheets, that have been saved to 3 csv files
 pr800866n_si_004-rep1.csv
 pr800866n_si_004-rep2.csv
 pr800866n_si_004-rep3.csv
 
-File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n/suppl_file/pr800866n_si_007.xls][pr800866n_si_007.xls]] (available as csv file) contains the original markers.
+File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n/suppl_file/pr800866n_si_007.xls][pr800866n_si_007.xls]] (available as csv file) contains the
+original markers.
 
-The two following csv files contain Uniprot ID and Entry Names for the the proteins that appear in the above 3 datasets. This information has been downloaded from www.flymine.org using the 'list analysis' tool using the protein CG numbers as input. 
+The two following csv files contain Uniprot ID and Entry Names for the
+the proteins that appear in the above 3 datasets. This information has
+been downloaded from www.flymine.org using the 'list analysis' tool
+using the protein CG numbers as input.
+
 TanFlyMineFiltered.csv 
 TanFlyMineUnfiltered.csv 
-The filtered dataset contains only Uniprot IDs that have been reviewed i.e. that come from Swiss-Prot. Some CG numbers give rise to more than one reviewed Uniprot ID. The unfiltered dataset contains all Uniprot IDs per CG number which includes corresponding IDs from both Swiss-Prot (reveiwed) and TrEMBl (unreviewed), again some CG numbers have multiple IDs. Four columns have been added to the Tan MSnSet instances to include this information which are called ProteinAccession, EntryName, ProteinAccessionAll and EntryNameAll. ProteinAccession contains a single Uniprot accession ID per protein, for proteins with multiple Uniprot IDs the ID which is reveiwed appears here, if none are reviewed (or multiple are reviewed) the ID that appears first in the csv file for that protein is used. The column ProteinAccessionAll contains all UniprotIDs per protein (both reviewed and unreviewed). Similarly the columns EntryName and EntryNameAll conatin the Uniprot entry names for each protein with EntryName containing only one name and EntryNameAll containing all names per protein. 
+
+The filtered dataset contains only Uniprot IDs that have been reviewed
+i.e. that come from Swiss-Prot. Some CG numbers give rise to more than
+one reviewed Uniprot ID. The unfiltered dataset contains all Uniprot
+IDs per CG number which includes corresponding IDs from both
+Swiss-Prot (reveiwed) and TrEMBl (unreviewed), again some CG numbers
+have multiple IDs. Four columns have been added to the Tan MSnSet
+instances to include this information which are called
+ProteinAccession, EntryName, ProteinAccessionAll and
+EntryNameAll. ProteinAccession contains a single Uniprot accession ID
+per protein, for proteins with multiple Uniprot IDs the ID which is
+reveiwed appears here, if none are reviewed (or multiple are reviewed)
+the ID that appears first in the csv file for that protein is
+used. The column ProteinAccessionAll contains all UniprotIDs per
+protein (both reviewed and unreviewed). Similarly the columns
+EntryName and EntryNameAll conatin the Uniprot entry names for each
+protein with EntryName containing only one name and EntryNameAll
+containing all names per protein.
 
 * From Ferro et al 2010
 
-The file AT_CHLORO_table_120906.xls was email by Myriam Ferro to be included in the pRolocdata package. The first sheet (README) ws used to prepare feature annotation. The second sheet was converted to AT_CHLORO_table_120906.csv and used to generate the at_chloro MSnSet.
+The file AT_CHLORO_table_120906.xls was email by Myriam Ferro to be
+included in the pRolocdata package. The first sheet (README) ws used
+to prepare feature annotation. The second sheet was converted to
+AT_CHLORO_table_120906.csv and used to generate the at_chloro MSnSet.
 
 * From Nikolovski 2012
 Reformated manually and fixed column names
+
  - S1: Summary of the 1385 proteins observed at least twice in any of
    the 4 LOPIT experiments with normalized reporter ion intensities
  - S2: Functional annotations, classification results, and
@@ -135,8 +179,11 @@ Reformated manually and fixed column names
 * From Hall 2009
 ** S1 - Complete protein-level iTRAQ quantitation values. Spreadshhet manually simplified and exported to csv.
 See supplementary file 1 for details about the design. The number below represebt fractions.
-AC = membrane protein-enriched pellet and soluble/preripheral proteins from fractions 1, 4, 13+14 and 21
-BD = membrane protein-enriched pellet and soluble/preripheral proteins from fractions 1, 9+10, 16 and 18
+
+AC = membrane protein-enriched pellet and soluble/preripheral proteins
+     from fractions 1, 4, 13+14 and 21
+BD = membrane protein-enriched pellet and soluble/preripheral proteins
+     from fractions 1, 9+10, 16 and 18
 
 |-------+----------------------------------+------+------------------------------+------|
 |       | membrane protein-enriched pellet |      | soluble/preripheral proteins |      |
@@ -170,10 +217,61 @@ ahead of print] PubMed PMID: 25122472.
 - 245589ST4_SVMLocalisation_280514.csv: Supplementary Table 4. List of
   proteins classified as Golgi residents by SVM classification
 
-
-
 * Protein complexe separation profiles
 - fabre2015r1 and r2
 - kristensen2012r1, r2, and r3
 - kirkwood2013
 - havugimana2012
+
+* From Itzhak et al 2016
+
+> Daniel N Itzhak, Stefka Tyanova, Jürgen Cox and Georg HH
+> Borner. Global, quantitative and dynamic mapping of protein
+> subcellular localization. DOI: http://dx.doi.org/10.7554/eLife.16950
+> Published June 9, 2016 Cite as eLife 2016;10.7554/eLife.16950
+
+The file of interest is [[https://elifesciences.org/content/5/e16950/supp-material9][Supplementary file 9]], and is available at
+https://elife-publishing-cdn.s3.amazonaws.com/16950/elife-16950-supp9-v3-download.xlsx. It
+is processed by the =inst/scripts/itzhak2016.R= file.
+
+- The second sheet contains the SILAC static data ('Static' data were
+  used to genrate six deep organellar maps) and is made available as
+  =itzhak2016stcSILAC=.
+
+
+
+
+
+* From Stekhoven et al 2014
+
+> Stekhoven DJ, Omasits U, Quebatte M, Dehio C, Ahrens
+> CH. Proteome-wide identification of predominant subcellular protein
+> localizations in a bacterial model organism. J Proteomics. 2014 Mar
+> 17;99:123-37. doi:10.1016/j.jprot.2014.01.015. Epub 2014
+> Jan 28. PubMed PMID: 24486812.
+
+Proteomics data provide unique insights into biological systems,
+including the predominant subcellular localization (SCL) of proteins,
+which can reveal important clues about their functions. Here we
+analyzed data of a complete prokaryotic proteome expressed under two
+conditions mimicking interaction of the emerging pathogen Bartonella
+henselae with its mammalian host. Normalized spectral count data from
+cytoplasmic, total membrane, inner and outer membrane fractions
+allowed us to identify the predominant SCL for 82% of the identified
+proteins. The spectral count proportion of total membrane versus
+cytoplasmic fractions indicated the propensity of cytoplasmic proteins
+to co-fractionate with the inner membrane, and enabled us to
+distinguish cytoplasmic, peripheral inner membrane and bona fide inner
+membrane proteins. Principal component analysis and k-nearest neighbor
+classification training on selected marker proteins or predominantly
+localized proteins, allowed us to determine an extensive catalog of at
+least 74 expressed outer membrane proteins, and to extend the SCL
+assignment to 94% of the identified proteins, including 18% where in
+silico methods gave no prediction. Suitable experimental proteomics
+data combined with straightforward computational approaches can thus
+identify the predominant SCL on a proteome-wide scale. Finally, we
+present a conceptual approach to identify proteins potentially
+changing their SCL in a condition-dependent fashion.
+
+File is =inst/extdata/mmc3.csv=, manually exported/formatted from
+[[http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S187439191400027X/1-s2.0-S187439191400027X-mmc3.xls/276834/html/S187439191400027X/c794b14eb9d2f6013eb18ce0f6693990/mmc3.xls][Supplementary table 4]].

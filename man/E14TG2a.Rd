@@ -9,7 +9,8 @@
 \docType{data}
 
 \title{
-  Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells
+  LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels
+  et al. (2016)
 }
 
 \description{

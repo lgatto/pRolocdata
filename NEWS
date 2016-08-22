@@ -1,9 +1,22 @@
-CHANGES IN VERSION 1.9.6
-------------------------
+CHANGES IN VERSION 1.11.4
+-------------------------
+ o Normalise manual titles <2016-08-16 Tue>
+ o Updated hyperLOPIT markers and goCC dataset <2016-08-22 Mon>
+
+CHANGES IN VERSION 1.11.3
+-------------------------
+ o Added data from Stekhoven et al. 2014 <2016-08-12 Fri>
+ 
+CHANGES IN VERSION 1.11.2
+-------------------------
+ o mv itzhak2016stcSILAC in right location <2016-08-10 Wed>
+ 
+CHANGES IN VERSION 1.11.1
+-------------------------
  o Added TL parameters for E15TG2a from Breckels et al. 2016 
    [2016-06-29 Wed]
  o Added hyperLOPIT2015goCC binary GO CC [2016-06-29 Wed]
- o Updated hyperLOPIT markers and goCC dataset [2016-08-22 Mon]
+ o Added data from Itzhak et al. 2016 <2016-08-10 Wed>
 
 CHANGES IN VERSION 1.9.5
 ------------------------
