@@ -217,6 +217,15 @@ for (i in 16:24) {
   hyperLOPIT2015 <- fDataToUnknown(hyperLOPIT2015, fcol = aa[i])
 }
 
+## Rename markers to markers2015 and add new markers
+fData(hyperLOPIT2015)$markers2015 <- fData(hyperLOPIT2015)$markers 
+
+toadd.ecm <- c("P47877", "P27808", "Q8C407")
+toadd.end <- "Q62351"
+
+fData(hyperLOPIT2015)[toadd.ecm, "markers"] <- "Extracellular matrix"
+fData(hyperLOPIT2015)[toadd.end, "markers"] <- "Endosome"
+
 save(hyperLOPIT2015,file="../../data/hyperLOPIT2015.RData", compress = "xz", compression_level = 9)
 save(hyperLOPIT2015ms3r1,file="../../data/hyperLOPIT2015ms3r1.RData", compress = "xz", compression_level = 9)
 save(hyperLOPIT2015ms3r2,file="../../data/hyperLOPIT2015ms3r2.RData", compress = "xz", compression_level = 9)

@@ -6,7 +6,8 @@
 
 \docType{data}
 \title{
-  Data from a LOPIT experiment on Human Embryonic Kidney fibroblast cells
+  LOPIT experiment on Human Embryonic Kidney fibroblast cells from
+  Breckels et al. (2013)
 }
 
 \description{

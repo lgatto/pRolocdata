@@ -5,7 +5,7 @@
 \docType{data}
 
 \title{
-  Data from Itzhak et al. 2016
+  Data from Itzhak et al. (2016)
 }
 
 \description{

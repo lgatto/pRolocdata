@@ -5,7 +5,7 @@
 \docType{data}
 
 \title{
-  Data from Nikolovski et al. 2012
+  Meta-analysis from Nikolovski et al. (2012)
 }
 
 
