@@ -38,7 +38,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 44 datasets available in
+Currently, there are 41 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -72,12 +72,10 @@ pRolocdata()
 |hall2009            |LOPIT data from Hall et al. 2009                                                   |
 |havugimana2012      |Data from Havugimana et al. 2012                                                   |
 |hyperLOPIT2015      |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
-|hyperLOPIT2015goCC  |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
 |hyperLOPIT2015ms2   |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
 |hyperLOPIT2015ms3r1 |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
 |hyperLOPIT2015ms3r2 |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
 |hyperLOPIT2015ms3r3 |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
-|itzhak2016stcSILAC  |Data from Itzhak et al. 2016                                                       |
 |kirkwood2013        |Data from Kirkwood et al. 2013.                                                    |
 |kristensen2012r1    |Data from Kristensen et al. 2012                                                   |
 |kristensen2012r2    |Data from Kristensen et al. 2012                                                   |
@@ -87,7 +85,6 @@ pRolocdata()
 |nikolovski2012      |Data from Nikolovski et al. 2012                                                   |
 |nikolovski2012imp   |Data from Nikolovski et al. 2012                                                   |
 |nikolovski2014      |Data from Nikolovski et al. 2014                                                   |
-|stekhoven2014       |Data from Stekhoven et al. 2014                                                    |
 |tan2009r1           |LOPIT data from Tan et al. 2009                                                    |
 |tan2009r1goCC       |LOPIT data from Tan et al. 2009                                                    |
 |tan2009r2           |LOPIT data from Tan et al. 2009                                                    |
