@@ -39,9 +39,9 @@ stopifnot(validObject(andreyev2009activ))
 stopifnot(validObject(andreyev2009rest))
 stopifnot(validObject(andreyev2009))
 
-save(andreyev2009, file = "../../data/andrevey2009.rda",
+save(andreyev2009, file = "../../data/andreyev2009.rda",
      compression_level = 9, compress = "xz")
-save(andreyev2009rest, file = "../../data/andrevey2009rest.rda",
+save(andreyev2009rest, file = "../../data/andreyev2009rest.rda",
      compression_level = 9, compress = "xz")
-save(andreyev2009activ, file = "../../data/andrevey2009activ.rda",
+save(andreyev2009activ, file = "../../data/andreyev2009activ.rda",
      compression_level = 9, compress = "xz")
