@@ -1,5 +1,7 @@
 \name{andreyev2009}
 \alias{andreyev2009}
+\alias{andreyev2009rest}
+\alias{andreyev2009activ}
 \docType{data}
 
 \title{
@@ -17,6 +19,9 @@
   Proteomics. 2010
   Feb;9(2):388-402. DOI:\url{http://dx.doi.org/10.1074/mcp.M900432-MCP200}. PubMed
   PMID:19884172; PubMed Central PMCID:PMC2830848.
+
+  The 6 subcellular fractions are nuclei, mitochondria, cytoplasm,
+  endoplasmic reticulum, plasma membrane and dense microsomal fraction.
   
 }
 
@@ -49,6 +54,8 @@ data("andreyev2009activ")
 \examples{
 data(andreyev2009rest)
 data(andreyev2009activ)
+
+library("pRoloc")
 par(mfrow = c(1, 2))
 plot2D(andreyev2009rest, main = "Resting (control)")
 plot2D(andreyev2009activ, main = "Kdo2-lipid A-treated")

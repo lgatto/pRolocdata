@@ -35,6 +35,10 @@ sel <- andreyev2009$condition == "Resting"
 andreyev2009rest <- normalise(andreyev2009[, sel], "sum")
 andreyev2009activ <- normalise(andreyev2009[, !sel], "sum")
 
+stopifnot(validObject(andreyev2009activ))
+stopifnot(validObject(andreyev2009rest))
+stopifnot(validObject(andreyev2009))
+
 save(andreyev2009, file = "../../data/andrevey2009.rda",
      compression_level = 9, compress = "xz")
 save(andreyev2009rest, file = "../../data/andrevey2009rest.rda",
