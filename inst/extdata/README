@@ -240,8 +240,6 @@ is processed by the =inst/scripts/itzhak2016.R= file.
 
 
 
-
-
 * From Stekhoven et al 2014
 
 > Stekhoven DJ, Omasits U, Quebatte M, Dehio C, Ahrens
@@ -275,3 +273,46 @@ changing their SCL in a condition-dependent fashion.
 
 File is =inst/extdata/mmc3.csv=, manually exported/formatted from
 [[http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S187439191400027X/1-s2.0-S187439191400027X-mmc3.xls/276834/html/S187439191400027X/c794b14eb9d2f6013eb18ce0f6693990/mmc3.xls][Supplementary table 4]].
+
+* From Andreyev et al 2009
+
+> Andreyev AY, Shen Z, Guan Z, Ryan A, Fahy E, Subramaniam S, Raetz
+> CR, Briggs S, Dennis EA. Application of proteomic marker ensembles
+> to subcellular organelle identification. Mol Cell Proteomics. 2010
+> Feb;9(2):388-402. doi: 10.1074/mcp.M900432-MCP200. Epub 2009
+> Nov 2. PubMed PMID: 19884172; PubMed Central PMCID: PMC2830848.
+
+Compartmentalization of biological processes and the associated
+cellular components is crucial for cell function. Typically, the
+location of a component is revealed through a co-localization and/or
+co-purification with an organelle marker. Therefore, the
+identification of reliable markers is critical for a thorough
+understanding of cellular function and dysfunction. We fractionated
+macrophage-like RAW264.7 cells, both in the resting and
+endotoxin-activated states, into six fractions representing the major
+organelles/compartments: nuclei, mitochondria, cytoplasm, endoplasmic
+reticulum, and plasma membrane as well as an additional dense
+microsomal fraction. The identity of the first five of these fractions
+was confirmed via the distribution of conventional enzymatic
+markers. Through a quantitative liquid chromatography/mass
+spectrometry-based proteomics analysis of the fractions, we identified
+50-member ensembles of marker proteins ("marker ensembles") specific
+for each of the corresponding organelles/compartments. Our analysis
+attributed 206 of the 250 marker proteins ( approximately 82%) to
+organelles that are consistent with the location annotations in the
+public domain (obtained using DAVID 2008, EntrezGene, Swiss-Prot, and
+references therein). Moreover, we were able to correct locations for a
+subset of the remaining proteins, thus proving the superior power of
+analysis using multiple organelles as compared with an analysis using
+one specific organelle. The marker ensembles were used to calculate
+the organelle composition of the six above mentioned subcellular
+fractions. Knowledge of the precise composition of these fractions can
+be used to calculate the levels of metabolites in the pure
+organelles. As a proof of principle, we applied these calculations to
+known mitochondria-specific lipids (cardiolipins and ubiquinones) and
+demonstrated their exclusive mitochondrial location. We speculate that
+the organelle-specific protein ensembles may be used to systematically
+redefine originally morphologically defined organelles as biochemical
+entities.
+
+See =inst/scripts/andreyev2009.R=

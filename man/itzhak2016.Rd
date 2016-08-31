@@ -33,7 +33,7 @@
 
   This data was generated from Supplementary file 9
   (\url{https://elifesciences.org/content/5/e16950/supp-material9}). See
-  \code{inst/scripts/itzhak2016.R} for the exact code
+  \code{inst/scripts/itzhak2016.R} for details.
   
 }
 
