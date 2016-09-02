@@ -1,5 +1,5 @@
 \name{trotter20010}
-\alias{trotter20010}
+\alias{trotter2010}
 \alias{trotter2010steep}
 \alias{trotter2010shallow}
 
@@ -17,7 +17,8 @@
   al. (2006) and Sadowski et al. (2008), respectively.
 
   The feature metadata contains the cellular compartment from TAIR8 and
-  the pRoloc Arabidopsis markers (see \code{\link{pRolocmarkers}}).
+  the pRoloc Arabidopsis markers (see
+  \code{\link[pRoloc]{pRolocmarkers}}).
   
 }
 
