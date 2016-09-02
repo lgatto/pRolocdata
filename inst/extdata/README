@@ -316,3 +316,30 @@ redefine originally morphologically defined organelles as biochemical
 entities.
 
 See =inst/scripts/andreyev2009.R=
+
+* From Rodriguez-Pineiro et al 2012
+
+> Rodríguez-Piñeiro AM, van der Post S, Johansson ME, Thomsson KA,
+> Nesvizhskii AI, Hansson GC. Proteomic study of the mucin granulae in
+> an intestinal goblet cell model. J Proteome Res. 2012 Mar
+> 2;11(3):1879-90. doi: 10.1021/pr2010988.  Epub 2012 Feb 2. PubMed
+> PMID:[[https://www.ncbi.nlm.nih.gov/pubmed/22248381][22248381]]; PubMed Central PMCID: PMC3292267.
+
+Goblet cells specialize in producing and secreting mucus with its main
+component, mucins. An inducible goblet-like cell line was used for the
+purification of the mucus vesicles stored in these cells by density
+gradient ultracentrifugation, and their proteome was analyzed by
+nanoLC-MS and MS/MS. Although the density of these vesicles coincides
+with others, it was possible to reveal a number of proteins that after
+immunolocalization on colon tissue and functional analyses were likely
+to be linked to the MUC2 vesicles. Most of the proteins were
+associated with the vesicle membrane or their outer surface. The
+ATP6AP2, previously suggested to be associated with vesicular proton
+pumps, was colocalized with MUC2 without other V-ATPase proteins and,
+thus, probably has roles in mucin vesicle function yet to be
+discovered. FAM62B, known to be a calcium-sensitive protein involved
+in vesicle fusion, also colocalized with the MUC2 vesicles and is
+probably involved in unknown ways in the later events of the MUC2
+vesicles and their secretion.
+
+See =inst/script/rodriguez-pineiro2012.R=

@@ -28,14 +28,14 @@ stopifnot(validObject(rodriguez2012r3))
 library("pRolocdata")
 data(hyperLOPIT2015)
 
-.addMarkers <- function(obj) {
+.addMarkers <- function(obj, ref = hyperLOPIT2015) {
     gn <- fData(obj)$Genes
     hlgn <- sub(" .+$", "", sub("^.+GN=", "",
-                                fData(hyperLOPIT2015)$protein.description))
+                                fData(ref)$protein.description))
     ii <- match(tolower(gn), tolower(hlgn))
     fData(obj)$markers <- "unknown"
     fData(obj)[!is.na(ii), "markers"] <-
-        fData(hyperLOPIT2015)[na.omit(ii), "markers"]
+        fData(ref)[na.omit(ii), "markers"]
     if (validObject(obj)) obj
 }
 

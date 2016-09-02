@@ -6,8 +6,8 @@
 
 \title{
 
-  Six sub-cellular fraction data from macrophage-like RAW264.7 cells
-  from Andreyev et al. (2009)
+  Six sub-cellular fraction data from mouse macrophage-like RAW264.7
+  cells from Andreyev et al. (2009)
 
 }
 
