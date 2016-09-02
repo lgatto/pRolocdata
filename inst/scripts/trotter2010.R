@@ -67,6 +67,16 @@ trotter2010steep <- updateSampleNames(steep)
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(trotter2010shallow)))
 stopifnot(pRolocdata:::valid.pRolocmetadata(pRolocmetadata(trotter2010steep)))
 
+
+mm <- pRolocmarkers("atha")
+
+trotter2010shallow <- addMarkers(trotter2010shallow, mm)
+trotter2010steep <- addMarkers(trotter2010steep, mm)
+
+trotter2010 <- combine(trotter2010steep,
+                       trotter2010shallow)
+
+
 if (validObject(trotter2010shallow))
   save(trotter2010shallow,
        file = "../../data/trotter2010shallow.rda",
@@ -76,7 +86,3 @@ if (validObject(trotter2010steep))
     save(trotter2010steep,
          file = "../../data/trotter2010steep.rda",
          compress = "xz", compression_level = 9)
-
-
-
-
