@@ -19,6 +19,10 @@ and
 [`pRolocGUI`](http://bioconductor.org/packages/devel/bioc/html/pRolocGUI.html)
 software for spatial proteomics data analysis and visualisation.
 
+**Current build status**:
+
+[![Build Status](https://travis-ci.org/lgatto/pRolocdata.svg?branch=master)](https://travis-ci.org/lgatto/pRolocdata)
+
 ### Installation
 
 
