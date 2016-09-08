@@ -275,3 +275,21 @@ changing their SCL in a condition-dependent fashion.
 
 File is =inst/extdata/mmc3.csv=, manually exported/formatted from
 [[http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S187439191400027X/1-s2.0-S187439191400027X-mmc3.xls/276834/html/S187439191400027X/c794b14eb9d2f6013eb18ce0f6693990/mmc3.xls][Supplementary table 4]].
+
+* Data from the Bioconductor pRoloc workflow
+bpw-svmopt.rds
+This object is the result of a svmOptimisation on the Christoforou
+(2016) hyperLOPIT dataset. 
+
+bpw-pdres.rds
+This object contains the results of a phenoDisco run on the
+Christoforou (2016) hyperLOPIT dataset run with parameters times=200,
+GS=60, p=0.05, ndims=2.
+
+bpw-tlopt.rds
+Results from a transfer learning run using hyperLOPIT data from
+Christoforou (2016) as the primary data source and goCC terms as an
+auxiliary data source. A reduced marker set was used to reduce
+computational time (the two ribosomes and nucleus sub-compartments
+were removed as they are well-resolved) and length.out = 4, times = 50
+was used for optimisation.
