@@ -10,7 +10,8 @@
 
 \title{
 
-  Spatial proteomics of human inducible goblet-like LS174T cells.
+  Spatial proteomics of human inducible goblet-like LS174T cells from
+  Rodriguez-Pineiro et al. (2012)
   
 }
 
