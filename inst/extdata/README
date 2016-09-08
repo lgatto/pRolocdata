@@ -361,3 +361,7 @@ auxiliary data source. A reduced marker set was used to reduce
 computational time (the two ribosomes and nucleus sub-compartments
 were removed as they are well-resolved) and length.out = 4, times = 50
 was used for optimisation.
+
+bpw-gocc.rda
+MSnSet of GO CC terms generated from object hl from Bioc pRoloc 
+workflow.
