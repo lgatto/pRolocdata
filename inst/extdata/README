@@ -343,3 +343,25 @@ probably involved in unknown ways in the later events of the MUC2
 vesicles and their secretion.
 
 See =inst/script/rodriguez-pineiro2012.R=
+
+* Data from the Bioconductor pRoloc workflow
+bpw-svmopt.rds
+This object is the result of a svmOptimisation on the Christoforou
+(2016) hyperLOPIT dataset.
+
+bpw-pdres.rds
+This object contains the results of a phenoDisco run on the
+Christoforou (2016) hyperLOPIT dataset run with parameters times=200,
+GS=60, p=0.05, ndims=2.
+
+bpw-tlopt.rds
+Results from a transfer learning run using hyperLOPIT data from
+Christoforou (2016) as the primary data source and goCC terms as an
+auxiliary data source. A reduced marker set was used to reduce
+computational time (the two ribosomes and nucleus sub-compartments
+were removed as they are well-resolved) and length.out = 4, times = 50
+was used for optimisation.
+
+bpw-gocc.rda
+MSnSet of GO CC terms generated from object hl from Bioc pRoloc 
+workflow.
