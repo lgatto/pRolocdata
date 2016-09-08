@@ -19,6 +19,10 @@ and
 [`pRolocGUI`](http://bioconductor.org/packages/devel/bioc/html/pRolocGUI.html)
 software for spatial proteomics data analysis and visualisation.
 
+**Current build status**:
+
+[![Build Status](https://travis-ci.org/lgatto/pRolocdata.svg?branch=master)](https://travis-ci.org/lgatto/pRolocdata)
+
 ### Installation
 
 
@@ -90,17 +94,17 @@ pRolocdata()
 |nikolovski2012      |Meta-analysis from Nikolovski et al. (2012)                                                          |
 |nikolovski2012imp   |Meta-analysis from Nikolovski et al. (2012)                                                          |
 |nikolovski2014      |LOPIMS data from Nikolovski et al. (2014)                                                            |
-|rodriguez2012r1     |Spatial proteomics of human inducible goblet-like LS174T cells.                                      |
-|rodriguez2012r2     |Spatial proteomics of human inducible goblet-like LS174T cells.                                      |
-|rodriguez2012r3     |Spatial proteomics of human inducible goblet-like LS174T cells.                                      |
+|rodriguez2012r1     |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)  |
+|rodriguez2012r2     |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)  |
+|rodriguez2012r3     |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)  |
 |stekhoven2014       |Data from Stekhoven et al. 2014                                                                      |
 |tan2009r1           |LOPIT data from Tan et al. (2009)                                                                    |
 |tan2009r1goCC       |LOPIT data from Tan et al. (2009)                                                                    |
 |tan2009r2           |LOPIT data from Tan et al. (2009)                                                                    |
 |tan2009r3           |LOPIT data from Tan et al. (2009)                                                                    |
-|trotter2010         |LOPIT data sets used in Trotter et al. 2010.                                                         |
-|trotter2010shallow  |LOPIT data sets used in Trotter et al. 2010.                                                         |
-|trotter2010steep    |LOPIT data sets used in Trotter et al. 2010.                                                         |
+|trotter2010         |LOPIT data sets used in Trotter et al. (2010)                                                        |
+|trotter2010shallow  |LOPIT data sets used in Trotter et al. (2010)                                                        |
+|trotter2010steep    |LOPIT data sets used in Trotter et al. (2010)                                                        |
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for

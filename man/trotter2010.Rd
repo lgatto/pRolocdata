@@ -6,7 +6,7 @@
 \docType{data}
 
 \title{
-  LOPIT data sets used in Trotter et al. 2010.
+  LOPIT data sets used in Trotter et al. (2010)
 }
 
 \description{
