@@ -19,6 +19,10 @@ and
 [`pRolocGUI`](http://bioconductor.org/packages/devel/bioc/html/pRolocGUI.html)
 software for spatial proteomics data analysis and visualisation.
 
+**Current build status**:
+
+[![Build Status](https://travis-ci.org/lgatto/pRolocdata.svg?branch=master)](https://travis-ci.org/lgatto/pRolocdata)
+
 ### Installation
 
 
@@ -38,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 41 datasets available in
+Currently, there are 51 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -48,49 +52,59 @@ pRolocdata()
 ```
 
 
-|Data                |Description                                                                        |
-|:-------------------|:----------------------------------------------------------------------------------|
-|E14TG2aR            |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                 |
-|E14TG2aS1           |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                 |
-|E14TG2aS1goCC       |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                 |
-|E14TG2aS1yLoc       |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                 |
-|E14TG2aS2           |Data from a LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells                 |
-|andy2011            |Data from a LOPIT experiment on Human Embryonic Kidney fibroblast cells            |
-|andy2011goCC        |Data from a LOPIT experiment on Human Embryonic Kidney fibroblast cells            |
-|andy2011hpa         |Data from a LOPIT experiment on Human Embryonic Kidney fibroblast cells            |
-|at_chloro           |The AT_CHLORO data base                                                            |
-|dunkley2006         |LOPIT data from Dunkley et al. 2006                                                |
-|dunkley2006goCC     |LOPIT data from Dunkley et al. 2006                                                |
-|fabre2015r1         |Data from Fabre et al. 2015                                                        |
-|fabre2015r2         |Data from Fabre et al. 2015                                                        |
-|foster2006          |PCP data from Foster et al, 2006                                                   |
-|groen2014cmb        |Data from LOPIT experiments on Arabidopsis thaliana roots, from Groen et al (2014) |
-|groen2014r1         |Data from LOPIT experiments on Arabidopsis thaliana roots, from Groen et al (2014) |
-|groen2014r1goCC     |Data from LOPIT experiments on Arabidopsis thaliana roots, from Groen et al (2014) |
-|groen2014r2         |Data from LOPIT experiments on Arabidopsis thaliana roots, from Groen et al (2014) |
-|groen2014r3         |Data from LOPIT experiments on Arabidopsis thaliana roots, from Groen et al (2014) |
-|hall2009            |LOPIT data from Hall et al. 2009                                                   |
-|havugimana2012      |Data from Havugimana et al. 2012                                                   |
-|hyperLOPIT2015      |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
-|hyperLOPIT2015ms2   |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
-|hyperLOPIT2015ms3r1 |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
-|hyperLOPIT2015ms3r2 |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
-|hyperLOPIT2015ms3r3 |Data from the hyperLOPIT technology on Mouse E14TG2a embryonic stem cells          |
-|kirkwood2013        |Data from Kirkwood et al. 2013.                                                    |
-|kristensen2012r1    |Data from Kristensen et al. 2012                                                   |
-|kristensen2012r2    |Data from Kristensen et al. 2012                                                   |
-|kristensen2012r3    |Data from Kristensen et al. 2012                                                   |
-|mulvey2015          |Data from Mulvey et al. 2015                                                       |
-|mulvey2015norm      |Data from Mulvey et al. 2015                                                       |
-|nikolovski2012      |Data from Nikolovski et al. 2012                                                   |
-|nikolovski2012imp   |Data from Nikolovski et al. 2012                                                   |
-|nikolovski2014      |Data from Nikolovski et al. 2014                                                   |
-|tan2009r1           |LOPIT data from Tan et al. 2009                                                    |
-|tan2009r1goCC       |LOPIT data from Tan et al. 2009                                                    |
-|tan2009r2           |LOPIT data from Tan et al. 2009                                                    |
-|tan2009r3           |LOPIT data from Tan et al. 2009                                                    |
-|trotter2010shallow  |LOPIT data sets used in Trotter et al. 2010.                                       |
-|trotter2010steep    |LOPIT data sets used in Trotter et al. 2010.                                       |
+|Data                |Description                                                                                          |
+|:-------------------|:----------------------------------------------------------------------------------------------------|
+|E14TG2aR            |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
+|E14TG2aS1           |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
+|E14TG2aS1goCC       |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
+|E14TG2aS1yLoc       |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
+|E14TG2aS2           |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
+|andreyev2009        |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
+|andreyev2009activ   |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
+|andreyev2009rest    |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
+|andy2011            |LOPIT experiment on Human Embryonic Kidney fibroblast cells from Breckels et al. (2013)              |
+|andy2011goCC        |LOPIT experiment on Human Embryonic Kidney fibroblast cells from Breckels et al. (2013)              |
+|andy2011hpa         |LOPIT experiment on Human Embryonic Kidney fibroblast cells from Breckels et al. (2013)              |
+|at_chloro           |The AT_CHLORO data base                                                                              |
+|dunkley2006         |LOPIT data from Dunkley et al. (2006)                                                                |
+|dunkley2006goCC     |LOPIT data from Dunkley et al. (2006)                                                                |
+|fabre2015r1         |Data from Fabre et al. 2015                                                                          |
+|fabre2015r2         |Data from Fabre et al. 2015                                                                          |
+|foster2006          |PCP data from Foster et al. (2006)                                                                   |
+|groen2014cmb        |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                            |
+|groen2014r1         |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                            |
+|groen2014r1goCC     |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                            |
+|groen2014r2         |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                            |
+|groen2014r3         |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                            |
+|hall2009            |LOPIT data from Hall et al. (2009)                                                                   |
+|havugimana2012      |Data from Havugimana et al. 2012                                                                     |
+|hyperLOPIT2015      |hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016)          |
+|hyperLOPIT2015goCC  |hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016)          |
+|hyperLOPIT2015ms2   |hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016)          |
+|hyperLOPIT2015ms3r1 |hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016)          |
+|hyperLOPIT2015ms3r2 |hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016)          |
+|hyperLOPIT2015ms3r3 |hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016)          |
+|itzhak2016stcSILAC  |Data from Itzhak et al. (2016)                                                                       |
+|kirkwood2013        |Data from Kirkwood et al. 2013.                                                                      |
+|kristensen2012r1    |Data from Kristensen et al. 2012                                                                     |
+|kristensen2012r2    |Data from Kristensen et al. 2012                                                                     |
+|kristensen2012r3    |Data from Kristensen et al. 2012                                                                     |
+|mulvey2015          |Data from Mulvey et al. 2015                                                                         |
+|mulvey2015norm      |Data from Mulvey et al. 2015                                                                         |
+|nikolovski2012      |Meta-analysis from Nikolovski et al. (2012)                                                          |
+|nikolovski2012imp   |Meta-analysis from Nikolovski et al. (2012)                                                          |
+|nikolovski2014      |LOPIMS data from Nikolovski et al. (2014)                                                            |
+|rodriguez2012r1     |Spatial proteomics of human inducible goblet-like LS174T cells.                                      |
+|rodriguez2012r2     |Spatial proteomics of human inducible goblet-like LS174T cells.                                      |
+|rodriguez2012r3     |Spatial proteomics of human inducible goblet-like LS174T cells.                                      |
+|stekhoven2014       |Data from Stekhoven et al. 2014                                                                      |
+|tan2009r1           |LOPIT data from Tan et al. (2009)                                                                    |
+|tan2009r1goCC       |LOPIT data from Tan et al. (2009)                                                                    |
+|tan2009r2           |LOPIT data from Tan et al. (2009)                                                                    |
+|tan2009r3           |LOPIT data from Tan et al. (2009)                                                                    |
+|trotter2010         |LOPIT data sets used in Trotter et al. 2010.                                                         |
+|trotter2010shallow  |LOPIT data sets used in Trotter et al. 2010.                                                         |
+|trotter2010steep    |LOPIT data sets used in Trotter et al. 2010.                                                         |
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for

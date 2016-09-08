@@ -1,7 +1,16 @@
+CHANGES IN VERSION 1.11.7
+-------------------------
+ o added data from bioc pRoloc workflow <2016-09-08 Thur> 
+
+CHANGES IN VERSION 1.11.6
+-------------------------
+ o Add combined trotter2010 data and markers fcol <2016-09-02 Fri>
+ o Add data from Rodriguez-Pineiro et al. 2012 <2016-09-02 Fri>
+ 
 CHANGES IN VERSION 1.11.5
 -------------------------
- o added results from bioc pRoloc workflow <2016-09-08 Thur>
-
+ o Added data from Andreyev et al. 2009 <2016-08-31 Wed>
+ 
 CHANGES IN VERSION 1.11.4
 -------------------------
  o Normalise manual titles <2016-08-16 Tue>
