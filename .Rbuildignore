@@ -1,3 +1,4 @@
 Makefile
 sandbox
 inst/extdata/elife-16950-supp9-v3-download.xlsx
+.travis.yml
