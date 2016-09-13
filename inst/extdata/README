@@ -274,7 +274,7 @@ changing their SCL in a condition-dependent fashion.
 File is =inst/extdata/mmc3.csv=, manually exported/formatted from
 [[http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S187439191400027X/1-s2.0-S187439191400027X-mmc3.xls/276834/html/S187439191400027X/c794b14eb9d2f6013eb18ce0f6693990/mmc3.xls][Supplementary table 4]].
 
-* From Andreyev et al 2009
+* From Andreyev et al 2010
 
 > Andreyev AY, Shen Z, Guan Z, Ryan A, Fahy E, Subramaniam S, Raetz
 > CR, Briggs S, Dennis EA. Application of proteomic marker ensembles
@@ -315,7 +315,7 @@ the organelle-specific protein ensembles may be used to systematically
 redefine originally morphologically defined organelles as biochemical
 entities.
 
-See =inst/scripts/andreyev2009.R=
+See =inst/scripts/andreyev2010.R=
 
 * From Rodriguez-Pineiro et al 2012
 
