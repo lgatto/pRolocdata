@@ -2,23 +2,33 @@
 \alias{andy2011}
 \alias{andy2011goCC}
 \alias{andy2011hpa}
+\alias{HEK293T2011}
+\alias{HEK293T2011hpa}
+\alias{HEK293T2011goCC}
 
 
 \docType{data}
+
 \title{
-  LOPIT experiment on Human Embryonic Kidney fibroblast cells from
-  Breckels et al. (2013)
+  LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells
+  from Breckels et al. (2013)
 }
 
 \description{
   This is a LOPIT dataset from a standard LOPIT experimental design on Human
-  Embryonic Kidney (HEK293T) fibroblast cells. See below for more details. 
+  Embryonic Kidney (HEK293T) fibroblast cells. See below for more
+  details. 
+
+  Note: this data was originally called \code{andy2011}. It is still
+  available under that name but might be deprecated in the future and
+  hence it is advised to use \code{HEK293T2011}.
+  
 }
 
 \usage{
-data(andy2011)
-data(andy2011goCC)
-data(andy2011hpa)
+data(HEK293T2011)
+data(HEK293T2011hpa)
+data(HEK293T2011goCC)
 }
 
 \format{
@@ -35,18 +45,19 @@ data(andy2011hpa)
   \code{pd.2013} feature meta-data and the markers used as input for the analysis 
   are available as \code{markers} feature meta-data.
 
-  The \code{andy2011goCC} instance contains binary assay data. Its
+  The \code{HEK293T2011goCC} instance contains binary assay data. Its
   columns represent GO CC terms that have been observed for the object's
   features. A 1 indicates that a GO term has been associated to a given
   feature (protein); a 0 means not such association was found in the GO
   ontology.
   
-  The \code{andy2011hpa} instance contains binary assay data. Its
-  columns represent subcellular locations that have been observed from 
-  microscopy images from the Human Protein Atlas, for each protein. A 1 indicates that a subcellular term has been associated to a given
-  feature (protein); a 0 means not such association was found. This matrix 
-  of terms was generated from version 13, released on 11/06/2014 of the Human
-  Protein Atlas. 
+  The \code{HEK293T2011hpa} instance contains binary assay data. Its
+  columns represent subcellular locations that have been observed from
+  microscopy images from the Human Protein Atlas, for each protein. A 1
+  indicates that a subcellular term has been associated to a given
+  feature (protein); a 0 means not such association was found. This
+  matrix of terms was generated from version 13, released on 11/06/2014
+  of the Human Protein Atlas.
   
 }
 
@@ -65,19 +76,19 @@ data(andy2011hpa)
 }
 
 \examples{
-data(andy2011)
-andy2011 
-pData(andy2011)
-head(exprs(andy2011))
+data(HEK293T2011)
+HEK293T2011
+pData(HEK293T2011)
+head(exprs(HEK293T2011))
 ## Organelle marker proteins
-table(fData(andy2011)$markers)
+table(fData(HEK293T2011)$markers)
 ## PhenoDisco assignment results
-table(fData(andy2011)$pd.2013)
+table(fData(HEK293T2011)$pd.2013)
 
-data(andy2011goCC)
-dim(andy2011goCC)
-head(featureNames(andy2011goCC))
-exprs(andy2011goCC)[1:10, 1:5]
+data(HEK293T2011goCC)
+dim(HEK293T2011goCC)
+head(featureNames(HEK293T2011goCC))
+exprs(HEK293T2011goCC)[1:10, 1:5]
 }
 
 \keyword{datasets}
