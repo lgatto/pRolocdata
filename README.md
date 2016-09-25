@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 51 datasets available in
+Currently, there are 54 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -59,12 +59,15 @@ pRolocdata()
 |E14TG2aS1goCC       |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
 |E14TG2aS1yLoc       |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
 |E14TG2aS2           |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                   |
-|andreyev2009        |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
-|andreyev2009activ   |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
-|andreyev2009rest    |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
-|andy2011            |LOPIT experiment on Human Embryonic Kidney fibroblast cells from Breckels et al. (2013)              |
-|andy2011goCC        |LOPIT experiment on Human Embryonic Kidney fibroblast cells from Breckels et al. (2013)              |
-|andy2011hpa         |LOPIT experiment on Human Embryonic Kidney fibroblast cells from Breckels et al. (2013)              |
+|HEK293T2011         |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)      |
+|HEK293T2011goCC     |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)      |
+|HEK293T2011hpa      |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)      |
+|andreyev2010        |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
+|andreyev2010activ   |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
+|andreyev2010rest    |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009) |
+|andy2011            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)      |
+|andy2011goCC        |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)      |
+|andy2011hpa         |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)      |
 |at_chloro           |The AT_CHLORO data base                                                                              |
 |dunkley2006         |LOPIT data from Dunkley et al. (2006)                                                                |
 |dunkley2006goCC     |LOPIT data from Dunkley et al. (2006)                                                                |
