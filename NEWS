@@ -1,6 +1,9 @@
 CHANGES IN VERSION 1.11.10
 --------------------------
- o
+ o Added the hyperLOPIT PMS-level data for MS3 replicates 1 and 2 and
+   MS2 acquisitions, names 'hyperLOPIT2015ms3r1psm',
+   'hyperLOPIT2015ms3r2psm' and 'hyperLOPIT2015ms2psm'
+   respectively. <2017-01-17 Tue>
  
 CHANGES IN VERSION 1.11.9
 -------------------------

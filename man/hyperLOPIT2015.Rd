@@ -6,13 +6,17 @@
 \alias{hyperLOPIT2015ms2}
 \alias{hyperLOPIT2015goCC}
 
+\alias{hyperLOPIT2015ms2psm}
+\alias{hyperLOPIT2015ms3r1psm}
+\alias{hyperLOPIT2015ms3r2psm}
+
 
 \docType{data}
 
 \title{
   
-  hyperLOPIT experiment on Mouse E14TG2a embryonic stem cells from
-  Christoforou et al. (2016)
+  Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic
+  stem cells from Christoforou et al. (2016).
   
 }
 
@@ -27,6 +31,9 @@ data(hyperLOPIT2015ms3r1)
 data(hyperLOPIT2015ms3r2)
 data(hyperLOPIT2015ms3r3)
 data(hyperLOPIT2015ms2)
+data(hyperLOPIT2015ms3r1psm)
+data(hyperLOPIT2015ms3r2psm)
+data(hyperLOPIT2015ms2psm)
 }
 
 \format{
@@ -45,6 +52,18 @@ data(hyperLOPIT2015ms2)
   acquired in MS2 mode has also been acquired (\code{hyperLOPIT2015ms2})
   which was also generated using the Orbitrap Fusion and using a TMT
   10-plex experimental design.
+
+  The PSM-level cvs file are available in the \code{extdata} directory
+  and have been processed as follows: imported \code{MSnSet} instances
+  using \code{readMSnSet2}, PSMs with missing values were filtered out
+  with \code{filterNA}, only PSMs with feature variable
+  \code{Quan.Usage} \code{"Used"} and a TMT6plex modification were
+  retained and the phenoData was matched and assigned from the
+  respective protein-level data. Finally, marker proteins are annotated
+  based on the combined protein-level data \code{hyperLOPIT2015} and
+  reporter tags are normalised using the \code{"sum"} method. The
+  processing script is \code{scripts/hyperlopit2015psm.R}.
+  
 }
 
 \source{  
@@ -65,6 +84,14 @@ data(hyperLOPIT2015)
 hyperLOPIT2015
 pData(hyperLOPIT2015)
 head(exprs(hyperLOPIT2015))
+
+data(hyperLOPIT2015ms3r1psm)
+x <- combineFeatures(hyperLOPIT2015ms3r1psm,
+                     groupBy = fData(hyperLOPIT2015ms3r1psm)$Protein.Group.Accession,
+                     fun = median)
+par(mfrow = c(1, 2))
+plot2D(hyperLOPIT2015ms3r1psm, main = "PSM-level")
+plot2D(x, main = "Protein-level (using mean)")
 }
 
 \keyword{datasets}

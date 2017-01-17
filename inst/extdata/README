@@ -239,7 +239,6 @@ is processed by the =inst/scripts/itzhak2016.R= file.
   =itzhak2016stcSILAC=.
 
 
-
 * From Stekhoven et al 2014
 
 > Stekhoven DJ, Omasits U, Quebatte M, Dehio C, Ahrens
@@ -365,3 +364,15 @@ was used for optimisation.
 bpw-gocc.rda
 MSnSet of GO CC terms generated from object hl from Bioc pRoloc 
 workflow.
+* HyperLOPIT PMS-level data
+
+The PSM-level cvs file are available in the =extdata= directory
+and have been processed as follows: imported =MSnSet= instances
+using =readMSnSet2=, PSMs with missing values were filtered out
+with =filterNA=, only PSMs with feature variable
+=Quan.Usage= ="Used"= and a TMT6plex modification were
+retained and the phenoData was matched and assigned from the
+respective protein-level data. Finally, marker proteins are annotated
+based on the combined protein-level data =hyperLOPIT2015= and
+reporter tags are normalised using the ="sum"= method. The
+processing script is =scripts/hyperlopit2015psm.R=.
