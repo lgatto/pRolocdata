@@ -56,7 +56,7 @@ hyperLOPIT2015ms3r1psm <-
     normalise(method = "sum")
     
 save(hyperLOPIT2015ms3r1psm,
-     file = "../extdata/hyperLOPIT2015ms3r1psm.rda",
+     file = "../../data/hyperLOPIT2015ms3r1psm.rda",
      compress = "xz", compression_level = 9)
 
 
@@ -72,7 +72,7 @@ hyperLOPIT2015ms3r2psm <-
     normalise(method = "sum")
     
 save(hyperLOPIT2015ms3r2psm,
-     file = "../extdata/hyperLOPIT2015ms3r2psm.rda",
+     file = "../../data/hyperLOPIT2015ms3r2psm.rda",
      compress = "xz", compression_level = 9)
 
 hyperLOPIT2015ms2psm <-
@@ -87,5 +87,5 @@ hyperLOPIT2015ms2psm <-
     normalise(method = "sum")
     
 save(hyperLOPIT2015ms2psm,
-     file = "../extdata/hyperLOPIT2015ms2psm.rda",
+     file = "../../data/hyperLOPIT2015ms2psm.rda",
      compress = "xz", compression_level = 9)
