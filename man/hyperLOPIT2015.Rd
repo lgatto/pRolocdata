@@ -89,6 +89,7 @@ data(hyperLOPIT2015ms3r1psm)
 x <- combineFeatures(hyperLOPIT2015ms3r1psm,
                      groupBy = fData(hyperLOPIT2015ms3r1psm)$Protein.Group.Accession,
                      fun = median)
+library("pRoloc")		     
 par(mfrow = c(1, 2))
 plot2D(hyperLOPIT2015ms3r1psm, main = "PSM-level")
 plot2D(x, main = "Protein-level (using mean)")
