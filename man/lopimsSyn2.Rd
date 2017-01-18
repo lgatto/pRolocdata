@@ -33,6 +33,7 @@ data(lopimsSyn2)
 data(lopimsSyn2_0frags)
 
 ## Visualisation
+library("pRoloc")
 par(mfrow = c(1, 3))
 plot2D(lopimsSyn1, main = "Synapter 1", addLegend = "topleft")
 plot2D(lopimsSyn2, main = "Synapter 2")
