@@ -238,7 +238,6 @@ is processed by the =inst/scripts/itzhak2016.R= file.
   used to genrate six deep organellar maps) and is made available as
   =itzhak2016stcSILAC=.
 
-
 * From Stekhoven et al 2014
 
 > Stekhoven DJ, Omasits U, Quebatte M, Dehio C, Ahrens
@@ -376,3 +375,29 @@ respective protein-level data. Finally, marker proteins are annotated
 based on the combined protein-level data =hyperLOPIT2015= and
 reporter tags are normalised using the ="sum"= method. The
 processing script is =scripts/hyperlopit2015psm.R=.
+* Synapter2 LOPIMS data 
+
+#+BEGIN_QUOTE
+Dear Laurent,
+
+the organelle data is in:
+
+Y:\RAW\pvs22\_QTOF_DATA_data3\synapter2paper\final_scripts\for_laurent
+
+there are three folders there each corresponds to one of the pipelines
+used for quantitation: for synapter synapter 1 (proloc_s1), for
+synapter 2 (proloc_s2), for synapter 2 with 0 fragments specified
+(proloc_s2_0F).
+
+Each of the folders contains a csv file with protein quantitation
+called protTableCI.csv. (CI stands for "common identifications") this
+is proteins shared between all three pipelines.
+
+The folder also contains common markers. Please let me know if you
+need anything else. Just for you reference there is an R script there
+which I used to compare the F1 values. I tested it today and
+everything seems to work, i.e. file is loaded markers added, svm
+optimisation performed. Good luck with your analysis!
+#+END_QUOTE
+
+See =inst/scripts/lopmissyn2.R=

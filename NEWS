@@ -4,6 +4,8 @@ CHANGES IN VERSION 1.11.10
    MS2 acquisitions, names 'hyperLOPIT2015ms3r1psm',
    'hyperLOPIT2015ms3r2psm' and 'hyperLOPIT2015ms2psm'
    respectively. <2017-01-17 Tue>
+ o Added LOPIMS data for synapter 2.0 release: lopmisSyn1, lopimsSyn2
+   and lopimsSyn2_0frags <2017-01-18 Wed>
  
 CHANGES IN VERSION 1.11.9
 -------------------------
