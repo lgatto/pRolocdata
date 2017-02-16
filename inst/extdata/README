@@ -401,3 +401,60 @@ optimisation performed. Good luck with your analysis!
 #+END_QUOTE
 
 See =inst/scripts/lopmissyn2.R=
+* U2OS hyperLOPIT data 2017
+
+=hyperLOPIT_U2OS_201702.csv=
+
+- UniProt Accession for Protein Group (no isoform information): Unique
+  UniProt accession for quantified protein group reported by Proteome
+  Discoverer (1% FDR) - isoform information not retained.
+- Normalized TMT 10-plex Reporter Ion Distribution: ReplicateX TMT
+  SetX-126 Normalized TMT 10-plex reporter ion values, representing
+  the distribution of each protein across the fractionation scheme for
+  each experiment. Protein-level reporter ion values were calculated
+  by taking the median of all quantifiable PSMs for the protein group,
+  then normalized so that the sum of all 10 channels was equal
+  to 1. The numeric value in the tag name corresponds to the nominal
+  mass of each TMT reporter ion. The N and C suffixes differentiates
+  between the 15N or 13C isotopologue variants of TMT 10-plex reporter
+  ions of the same nominal mass.
+- UniProt Accession for Protein Group (with isoform information):
+  Unique UniProt accession for quantified protein group reported by
+  Proteome Discoverer (1% FDR) - isoform information retained.
+- UniProt Protein Description: UniProt description for protein
+  accession.
+- Coverage: Percentage of protein sequence covered by identified
+  peptides.
+- Quantified Proteins: Number of quantified protein groups.
+- Quantified Unique Peptides: Number of unique quantified
+  peptides. Only these peptides were used for quantification.
+- Quantified Peptides: Number of quantified peptides. Only peptides
+  that were unique to a single protein group were used for
+  quantification.
+- Quantified PSMs: Number of quantified peptide-spectrum matches.
+- Score - ReplicateX TMT SetX: Total score of identified protein group
+  for each experiment. This score is equal to the sum of the
+  individual peptide scores.
+- Coverage - ReplicateX TMT SetX: Percentage of protein sequence
+  covered by identified peptides for each experiment.
+- Quantified Peptides - ReplicateX TMT SetX: Number of quantified
+  peptides for each experiment. Only peptides that were unique to a
+  single protein group were used for quantification.
+- Quantified PSMs - ReplicateX TMT SetX: Number of quantified
+  peptide-spectrum matches for each experiment.
+- SVM Classification of Protein Localization
+  - SVM Marker Set: Final marker set used for SVM classification of
+    protein subcellular localization to 14 subcellular compartments.
+  - SVM Classification: Subcellular class to which the protein group
+    was assigned by SVM classification. All proteins are assigned to a
+    single class by SVM.
+  - SVM Score: Confidence score for localization assignment, ranging
+    from 0 to 1. A score close to 0 represents a very low confidence
+    assignment, whereas a score of 1 indicates a very high confidence
+    assignment.
+  - Final SVM Classification (5% FDR) (assignment): Predicted
+    localization, with SVM score thresholds determined empirically by
+    comparison to GO annotation and protein database annotation. The
+    SVM score thresholds were set individually for each class so that
+    the false discovery rate of the SVM classification was equal or
+    lower than 5%.
