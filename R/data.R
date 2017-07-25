@@ -43,11 +43,9 @@ valid.pRolocmetadata <- function(x) {
 }
 
 ##' @title Create a SpatialMaps Account
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
+##' @param password A password {string}
+##' @param email Any email that can receive the confirmation mail. {string} 
+##' @return Message of success or failure
 createAccount <- function(password = "prompt", email = "prompt") {
   projectAPI <- "AIzaSyC7iVp_D4iCAOl1e6ymW9TB7aC9E8tbjD4"
   email <- readline(prompt = "Enter Email: ")
@@ -59,11 +57,8 @@ createAccount <- function(password = "prompt", email = "prompt") {
 }
 
 ##' @title Reset the SpatialMaps account password
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
+##' @param email The SpatialMaps account email. 
+##' @return Returns success or failure warning
 resetPassword <- function(email){
   projectAPI <- "AIzaSyC7iVp_D4iCAOl1e6ymW9TB7aC9E8tbjD4"
   AuthUrl <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key=", projectAPI)
@@ -75,12 +70,11 @@ resetPassword <- function(email){
   }
 }
 
-##' @title Login & Create Securitytoken
+##' @title Login & Create Security token
 ##' @param x A \code{pRolocdata} data.
 ##' @return An instance of class \code{pRolocmetadata}.
 ##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
+
 login <- function(pgp) {
   if (password == "prompt" && email == "prompt"){
     email <- readline(prompt = "Email: ")
@@ -118,11 +112,9 @@ download <- function(dataset, randomKey, pgp, password="none") {
 }
 
 ##' @title Upload Datasets from SpatialMaps
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
+##' @param dataset The proloc object.
+##' @param name A string to add the name of the dataset.
+##' @return returns the success and random id {string}
 upload <- function(dataset, name){
   dbURL <- "https://spatialmap-1b08e.firebaseio.com"
   #pRolocMetaData
@@ -138,12 +130,9 @@ upload <- function(dataset, name){
   print(paste0(name, " got transfered to firebase."))
 }
 
-##' @title Upload Datasets from SpatialMaps
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
+##' @title Append colors to the fSet table.
+##' @param object The pRoloc object.
+##' @return Appends the color column to the fSet.
 createColors <- function(object){
   markers <- fData(object)$markers
   uniqueMarkers <- unique(markers)
@@ -158,13 +147,10 @@ createColors <- function(object){
   return(colorAssigment)
 }
 
-##' @title Upload Datasets from SpatialMaps
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
-#extract data from MSnSet object
+##' @title Transform MSnSet object to binary base64 string.
+##' @param object The MsnSet object.
+##' @description extract data from MSnSet object
+##' @return A list containing the base64 encrypted MSnSet s4 object.
 pRolocRawData <- function(object){
   #convert object to base64
   tempPath <- tempfile()
@@ -179,9 +165,6 @@ pRolocRawData <- function(object){
 ##' @title Upload Datasets from SpatialMaps
 ##' @param x A \code{pRolocdata} data.
 ##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
 pRolocFData <- function(object){
   pcaData <- as.data.frame(plot2D(object, plot = FALSE))
   
@@ -229,12 +212,11 @@ pRolocFData <- function(object){
   return(pRolocList)
 }
 
-##' @title Upload Datasets from SpatialMaps
-##' @param x A \code{pRolocdata} data.
+##' @title Meta data creation
+##' @param object The MSnSet object.
+##' @param varname The name of the object.
+##' @description Creates the /Meta data entry for SpatialMaps
 ##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
 pRolocMetaFrame <- function(object, varName){
   #meta
   #varName <- "varName"
@@ -276,12 +258,14 @@ pRolocMetaFrame <- function(object, varName){
   return(pRolocList)
 }
 
-##' @title Upload Datasets from SpatialMaps
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
+##' @title Update existing SpatialMaps dataset. 
+##' @param dataset A MSnSet object.
+##' @param name Name of the MSnSet dataset.
+##' @param email Email of the user.
+##' @param password Password of the user
+##' @param randomKey The MSnSet random key. This key is provided either in on the 
+##' SpatialMaps website or returned after each upload.
+##' @return Returns success message. 
 update <- function(dataset, name, email, password, randomKey) {
     dbURL <- "https://spatialmap-1b08e.firebaseio.com"
     #pRolocMetaData
