@@ -56,11 +56,27 @@ createAccount <- function(password = "prompt", email = "prompt") {
   print("We send you a mail - Please verify your email.")
 }
 
+
+##' @title API key store
+##' @param Key The name of the API key to be called.
+##' @description An internal function to store
+##' @param email Any email that can receive the confirmation mail. {string} 
+##' @return Message of success or failure
+createAccount <- function(password = "prompt", email = "prompt") {
+  projectAPI <- fromJSON("keys.json")$projectAPI
+  email <- readline(prompt = "Enter Email: ")
+  AuthUrl <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=", projectAPI)
+  userData <- POST(url = AuthUrl, body = list("email" = email, "password" = password), encode = "json")
+  return(content(userData))
+  print("Your SpatialMaps Account was successfully created!")
+  print("We send you a mail - Please verify your email.")
+}
+
 ##' @title Reset the SpatialMaps account password
 ##' @param email The SpatialMaps account email. 
 ##' @return Returns success or failure warning
 resetPassword <- function(email){
-  projectAPI <- "AIzaSyC7iVp_D4iCAOl1e6ymW9TB7aC9E8tbjD4"
+  projectAPI <- fromJSON("keys.json")$projectAPI
   AuthUrl <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key=", projectAPI)
   userData <- POST(url = AuthUrl, body = list("email" = email, "requestType" = "PASSWORD_RESET"), encode = "json")
   if ("error" %in% names(content(userData))) {
@@ -86,7 +102,7 @@ login <- function(pgp) {
     warning("please provide your email and password")
   }
   
-  projectAPI = "AIzaSyC7iVp_D4iCAOl1e6ymW9TB7aC9E8tbjD4"
+  projectAPI = fromJSON("keys.json")$projectAPI
   AuthUrl <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=", projectAPI)
   userData <- httr::POST(url = AuthUrl, body = list("email" = email, "password" = password), encode = "json")
   return(content(userData))
@@ -99,7 +115,7 @@ login <- function(pgp) {
 ##' @examples
 ##' library("pRolocdata")
 download <- function(dataset, randomKey, pgp, password="none") {
-    dbURL <- "https://spatialmap-1b08e.firebaseio.com"
+    dbURL <- dbURL <- fromJSON("keys.json")$dbURL
     path <- paste0("/objects/", dataset)
     #retrieving data
     data <- GET(paste0(dbURL,path,".json"))
@@ -116,7 +132,7 @@ download <- function(dataset, randomKey, pgp, password="none") {
 ##' @param name A string to add the name of the dataset.
 ##' @return returns the success and random id {string}
 upload <- function(dataset, name){
-  dbURL <- "https://spatialmap-1b08e.firebaseio.com"
+  dbURL <- fromJSON("keys.json")$dbURL
   #pRolocMetaData
   pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name)
   Response <- POST(paste0(dbURL,"/meta",".json"), body = toJSON(pRolocMeta, auto_unbox = TRUE))
@@ -167,7 +183,6 @@ pRolocRawData <- function(object){
 ##' @return An instance of class \code{pRolocmetadata}.
 pRolocFData <- function(object){
   pcaData <- as.data.frame(plot2D(object, plot = FALSE))
-  
   fScatter <- data.frame("PCA1" = pcaData[[1]], 
                         "PCA2" = pcaData[[2]], 
                         "Colors" = createColors(object))
@@ -267,7 +282,7 @@ pRolocMetaFrame <- function(object, varName){
 ##' SpatialMaps website or returned after each upload.
 ##' @return Returns success message. 
 update <- function(dataset, name, email, password, randomKey) {
-    dbURL <- "https://spatialmap-1b08e.firebaseio.com"
+    dbURL <- dbURL <- fromJSON("keys.json")$dbURL
     #pRolocMetaData
     pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name)
     PUT(paste0(dbURL,"/meta/",randomKey,".json"), body = toJSON(pRolocMeta, auto_unbox = TRUE))
@@ -288,7 +303,7 @@ update <- function(dataset, name, email, password, randomKey) {
 dataBackup <- function(outputFile="SpatialMaps.json", secretKeyPGP = NULL){
     if (is.null(secretKeyPGP)) secretKeyPGP <- readline(prompt = "Enter SecretKey: ")
     print("Fetching Data")
-    dbURL <- "https://spatialmap-1b08e.firebaseio.com"
+    dbURL <- dbURL <- fromJSON("keys.json")$dbURL
     urlPath = paste0(dbURL, "/.json?auth=", secretKeyPGP)
     curl_download(url = urlPath,
                   destfile = outputFile,
