@@ -47,7 +47,7 @@ valid.pRolocmetadata <- function(x) {
 ##' @param email Any email that can receive the confirmation mail. {string} 
 ##' @return Message of success or failure
 createAccount <- function(password = "prompt", email = "prompt") {
-  projectAPI <- "AIzaSyC7iVp_D4iCAOl1e6ymW9TB7aC9E8tbjD4"
+  projectAPI <- fromJSON("keys.json")$projectAPI
   email <- readline(prompt = "Enter Email: ")
   AuthUrl <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=", projectAPI)
   userData <- POST(url = AuthUrl, body = list("email" = email, "password" = password), encode = "json")
@@ -165,15 +165,14 @@ createColors <- function(object){
 
 ##' @title Transform MSnSet object to binary base64 string.
 ##' @param object The MsnSet object.
-##' @description extract data from MSnSet object
+##' @description Converts the S4 object to a base64 string to prevent any column reordering or other modifications. 
 ##' @return A list containing the base64 encrypted MSnSet s4 object.
 pRolocRawData <- function(object){
-  #convert object to base64
   tempPath <- tempfile()
   saveRDS(object, file = tempPath)
   binarySet <- readBin(tempPath, what = "raw", n = 50000000)
   base64Set <- jsonlite::base64_enc(binarySet)
-  #adding key by assigning to data.frame
+  #Adding the database key by assigning the base64 string to a list
   pRolocList <- list("base64Set" =  base64Set)
   return(pRolocList)
 }
@@ -196,35 +195,31 @@ pRolocFData <- function(object){
     }
   }
   
-  #filtering forbidden keys
-  originalNames <- names(fSetData)
-  originalNames <- gsub("\\$","-", originalNames)
-  originalNames <- gsub("\\#","-", originalNames)
-  originalNames <- gsub("\\]","-", originalNames)
-  originalNames <- gsub("\\[","-", originalNames)
-  originalNames <- gsub("\\/","-", originalNames)
-  originalNames <- gsub("\\.","-", originalNames)
-  names(p) <- originalNames
+  #filtering forbidden key names
+  names(p) <- filterKeys(names(fSetData))
   
   p <- cbind(p, data.frame("id" = row.names(fSetData)))
   fSet <- cbind(fScatter,p)
-  
   exprsSet <- exprs(object)
   exprsSet <- cbind(exprsSet, data.frame("id" = row.names(exprsSet)))
   row.names(exprsSet) <- NULL
   
-  #filtering forbidden keys
-  originalNames2 <- names(exprsSet)
-  originalNames2 <- gsub("\\$","-", originalNames2)
-  originalNames2 <- gsub("\\#","-", originalNames2)
-  originalNames2 <- gsub("\\]","-", originalNames2)
-  originalNames2 <- gsub("\\[","-", originalNames2)
-  originalNames2 <- gsub("\\/","-", originalNames2)
-  originalNames2 <- gsub("\\.","-", originalNames2)
-  names(exprsSet) <- originalNames2
+  #filtering forbidden key names
+  names(exprsSet) <- filterKeys(names(exprsSet))
   
   pRolocList <- list("fSet" = fSet, "exprsSet" = exprsSet)
   return(pRolocList)
+}
+##' @title Filter forbidden json keys
+##' @param x The names of the dataset, called with names(x)
+##' @return returns correctedNames and reports changes in the naming
+filterKeys <- function(x){
+  modifiedNames <- x
+  forbiddenKeys <- c("\\$","\\#","\\]","\\[","\\/","\\.")
+  for (i in forbiddenKeys) modifiedNames <- gsub(i,"-", modifiedNames)
+  if (!identical(x, modifiedNames)) 
+    warning("One or more column keys were renamed for the SpatialMaps usage. Note: Your raw dataset stays the same.")
+  return(modifiedNames)
 }
 
 ##' @title Meta data creation
