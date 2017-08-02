@@ -56,7 +56,6 @@ createAccount <- function(password = "prompt", email = "prompt") {
   print("We send you a mail - Please verify your email.")
 }
 
-
 ##' @title API key store
 ##' @param Key The name of the API key to be called.
 ##' @description An internal function to store
@@ -90,13 +89,12 @@ resetPassword <- function(email){
 ##' @param x A \code{pRolocdata} data.
 ##' @return An instance of class \code{pRolocmetadata}.
 ##' @aliases print.pRolocmetadata
-
-login <- function(pgp) {
-  if (password == "prompt" && email == "prompt"){
+login <- function(password = "prompt", email = "prompt", pgp = "none"){
+  if (password == "prompt" && email == "prompt") {
     email <- readline(prompt = "Email: ")
     password <- readline(prompt = "Password: ")
     print("Connecting to SpatialMaps:")
-  } else if(password != "prompt" && email != "prompt"){
+  } else if (password != "prompt" && email != "prompt") {
     print("Connecting to SpatialMaps:")
   } else {
     warning("please provide your email and password")
@@ -130,7 +128,7 @@ download <- function(dataset, randomKey, pgp, password="none") {
 ##' @title Upload Datasets from SpatialMaps
 ##' @param dataset The proloc object.
 ##' @param name A string to add the name of the dataset.
-##' @return returns the success and random id {string}
+##' @return Reports the successfull transfer and outputs the random ID.
 upload <- function(dataset, name){
   dbURL <- fromJSON("keys.json")$dbURL
   #pRolocMetaData
@@ -153,7 +151,7 @@ createColors <- function(object){
   markers <- fData(object)$markers
   uniqueMarkers <- unique(markers)
   markerVec <- c()
-  for(i in 1:length(uniqueMarkers)){
+  for (i in 1:length(uniqueMarkers)) {
     markerColor <- ifelse(uniqueMarkers[i] == "unknown", getStockcol(), getStockcol()[i])
     markerVec <- c(markerVec, markerColor)
   }
@@ -187,8 +185,8 @@ pRolocFData <- function(object){
                         "Colors" = createColors(object))
   fSetData <- fData(object)
   
-  for (i in 1:length((fSetData))){
-    if (i == 1){
+  for (i in 1:length((fSetData))) {
+    if (i == 1) {
       p <- data.frame(fSetData[[i]])
     } else {
       p <- data.frame(p, fSetData[[i]])
@@ -305,4 +303,3 @@ dataBackup <- function(outputFile="SpatialMaps.json", secretKeyPGP = NULL){
                   quiet = FALSE)
     print(paste0("Backup file created: ", outputFile))
 }
-
