@@ -1,0 +1,460 @@
+Supplementary data files used to construct data sets -*- mode:org; -*-
+
+* From Foster et al 2006 
+
+Supplemental data file from http://www.cell.com/supplemental/S0092-8674(06)00369-2
+
+** Table S1 -- PIIS0092867406003692.mmc2.xls
+All proteins identified in this study, including the IPI and UniProt
+accession numbers (hyperlinked to the UniProt Knowledgebase) and a
+description of the protein. Following these entries are the sequence
+coverage (as percent) and the number of unique peptides observed for
+each protein, as well as the sequences of those unique peptides.
+
+xls2csv PIIS0092867406003692.mmc2.xls > PIIS0092867406003692.mmc2.csv
+
+** Table S2 -- PIIS0092867406003692.mmc3.xls
+All peptides identified in this study, including their sequences in
+the single letter IUPAC nomenclature, the best relative mass error
+measured for each (in parts per million), the highest Mascot IonsScore
+recorded for each and the number of amino acids in each.
+
+xls2csv PIIS0092867406003692.mmc3.xls  > PIIS0092867406003692.mmc3.csv
+
+** Table S3 -- PIIS0092867406003692.mmc4.xls
+Protein correlation profiles for each measured protein from three
+different sets of experiments: high and low-density sucrose gradients,
+and cytoplasm versus nucleus. In each worksheet the IPI and UniProt
+codes, as well as protein names and measured abundances (expressed as
+log10[ion intensity]), are listed before the normalized abundances of
+each protein in each 2 fraction. The high-density page contains ion
+intensities for only the first eight fractions (Fr01-08) while the
+low-density page contains information for fractions 09 through 30
+(Fr25-29 were not included as they are equivalent to Fr30).
+
+Each worksheet has been opened in gnumeric and saved as a csv file.
+Sheet 1 (PCP-High density): PIIS0092867406003692.mmc4-highDensity.csv
+Sheet 2 (PCP-Low density):  PIIS0092867406003692.mmc4-lowDensity.csv
+Sheet 3 (Cytoplasm or Nucleus): not used here
+
+** Table S4 -- PIIS0092867406003692.mmc5.xls
+Peptide correlation profiles for each measured peptide from three
+different sets of experiments: high and low-density sucrose gradients,
+and cytoplasm versus nucleus (three separate worksheets). In each
+worksheet the charge state, molecular weight and amino acid sequence
+of each peptide precede the measured ion volumes (in Da). The
+high-density page contains ion intensities for only the first eight
+fractions (Fr01-08) while the low-density page contains information
+for fractions 09 through 30 (Fr25-29 were not included as they are
+equivalent to Fr30).
+
+Each worksheet has been opened in gnumeric and saved as a csv file.
+Sheet 1 (PCP-High density): PIIS0092867406003692.mmc5-highDensity.csv
+Sheet 2 (PCP-Low density):  PIIS0092867406003692.mmc5-lowDensity.csv
+Sheet 3 (Cytoplasm or Nucleus): not used here
+
+** Table S5 -- PIIS0092867406003692.mmc6.xls
+Localizations for all proteins measured in this study. IPI and UniProt accession codes, protein descriptions, abundances and the number of peptides upon which the localization was based are listed in the first five columns of each sheet. In the Localizations Sheet the subsequent columns contain the χ2 values for that protein’s PCP versus the marker for the given organelle where the protein met the assignment criteria (see Experimental Procedures). Where the assignment criteria were not met (e.g., where the χ2 value was higher than the cutoff) no value is shown. The fold enrichments for proteins in the nucleus are indicated in the Cytoplasm/Nucleus column (only those proteins enriched more than two-fold). In the Refined Locations Sheet the result of evaluating our measured localizations versus the published literature is shown (see Experimental Procedures). 'Yes' was assigned where annotation indicated the protein was in the organelle but also in the case where secreted proteins were identified in the secretory pathway (ER, ERGDV, Golgi). 'No' was assigned where the measured location was not among the annotated locations for a protein. 'Probably' was assigned in several instances: 1) where no location was otherwise annotated, 2) where a protein annotated as cytosolic was measured in an organelle since it would encounter than organelle and could be specifically associated with it, 3) where a protein annotated as nuclear was found in the cytosol since most proteins are not completely excluded by the nuclear pore, 4) where a non-proteasomal protein was found in the proteasome since most proteins are degraded by this machinery at some point, 5) where cytoskeletal proteins were measured in an organelle. 'Co-migrating' was assigned for ribosomal proteins that peaked in fractions 17 and/or 19.
+
+Each worksheet has been opened in gnumeric and saved as a csv file.
+Sheet 1 (Localizations): PIIS0092867406003692.mmc6-localizations.csv
+Sheet 2 (Refined localizations):PIIS0092867406003692.mmc6-refinedLoc.csv
+
+Marker proteins have been extracted from the paper, second paragraph on page 188:
+
+To determine the PCP of well-studied organelles, we
+examined the profiles of several well-characterized
+marker proteins, including 130 kDa Golgi phosphoprotein
+(GPP130, Golgi), AP-2 assembly subunit AP17 (plasma
+membrane [PM]), early endosome antigen 1 (EEA1, early
+endosomes [EE]), transferrin receptor 2 (TfR2, recycling
+endosome [RE]), calnexin (ER), p115 (ER/Golgi-derived
+vesicles [ERGDV]), and F1-F0 ATP synthase b subunit (mi-
+tochondria). Each of these markers peaked in different
+gradient fractions and had distinct profiles; thus at least
+these seven organelles could be distinguished with confi-
+dence (Figure 2B). Markers of other compartments were
+also observed, but their profiles matched closely to one
+of the seven mentioned above. In particular, ERGIC-53,
+a marker for the ER-Golgi intermediate compartment,
+overlapped very closely with the ER, as has been reported
+previously (Breuza et al., 2004). Likewise, the profiles of
+cation-independent mannose 6-phosphate receptor and
+adaptor-related protein 1b, markers of the late endosome
+and trans-Golgi network, respectively, largely overlapped
+with TfR2 (Tables S3 and S4). This suggests that these
+compartments migrate similarly in rate-zonal centrifuga-
+tion and is in agreement with the specialized conditions re-
+quired for even partial segregation reported by others
+(Tulp et al., 1998; Hashiramoto and James, 2000).
+
+Organelle marker had a chi2 scores of 0 for the expected organelle, except where otherwise noted:
+- Golgi: 130 kDa Golgi phosphoprotein (GPP130) - IPI00269029 
+- PM: AP-2 assembly subunit AP17 (AP-2 assembly subunit AP17) - IPI00118022 
+- EE (early endosome): early endosome antigen 1 - IPI00453776 [a]
+- TGN/RE (recycling endosome): Transferrin receptor protein 2 - IPI00223651
+- ER: Calnexin precursor - IPI00119618
+- ERGDV (ER/Golgi-derived vesicles): Vesicle docking protein - IPI00128071 [b]
+- Mito: ATP synthase beta chain, mitochondrial precursor - IPI00113801
+- Proteasome: Proteasome subunit beta type 1 - IPI00113845  [c]
+              Proteasome subunit alpha type 6 - IPI00131845 [d]
+              Proteasome subunit alpha type 7 - IPI00131406 [e]
+
+[a] Also chi2 of 0.048 for ERGDV
+[b] General vesicular transport factor p115 in UniProt, 
+    also chi2 value of 0.027 for Golgi.
+[c] chi2 value of 0.0018 for proteasome
+[d] chi2 value of 0.0055 for proteasome 
+[e] chi2 value of 0.0057 for proteasome
+
+* From Dunkley et al 2006 
+
+Supporting Information from http://www.pnas.org/content/103/17/6518/suppl/DC1
+
+** Supporting Table 2 -- 06958Table2.xls
+Table 2. Spreadsheet of protein found in both comparison A and B in
+terms of protein identification data, predicted subcellular location,
+and GFP fusion data.  This table contains the 6 possible ratios for
+each iTRAQ 4-plex run. Not used here
+
+** Supporting Table 3 -- 06958Table3.xls
+Table 3. Spreadsheet containing normalized reported ion intensities.
+This table has been converted to Dunkley2006.csv for easy input into R.
+
+* From Tan et al 2009
+
+Supporting Information from http://pubs.acs.org/doi/suppl/10.1021/pr800866n
+
+File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n][pr800866n_si_004.xls]] contains relative quantitation data for the
+3 replicates in separate sheets, that have been saved to 3 csv files
+pr800866n_si_004-rep1.csv
+pr800866n_si_004-rep2.csv
+pr800866n_si_004-rep3.csv
+
+File [[http://pubs.acs.org/doi/suppl/10.1021/pr800866n/suppl_file/pr800866n_si_007.xls][pr800866n_si_007.xls]] (available as csv file) contains the
+original markers.
+
+The two following csv files contain Uniprot ID and Entry Names for the
+the proteins that appear in the above 3 datasets. This information has
+been downloaded from www.flymine.org using the 'list analysis' tool
+using the protein CG numbers as input.
+
+TanFlyMineFiltered.csv 
+TanFlyMineUnfiltered.csv 
+
+The filtered dataset contains only Uniprot IDs that have been reviewed
+i.e. that come from Swiss-Prot. Some CG numbers give rise to more than
+one reviewed Uniprot ID. The unfiltered dataset contains all Uniprot
+IDs per CG number which includes corresponding IDs from both
+Swiss-Prot (reveiwed) and TrEMBl (unreviewed), again some CG numbers
+have multiple IDs. Four columns have been added to the Tan MSnSet
+instances to include this information which are called
+ProteinAccession, EntryName, ProteinAccessionAll and
+EntryNameAll. ProteinAccession contains a single Uniprot accession ID
+per protein, for proteins with multiple Uniprot IDs the ID which is
+reveiwed appears here, if none are reviewed (or multiple are reviewed)
+the ID that appears first in the csv file for that protein is
+used. The column ProteinAccessionAll contains all UniprotIDs per
+protein (both reviewed and unreviewed). Similarly the columns
+EntryName and EntryNameAll conatin the Uniprot entry names for each
+protein with EntryName containing only one name and EntryNameAll
+containing all names per protein.
+
+* From Ferro et al 2010
+
+The file AT_CHLORO_table_120906.xls was email by Myriam Ferro to be
+included in the pRolocdata package. The first sheet (README) ws used
+to prepare feature annotation. The second sheet was converted to
+AT_CHLORO_table_120906.csv and used to generate the at_chloro MSnSet.
+
+* From Nikolovski 2012
+Reformated manually and fixed column names
+
+ - S1: Summary of the 1385 proteins observed at least twice in any of
+   the 4 LOPIT experiments with normalized reporter ion intensities
+ - S2: Functional annotations, classification results, and
+   fractionation profiles of the 1385 proteins studied
+ - S3: List of the 12 novel putative GT families with their members
+
+* From Hall 2009
+** S1 - Complete protein-level iTRAQ quantitation values. Spreadshhet manually simplified and exported to csv.
+See supplementary file 1 for details about the design. The number below represebt fractions.
+
+AC = membrane protein-enriched pellet and soluble/preripheral proteins
+     from fractions 1, 4, 13+14 and 21
+BD = membrane protein-enriched pellet and soluble/preripheral proteins
+     from fractions 1, 9+10, 16 and 18
+
+|-------+----------------------------------+------+------------------------------+------|
+|       | membrane protein-enriched pellet |      | soluble/preripheral proteins |      |
+|-------+----------------------------------+------+------------------------------+------|
+| iTRAQ |                                A |    B |                            C |    D |
+|-------+----------------------------------+------+------------------------------+------|
+|   114 |                                1 |    1 |                            1 |    1 |
+|   115 |                                4 | 9+10 |                            4 | 9+10 |
+|   116 |                            13+14 |   16 |                        13+14 |   16 |
+|   117 |                               21 |   18 |                           21 |   18 |
+|-------+----------------------------------+------+------------------------------+------|
+
+** S3 - iTRAQ ratios (21 ?) - not considered.
+** S4 - markers, converted from xls to csv with xls2csv
+** S5 - PLS-DA assignments, converted from xls to csv with xls2csv
+
+* From Nikolovski et al 2014
+
+Nikolovski N, Shliaha PV, Gatto L, Dupree P, Lilley KS. Label free
+protein quantification for plant Golgi protein localisation and
+abundance. Plant Physiol.  2014 Aug 13. pii: pp.114.245589. [Epub
+ahead of print] PubMed PMID: 25122472.
+
+- 245589ST2_protein_distributions.csv: Supplementary Table 2. List of
+  all proteins observed in both biological replicates (A and B) and
+  their distribution profiles
+
+- 245589ST3_MarkerList_250614.csv: Supplementary Table 3. List of
+  organellar marker proteins used in this study
+
+- 245589ST4_SVMLocalisation_280514.csv: Supplementary Table 4. List of
+  proteins classified as Golgi residents by SVM classification
+
+* Protein complexe separation profiles
+- fabre2015r1 and r2
+- kristensen2012r1, r2, and r3
+- kirkwood2013
+- havugimana2012
+
+* From Itzhak et al 2016
+
+> Daniel N Itzhak, Stefka Tyanova, Jürgen Cox and Georg HH
+> Borner. Global, quantitative and dynamic mapping of protein
+> subcellular localization. DOI: http://dx.doi.org/10.7554/eLife.16950
+> Published June 9, 2016 Cite as eLife 2016;10.7554/eLife.16950
+
+The file of interest is [[https://elifesciences.org/content/5/e16950/supp-material9][Supplementary file 9]], and is available at
+https://elife-publishing-cdn.s3.amazonaws.com/16950/elife-16950-supp9-v3-download.xlsx. It
+is processed by the =inst/scripts/itzhak2016.R= file.
+
+- The second sheet contains the SILAC static data ('Static' data were
+  used to genrate six deep organellar maps) and is made available as
+  =itzhak2016stcSILAC=.
+
+* From Stekhoven et al 2014
+
+> Stekhoven DJ, Omasits U, Quebatte M, Dehio C, Ahrens
+> CH. Proteome-wide identification of predominant subcellular protein
+> localizations in a bacterial model organism. J Proteomics. 2014 Mar
+> 17;99:123-37. doi:10.1016/j.jprot.2014.01.015. Epub 2014
+> Jan 28. PubMed PMID: 24486812.
+
+Proteomics data provide unique insights into biological systems,
+including the predominant subcellular localization (SCL) of proteins,
+which can reveal important clues about their functions. Here we
+analyzed data of a complete prokaryotic proteome expressed under two
+conditions mimicking interaction of the emerging pathogen Bartonella
+henselae with its mammalian host. Normalized spectral count data from
+cytoplasmic, total membrane, inner and outer membrane fractions
+allowed us to identify the predominant SCL for 82% of the identified
+proteins. The spectral count proportion of total membrane versus
+cytoplasmic fractions indicated the propensity of cytoplasmic proteins
+to co-fractionate with the inner membrane, and enabled us to
+distinguish cytoplasmic, peripheral inner membrane and bona fide inner
+membrane proteins. Principal component analysis and k-nearest neighbor
+classification training on selected marker proteins or predominantly
+localized proteins, allowed us to determine an extensive catalog of at
+least 74 expressed outer membrane proteins, and to extend the SCL
+assignment to 94% of the identified proteins, including 18% where in
+silico methods gave no prediction. Suitable experimental proteomics
+data combined with straightforward computational approaches can thus
+identify the predominant SCL on a proteome-wide scale. Finally, we
+present a conceptual approach to identify proteins potentially
+changing their SCL in a condition-dependent fashion.
+
+File is =inst/extdata/mmc3.csv=, manually exported/formatted from
+[[http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S187439191400027X/1-s2.0-S187439191400027X-mmc3.xls/276834/html/S187439191400027X/c794b14eb9d2f6013eb18ce0f6693990/mmc3.xls][Supplementary table 4]].
+
+* From Andreyev et al 2010
+
+> Andreyev AY, Shen Z, Guan Z, Ryan A, Fahy E, Subramaniam S, Raetz
+> CR, Briggs S, Dennis EA. Application of proteomic marker ensembles
+> to subcellular organelle identification. Mol Cell Proteomics. 2010
+> Feb;9(2):388-402. doi: 10.1074/mcp.M900432-MCP200. Epub 2009
+> Nov 2. PubMed PMID: 19884172; PubMed Central PMCID: PMC2830848.
+
+Compartmentalization of biological processes and the associated
+cellular components is crucial for cell function. Typically, the
+location of a component is revealed through a co-localization and/or
+co-purification with an organelle marker. Therefore, the
+identification of reliable markers is critical for a thorough
+understanding of cellular function and dysfunction. We fractionated
+macrophage-like RAW264.7 cells, both in the resting and
+endotoxin-activated states, into six fractions representing the major
+organelles/compartments: nuclei, mitochondria, cytoplasm, endoplasmic
+reticulum, and plasma membrane as well as an additional dense
+microsomal fraction. The identity of the first five of these fractions
+was confirmed via the distribution of conventional enzymatic
+markers. Through a quantitative liquid chromatography/mass
+spectrometry-based proteomics analysis of the fractions, we identified
+50-member ensembles of marker proteins ("marker ensembles") specific
+for each of the corresponding organelles/compartments. Our analysis
+attributed 206 of the 250 marker proteins ( approximately 82%) to
+organelles that are consistent with the location annotations in the
+public domain (obtained using DAVID 2008, EntrezGene, Swiss-Prot, and
+references therein). Moreover, we were able to correct locations for a
+subset of the remaining proteins, thus proving the superior power of
+analysis using multiple organelles as compared with an analysis using
+one specific organelle. The marker ensembles were used to calculate
+the organelle composition of the six above mentioned subcellular
+fractions. Knowledge of the precise composition of these fractions can
+be used to calculate the levels of metabolites in the pure
+organelles. As a proof of principle, we applied these calculations to
+known mitochondria-specific lipids (cardiolipins and ubiquinones) and
+demonstrated their exclusive mitochondrial location. We speculate that
+the organelle-specific protein ensembles may be used to systematically
+redefine originally morphologically defined organelles as biochemical
+entities.
+
+See =inst/scripts/andreyev2010.R=
+
+* From Rodriguez-Pineiro et al 2012
+
+> Rodríguez-Piñeiro AM, van der Post S, Johansson ME, Thomsson KA,
+> Nesvizhskii AI, Hansson GC. Proteomic study of the mucin granulae in
+> an intestinal goblet cell model. J Proteome Res. 2012 Mar
+> 2;11(3):1879-90. doi: 10.1021/pr2010988.  Epub 2012 Feb 2. PubMed
+> PMID:[[https://www.ncbi.nlm.nih.gov/pubmed/22248381][22248381]]; PubMed Central PMCID: PMC3292267.
+
+Goblet cells specialize in producing and secreting mucus with its main
+component, mucins. An inducible goblet-like cell line was used for the
+purification of the mucus vesicles stored in these cells by density
+gradient ultracentrifugation, and their proteome was analyzed by
+nanoLC-MS and MS/MS. Although the density of these vesicles coincides
+with others, it was possible to reveal a number of proteins that after
+immunolocalization on colon tissue and functional analyses were likely
+to be linked to the MUC2 vesicles. Most of the proteins were
+associated with the vesicle membrane or their outer surface. The
+ATP6AP2, previously suggested to be associated with vesicular proton
+pumps, was colocalized with MUC2 without other V-ATPase proteins and,
+thus, probably has roles in mucin vesicle function yet to be
+discovered. FAM62B, known to be a calcium-sensitive protein involved
+in vesicle fusion, also colocalized with the MUC2 vesicles and is
+probably involved in unknown ways in the later events of the MUC2
+vesicles and their secretion.
+
+See =inst/script/rodriguez-pineiro2012.R=
+
+* Data from the Bioconductor pRoloc workflow
+bpw-svmopt.rds
+This object is the result of a svmOptimisation on the Christoforou
+(2016) hyperLOPIT dataset.
+
+bpw-pdres.rds
+This object contains the results of a phenoDisco run on the
+Christoforou (2016) hyperLOPIT dataset run with parameters times=200,
+GS=60, p=0.05, ndims=2.
+
+bpw-tlopt.rds
+Results from a transfer learning run using hyperLOPIT data from
+Christoforou (2016) as the primary data source and goCC terms as an
+auxiliary data source. A reduced marker set was used to reduce
+computational time (the two ribosomes and nucleus sub-compartments
+were removed as they are well-resolved) and length.out = 4, times = 50
+was used for optimisation.
+
+bpw-gocc.rda
+MSnSet of GO CC terms generated from object hl from Bioc pRoloc 
+workflow.
+* HyperLOPIT PMS-level data
+
+The PSM-level cvs file are available in the =extdata= directory
+and have been processed as follows: imported =MSnSet= instances
+using =readMSnSet2=, PSMs with missing values were filtered out
+with =filterNA=, only PSMs with feature variable
+=Quan.Usage= ="Used"= and a TMT6plex modification were
+retained and the phenoData was matched and assigned from the
+respective protein-level data. Finally, marker proteins are annotated
+based on the combined protein-level data =hyperLOPIT2015= and
+reporter tags are normalised using the ="sum"= method. The
+processing script is =scripts/hyperlopit2015psm.R=.
+* Synapter2 LOPIMS data 
+
+#+BEGIN_QUOTE
+Dear Laurent,
+
+the organelle data is in:
+
+Y:\RAW\pvs22\_QTOF_DATA_data3\synapter2paper\final_scripts\for_laurent
+
+there are three folders there each corresponds to one of the pipelines
+used for quantitation: for synapter synapter 1 (proloc_s1), for
+synapter 2 (proloc_s2), for synapter 2 with 0 fragments specified
+(proloc_s2_0F).
+
+Each of the folders contains a csv file with protein quantitation
+called protTableCI.csv. (CI stands for "common identifications") this
+is proteins shared between all three pipelines.
+
+The folder also contains common markers. Please let me know if you
+need anything else. Just for you reference there is an R script there
+which I used to compare the F1 values. I tested it today and
+everything seems to work, i.e. file is loaded markers added, svm
+optimisation performed. Good luck with your analysis!
+#+END_QUOTE
+
+See =inst/scripts/lopmissyn2.R=
+* U2OS hyperLOPIT data 2017
+
+=hyperLOPIT_U2OS_201702.csv=
+
+- UniProt Accession for Protein Group (no isoform information): Unique
+  UniProt accession for quantified protein group reported by Proteome
+  Discoverer (1% FDR) - isoform information not retained.
+- Normalized TMT 10-plex Reporter Ion Distribution: ReplicateX TMT
+  SetX-126 Normalized TMT 10-plex reporter ion values, representing
+  the distribution of each protein across the fractionation scheme for
+  each experiment. Protein-level reporter ion values were calculated
+  by taking the median of all quantifiable PSMs for the protein group,
+  then normalized so that the sum of all 10 channels was equal
+  to 1. The numeric value in the tag name corresponds to the nominal
+  mass of each TMT reporter ion. The N and C suffixes differentiates
+  between the 15N or 13C isotopologue variants of TMT 10-plex reporter
+  ions of the same nominal mass.
+- UniProt Accession for Protein Group (with isoform information):
+  Unique UniProt accession for quantified protein group reported by
+  Proteome Discoverer (1% FDR) - isoform information retained.
+- UniProt Protein Description: UniProt description for protein
+  accession.
+- Coverage: Percentage of protein sequence covered by identified
+  peptides.
+- Quantified Proteins: Number of quantified protein groups.
+- Quantified Unique Peptides: Number of unique quantified
+  peptides. Only these peptides were used for quantification.
+- Quantified Peptides: Number of quantified peptides. Only peptides
+  that were unique to a single protein group were used for
+  quantification.
+- Quantified PSMs: Number of quantified peptide-spectrum matches.
+- Score - ReplicateX TMT SetX: Total score of identified protein group
+  for each experiment. This score is equal to the sum of the
+  individual peptide scores.
+- Coverage - ReplicateX TMT SetX: Percentage of protein sequence
+  covered by identified peptides for each experiment.
+- Quantified Peptides - ReplicateX TMT SetX: Number of quantified
+  peptides for each experiment. Only peptides that were unique to a
+  single protein group were used for quantification.
+- Quantified PSMs - ReplicateX TMT SetX: Number of quantified
+  peptide-spectrum matches for each experiment.
+- SVM Classification of Protein Localization
+  - SVM Marker Set: Final marker set used for SVM classification of
+    protein subcellular localization to 14 subcellular compartments.
+  - SVM Classification: Subcellular class to which the protein group
+    was assigned by SVM classification. All proteins are assigned to a
+    single class by SVM.
+  - SVM Score: Confidence score for localization assignment, ranging
+    from 0 to 1. A score close to 0 represents a very low confidence
+    assignment, whereas a score of 1 indicates a very high confidence
+    assignment.
+  - Final SVM Classification (5% FDR) (assignment): Predicted
+    localization, with SVM score thresholds determined empirically by
+    comparison to GO annotation and protein database annotation. The
+    SVM score thresholds were set individually for each class so that
+    the false discovery rate of the SVM classification was equal or
+    lower than 5%.
