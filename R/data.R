@@ -43,9 +43,9 @@ valid.pRolocmetadata <- function(x) {
 }
 
 ##' @title Create a SpatialMaps Account
-##' @param password A password {string}
-##' @param email Any email that can receive the confirmation mail. {string} 
-##' @return Message of success or failure
+##' @param password The SpatialMaps account password.
+##' @param email Any email that can receive the confirmation mail.  
+##' @return Message of success or failure.
 createAccount <- function(password = "prompt", email = "prompt") {
   projectAPI <- fromJSON("keys.json")$projectAPI
   email <- readline(prompt = "Enter Email: ")
@@ -58,9 +58,9 @@ createAccount <- function(password = "prompt", email = "prompt") {
 
 ##' @title API key store
 ##' @param Key The name of the API key to be called.
-##' @description An internal function to store
-##' @param email Any email that can receive the confirmation mail. {string} 
-##' @return Message of success or failure
+##' @description An internal function to store.
+##' @param email Any email that can receive the confirmation mail. 
+##' @return Message of success or failure.
 createAccount <- function(password = "prompt", email = "prompt") {
   projectAPI <- fromJSON("keys.json")$projectAPI
   email <- readline(prompt = "Enter Email: ")
@@ -71,9 +71,9 @@ createAccount <- function(password = "prompt", email = "prompt") {
   print("We send you a mail - Please verify your email.")
 }
 
-##' @title Reset the SpatialMaps account password
+##' @title Reset the SpatialMaps account password.
 ##' @param email The SpatialMaps account email. 
-##' @return Returns success or failure warning
+##' @return Returns success or failure warning.
 resetPassword <- function(email){
   projectAPI <- fromJSON("keys.json")$projectAPI
   AuthUrl <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key=", projectAPI)
@@ -85,7 +85,7 @@ resetPassword <- function(email){
   }
 }
 
-##' @title Login & Create Security token
+##' @title Login & Create Security token.
 ##' @param x A \code{pRolocdata} data.
 ##' @return An instance of class \code{pRolocmetadata}.
 ##' @aliases print.pRolocmetadata
@@ -106,12 +106,9 @@ login <- function(password = "prompt", email = "prompt", pgp = "none"){
   return(content(userData))
 }
 
-##' @title Download Datasets from SpatialMaps
+##' @title Download Datasets from SpatialMaps.
 ##' @param x A \code{pRolocdata} data.
 ##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-##' @examples
-##' library("pRolocdata")
 download <- function(dataset, randomKey, pgp, password="none") {
     dbURL <- dbURL <- fromJSON("keys.json")$dbURL
     path <- paste0("/objects/", dataset)
@@ -129,10 +126,10 @@ download <- function(dataset, randomKey, pgp, password="none") {
 ##' @param dataset The proloc object.
 ##' @param name A string to add the name of the dataset.
 ##' @return Reports the successfull transfer and outputs the random ID.
-upload <- function(dataset, name){
+upload <- function(dataset, name, token){
   dbURL <- fromJSON("keys.json")$dbURL
   #pRolocMetaData
-  pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name)
+  pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name, token = token)
   Response <- POST(paste0(dbURL,"/meta",".json"), body = toJSON(pRolocMeta, auto_unbox = TRUE))
   #pRolocRawData
   pRolocRaw <- pRolocRawData(eval(as.name(dataset)))
@@ -142,6 +139,19 @@ upload <- function(dataset, name){
   PUT(paste0(dbURL,"/data/",content(Response),".json"), body = toJSON(pRolocDataVar, auto_unbox = TRUE))
   #success message
   print(paste0(name, " got transfered to firebase."))
+}
+
+
+##' @title Upload Datasets from SpatialMaps
+##' @param dataset The proloc object.
+##' @param name A string to add the name of the dataset.
+##' @return Reports the successfull transfer and outputs the random ID.
+tokenCheck <- function(token){
+  projectAPI <- fromJSON("keys.json")$projectAPI
+  dbURL <- dbURL <- fromJSON("keys.json")$dbURL
+  requestURL <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=", projectAPI)
+  requestData = httr::POST(url = requestURL,  body = list("idToken" = token), encode = "json")
+  return(httr::content(requestData)$users[[1]]$localId)
 }
 
 ##' @title Append colors to the fSet table.
@@ -225,7 +235,7 @@ filterKeys <- function(x){
 ##' @param varname The name of the object.
 ##' @description Creates the /Meta data entry for SpatialMaps
 ##' @return An instance of class \code{pRolocmetadata}.
-pRolocMetaFrame <- function(object, varName){
+pRolocMetaFrame <- function(object, varName, token){
   #meta
   #varName <- "varName"
   title <-  object@experimentData@title
@@ -236,7 +246,7 @@ pRolocMetaFrame <- function(object, varName){
   abstract <- object@experimentData@abstract
   lab <- object@experimentData@lab
   pubMedIds <- object@experimentData@pubMedIds
-  
+  UID <- tokenCheck(token = token)
   tissue <- object@experimentData@samples$tissue
   cellLine <- object@experimentData@samples$cellLine
   species <- object@experimentData@samples$species
@@ -249,6 +259,7 @@ pRolocMetaFrame <- function(object, varName){
   pRolocList <- list("varName" = varName, 
                     "title" = title,
                     "author" = author, 
+                    "UID" = UID,
                     "email" = email, 
                     "contact" = contact, 
                     "dataStamp" = dataStamp, 
@@ -296,7 +307,7 @@ update <- function(dataset, name, email, password, randomKey) {
 dataBackup <- function(outputFile="SpatialMaps.json", secretKeyPGP = NULL){
     if (is.null(secretKeyPGP)) secretKeyPGP <- readline(prompt = "Enter SecretKey: ")
     print("Fetching Data")
-    dbURL <- dbURL <- fromJSON("keys.json")$dbURL
+    dbURL <- fromJSON("keys.json")$dbURL
     urlPath = paste0(dbURL, "/.json?auth=", secretKeyPGP)
     curl_download(url = urlPath,
                   destfile = outputFile,
