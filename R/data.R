@@ -42,24 +42,11 @@ valid.pRolocmetadata <- function(x) {
     !any(sapply(x, is.null))
 }
 
-##' @title Create a SpatialMaps Account
-##' @param password The SpatialMaps account password.
-##' @param email Any email that can receive the confirmation mail.  
-##' @return Message of success or failure.
-createAccount <- function(password = "prompt", email = "prompt") {
-  projectAPI <- fromJSON("keys.json")$projectAPI
-  email <- readline(prompt = "Enter Email: ")
-  AuthUrl <- paste0("https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=", projectAPI)
-  userData <- POST(url = AuthUrl, body = list("email" = email, "password" = password), encode = "json")
-  return(content(userData))
-  print("Your SpatialMaps Account was successfully created!")
-  print("We send you a mail - Please verify your email.")
-}
 
-##' @title API key store
-##' @param Key The name of the API key to be called.
-##' @description An internal function to store.
+##' @title SpatialMap Account Creation
+##' @description Uploads require a user login. The createAccount function allows to create the account within R with valid password and email. In case a spatialMaps account was already created on the platform, no new account is neccesssary. 
 ##' @param email Any email that can receive the confirmation mail. 
+##' @param password Any password with a minimum of complexity. 
 ##' @return Message of success or failure.
 createAccount <- function(password = "prompt", email = "prompt") {
   projectAPI <- fromJSON("keys.json")$projectAPI
@@ -71,7 +58,8 @@ createAccount <- function(password = "prompt", email = "prompt") {
   print("We send you a mail - Please verify your email.")
 }
 
-##' @title Reset the SpatialMaps account password.
+##' @title spatialMaps account password reset
+##' @describtion The password reset function in case the password was lost. The function triggers a password reset email sent to the input email.
 ##' @param email The SpatialMaps account email. 
 ##' @return Returns success or failure warning.
 resetPassword <- function(email){
@@ -86,10 +74,11 @@ resetPassword <- function(email){
 }
 
 ##' @title Login & Create Security token.
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-##' @aliases print.pRolocmetadata
-login <- function(password = "prompt", email = "prompt", pgp = "none"){
+##' @description The login function provides all information to interact with the SpatialMaps database. Its main functioanlity is to receive the JWT token required to upload MSnSets.
+##' @param password The SpatialMaps account password.
+##' @param email The SpatialMaps account email
+##' @return returns list with various account information 
+login <- function(password = "prompt", email = "prompt"){
   if (password == "prompt" && email == "prompt") {
     email <- readline(prompt = "Email: ")
     password <- readline(prompt = "Password: ")
@@ -107,9 +96,10 @@ login <- function(password = "prompt", email = "prompt", pgp = "none"){
 }
 
 ##' @title Download Datasets from SpatialMaps.
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
-download <- function(dataset, randomKey, pgp, password="none") {
+##' @description SpatialMaps download function. The dataset name can be gathered from the SpatialMaps platform.
+##' @param dataset The shortlink received from SpatialMaps
+##' @return Success or failure message
+download <- function(dataset) {
     dbURL <- dbURL <- fromJSON("keys.json")$dbURL
     path <- paste0("/objects/", dataset)
     #retrieving data
@@ -125,6 +115,7 @@ download <- function(dataset, randomKey, pgp, password="none") {
 ##' @title Upload Datasets from SpatialMaps
 ##' @param dataset The proloc object.
 ##' @param name A string to add the name of the dataset.
+##' @param token The JWT token created with the login() function.
 ##' @return Reports the successfull transfer and outputs the random ID.
 upload <- function(dataset, name, token){
   dbURL <- fromJSON("keys.json")$dbURL
@@ -142,9 +133,9 @@ upload <- function(dataset, name, token){
 }
 
 
-##' @title Upload Datasets from SpatialMaps
-##' @param dataset The proloc object.
-##' @param name A string to add the name of the dataset.
+##' @title Token verification
+##' @description Verifies the authenticity of the generated token and returns the uniquer user identifier.
+##' @param token The JWT token created with the login() function.
 ##' @return Reports the successfull transfer and outputs the random ID.
 tokenCheck <- function(token){
   projectAPI <- fromJSON("keys.json")$projectAPI
@@ -155,6 +146,7 @@ tokenCheck <- function(token){
 }
 
 ##' @title Append colors to the fSet table.
+##' @description A helper function to pass pRoloc conform colors to the fData table.
 ##' @param object The pRoloc object.
 ##' @return Appends the color column to the fSet.
 createColors <- function(object){
@@ -171,10 +163,10 @@ createColors <- function(object){
   return(colorAssigment)
 }
 
-##' @title Transform MSnSet object to binary base64 string.
+##' @title s4 class to base64 binary
+##' @description Transforms MSnSet object to binary base64 string. This step is required to keep store the s4 class without interfering with the JSON formatting requirements of firebase and to prevent any column reordering or other modifications.
 ##' @param object The MsnSet object.
-##' @description Converts the S4 object to a base64 string to prevent any column reordering or other modifications. 
-##' @return A list containing the base64 encrypted MSnSet s4 object.
+##' @return A base64 encrypted MSnSet object list.
 pRolocRawData <- function(object){
   tempPath <- tempfile()
   saveRDS(object, file = tempPath)
@@ -185,9 +177,9 @@ pRolocRawData <- function(object){
   return(pRolocList)
 }
 
-##' @title Upload Datasets from SpatialMaps
-##' @param x A \code{pRolocdata} data.
-##' @return An instance of class \code{pRolocmetadata}.
+##' @title fData list aggregation.
+##' @description Helper function to reformat fData to DB suitable format.
+##' @param object The MSnSet.
 pRolocFData <- function(object){
   pcaData <- as.data.frame(plot2D(object, plot = FALSE))
   fScatter <- data.frame("PCA1" = pcaData[[1]], 
@@ -219,8 +211,9 @@ pRolocFData <- function(object){
   return(pRolocList)
 }
 ##' @title Filter forbidden json keys
-##' @param x The names of the dataset, called with names(x)
-##' @return returns correctedNames and reports changes in the naming
+##' @description The firebase realtime database probhibts certain synthax relevant column names. This function helps to overcome potential errors and warns the user if one or more column names needed to be renamed. 
+##' @param x The column names of the dataset.
+##' @return returns correctedNames and reports changes in the naming.
 filterKeys <- function(x){
   modifiedNames <- x
   forbiddenKeys <- c("\\$","\\#","\\]","\\[","\\/","\\.")
@@ -230,11 +223,11 @@ filterKeys <- function(x){
   return(modifiedNames)
 }
 
-##' @title Meta data creation
+##' @title Metadata creation
 ##' @param object The MSnSet object.
 ##' @param varname The name of the object.
+##' @param token The JWT token created with the login() function.
 ##' @description Creates the /Meta data entry for SpatialMaps
-##' @return An instance of class \code{pRolocmetadata}.
 pRolocMetaFrame <- function(object, varName, token){
   #meta
   #varName <- "varName"
@@ -278,17 +271,17 @@ pRolocMetaFrame <- function(object, varName, token){
 }
 
 ##' @title Update existing SpatialMaps dataset. 
+##' @description Other than the upload function, the update function takes a specified random key as path (other than creating a new one). The main value of the update function is not to create duplicates in the database.
 ##' @param dataset A MSnSet object.
 ##' @param name Name of the MSnSet dataset.
-##' @param email Email of the user.
-##' @param password Password of the user
+##' @param token The JWT token created with the login() function.
 ##' @param randomKey The MSnSet random key. This key is provided either in on the 
 ##' SpatialMaps website or returned after each upload.
 ##' @return Returns success message. 
-update <- function(dataset, name, email, password, randomKey) {
+update <- function(dataset, name, token, randomKey) {
     dbURL <- dbURL <- fromJSON("keys.json")$dbURL
     #pRolocMetaData
-    pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name)
+    pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name, token = token)
     PUT(paste0(dbURL,"/meta/",randomKey,".json"), body = toJSON(pRolocMeta, auto_unbox = TRUE))
     #pRolocRawData
     pRolocRaw <- pRolocRawData(eval(as.name(dataset)))
@@ -301,14 +294,15 @@ update <- function(dataset, name, email, password, randomKey) {
 }
 
 ##' @title SpatialMap database backup function 
-##' @param outputFile The output file name that should include the .json identifier {string}. File is written to the working directory. 
-##' @param secretKey The database secret key {string}. Can be optained from options -> project config -> accounts -> database secrets.
+##' @description Backup of all SpatialMaps database entries
+##' @param outputFile The output file name that should include the .json identifier {string}. File is written into the working directory.
+##' @param secret The database secret key. Can be optained from options -> project config -> accounts -> database secrets.
 ##' @return An instance of class \code{pRolocmetadata}.
-dataBackup <- function(outputFile="SpatialMaps.json", secretKeyPGP = NULL){
-    if (is.null(secretKeyPGP)) secretKeyPGP <- readline(prompt = "Enter SecretKey: ")
+dataBackup <- function(outputFile="SpatialMaps.json", secret = NULL){
+    if (is.null(secret)) secret <- readline(prompt = "Enter secret: ")
     print("Fetching Data")
     dbURL <- fromJSON("keys.json")$dbURL
-    urlPath = paste0(dbURL, "/.json?auth=", secretKeyPGP)
+    urlPath = paste0(dbURL, "/.json?auth=", secret)
     curl_download(url = urlPath,
                   destfile = outputFile,
                   quiet = FALSE)
