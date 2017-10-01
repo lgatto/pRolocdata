@@ -4,4 +4,12 @@ importFrom("utils", "data", "packageVersion")
 
 export(pRolocdata,
        pRolocmetadata,
-       print.pRolocmetadata)
+       print.pRolocmetadata,
+       createAccount,
+       resetPassword,
+       login,
+       download,
+       upload,
+       update,
+       dataBackup)
+       
