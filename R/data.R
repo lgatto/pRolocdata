@@ -126,10 +126,10 @@ download <- function(dataset) {
 ##' @param token The JWT token created with the login() function.
 ##' @return Reports the successfull transfer and outputs the random ID.
 ##' @export
-upload <- function(dataset, name, token){
+upload <- function(dataset, name, token, public = TRUE){
   dbURL <- fromJSON("keys.json")$dbURL
   #pRolocMetaData
-  pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name, token = token)
+  pRolocMeta <- pRolocMetaFrame(eval(as.name(dataset)), varName = name, token = token, public = public)
   Response <- POST(paste0(dbURL,"/meta",".json"), body = toJSON(pRolocMeta, auto_unbox = TRUE))
   #pRolocRawData
   pRolocRaw <- pRolocRawData(eval(as.name(dataset)))
@@ -163,7 +163,7 @@ createColors <- function(object){
   uniqueMarkers <- unique(markers)
   markerVec <- c()
   for (i in 1:length(uniqueMarkers)) {
-    markerColor <- ifelse(uniqueMarkers[i] == "unknown", getStockcol(), getStockcol()[i])
+    markerColor <- ifelse(uniqueMarkers[i] == "unknown", pRoloc::getStockcol(), pRoloc::getStockcol()[i])
     markerVec <- c(markerVec, markerColor)
   }
   colorTable <- data.frame(uniqueMarkers, markerVec, stringsAsFactors = FALSE)
@@ -190,35 +190,36 @@ pRolocRawData <- function(object){
 ##' @description Helper function to reformat fData to DB suitable format.
 ##' @param object The MSnSet.
 pRolocFData <- function(object){
-  pcaData <- as.data.frame(plot2D(object, plot = FALSE))
-  fScatter <- data.frame("PCA1" = pcaData[[1]], 
+  pcaData = as.data.frame(pRoloc::plot2D(object, plot = FALSE))
+  
+  fScatter = data.frame("PCA1" = pcaData[[1]], 
                         "PCA2" = pcaData[[2]], 
                         "Colors" = createColors(object))
-  fSetData <- fData(object)
+  fSetData = fData(object)
   
   for (i in 1:length((fSetData))) {
     if (i == 1) {
-      p <- data.frame(fSetData[[i]])
+      p = data.frame(fSetData[[i]])
     } else {
-      p <- data.frame(p, fSetData[[i]])
+      p = data.frame(p, fSetData[[i]])
     }
   }
   
-  #filtering forbidden key names
+  #filtering forbidden keys
   names(p) <- filterKeys(names(fSetData))
+
+  exprsSet = exprs(object)
+  exprsSet = cbind(exprsSet, data.frame("id" = row.names(exprsSet)))
+  row.names(exprsSet) = NULL
   
-  p <- cbind(p, data.frame("id" = row.names(fSetData)))
-  fSet <- cbind(fScatter,p)
-  exprsSet <- exprs(object)
-  exprsSet <- cbind(exprsSet, data.frame("id" = row.names(exprsSet)))
-  row.names(exprsSet) <- NULL
-  
-  #filtering forbidden key names
   names(exprsSet) <- filterKeys(names(exprsSet))
+  fSet = cbind(fScatter,p,exprsSet)
   
-  pRolocList <- list("fSet" = fSet, "exprsSet" = exprsSet)
+  pRolocList = list("fSet" = fSet)
   return(pRolocList)
 }
+
+
 ##' @title Filter forbidden json keys
 ##' @description The firebase realtime database probhibts certain synthax relevant column names. This function helps to overcome potential errors and warns the user if one or more column names needed to be renamed. 
 ##' @param x The column names of the dataset.
@@ -228,7 +229,7 @@ filterKeys <- function(x){
   forbiddenKeys <- c("\\$","\\#","\\]","\\[","\\/","\\.")
   for (i in forbiddenKeys) modifiedNames <- gsub(i,"-", modifiedNames)
   if (!identical(x, modifiedNames)) 
-    warning("One or more column keys were renamed for the SpatialMaps usage. Note: Your raw dataset stays the same.")
+    print("One or more column keys were renamed for the SpatialMaps usage. Note: Your raw dataset stays the same.")
   return(modifiedNames)
 }
 
@@ -237,7 +238,7 @@ filterKeys <- function(x){
 ##' @param varname The name of the object.
 ##' @param token The JWT token created with the login() function.
 ##' @description Creates the /Meta data entry for SpatialMaps
-pRolocMetaFrame <- function(object, varName, token){
+pRolocMetaFrame <- function(object, varName, token, public){
   #meta
   #varName <- "varName"
   title <-  object@experimentData@title
@@ -261,6 +262,7 @@ pRolocMetaFrame <- function(object, varName, token){
   pRolocList <- list("varName" = varName, 
                     "title" = title,
                     "author" = author, 
+                    "public" = public,
                     "UID" = UID,
                     "email" = email, 
                     "contact" = contact, 
@@ -275,7 +277,6 @@ pRolocMetaFrame <- function(object, varName, token){
                     "markerClasses" = markerClasses,
                     "featureNames" = featureNames
   )
-  
   return(pRolocList)
 }
 
