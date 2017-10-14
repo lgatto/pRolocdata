@@ -105,19 +105,17 @@ login <- function(email = "prompt", password = "prompt", simple = TRUE){
 ##' @title Download Datasets from SpatialMaps.
 ##' @description SpatialMaps download function. The dataset name can be gathered from the SpatialMaps platform.
 ##' @param dataset The shortlink received from SpatialMaps
-##' @return Success or failure message
+##' @return returns the requested SpatialMaps s4 class. 
 ##' @export
 download <- function(dataset) {
-    dbURL <- dbURL <- fromJSON("keys.json")$dbURL
-    path <- paste0("/objects/", dataset)
+    dbURL <- jsonlite::fromJSON("keys.json")$dbURL
+    path <- paste0("/raw/", dataset)
     #retrieving data
-    data <- GET(paste0(dbURL,path,".json"))
+    data <- httr::GET(paste0(dbURL,path,".json"))
     retrievedData <- httr::content(data,"text")
     tempPath2 <- tempfile()
-    writeBin(base64_dec(fromJSON(retrievedData)), tempPath2)
-    x <- readRDS(tempPath2)
-    assign(toString(as.name(dataset)), x, envir = .GlobalEnv)
-    return(paste0(dataset, " was transfered"))
+    writeBin(base64_dec(fromJSON(retrievedData)$base64Set), tempPath2)
+    return(readRDS(tempPath2))
 }
 
 ##' @title Upload Datasets from SpatialMaps
