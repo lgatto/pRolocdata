@@ -139,7 +139,6 @@ upload <- function(dataset, name, token, public = TRUE){
   print(paste0(name, " got transfered to firebase."))
 }
 
-
 ##' @title Token verification
 ##' @description Verifies the authenticity of the generated token and returns the uniquer user identifier.
 ##' @param token The JWT token created with the login() function.
@@ -255,6 +254,7 @@ pRolocMetaFrame <- function(object, varName, token, public){
   
   markerClasses <- toString(pRoloc::getMarkerClasses(object))
   featureNames <- toString(featureNames(object))
+  profileColumns <- colnames(exprs(object))
   
   #List generation
   pRolocList <- list("varName" = varName, 
@@ -273,7 +273,8 @@ pRolocMetaFrame <- function(object, varName, token, public){
                     "species" = species,
                     "operator" = operator,
                     "markerClasses" = markerClasses,
-                    "featureNames" = featureNames
+                    "featureNames" = featureNames,
+                    "profileColumns" = profileColumns
   )
   return(pRolocList)
 }
