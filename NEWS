@@ -1,11 +1,11 @@
-CHANGES IN VERSION 1.13.3
+CHANGES IN VERSION 1.17.1
 -------------------------
- o
- 
+ o Update README with information on how to add data <2018-03-08 Thu>
+
 CHANGES IN VERSION 1.13.2
 -------------------------
  o new U2OS hyperLOPIT data <2017-02-16 Thu>
- 
+
 CHANGES IN VERSION 1.13.1
 -------------------------
  o Added the hyperLOPIT PMS-level data for MS3 replicates 1 and 2 and
@@ -18,7 +18,7 @@ CHANGES IN VERSION 1.13.1
 CHANGES IN VERSION 1.13.0
 -------------------------
  o Bioc 3.5 devel
- 
+
 CHANGES IN VERSION 1.12.0
 -------------------------
  o Bioc 3.4 release
@@ -26,25 +26,25 @@ CHANGES IN VERSION 1.12.0
 CHANGES IN VERSION 1.11.9
 -------------------------
  o rename andy2011 HEK293T2011 <2016-09-23 Fri>
- 
+
 CHANGES IN VERSION 1.11.8
 -------------------------
  o rename andreyev2009 to andreyev2010 <2016-09-12 Mon>
- 
+
 CHANGES IN VERSION 1.11.7
 -------------------------
  o Update title from Rodriguez-Pineiro et al. 2012 <2016-09-06 Tue>
- o added data from bioc pRoloc workflow <2016-09-08 Thur> 
+ o added data from bioc pRoloc workflow <2016-09-08 Thur>
 
 CHANGES IN VERSION 1.11.6
 -------------------------
  o Add combined trotter2010 data and markers fcol <2016-09-02 Fri>
  o Add data from Rodriguez-Pineiro et al. 2012 <2016-09-02 Fri>
- 
+
 CHANGES IN VERSION 1.11.5
 -------------------------
  o Added data from Andreyev et al. 2009 <2016-08-31 Wed>
- 
+
 CHANGES IN VERSION 1.11.4
 -------------------------
  o Normalise manual titles <2016-08-16 Tue>
@@ -53,14 +53,14 @@ CHANGES IN VERSION 1.11.4
 CHANGES IN VERSION 1.11.3
 -------------------------
  o Added data from Stekhoven et al. 2014 <2016-08-12 Fri>
- 
+
 CHANGES IN VERSION 1.11.2
 -------------------------
  o mv itzhak2016stcSILAC in right location <2016-08-10 Wed>
- 
+
 CHANGES IN VERSION 1.11.1
 -------------------------
- o Added TL parameters for E15TG2a from Breckels et al. 2016 
+ o Added TL parameters for E15TG2a from Breckels et al. 2016
    [2016-06-29 Wed]
  o Added hyperLOPIT2015goCC binary GO CC [2016-06-29 Wed]
  o Added data from Itzhak et al. 2016 <2016-08-10 Wed>
@@ -68,23 +68,23 @@ CHANGES IN VERSION 1.11.1
 CHANGES IN VERSION 1.9.5
 ------------------------
  o Added data from Mulvey et al. 2015 <2016-04-04 Mon>
- 
+
 CHANGES IN VERSION 1.9.4
 ------------------------
  o Added the STRING-db tab delimitated PPI data for transfer learning
    example <2016-02-29 Mon>
- 
+
 CHANGES IN VERSION 1.9.3
 ------------------------
  o data unit tests <2016-02-09 Tue>
- 
+
 CHANGES IN VERSION 1.9.2
 ------------------------
- o fixed bug in E14TG2aS1 fData [2015-08-02 Mon] 
+ o fixed bug in E14TG2aS1 fData [2015-08-02 Mon]
 
 CHANGES IN VERSION 1.9.1
 ------------------------
- o added fraction information to hyperLOPIT data [2015-11-04 Wed] 
+ o added fraction information to hyperLOPIT data [2015-11-04 Wed]
  o reverted fraction order, fixed bug in hyperLOPIT
    make script [2015-11-05 Thu]
  o Added fraction number order [2015-11-05 Thu]
@@ -92,31 +92,31 @@ CHANGES IN VERSION 1.9.1
 CHANGES IN VERSION 1.9.0
 ------------------------
  o New version for Bio devel 3.3
- 
+
 CHANGES IN VERSION 1.8.0
 ------------------------
  o New version for Bio release 3.2
- 
+
 CHANGES IN VERSION 1.7.4
 ------------------------
  o new hyperLOPIT datasets on mouse stem cells
-   [2015-10-07 Wed] 
+   [2015-10-07 Wed]
 
 CHANGES IN VERSION 1.7.3
 ------------------------
  o Fix typo in man pages [2015-09-08 Tue]
- 
+
 CHANGES IN VERSION 1.7.2
 ------------------------
  o added HPA, GOCC and YLOC datasets from Breckels et al 2015
    and all optimised parameters [2015-07-16 Thu]
- 
+
 CHANGES IN VERSION 1.7.1
 ------------------------
  o update tan2009 data [2015-04-17 Fri]
  o update dunkley2006, fixing named fData()$fcol fvars
    [2015-04-18 Sat]
- 
+
 CHANGES IN VERSION 1.7.0
 ------------------------
  o new devel version for Bioc 3.2
@@ -124,7 +124,7 @@ CHANGES IN VERSION 1.7.0
 CHANGES IN VERSION 1.5.8
 ------------------------
  o added transfer learning results from Breckels et al 2015 to
-   experimentData [2015-04-07 Thu] 
+   experimentData [2015-04-07 Thu]
 
 CHANGES IN VERSION 1.5.7
 ------------------------
@@ -132,22 +132,22 @@ CHANGES IN VERSION 1.5.7
    to E14TG2a datasets [2015-03-23 Mon]
  o added knntl and svmtl parameters used for classification to
    experimentData slot in E14TG2aS1 dataset [2015-03-26 Thu]
-  
+
 CHANGES IN VERSION 1.5.6
 ------------------------
  o using UniProt accession numbers as feature names for andy2011
    and andy2011goCC [2015-03-21 Sat]
- 
+
 CHANGES IN VERSION 1.5.5
 ------------------------
  o added GO CC auxiliary data [2015-02-05 Thu]
  o added pData(havugimana2012) [2015-02-10 Tue]
- 
+
 CHANGES IN VERSION 1.5.4
 ------------------------
  o protein complex gradient data: fabre2015 (2 reps), havugimana2012,
    kirkwood2013 and kristensen2012 (3 reps) [2015-02-04 Wed]
- 
+
 CHANGES IN VERSION 1.5.3
 ------------------------
  o Updating Groen 2014 man title [2014-12-12 Fri]
@@ -156,7 +156,7 @@ CHANGES IN VERSION 1.5.3
 CHANGES IN VERSION 1.5.2
 ------------------------
  o Nothing
- 
+
 CHANGES IN VERSION 1.5.1
 ------------------------
  o Updated all markers in andy, dunkley and tan datasets and
@@ -168,11 +168,11 @@ CHANGES IN VERSION 1.5.1
 CHANGES IN VERSION 1.5.0
 ------------------------
  o new devel version
- 
+
 CHANGES IN VERSION 1.3.5
 ------------------------
  o Remove new/meta pRolocmetadata <2014-09-03 Wed>
- o Updated fData in Groen datasets <2014-09-23 Tue> 
+ o Updated fData in Groen datasets <2014-09-23 Tue>
 
 CHANGES IN VERSION 1.3.4
 ------------------------
@@ -188,18 +188,18 @@ CHANGES IN VERSION 1.3.3
 CHANGES IN VERSION 1.3.2
 ------------------------
  o added experimentData(nikolovski2014) [2014-08-28 Thu]
- 
+
 CHANGES IN VERSION 1.3.1
 ------------------------
- o Data from Nikolovski et al. 2014 (PMID 25122472) [2014-08-28 Thu] 
+ o Data from Nikolovski et al. 2014 (PMID 25122472) [2014-08-28 Thu]
  p gzipped all csv files in inst/extdata [2014-08-28 Thu]
 
 CHANGES IN VERSION 1.0.7
 ------------------------
  o added Uniprot accesion number and entry names to Tan datasets
-   <2013-03-10 Mon> 
- o move pRoloc/inst/extdata/*csv here [2014-03-23 Sun] 
- o import MSnbase in NAMESPACE [2014-03-23 Sun] 
+   <2013-03-10 Mon>
+ o move pRoloc/inst/extdata/*csv here [2014-03-23 Sun]
+ o import MSnbase in NAMESPACE [2014-03-23 Sun]
 
 CHANGES IN VERSION 1.0.6
 ------------------------
@@ -207,7 +207,7 @@ CHANGES IN VERSION 1.0.6
 
 CHANGES IN VERSION 1.0.5
 ------------------------
- o changed featureNames(tan2006r*) to FBgn numbers <2013-12-16 Mon> 
+ o changed featureNames(tan2006r*) to FBgn numbers <2013-12-16 Mon>
 
 CHANGES IN VERSION 1.0.4
 ------------------------
@@ -223,7 +223,7 @@ CHANGES IN VERSION 1.0.2
 
 CHANGES IN VERSION 1.0.1
 ------------------------
- o changed featureNames(dunkley2006) to upper case <2013-09-17 Tue> 
+ o changed featureNames(dunkley2006) to upper case <2013-09-17 Tue>
 
 CHANGES IN VERSION 1.0.0
 ------------------------
@@ -239,7 +239,7 @@ CHANGES IN VERSION 0.99.10
 
 CHANGES IN VERSION 0.99.9
 -------------------------
- o added column 'pd.validated' to datasets used in Breckels et al. 
+ o added column 'pd.validated' to datasets used in Breckels et al.
   with the organelle/protein family assignments manually assigned
    to each phenotype from UniprotKB. <2013-03-05 Tue>
  o added data from Nikolovski et al 2012. <2013-03-13 Wed>
@@ -247,14 +247,14 @@ CHANGES IN VERSION 0.99.9
    pd.markers which contains all original organelle markers plus
    new protein markers found using phenoDisco as described in Breckels
    et al paper. <2013-03-18 Mon>
- o updated fvarMetaData slot for all datasets used in Breckels et al 
+ o updated fvarMetaData slot for all datasets used in Breckels et al
    paper <2013-03-18 Mon>
  o updated nikolovski pData <2013-03-18 Mon>
 
 CHANGES IN VERSION 0.99.8
 -------------------------
- o added shallow (from Dunkley 2006) and steep 
-   (from Sadowski 2008) data set used in 
+ o added shallow (from Dunkley 2006) and steep
+   (from Sadowski 2008) data set used in
    Trotter et al 2010. <2013-03-04 Mon>
 
 CHANGES IN VERSION 0.99.7
@@ -263,7 +263,7 @@ CHANGES IN VERSION 0.99.7
  o Updated all existing LOPIT datasets used in Breckels et al.
    (dunkley2006, tan2009r1) to include a column in the featureData
    of the phenoDisco output. <2013-02-26 Tue>
- o Updated documentation for LOPIT datasets <2013-02-26 Tue> 
+ o Updated documentation for LOPIT datasets <2013-02-26 Tue>
  o L Breckels added as author <2013-02-26 Tue>
 
 CHANGES IN VERSION 0.99.6
@@ -272,7 +272,7 @@ CHANGES IN VERSION 0.99.6
 
 CHANGES IN VERSION 0.99.5
 -------------------------
- o renamed script names to be consistent with 
+ o renamed script names to be consistent with
    data names <2012-11-14 Wed>
 
 CHANGES IN VERSION 0.99.4
@@ -281,14 +281,14 @@ CHANGES IN VERSION 0.99.4
 
 CHANGES IN VERSION 0.99.3
 -------------------------
- o fixed at_chloro fvarMetadata reference and updated 
-   at_chloro example to produce at_chloro2 with percentages 
+ o fixed at_chloro fvarMetadata reference and updated
+   at_chloro example to produce at_chloro2 with percentages
    as in Ferro et al. 2010 <2012-09-15 Sat>
 
 CHANGES IN VERSION 0.99.2
 -------------------------
- o updated pRolocdata to use data (does 
-   not return a dataframe anymore) and 
+ o updated pRolocdata to use data (does
+   not return a dataframe anymore) and
    startup message  <2012-09-08 Sat>
  o updated at_chloro exmaple <2012-09-08 Sat>
 
@@ -298,6 +298,6 @@ CHANGES IN VERSION 0.99.1
 
 CHANGES IN VERSION 0.99.0
 -------------------------
- o Initial commit with data from Dunkley et al. (2006), 
+ o Initial commit with data from Dunkley et al. (2006),
    Foster et al. (2006) and Tan et al. (2009). <2012-09-05 Wed>
  o Removing pRoloc from Depends <2012-09-06 Thu>
