@@ -56,6 +56,7 @@ pRolocdata()
 ```{r, echo=FALSE, results='asis'}
 kable(x, format = "markdown")
 ```
+
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for

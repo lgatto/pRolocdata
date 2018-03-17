@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 62 datasets available in
+Currently, there are 72 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -69,6 +69,16 @@ pRolocdata()
 |andy2011goCC           |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |andy2011hpa            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |at_chloro              |The AT_CHLORO data base                                                                                          |
+|beltran2016HCMV120     |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV24      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV48      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV72      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV96      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016Mock120     |Data from Beltran et al. 2016                                                                                    |
+|beltran2016Mock24      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016Mock48      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016Mock72      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016Mock96      |Data from Beltran et al. 2016                                                                                    |
 |dunkley2006            |LOPIT data from Dunkley et al. (2006)                                                                            |
 |dunkley2006goCC        |LOPIT data from Dunkley et al. (2006)                                                                            |
 |fabre2015r1            |Data from Fabre et al. 2015                                                                                      |
@@ -90,8 +100,8 @@ pRolocdata()
 |hyperLOPIT2015ms3r2    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015ms3r2psm |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015ms3r3    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPITU2OS2017     |                                                                                                                 |
-|hyperLOPITU2OS2017b    |                                                                                                                 |
+|hyperLOPITU2OS2017     |2017 hyperLOPIT on U2OS cells                                                                                    |
+|hyperLOPITU2OS2017b    |2017 hyperLOPIT on U2OS cells                                                                                    |
 |itzhak2016stcSILAC     |Data from Itzhak et al. (2016)                                                                                   |
 |kirkwood2013           |Data from Kirkwood et al. 2013.                                                                                  |
 |kristensen2012r1       |Data from Kristensen et al. 2012                                                                                 |
@@ -116,6 +126,7 @@ pRolocdata()
 |trotter2010            |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010shallow     |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010steep       |LOPIT data sets used in Trotter et al. (2010)                                                                    |
+
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for
