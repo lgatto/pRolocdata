@@ -74,11 +74,11 @@ pRolocdata()
 |beltran2016HCMV48      |Data from Beltran et al. 2016                                                                                    |
 |beltran2016HCMV72      |Data from Beltran et al. 2016                                                                                    |
 |beltran2016HCMV96      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016Mock120     |Data from Beltran et al. 2016                                                                                    |
-|beltran2016Mock24      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016Mock48      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016Mock72      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016Mock96      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK120     |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK24      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK48      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK72      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK96      |Data from Beltran et al. 2016                                                                                    |
 |dunkley2006            |LOPIT data from Dunkley et al. (2006)                                                                            |
 |dunkley2006goCC        |LOPIT data from Dunkley et al. (2006)                                                                            |
 |fabre2015r1            |Data from Fabre et al. 2015                                                                                      |

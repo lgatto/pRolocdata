@@ -473,18 +473,23 @@ the Density Gradient, Related to Figure 4. Each tab in the table shows
 data from the TMT data set for each infected and uninfected time point
 (24, 48, 72, 96, and 120 hpi).
 
-*** Data edits
+The spreadsheet above, available from the SI contains corrupted values
+(see https://twitter.com/lgatt0/status/974756030793043969) due to
+manual search/replacement: some 31 values are formatted as number and
+dates (see [1] for details). An email has been sent to the authors who
+provided the following replacement files that were compressed for save
+space.
 
-Sheet 2
-
-Expecting numeric in I1547 / R1547C9: got '0.2492'MARC2419871'
-
-Sheet 3
-
-Expecting numeric in E1127 / R1127C5: got '0.37'SEP1156927552'
-Expecting numeric in I1844 / R1844C9: got '0.155411'SEP115036'
-
-
+OrganelleProfiles.TMT.HCMV.h120.csv
+OrganelleProfiles.TMT.HCMV.h24.csv
+OrganelleProfiles.TMT.HCMV.h48.csv
+OrganelleProfiles.TMT.HCMV.h72.csv
+OrganelleProfiles.TMT.HCMV.h96.csv
+OrganelleProfiles.TMT.MOCK.h120.csv
+OrganelleProfiles.TMT.MOCK.h24.csv
+OrganelleProfiles.TMT.MOCK.h48.csv
+OrganelleProfiles.TMT.MOCK.h72.csv
+OrganelleProfiles.TMT.MOCK.h96.csv
 
 ** =1-s2.0-S2405471216302897-mmc4.xlsx=
 
