@@ -48,6 +48,7 @@ data(beltran2016MOCK120)
 
 
 \references{
+
   Jean Beltran PM, Mathias RA, Cristea IM. \emph{A Portrait of the Human
   Organelle Proteome In Space and Time during Cytomegalovirus
   Infection}. Cell Syst. 2016 Oct 26;3(4):361-373.e6. doi:
@@ -66,6 +67,9 @@ beltran2016HCMV24
 ## the expression data
 head(exprs(beltran2016MOCK24))
 head(exprs(beltran2016HCMV24))
+
+## abstract
+abstract(beltran2016HCMV24)
 
 ## plotting
 library("pRoloc")
