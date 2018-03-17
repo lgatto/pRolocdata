@@ -17,6 +17,7 @@ apt_packages:
   - texlive-full  
 
 r_packages:
+  - devtools
   - covr
 
 script: 
