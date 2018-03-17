@@ -1,6 +1,6 @@
 Supplementary data files used to construct data sets -*- mode:org; -*-
 
-* From Foster et al 2006 
+* From Foster et al 2006
 
 Supplemental data file from http://www.cell.com/supplemental/S0092-8674(06)00369-2
 
@@ -89,25 +89,25 @@ quired for even partial segregation reported by others
 (Tulp et al., 1998; Hashiramoto and James, 2000).
 
 Organelle marker had a chi2 scores of 0 for the expected organelle, except where otherwise noted:
-- Golgi: 130 kDa Golgi phosphoprotein (GPP130) - IPI00269029 
-- PM: AP-2 assembly subunit AP17 (AP-2 assembly subunit AP17) - IPI00118022 
+- Golgi: 130 kDa Golgi phosphoprotein (GPP130) - IPI00269029
+- PM: AP-2 assembly subunit AP17 (AP-2 assembly subunit AP17) - IPI00118022
 - EE (early endosome): early endosome antigen 1 - IPI00453776 [a]
 - TGN/RE (recycling endosome): Transferrin receptor protein 2 - IPI00223651
 - ER: Calnexin precursor - IPI00119618
 - ERGDV (ER/Golgi-derived vesicles): Vesicle docking protein - IPI00128071 [b]
 - Mito: ATP synthase beta chain, mitochondrial precursor - IPI00113801
 - Proteasome: Proteasome subunit beta type 1 - IPI00113845  [c]
-              Proteasome subunit alpha type 6 - IPI00131845 [d]
-              Proteasome subunit alpha type 7 - IPI00131406 [e]
+	      Proteasome subunit alpha type 6 - IPI00131845 [d]
+	      Proteasome subunit alpha type 7 - IPI00131406 [e]
 
 [a] Also chi2 of 0.048 for ERGDV
-[b] General vesicular transport factor p115 in UniProt, 
+[b] General vesicular transport factor p115 in UniProt,
     also chi2 value of 0.027 for Golgi.
 [c] chi2 value of 0.0018 for proteasome
-[d] chi2 value of 0.0055 for proteasome 
+[d] chi2 value of 0.0055 for proteasome
 [e] chi2 value of 0.0057 for proteasome
 
-* From Dunkley et al 2006 
+* From Dunkley et al 2006
 
 Supporting Information from http://www.pnas.org/content/103/17/6518/suppl/DC1
 
@@ -139,8 +139,8 @@ the proteins that appear in the above 3 datasets. This information has
 been downloaded from www.flymine.org using the 'list analysis' tool
 using the protein CG numbers as input.
 
-TanFlyMineFiltered.csv 
-TanFlyMineUnfiltered.csv 
+TanFlyMineFiltered.csv
+TanFlyMineUnfiltered.csv
 
 The filtered dataset contains only Uniprot IDs that have been reviewed
 i.e. that come from Swiss-Prot. Some CG numbers give rise to more than
@@ -361,7 +361,7 @@ were removed as they are well-resolved) and length.out = 4, times = 50
 was used for optimisation.
 
 bpw-gocc.rda
-MSnSet of GO CC terms generated from object hl from Bioc pRoloc 
+MSnSet of GO CC terms generated from object hl from Bioc pRoloc
 workflow.
 * HyperLOPIT PMS-level data
 
@@ -375,7 +375,7 @@ respective protein-level data. Finally, marker proteins are annotated
 based on the combined protein-level data =hyperLOPIT2015= and
 reporter tags are normalised using the ="sum"= method. The
 processing script is =scripts/hyperlopit2015psm.R=.
-* Synapter2 LOPIMS data 
+* Synapter2 LOPIMS data
 
 #+BEGIN_QUOTE
 Dear Laurent,
@@ -458,3 +458,35 @@ See =inst/scripts/lopmissyn2.R=
     SVM score thresholds were set individually for each class so that
     the false discovery rate of the SVM classification was equal or
     lower than 5%.
+* From Beltran et al 2016
+
+A Portrait of the Human Organelle Proteome In Space and Time during
+Cytomegalovirus Infection Pierre M. Jean Beltran, Rommel A. Mathias
+and Ileana M. Cristea. http://dx.doi.org/10.1016/j.cels.2016.08.012
+
+Files are
+
+** =1-s2.0-S2405471216302897-mmc3.xlsx=
+
+Table S2. Relative Protein Abundance across Organelle Fractions from
+the Density Gradient, Related to Figure 4. Each tab in the table shows
+data from the TMT data set for each infected and uninfected time point
+(24, 48, 72, 96, and 120 hpi).
+
+*** Data edits
+
+Sheet 2
+
+Expecting numeric in I1547 / R1547C9: got '0.2492'MARC2419871'
+
+Sheet 3
+
+Expecting numeric in E1127 / R1127C5: got '0.37'SEP1156927552'
+Expecting numeric in I1844 / R1844C9: got '0.155411'SEP115036'
+
+
+
+** =1-s2.0-S2405471216302897-mmc4.xlsx=
+
+Table S3. List of Refined Organelle Markers Used for Prediction of
+Subcellular Localization, Related to Figure 4.

@@ -16,7 +16,7 @@
   \code{hyperLOPITU2OS2017} contains all 40 fractions while in
   \code{hyperLOPITU2OS2017b}, 3 fractions with low protein yields have
   been remove (see example below).
-  
+
 }
 
 
@@ -84,10 +84,15 @@
     SVM score thresholds were set individually for each class so that
     the false discovery rate of the SVM classification was equal or
     lower than 5\%.
-  }  
+  }
 }
 
 
+\references{
+  Thul PJ et al. \emph{A subcellular map of the human
+  proteome}. Science. 2017 May 26;356(6340). pii: eaal3321. doi:
+  10.1126/science.aal3321. Epub 2017 May 11. PubMed PMID: 28495876.
+}
 
 \examples{
 data(hyperLOPITU2OS2017)
