@@ -2,6 +2,7 @@ language: r
 r: bioc-devel
 cache: packages
 sudo: true
+dist: trusty
 
 # Set CXX1X for R-devel, as R-devel does not detect CXX1X support for gcc 4.6.3,
 # this was causing mzR installation to fail
