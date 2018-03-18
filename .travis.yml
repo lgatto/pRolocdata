@@ -22,7 +22,7 @@ r_packages:
 
 script: 
   - | 
-    travis_wait 60 R CMD build .
+    travis_wait 120 R CMD build .
     R CMD check pRolocdata*tar.gz
   
 after_success:
