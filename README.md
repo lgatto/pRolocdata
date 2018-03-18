@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 72 datasets available in
+Currently, there are 73 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -91,6 +91,7 @@ pRolocdata()
 |groen2014r3            |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
 |hall2009               |LOPIT data from Hall et al. (2009)                                                                               |
 |havugimana2012         |Data from Havugimana et al. 2012                                                                                 |
+|hirst2018              |Data from Hirst et al. 2018                                                                                      |
 |hyperLOPIT2015         |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015goCC     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015ms2      |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |

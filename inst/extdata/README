@@ -495,3 +495,18 @@ OrganelleProfiles.TMT.MOCK.h96.csv
 
 Table S3. List of Refined Organelle Markers Used for Prediction of
 Subcellular Localization, Related to Figure 4.
+* From Hirst et al 2018
+
+Reference: Role of the AP-5 adaptor protein complex in late
+endosome-to-Golgi retrieval. Hirst et al. 2018,
+https://doi.org/10.1371/journal.pbio.2004411.
+
+File =journal.pbio.2004411.s003.tab3.csv= correspond to the third tab
+from supplementary file =journal.pbio.2004411.s003.xlsx=, exported to
+a csv file.
+
+File =journal.pbio.2004411.s003.tab4.csv= correspond to the forth tab
+from supplementary file =journal.pbio.2004411.s003.xlsx=, exported to
+a csv file.
+
+See the man page for more details.
