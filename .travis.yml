@@ -17,8 +17,11 @@ r: bioc-devel
 #   - texlive-full  
 
 r_packages:
-  - devtools
   - covr
+
+bioc_packages:
+  - MSnbase
+  - pRoloc
 
 # script: 
 #   - | 
