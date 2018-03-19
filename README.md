@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 73 datasets available in
+Currently, there are 75 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -104,6 +104,8 @@ pRolocdata()
 |hyperLOPITU2OS2017     |2017 hyperLOPIT on U2OS cells                                                                                    |
 |hyperLOPITU2OS2017b    |2017 hyperLOPIT on U2OS cells                                                                                    |
 |itzhak2016stcSILAC     |Data from Itzhak et al. (2016)                                                                                   |
+|itzhak2017             |Data from Itzhak et al. 2017                                                                                     |
+|itzhak2017markers      |Data from Itzhak et al. 2017                                                                                     |
 |kirkwood2013           |Data from Kirkwood et al. 2013.                                                                                  |
 |kristensen2012r1       |Data from Kristensen et al. 2012                                                                                 |
 |kristensen2012r2       |Data from Kristensen et al. 2012                                                                                 |
