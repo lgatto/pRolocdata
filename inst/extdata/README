@@ -519,13 +519,14 @@ of Mouse Primary Neurons.  Cell Rep. 2017 Sep
 12;20(11):2706-2718. doi: 10.1016/j.celrep.2017.08.063. PubMed PMID:
 28903049; PubMed Central PMCID: PMC5775508.
 
-Files downloaded from the SI:
+File downloaded from the SI: =1-s2.0-S2211124717311889-mmc3.xlsx=
 
-** Mouse neuron Intensity and LFQ data: =1-s2.0-S2211124717311889-mmc3.xlsx=
+** Mouse neuron Intensity and LFQ data
 
 - Tab 1: Mouse neuron raw intensity data
 - Tab 2: Mouse neuron LFQ maps data
 - Tab 3: Marker proteins with norm data
+- Tab 4: Notes (below)
 
 This worksheet contains the new mouse neuron proteomic data generated
 in this study. Tables correspond to the primary output from MaxQuant;
@@ -543,14 +544,9 @@ LFQ data are the MaxQuant LFQ (label free quantification) normalized
 intensities of the (five times) six membrane fractions used for
 generating organellar maps.
 
-*** Marker proteins with norm data
+** Marker proteins with norm data
 
 The 834 compartment marker proteins used for classification. LFQ
 values were normalised to a sum of 1 ('normalised area data') within
 each map, to generate abundance distribution profiles suitable for SVM
 based machine learning.
-
-** Mouse Neuron Spatial Proteome: =1-s2.0-S2211124717311889-mmc4.xlsx=
-
-Neurons acutely isolated from embryonic mice, E15, exported as
-=1-s2.0-S2211124717311889-mmc4-tab1.csv=.
