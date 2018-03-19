@@ -510,3 +510,47 @@ from supplementary file =journal.pbio.2004411.s003.xlsx=, exported to
 a csv file.
 
 See the man page for more details.
+* From Itzhal et al 2017
+
+Itzhak DN, Davies C, Tyanova S, Mishra A, Williamson J, Antrobus R,
+Cox J, Weekes MP, Borner GHH. A Mass Spectrometry-Based Approach for
+Mapping Protein Subcellular Localization Reveals the Spatial Proteome
+of Mouse Primary Neurons.  Cell Rep. 2017 Sep
+12;20(11):2706-2718. doi: 10.1016/j.celrep.2017.08.063. PubMed PMID:
+28903049; PubMed Central PMCID: PMC5775508.
+
+Files downloaded from the SI:
+
+** Mouse neuron Intensity and LFQ data: =1-s2.0-S2211124717311889-mmc3.xlsx=
+
+- Tab 1: Mouse neuron raw intensity data
+- Tab 2: Mouse neuron LFQ maps data
+- Tab 3: Marker proteins with norm data
+
+This worksheet contains the new mouse neuron proteomic data generated
+in this study. Tables correspond to the primary output from MaxQuant;
+only basic filtering was applied to remove reverse hits, proteins only
+identified by site, and common contaminants. For the various analyses
+presented in the manuscript, further quality filters and normalization
+steps were applied, as detailed in the Supplemental Experimental
+Procedures.
+
+Intensity data correspond to the raw MaxQuant output, for all five map
+replicates, and include cytosol, membrane and nuclear fractions, as
+well as two full proteome samples.
+
+LFQ data are the MaxQuant LFQ (label free quantification) normalized
+intensities of the (five times) six membrane fractions used for
+generating organellar maps.
+
+*** Marker proteins with norm data
+
+The 834 compartment marker proteins used for classification. LFQ
+values were normalised to a sum of 1 ('normalised area data') within
+each map, to generate abundance distribution profiles suitable for SVM
+based machine learning.
+
+** Mouse Neuron Spatial Proteome: =1-s2.0-S2211124717311889-mmc4.xlsx=
+
+Neurons acutely isolated from embryonic mice, E15, exported as
+=1-s2.0-S2211124717311889-mmc4-tab1.csv=.
