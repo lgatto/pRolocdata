@@ -1,7 +1,7 @@
 language: r
 r: bioc-devel
 # cache: packages
-sudo: require
+# sudo: require
 # dist: trusty
 
 # Set CXX1X for R-devel, as R-devel does not detect CXX1X support for gcc 4.6.3,
@@ -12,18 +12,18 @@ sudo: require
 #   - tlmgr install bera nowidow parnotes marginfix etoolbox titlesec sectsty framed enumitem parskip soul placeins footmisc changepage xstring caption mathtools   
 #   - if [[ "$TRAVIS_R_VERSION_STRING" = 'bioc-devel' ]]; then mkdir ~/.R && echo 'CXX1X=g++ -std=c++0x -g -O2 -fPIC' > ~/.R/Makevars; fi
 
-apt_packages:
-  - libnetcdf-dev
-  - texlive-full  
+# apt_packages:
+#   - libnetcdf-dev
+#   - texlive-full  
 
 r_packages:
   - devtools
   - covr
 
-script: 
-  - | 
-    R CMD build .
-    R CMD check pRolocdata*tar.gz
+# script: 
+#   - | 
+#     R CMD build .
+#     R CMD check pRolocdata*tar.gz
   
 after_success:
   - Rscript -e 'covr::codecov()'
