@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 62 datasets available in
+Currently, there are 75 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -69,6 +69,16 @@ pRolocdata()
 |andy2011goCC           |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |andy2011hpa            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |at_chloro              |The AT_CHLORO data base                                                                                          |
+|beltran2016HCMV120     |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV24      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV48      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV72      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV96      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK120     |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK24      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK48      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK72      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK96      |Data from Beltran et al. 2016                                                                                    |
 |dunkley2006            |LOPIT data from Dunkley et al. (2006)                                                                            |
 |dunkley2006goCC        |LOPIT data from Dunkley et al. (2006)                                                                            |
 |fabre2015r1            |Data from Fabre et al. 2015                                                                                      |
@@ -81,6 +91,7 @@ pRolocdata()
 |groen2014r3            |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
 |hall2009               |LOPIT data from Hall et al. (2009)                                                                               |
 |havugimana2012         |Data from Havugimana et al. 2012                                                                                 |
+|hirst2018              |Data from Hirst et al. 2018                                                                                      |
 |hyperLOPIT2015         |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015goCC     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015ms2      |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
@@ -93,6 +104,8 @@ pRolocdata()
 |hyperLOPITU2OS2017     |2017 hyperLOPIT on U2OS cells                                                                                    |
 |hyperLOPITU2OS2017b    |2017 hyperLOPIT on U2OS cells                                                                                    |
 |itzhak2016stcSILAC     |Data from Itzhak et al. (2016)                                                                                   |
+|itzhak2017             |Data from Itzhak et al. 2017                                                                                     |
+|itzhak2017markers      |Data from Itzhak et al. 2017                                                                                     |
 |kirkwood2013           |Data from Kirkwood et al. 2013.                                                                                  |
 |kristensen2012r1       |Data from Kristensen et al. 2012                                                                                 |
 |kristensen2012r2       |Data from Kristensen et al. 2012                                                                                 |
@@ -116,6 +129,7 @@ pRolocdata()
 |trotter2010            |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010shallow     |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010steep       |LOPIT data sets used in Trotter et al. (2010)                                                                    |
+
 ### Loading data
 
 Data is loaded into the `R` session using the `load` function; for
@@ -157,7 +171,7 @@ supplementary material to the research paper and used to generate the
 spreadsheets and create the `R` data is distributed in the
 `inst/scripts` directory.
 
-### Required metadata
+### Suggested metadata
 
 Additional metadata is available with the `pRolocmetadata()` function
 as detailed below.
@@ -178,14 +192,14 @@ Documented in `pubMedIds(.)`.
 
 Documented in `experimentData(.)@other`:
   - **MS** (`$MS`) type of mass spectrometry experiment: iTRAQ8,
-    iTRAQ4, TMT6, LF, SC, ...
+	iTRAQ4, TMT6, LF, SC, ...
   - **Experiment** (`$spatexp`) type of spatial proteomics
-    experiment: LOPIT, LOPIMS, subtractive, PCP, other, PCP-SILAC,
-    ...
+	experiment: LOPIT, LOPIMS, subtractive, PCP, other, PCP-SILAC,
+	...
   - **MarkerCol** (`$markers.fcol`) name of the markers feature
-    data. Default is `markers`.
+	data. Default is `markers`.
   - **PredictionCol** (`$prediction.fcol`) name of the localisation
-    prediction feature data.
+	prediction feature data.
 
 #### Example
 
@@ -247,23 +261,38 @@ pRolocmetadata(dunkley2006)
 
 ### Adding new data
 
-New data consists of
+The procedure to data in pRolocdata is as follows. Here, we assume
+that 3 new data files are available from the manuscript of *Smith et
+al. 2017*, and these files will be added to `pRolocdata` as three
+`MSnSet` objects.
 
-- the source data (generally a `csv` file) in `inst/extdata` and their
-  description (including origin of the files) in
-  `inst/extdata/README`. The name of the source files should, if
-  possible, not be modified (except for the file extension).
 
-- the `R` script, named `newdata.R` in the `inst/scripts` directory,
-  that reads the source files and generates a valid `MSnSet` instance
-  (with appropriate pRolocmetadata fields) in the `data` package
-  directory. The `R` data file should be names `newdata.rda`.
+1. the original data (often from supplementary material) are added to
+   `inst/extdata`, say `Smith_expA.csv`, `Smith_expB.csv` and
+   `Smith_expC.csv` (the name should ideally be the same as the
+   original files), and the files and provenance is documented in
+   `inst/extdata/README`. If the data files are really big, then they
+   should be compressed. If they are too big (for example don't fit on
+   github or would substantially increase the size of the package),
+   then we might decide not to added them, but they should still be
+   documented in the README file and the script (see point 2) should
+   still assume they are there.
 
-- A documentation file for the new data: `man/newdata.Rd`.
+2. A script, typically called `Smith2017.R`, is added to
+   `inst/scripts/`. That script reads the files above and saves the
+   corresponding (compressed) MSnSet objects directly in data,
+   typically called `Smith2016a.rda`, `Smith2016a.rda`, ..., and the
+   objects themselves would be named `Smith2016a`, `Smith2016b`, ...
 
-A [github pull request](https://github.com/lgatto/pRolocdata) with the
-above can be send directly. 
+3. Write a `man/Smith2016.Rd` documentation file documenting all
+   relevant data objects, providing some information about the
+   experiment and data provenance, and a reference to the original
+   paper.
 
-Alternatively, if you do not have the `R` skills to prepare the data,
-send me an email at `lg390<AT>cam<dot>ac<dot>uk` with the source `csv`
-files and appropriate metadata and I will add it for you.
+4. Build and check the package and, if successful, send a [github pull
+   request](https://github.com/lgatto/pRolocdata).
+
+
+If you do not have the `R` expertise to prepare the data, send me an
+email at `lg390<AT>cam<dot>ac<dot>uk` with the source `csv` files and
+appropriate metadata and I will add it for you.
