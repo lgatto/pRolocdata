@@ -27,7 +27,7 @@ getAN <- function(x) {
 }
 
 ## Experimental data to add
-addExperimentInfo <- function(date = "Autumn 2013", 
+addExperimentInfo <- function(date = "Autumn 2013",
                               instrument = "Orbitrap Fusion Tribrid") {
   .experiment <- new("MIAPE",
                      lab = "Cambridge Centre for Proteomics (CCP)",
@@ -41,8 +41,8 @@ addExperimentInfo <- function(date = "Autumn 2013",
                                     "Claire M. Mulvey")
                      ),
                      title = "A draft map of the mouse pluripotent stem cell spatial proteome",
-                     abstract = "",
-                     pubMedIds = "",
+                     abstract = "Knowledge of the subcellular distribution of proteins is vital for understanding cellular mechanisms. Capturing the subcellular proteome in a single experiment has proven challenging, with studies focusing on specific compartments or assigning proteins to subcellular niches with low resolution and/or accuracy. Here we introduce hyperLOPIT, a method that couples extensive fractionation, quantitative high-resolution accurate mass spectrometry with multivariate data analysis. We apply hyperLOPIT to a pluripotent stem cell population whose subcellular proteome has not been extensively studied. We provide localization data on over 5,000 proteins with unprecedented spatial resolution to reveal the organization of organelles, sub-organellar compartments, protein complexes, functional networks and steady-state dynamics of proteins and unexpected subcellular locations. The method paves the way for characterizing the impact of post-transcriptional and post-translational modification on protein location and studies involving proteome-level locational changes on cellular perturbation. An interactive open-source resource is presented that enables exploration of these data.",
+                     pubMedIds = "26754106",
                      url = "",
                      instrumentModel = instrument,
                      instrumentManufacturer = "ThermoScientific",
@@ -58,23 +58,23 @@ addExperimentInfo <- function(date = "Autumn 2013",
 
 ## Experiment info
 addPhenoData <- function(exprs, reps = c(1, 2), method = "MS3") {
-  .pData <- data.frame(Replicate = rep(reps, each = 10), 
+  .pData <- data.frame(Replicate = rep(reps, each = 10),
                        TMT.Reagent = colnames(exprs),
                        Acquisiton.Method = method,
                        row.names=colnames(exprs))
   return(.pData)
 }
 
-finfo <- read.csv("../extdata/hyperLOPIT-SIData-fraction-info.csv", 
+finfo <- read.csv("../extdata/hyperLOPIT-SIData-fraction-info.csv",
                   row.names=1, skip = 1, stringsAsFactors = FALSE,
                   header = TRUE)
 rownames(finfo) <- paste0("X", rownames(finfo))
   exp1 <- data.frame(finfo[, 1], finfo[, 4], stringsAsFactors = FALSE)
   exp2 <- data.frame(finfo[, 2], finfo[, 5], stringsAsFactors = FALSE)
   exp3 <- data.frame(finfo[, 3], finfo[, 6], stringsAsFactors = FALSE)
-  colnames(exp1) <- colnames(exp2) <- 
+  colnames(exp1) <- colnames(exp2) <-
     colnames(exp3) <- c("Gradient.Fraction",
-                        "Iodixonal.Density") 
+                        "Iodixonal.Density")
 gradData <- vector("list", 3)
 gradData[[1]] <- exp1
 gradData[[2]] <- exp2
@@ -83,7 +83,7 @@ gradData[[3]] <- exp3
 makeFusion <- function(filename, repNo = 1, method = "MS3",
                        date = "Autumn 2013",
                        instrument = "Orbitrap Fusion Tribrid") {
-  csv <- read.csv(filename, row.names=1, skip = 1, 
+  csv <- read.csv(filename, row.names=1, skip = 1,
                   header = TRUE, stringsAsFactors=FALSE)
   EntryName <- getAN(csv)
   l <- colnames(csv)
@@ -99,9 +99,9 @@ makeFusion <- function(filename, repNo = 1, method = "MS3",
   .fData <- cbind(EntryName, csv[,-ind])
   .fData <- new("AnnotatedDataFrame", .fData)
   featuresinfo <- c("UniProt identifier for quantified protein group reported by Proteome Discoverer.",
-                    "UniProt description for protein accession.", 
-                    "Number of quantified peptides. Only peptides that were unique to the a single protein group were used for quantification.", 
-                    "Number of quantified peptide-spectrum matches.", 
+                    "UniProt description for protein accession.",
+                    "Number of quantified peptides. Only peptides that were unique to the a single protein group were used for quantification.",
+                    "Number of quantified peptide-spectrum matches.",
                     "Protein Coverage %")
   if (method != "MS3") {
     .fData@varMetadata[,1] <- featuresinfo[-5]
@@ -133,15 +133,15 @@ makeFusion <- function(filename, repNo = 1, method = "MS3",
 csv <- read.csv("../extdata/hyperLOPIT-SIData-ms3-rep12-intersect.csv.gz",
                 row.names=1, header = TRUE, skip = 1, stringsAsFactors=FALSE)
 l <- colnames(csv)
-l <- c("entry.name", "protein.description", "Peptides.rep1", "Peptides.rep2", 
-       "PSMs.rep1", "PSMs.rep2", paste0(l[7:16], ".rep1"), 
+l <- c("entry.name", "protein.description", "Peptides.rep1", "Peptides.rep2",
+       "PSMs.rep1", "PSMs.rep2", paste0(l[7:16], ".rep1"),
        paste0(l[7:16], ".rep2"), l[27:44])
 l[grep("SVM.marker.set", l)] <- "markers"
 colnames(csv) <- l
 tokeep <- grep("X1", l)
 .exprs <- csv[, tokeep]
 .exprs <- as.matrix(.exprs)
-.fData <- csv[, -tokeep] 
+.fData <- csv[, -tokeep]
 uns <- which(.fData$Final.Localization.Assignment == "unclassified")
 .fData$Final.Localization.Assignment[uns] <- "unknown"
 .fData <- new("AnnotatedDataFrame", .fData)
@@ -155,7 +155,7 @@ metadata[3:6] <- c(paste0("Replicate 1: ", metadata[3]),
 .fData@varMetadata[,1] <- metadata
 .pData <- addPhenoData(.exprs, reps = c(1, 2))
 .pData[, 2] <- as.character(.pData[, 2])
-.pData[, 2] <- sapply(1:length(.pData[, 2]), 
+.pData[, 2] <- sapply(1:length(.pData[, 2]),
                       function(z) strsplit(.pData[, 2][z], ".rep")[[1]][1])
 .pData <- cbind(.pData, rbind(gradData[[1]], gradData[[2]]))
 .pData <- new("AnnotatedDataFrame", .pData)
@@ -188,7 +188,7 @@ f4 <- "../extdata/hyperLOPIT-SIData-ms2-rep1.csv.gz"
 hyperLOPIT2015ms3r1 <- makeFusion(f1, 1, "MS3")
 hyperLOPIT2015ms3r2 <- makeFusion(f2, 2, "MS3")
 hyperLOPIT2015ms3r3 <- makeFusion(f3, 3, "MS3", date = "Summer 2015")
-hyperLOPIT2015ms2 <- makeFusion(f4, 1, "MS2", instrument = "Q Exactive") 
+hyperLOPIT2015ms2 <- makeFusion(f4, 1, "MS2", instrument = "Q Exactive")
 
 ## add markers
 hyperLOPIT2015ms3r1 <- addMarkers(hyperLOPIT2015ms3r1, markers = mrk, verbose = FALSE)
@@ -197,9 +197,9 @@ hyperLOPIT2015ms3r3 <- addMarkers(hyperLOPIT2015ms3r3, markers = mrk, verbose = 
 hyperLOPIT2015ms2 <- addMarkers(hyperLOPIT2015ms2, markers = mrk, verbose = FALSE)
 
 ## Update fvarLabel description
-fvarMetadata(hyperLOPIT2015ms3r1)$labelDescription[6]  <- 
-  fvarMetadata(hyperLOPIT2015ms3r2)$labelDescription[6] <- 
-  fvarMetadata(hyperLOPIT2015ms3r3)$labelDescription[6] <- 
+fvarMetadata(hyperLOPIT2015ms3r1)$labelDescription[6]  <-
+  fvarMetadata(hyperLOPIT2015ms3r2)$labelDescription[6] <-
+  fvarMetadata(hyperLOPIT2015ms3r3)$labelDescription[6] <-
   "Marker set, curated by AC and CMM, covering protein subcellular localizations to 14 subcellular compartments."
 
 ## Change fvarLabels
@@ -207,8 +207,8 @@ fvarLabels(hyperLOPIT2015) <- tolower(fvarLabels(hyperLOPIT2015))
 fvarLabels(hyperLOPIT2015)[c(13, 14, 15, 20)] <- c("svm.top.quartile", "final.assignment", "first.evidence", "signalling.cascades")
 
 ## Update phenoData
-pData(hyperLOPIT2015)[, 4] <- as.character(pData(hyperLOPIT2015)[, 4]) 
-#pData(hyperLOPIT2015)[, 5] <- as.numeric(pData(hyperLOPIT2015)[, 5]) 
+pData(hyperLOPIT2015)[, 4] <- as.character(pData(hyperLOPIT2015)[, 4])
+#pData(hyperLOPIT2015)[, 5] <- as.numeric(pData(hyperLOPIT2015)[, 5])
 
 ## Add unknown instead of "" for data plotting, change unclassified to unknown for completeness
 hyperLOPIT2015 <- fDataToUnknown(hyperLOPIT2015, fcol = "svm.top.quartile", from = "unclassified")
@@ -218,7 +218,7 @@ for (i in 16:24) {
 }
 
 ## Rename markers to markers2015 and add new markers
-fData(hyperLOPIT2015)$markers2015 <- fData(hyperLOPIT2015)$markers 
+fData(hyperLOPIT2015)$markers2015 <- fData(hyperLOPIT2015)$markers
 
 toadd.ecm <- c("P47877", "P27808", "Q8C407")
 toadd.end <- "Q62351"
