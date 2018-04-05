@@ -1,0 +1,18 @@
+language: r
+r: bioc-devel
+cache: packages
+sudo: require
+# dist: trusty
+
+apt_packages:
+  - libnetcdf-dev
+
+r_packages:
+  - devtools
+  - covr
+
+bioc_packages:
+  - MSnbase
+  - pRoloc
+
+
