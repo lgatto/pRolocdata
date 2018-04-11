@@ -1,8 +1,11 @@
+CHANGES IN VERSION 1.17.4
+-------------------------
+ o Typo in tlopt colnames fixed for f1000 workflow
+   <2018-04-10 Tue> 
+
 CHANGES IN VERSION 1.17.3
 -------------------------
  o Add Proteome biocView <2018-04-05 Thu>
- o Typo in tlopt colnames fixed for f1000 workflow
-   <2018-04-10 Tue> 
 
 CHANGES IN VERSION 1.17.2
 -------------------------
