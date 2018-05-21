@@ -1,3 +1,15 @@
+CHANGES IN VERSION 1.19.1
+-------------------------
+ o Adding hyperLOPIT TAGM results <2018-05-21 Mon>
+
+CHANGES IN VERSION 1.19.0
+-------------------------
+ o New Bioconductor devel version
+
+CHANGES IN VERSION 1.18.0
+-------------------------
+ o New Bioconductor release version
+
 CHANGES IN VERSION 1.17.4
 -------------------------
  o Typo in tlopt colnames fixed for f1000 workflow
