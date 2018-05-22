@@ -226,8 +226,17 @@ toadd.end <- "Q62351"
 fData(hyperLOPIT2015)[toadd.ecm, "markers"] <- "Extracellular matrix"
 fData(hyperLOPIT2015)[toadd.end, "markers"] <- "Endosome"
 
-save(hyperLOPIT2015,file="../../data/hyperLOPIT2015.RData", compress = "xz", compression_level = 9)
-save(hyperLOPIT2015ms3r1,file="../../data/hyperLOPIT2015ms3r1.RData", compress = "xz", compression_level = 9)
-save(hyperLOPIT2015ms3r2,file="../../data/hyperLOPIT2015ms3r2.RData", compress = "xz", compression_level = 9)
-save(hyperLOPIT2015ms3r3,file="../../data/hyperLOPIT2015ms3r3.RData", compress = "xz", compression_level = 9)
-save(hyperLOPIT2015ms2,file="../../data/hyperLOPIT2015ms2.RData", compress = "xz", compression_level = 9)
+## TODO
+## - load ../extdata/hlMAPresults20180521.rda and
+##        ../extdata/hlMCMCresults20180521.rda
+## - add to fData
+## - document here what it is and where it comes from
+## - update man/hyperLOPIT2015.Rd: add a paragraph in the details
+##   section explaining what these new feature variables are, with a
+##   reference to the pre-print.
+
+save(hyperLOPIT2015, file = "../../data/hyperLOPIT2015.RData", compress = "xz", compression_level = 9)
+save(hyperLOPIT2015ms3r1, file = "../../data/hyperLOPIT2015ms3r1.RData", compress = "xz", compression_level = 9)
+save(hyperLOPIT2015ms3r2, file = "../../data/hyperLOPIT2015ms3r2.RData", compress = "xz", compression_level = 9)
+save(hyperLOPIT2015ms3r3, file = "../../data/hyperLOPIT2015ms3r3.RData", compress = "xz", compression_level = 9)
+save(hyperLOPIT2015ms2, file = "../../data/hyperLOPIT2015ms2.RData", compress = "xz", compression_level = 9)
