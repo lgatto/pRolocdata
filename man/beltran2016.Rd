@@ -22,7 +22,7 @@
 \description{
 
   The data contain the spatial proteomics data for 5 time points (24,
-  48, 72, 96 and 120) and two condidiont (HMCV infection and MOCK),
+  48, 72, 96 and 120) and two condidions (HMCV infection and MOCK),
   totalling 10 \code{MSnSet} object. Each contains expression data for
   1748 to 2220 proteins along 6 fractions quantified by TMT 6-plex.
 
