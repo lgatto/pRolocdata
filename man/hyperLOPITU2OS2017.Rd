@@ -3,6 +3,7 @@
 \alias{hyperLOPITU2OS2017b}
 \alias{hyperLOPITU2OS2018}
 \alias{lopitdcU2OS2018}
+\alias{U2OS}
 
 \docType{data}
 
