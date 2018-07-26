@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 77 datasets available in
+Currently, there are 78 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -69,6 +69,7 @@ pRolocdata()
 |andy2011goCC           |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |andy2011hpa            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |at_chloro              |The AT_CHLORO data base                                                                                          |
+|baers2018              |Synechocystis spatial proteomics                                                                                 |
 |beltran2016HCMV120     |Data from Beltran et al. 2016                                                                                    |
 |beltran2016HCMV24      |Data from Beltran et al. 2016                                                                                    |
 |beltran2016HCMV48      |Data from Beltran et al. 2016                                                                                    |
