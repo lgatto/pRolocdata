@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 78 datasets available in
+Currently, there are 79 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -132,6 +132,7 @@ pRolocdata()
 |trotter2010            |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010shallow     |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010steep       |LOPIT data sets used in Trotter et al. (2010)                                                                    |
+|yeast2018              |Saccharomyces cerevisiae spatial proteomics (2018)                                                               |
 
 ### Loading data
 
