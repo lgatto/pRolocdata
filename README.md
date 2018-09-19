@@ -42,7 +42,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 79 datasets available in
+Currently, there are 75 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -69,7 +69,6 @@ pRolocdata()
 |andy2011goCC           |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |andy2011hpa            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |at_chloro              |The AT_CHLORO data base                                                                                          |
-|baers2018              |Synechocystis spatial proteomics                                                                                 |
 |beltran2016HCMV120     |Data from Beltran et al. 2016                                                                                    |
 |beltran2016HCMV24      |Data from Beltran et al. 2016                                                                                    |
 |beltran2016HCMV48      |Data from Beltran et al. 2016                                                                                    |
@@ -102,9 +101,8 @@ pRolocdata()
 |hyperLOPIT2015ms3r2    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015ms3r2psm |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
 |hyperLOPIT2015ms3r3    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPITU2OS2017     |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
-|hyperLOPITU2OS2017b    |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
-|hyperLOPITU2OS2018     |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
+|hyperLOPITU2OS2017     |2017 hyperLOPIT on U2OS cells                                                                                    |
+|hyperLOPITU2OS2017b    |2017 hyperLOPIT on U2OS cells                                                                                    |
 |itzhak2016stcSILAC     |Data from Itzhak et al. (2016)                                                                                   |
 |itzhak2017             |Data from Itzhak et al. 2017                                                                                     |
 |itzhak2017markers      |Data from Itzhak et al. 2017                                                                                     |
@@ -115,7 +113,6 @@ pRolocdata()
 |lopimsSyn1             |LOPIMS data for the Synapter 2.0 paper                                                                           |
 |lopimsSyn2             |LOPIMS data for the Synapter 2.0 paper                                                                           |
 |lopimsSyn2_0frags      |LOPIMS data for the Synapter 2.0 paper                                                                           |
-|lopitdcU2OS2018        |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
 |mulvey2015             |Data from Mulvey et al. 2015                                                                                     |
 |mulvey2015norm         |Data from Mulvey et al. 2015                                                                                     |
 |nikolovski2012         |Meta-analysis from Nikolovski et al. (2012)                                                                      |
@@ -132,7 +129,6 @@ pRolocdata()
 |trotter2010            |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010shallow     |LOPIT data sets used in Trotter et al. (2010)                                                                    |
 |trotter2010steep       |LOPIT data sets used in Trotter et al. (2010)                                                                    |
-|yeast2018              |Saccharomyces cerevisiae spatial proteomics (2018)                                                               |
 
 ### Loading data
 

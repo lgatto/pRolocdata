@@ -1,28 +1,21 @@
 \name{hyperLOPITU2OS2017}
 \alias{hyperLOPITU2OS2017}
 \alias{hyperLOPITU2OS2017b}
-\alias{hyperLOPITU2OS2018}
-\alias{lopitdcU2OS2018}
-\alias{U2OS}
 
 \docType{data}
 
-\title{ 2017 and 2018 hyperLOPIT on U2OS cells }
+\title{ 2017 hyperLOPIT on U2OS cells }
 
 \description{
 
-  This data contains 4 different datasets generated from U2OS cells.
-  The \code{lopitdcU2OS2018} was generated using the LOPIT-DC method
-  and all other datasets have been generated using the hyperLOPIT
-  protocol (see Christoforou et al. 2016 and Mulvey et al. 2017). The
-  \code{lopitdcU2OS2018} dataset contains 3 replicates, 10 fractions
-  per replicate. The \code{hyperLOPITU2OS2017} dataset contains 2
-  replicates, in which the quantitation was obtained using two sets of  
-  TMT 10-plex per replicate, producing a total of 40 quanitation 
-  channels, while in \code{hyperLOPITU2OS2017b}, 3 fractions with low 
-  protein yields have been remove (see example below). The 
-  \code{hyperLOPITU2OS2018} dataset contains a third replicate, thus
-  giving 57 quantitation channels in total.
+  This data contains 2 replicated hyperLOPIT experiments/gradients (see
+  Christoforou et al. 2016 for details on the technology) on U2OS
+  cells. The quantitation was obtain using two sets of TMT 10-plex per
+  replicate, producing a total of 40 quanitation channels.
+
+  \code{hyperLOPITU2OS2017} contains all 40 fractions while in
+  \code{hyperLOPITU2OS2017b}, 3 fractions with low protein yields have
+  been remove (see example below).
 
 }
 
