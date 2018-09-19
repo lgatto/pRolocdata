@@ -64,10 +64,6 @@ data(hyperLOPIT2015ms2psm)
   reporter tags are normalised using the \code{"sum"} method. The
   processing script is \code{scripts/hyperlopit2015psm.R}.
 
-  The \code{TAGM} feature data contains the allocation results from the
-  Baysian T-augmented Gaussian Mixture modelling approach as described
-  in Crook et al. (2018).
-
 }
 
 \source{
@@ -78,15 +74,11 @@ data(hyperLOPIT2015ms2psm)
 
 \references{
 
-  \emph{A draft map of the mouse pluripotent stem cell spatial
-  proteome}. Christoforou A, Mulvey CM, Breckels LM, Geladaki A, Hurrell
-  T, Hayward PC, Naake T, Gatto L, Viner R, Martinez Arias A, Lilley
-  KS. Nat Commun. 2016 Jan 12;7:8992. doi: 10.1038/ncomms9992. PubMed
-  PMID: 26754106; PubMed Central PMCID: PMC4729960.
-
-  \emph{A Bayesian Mixture Modelling Approach For Spatial Proteomics}
-  Oliver M Crook, Claire M Mulvey, Paul D. W. Kirk, Kathryn S Lilley,
-  Laurent Gatto bioRxiv 282269; doi: https://doi.org/10.1101/282269
+  Christoforou A, Mulvey CM, Breckels LM, Geladaki A, Hurrell T, Hayward
+  PC, Naake T, Gatto L, Viner R, Martinez Arias A, Lilley KS. \emph{A
+  draft map of the mouse pluripotent stem cell spatial proteome}. Nat
+  Commun. 2016 Jan 12;7:8992. doi: 10.1038/ncomms9992. PubMed PMID:
+  26754106; PubMed Central PMCID: PMC4729960.
 
 }
 
