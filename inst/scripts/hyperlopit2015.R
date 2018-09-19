@@ -233,9 +233,18 @@ load("../extdata/hlMCMCresults20180521.rda") ## hlMCMCresults20180521
 stopifnot(identical(rownames(hlMAPresults20180521), featureNames(hyperLOPIT2015)))
 stopifnot(identical(rownames(hlMCMCresults20180521), featureNames(hyperLOPIT2015)))
 
+## change type from character to numeric 
+hlMCMCresults20180521$tagm.mcmc.probability <- as.numeric(hlMCMCresults20180521$tagm.mcmc.probability)
+## Change convention for outlier so that markers have outlier of 0.
+hlMCMCresults20180521$tagm.mcmc.outlier <- 1 - hlMCMCresults20180521$tagm.mcmc.outlier
+
 fData(hyperLOPIT2015)$TAGM <-
                         cbind(hlMAPresults20180521,
                               hlMCMCresults20180521)
+
+
+
+
 stopifnot(validObject(hyperLOPIT2015))
 
 save(hyperLOPIT2015, file = "../../data/hyperLOPIT2015.RData", compress = "xz", compression_level = 9)
