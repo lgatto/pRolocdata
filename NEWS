@@ -1,3 +1,32 @@
+CHANGES IN VERSION 1.19.5
+-------------------------
+ o Nothing yet.
+
+CHANGES IN VERSION 1.19.4
+-------------------------
+ o New yeast spatial proteome dataset <2018-08-14 Tue> 
+
+CHANGES IN VERSION 1.19.3
+-------------------------
+ o New synechocystis spatial proteome <2018-07-26 Thu>
+
+CHANGES IN VERSION 1.19.2
+-------------------------
+ o Fix typo in beltran2016 man page <2018-07-24 Tue>
+ o Added LOPIT-DC and hyperLOPIT U2OS data <2018-07-25 Wed>
+
+CHANGES IN VERSION 1.19.1
+-------------------------
+ o Adding hyperLOPIT TAGM results <2018-05-21 Mon>
+
+CHANGES IN VERSION 1.19.0
+-------------------------
+ o New Bioconductor devel version
+
+CHANGES IN VERSION 1.18.0
+-------------------------
+ o New Bioconductor release version
+
 CHANGES IN VERSION 1.17.4
 -------------------------
  o Typo in tlopt colnames fixed for f1000 workflow
