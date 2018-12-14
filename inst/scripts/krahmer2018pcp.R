@@ -47,7 +47,9 @@ pd <- data.frame(toName,
 pd <- new("AnnotatedDataFrame", pd)
 
 ## feature data
+ascession
 fd <- featureData[rownames(e),1:22]
+colnames(fd)[1] <- "Ascession" #remove non ascii name
 fd <- new("AnnotatedDataFrame", fd)
 
 process <- new("MSnProcess",
