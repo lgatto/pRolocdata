@@ -18,6 +18,10 @@
   The annotatied marker proteins are available in the
   \code{itzhak2017markers} dataset.
 
+  This data corresponds to the \emph{Mouse neuron Intensity and LFQ
+  data} data from supplemental table S3 (Proteomic Mouse Neuron Data
+  Generated in This Study, Related to Figure 5).
+
 }
 
 \usage{

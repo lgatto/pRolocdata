@@ -29,8 +29,9 @@ software for spatial proteomics data analysis and visualisation.
 
 
 ```r
-source("http://bioconductor.org/biocLite.R")
-biocLite("pRolocdata")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("pRolocdata")
 ```
 
 Once installed, the package needs to be loaded
