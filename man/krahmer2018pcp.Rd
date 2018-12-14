@@ -17,7 +17,7 @@
   observed in non-alcoholic fatty liver disease (NAFLD), affects protein localization,
   organelle organization, and protein phosphorylation in vivo. We develop a mass
   spectrometric workflow for protein and phosphopeptide correlation profiling to
-  monitor levels and cellular distributions of ∼6,000 liver proteins and ∼16,000
+  monitor levels and cellular distributions of 6,000 liver proteins and 16,000
   phosphopeptides during development of steatosis. Several organelle contact
   site proteins are targeted to lipid droplets (LDs) in steatotic liver,
   tethering organelles orchestrating lipid metabolism. Proteins of the
