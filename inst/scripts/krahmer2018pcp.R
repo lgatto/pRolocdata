@@ -23,7 +23,7 @@ experiment <- new("MIAPE",
                     operator = "Natalie Krahmer"
                   ),
                   title = "Organellar Proteomics and Phospho-Proteomics Reveal Subcellular Reorganization in Diet-Induced Hepatic Steatosis",
-                  abstract = "Lipid metabolism is highly compartmentalized between cellular organelles that dynamically adapt their compositions and interactions in response to metabolic challenges. Here, we investigate how diet-induced hepatic lipid accumulation, observed in non-alcoholic fatty liver disease (NAFLD), affects protein localization, organelle organization, and protein phosphorylation in vivo. We develop a mass spectrometric workflow for protein and phosphopeptide correlation profiling to monitor levels and cellular distributions of ∼6,000 liver proteins and ∼16,000 phosphopeptides during development of steatosis. Several organelle contact site proteins are targeted to lipid droplets (LDs) in steatotic liver, tethering organelles orchestrating lipid metabolism. Proteins of the secretory pathway dramatically redistribute, including the mis-localization of the COPI complex and sequestration of the Golgi apparatus at LDs. This correlates with reduced hepatic protein secretion. Our systematic in vivo analysis of subcellular rearrangements and organelle-specific phosphorylation reveals how nutrient overload leads to organellar reorganization and cellular dysfunction.",
+                  abstract = "Lipid metabolism is highly compartmentalized between cellular organelles that dynamically adapt their compositions and interactions in response to metabolic challenges. Here, we investigate how diet-induced hepatic lipid accumulation, observed in non-alcoholic fatty liver disease (NAFLD), affects protein localization, organelle organization, and protein phosphorylation in vivo. We develop a mass spectrometric workflow for protein and phosphopeptide correlation profiling to monitor levels and cellular distributions of 6,000 liver proteins and 16,000 phosphopeptides during development of steatosis. Several organelle contact site proteins are targeted to lipid droplets (LDs) in steatotic liver, tethering organelles orchestrating lipid metabolism. Proteins of the secretory pathway dramatically redistribute, including the mis-localization of the COPI complex and sequestration of the Golgi apparatus at LDs. This correlates with reduced hepatic protein secretion. Our systematic in vivo analysis of subcellular rearrangements and organelle-specific phosphorylation reveals how nutrient overload leads to organellar reorganization and cellular dysfunction.",
                   pubMedIds = "",
                   url = "",
                   instrumentModel = "Q Exactive HF-X",
@@ -47,7 +47,6 @@ pd <- data.frame(toName,
 pd <- new("AnnotatedDataFrame", pd)
 
 ## feature data
-ascession
 fd <- featureData[rownames(e),1:22]
 colnames(fd)[1] <- "Ascession" #remove non ascii name
 fd <- new("AnnotatedDataFrame", fd)
@@ -66,8 +65,7 @@ krahmer2018pcp <- new("MSnSet",
 
 
 krahmer2018pcp@processingData <- process
-if (validObject(krahmer2018pcp)) 
-  return (krahmer2018pcp)
+stopifnot(validObject(krahmer2018pcp))
 
-save(krahmer2018pcp, file="../../data/krahmer2018pcp.RData",
+save(krahmer2018pcp, file="../../data/krahmer2018pcp.rda",
      compress = "xz", compression_level = 9)
