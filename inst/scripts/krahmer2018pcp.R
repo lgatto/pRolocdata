@@ -63,6 +63,24 @@ krahmer2018pcp <- new("MSnSet",
                  experimentData = experiment,
                  featureData = fd)
 
+## Normalise
+krahmer2018pcp <- normalise(krahmer2018pcp, method = "sum")
+
+## Marker column
+krahmer2018pcp <- fDataToUnknown(krahmer2018pcp, fcol = "Organelle")
+fd <- fData(krahmer2018pcp)
+fd$markers <- fd$Organelle
+fData(krahmer2018pcp) <- fd
+krahmer2018pcp <- normalise(krahmer2018pcp, method = "sum")
+
+
+## Phenodata
+pData(krahmer2018pcp)$fraction <- as.numeric(sub("^.+FR", "", sampleNames(krahmer2018pcp)))
+pData(krahmer2018pcp)$replicate <- as.numeric(sub("^.+_", "", sub("_FR.+$", "", sampleNames(krahmer2018pcp))))
+pData(krahmer2018pcp)$experiment <- c(rep("LFD", 66), rep("HFD3", 66), rep("HFD12", 66))
+
+stopifnot(length(pData(krahmer2018pcp)$experiment) == ncol(e)) # check columns and experiments match
+
 
 krahmer2018pcp@processingData <- process
 stopifnot(validObject(krahmer2018pcp))
