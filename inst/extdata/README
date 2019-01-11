@@ -578,3 +578,9 @@ has 3 replicates. There are 3 experiments in total low-fat diet, High-fat diet a
 data. These files provide the raw quantitation data, but normalised data
 is provided within the
 MSnSet.
+
+For the Phospho Label-free quantification is performed across 22 fractions where each experiment
+has 4 replicates. There are 2 experiments in total low-fat diet  and high-fat diet after 12 hours.
+Maxquant was used to pre-process the
+data. These files provide the raw quantitation data, but normalised data
+is provided within the MSnSet.
