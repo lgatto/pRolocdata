@@ -61,8 +61,7 @@ plot2D(krahmer2018pcp, fcol = "Organelle" , main = "Krahmer 2018")
 
 data(krahmer2018phosphopcp)
 krahmer2018phosphopcp
-Data(krahmer2018phosphopcp)
-prs(krahmer2018phosphopcp)[1:3,1:3]
+exprs(krahmer2018phosphopcp)[1:3,1:3]
   
 plot2D(krahmer2018phosphopcp, main = "Krahmer 2018")
 }
