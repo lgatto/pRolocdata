@@ -1,5 +1,6 @@
 \name{krahmer2018pcp}
 \alias{krahmer2018pcp}
+\alias{krahmer2018phosphopcp}
 \docType{data}
 
 \title{
@@ -31,6 +32,7 @@
 
 \usage{
   data("krahmer2018pcp")
+  data("krahmer2018phosphopcp")
 }
 
 \format{
@@ -55,7 +57,14 @@ pData(krahmer2018pcp)
 exprs(krahmer2018pcp)[1:3,1:3]
 
 library("pRoloc")
-plot2D(krahmer2018pcp, fcol = "Organelle" , main = "Kramer 2018")
+plot2D(krahmer2018pcp, fcol = "Organelle" , main = "Krahmer 2018")
+
+data(krahmer2018phosphopcp)
+krahmer2018phosphopcp
+Data(krahmer2018phosphopcp)
+prs(krahmer2018phosphopcp)[1:3,1:3]
+  
+plot2D(krahmer2018phosphopcp, main = "Krahmer 2018")
 }
 
 \keyword{datasets}
