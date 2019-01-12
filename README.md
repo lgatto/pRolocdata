@@ -43,7 +43,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 79 datasets available in
+Currently, there are 80 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -110,6 +110,7 @@ pRolocdata()
 |itzhak2017             |Data from Itzhak et al. 2017                                                                                     |
 |itzhak2017markers      |Data from Itzhak et al. 2017                                                                                     |
 |kirkwood2013           |Data from Kirkwood et al. 2013.                                                                                  |
+|krahmer2018pcp         |Subcellular Reorganization in Diet-Induced Hepatic Steatosis                                                     |
 |kristensen2012r1       |Data from Kristensen et al. 2012                                                                                 |
 |kristensen2012r2       |Data from Kristensen et al. 2012                                                                                 |
 |kristensen2012r3       |Data from Kristensen et al. 2012                                                                                 |
