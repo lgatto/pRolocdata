@@ -596,7 +596,15 @@ quantitative mass-spec data was download from supplementary data S1 and markers 
 mmc2.xlsx
 
 These files were then converted manually to .csv files in the form: There are 9 datasets in total.
-orre2019[cell-line].csv
+A431.csv
+H322.csv
+HCC827.csv
+HCC827-gef.csv
+HCC827rep1.csv
+HCC827rep2.csv
+HCC827rep3.csv
+MCF7.csv
+U251.csv
 
 TMT 10-plex quantification was used. Each 10-plex contains two replicates. This workflow
 uses isoelectric focusing so they gain additional converage of the proteome, however
