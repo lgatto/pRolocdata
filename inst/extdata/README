@@ -609,3 +609,20 @@ U251.csv
 TMT 10-plex quantification was used. Each 10-plex contains two replicates. This workflow
 uses isoelectric focusing so they gain additional converage of the proteome, however
 this acros 72 RP fraction and thus require alot of ms time. 
+
+
+* From Davies et al. 2018
+
+Davies, Alexandra K, Itzhak, Daniel N., Edgar, James R., Archuleta, Tara L., Hirst, Jennifer
+, Jackson, Lauren P., Robinson, Margaret S., Borner, Georg H. H.
+
+AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A
+
+
+The file 41467_2018_6172_MOESM3_ESM was downloaded from supplementary material 1. This file was then converted
+to Daviesetal.csv
+
+Each experiment contains two duplicates with 5 fractions. There are 3 experiment in total - a control wild type
+experiment and two futher knock-out experiments labelled ap4b1 and ap4e1 for the specific genes knocked out.
+
+Label-free quantitation is used. The data is row sum normalised manually.
