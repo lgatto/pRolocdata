@@ -51,7 +51,7 @@
   exprs(helaCtrl)[1:3,1:3]
   
   library("pRoloc")
-  plot2D(helaCtrl,, main = "HeLa Ctrl", dims = c(1, 3))
+  plot2D(helaCtrl, main = "HeLa Ctrl", dims = c(1, 3))
 }
 
 \keyword{datasets}
