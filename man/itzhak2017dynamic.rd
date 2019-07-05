@@ -46,7 +46,7 @@
 
 \examples{
   data("itzhak2016helaCtrl")
-  helaCtrl
+  helaCtrl <- itzhak2016helaCtrl
   pData(helaCtrl)
   exprs(helaCtrl)[1:3,1:3]
   

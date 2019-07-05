@@ -119,5 +119,8 @@ helaEgf@processingData <- process
 stopifnot(validObject(helaCtrl))
 stopifnot(validObject(helaEgf))
 
-save(helaCtrl, file="../../data/itzhak2016helaCtrl.rda", compress = "xz", compression_level = 9)
-save(helaEgf, file="../../data/itzhak2016helaEgf.rda", compress = "xz", compression_level = 9)
+itzhak2016helaCtrl <- helaCtrl
+itzhak2016helaEgf <- helaEgf
+
+save(itzhak2016helaCtrl, file="../../data/itzhak2016helaCtrl.rda", compress = "xz", compression_level = 9)
+save(itzhak2016helaEgf, file="../../data/itzhak2016helaEgf.rda", compress = "xz", compression_level = 9)
