@@ -1,6 +1,6 @@
 \name{itzhak2016dynamic}
-\alias{helaCtrl}
-\alias{helaEgf}
+\alias{itzhak2016helaCtrl}
+\alias{itzhak2016helaEgf}
 \docType{data}
 
 \title{
