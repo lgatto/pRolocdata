@@ -45,7 +45,7 @@ e <- exprs(Phosphopcp)
 toName <- paste0(colnames(Phosphopcpcsv)[20:195])
 colnames(e) <- toName
 pd <- data.frame(toName,
-                 row.names=colnames(e))  
+                 row.names=colnames(e))
 pd <- new("AnnotatedDataFrame", pd)
 
 ## feature data
@@ -88,5 +88,6 @@ stopifnot(length(pData(krahmer2018Phosphopcp)$experiment) == ncol(e)) # check co
 krahmer2018Phosphopcp@processingData <- process
 stopifnot(validObject(krahmer2018Phosphopcp))
 
-save(krahmer2018Phosphopcp, file="../../data/krahmer2018Phosphopcp.rda",
+save(krahmer2018Phosphopcp,
+     file="../../data/krahmer2018phosphopcp.rda",
      compress = "xz", compression_level = 9)
