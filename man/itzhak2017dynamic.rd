@@ -45,7 +45,7 @@
 }
 
 \examples{
-  data("ithzak2016helaCtrl")
+  data("itzhak2016helaCtrl")
   helaCtrl
   pData(helaCtrl)
   exprs(helaCtrl)[1:3,1:3]
