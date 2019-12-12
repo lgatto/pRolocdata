@@ -1,6 +1,29 @@
+CHANGES IN VERSION 1.25.1
+-------------------------
+ o add dynamic Itzhak data
+
+CHANGES IN VERSION 1.21.1
+-------------------------
+ o Clarify that itzhak2017 data is LFQ from suppl table 3
+   <2018-11-06 Tue>
+ o Data from Krahmer et al. 2018 <2018-12-22 Sat>
+ o Data from Davies at al. 2018 <2019-02-01 Fri>
+
+CHANGES IN VERSION 1.21.0
+-------------------------
+ o New version for Bioc 3.ç (devel)
+
+CHANGES IN VERSION 1.20.0
+-------------------------
+ o New version for Bioc 3.8 (release)
+
+CHANGES IN VERSION 1.19.5
+-------------------------
+ o Fix typos
+
 CHANGES IN VERSION 1.19.4
 -------------------------
- o New yeast spatial proteome dataset <2018-08-14 Tue> 
+ o New yeast spatial proteome dataset <2018-08-14 Tue>
 
 CHANGES IN VERSION 1.19.3
 -------------------------
@@ -26,7 +49,7 @@ CHANGES IN VERSION 1.18.0
 CHANGES IN VERSION 1.17.4
 -------------------------
  o Typo in tlopt colnames fixed for f1000 workflow
-   <2018-04-10 Tue> 
+   <2018-04-10 Tue>
 
 CHANGES IN VERSION 1.17.3
 -------------------------
