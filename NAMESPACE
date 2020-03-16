@@ -2,6 +2,7 @@ import("MSnbase")
 import("Biobase")
 importFrom("utils", "data", "packageVersion")
 
+S3method(print, pRolocmetadata)
+
 export(pRolocdata,
-       pRolocmetadata,
-       print.pRolocmetadata)
+       pRolocmetadata)

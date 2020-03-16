@@ -43,7 +43,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 79 datasets available in
+Currently, there are 95 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -81,6 +81,9 @@ pRolocdata()
 |beltran2016MOCK48      |Data from Beltran et al. 2016                                                                                    |
 |beltran2016MOCK72      |Data from Beltran et al. 2016                                                                                    |
 |beltran2016MOCK96      |Data from Beltran et al. 2016                                                                                    |
+|davies2018ap4b1        |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
+|davies2018ap4e1        |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
+|davies2018wt           |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
 |dunkley2006            |LOPIT data from Dunkley et al. (2006)                                                                            |
 |dunkley2006goCC        |LOPIT data from Dunkley et al. (2006)                                                                            |
 |fabre2015r1            |Data from Fabre et al. 2015                                                                                      |
@@ -106,10 +109,14 @@ pRolocdata()
 |hyperLOPITU2OS2017     |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
 |hyperLOPITU2OS2017b    |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
 |hyperLOPITU2OS2018     |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
+|itzhak2016helaCtrl     |Global, quantitative and dynamic mapping of protein subcellular localization                                     |
+|itzhak2016helaEgf      |Global, quantitative and dynamic mapping of protein subcellular localization                                     |
 |itzhak2016stcSILAC     |Data from Itzhak et al. (2016)                                                                                   |
 |itzhak2017             |Data from Itzhak et al. 2017                                                                                     |
 |itzhak2017markers      |Data from Itzhak et al. 2017                                                                                     |
 |kirkwood2013           |Data from Kirkwood et al. 2013.                                                                                  |
+|krahmer2018pcp         |Subcellular Reorganization in Diet-Induced Hepatic Steatosis                                                     |
+|krahmer2018phosphopcp  |Subcellular Reorganization in Diet-Induced Hepatic Steatosis                                                     |
 |kristensen2012r1       |Data from Kristensen et al. 2012                                                                                 |
 |kristensen2012r2       |Data from Kristensen et al. 2012                                                                                 |
 |kristensen2012r3       |Data from Kristensen et al. 2012                                                                                 |
@@ -122,6 +129,15 @@ pRolocdata()
 |nikolovski2012         |Meta-analysis from Nikolovski et al. (2012)                                                                      |
 |nikolovski2012imp      |Meta-analysis from Nikolovski et al. (2012)                                                                      |
 |nikolovski2014         |LOPIMS data from Nikolovski et al. (2014)                                                                        |
+|orre2019a431           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019h322           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827         |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827gef      |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827rep1     |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827rep2     |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827rep3     |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019mcf7           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019u251           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
 |rodriguez2012r1        |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
 |rodriguez2012r2        |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
 |rodriguez2012r3        |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
