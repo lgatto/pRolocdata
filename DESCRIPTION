@@ -1,7 +1,7 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.21.1
+Version: 1.25.1
 Author: Laurent Gatto, Oliver M. Crook and Lisa M. Breckels
 Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: Mass-spectrometry based spatial proteomics data sets and
@@ -16,4 +16,8 @@ URL: https://github.com/lgatto/pRolocdata
 biocViews: ExperimentData, Homo_sapiens_Data, MassSpectrometryData,
 	   Arabidopsis_thaliana_Data, Drosophila_melanogaster_Data,
 	   Mus_musculus_Data, StemCell, Proteome
+<<<<<<< HEAD
 RoxygenNote: 6.1.1
+=======
+Encoding: UTF-8
+>>>>>>> eca68520de4bcc71c12e74537bb648fa53cd4206
