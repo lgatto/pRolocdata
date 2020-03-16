@@ -43,8 +43,7 @@
   
   \emph{Spatial proteomics defines the content of trafficking vesicles captured by golgin
     tethers. John J.H. Shin, Oliver M. Crook, Alicia C. Borgeaud, Jérôme Cattin-Ortolá, Sew-Yeu Peak-
-      Chew, Jessica Chadwick, Kathryn S. Lilley, Sean Munro.
-  
+      Chew, Jessica Chadwick, Kathryn S. Lilley, Sean Munro.}
 }
 
 \examples{

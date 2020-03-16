@@ -7,7 +7,7 @@ Maintainer: Laurent Gatto <lg390@cam.ac.uk>
 Description: Mass-spectrometry based spatial proteomics data sets and
 	     protein complex separation data. Also contains the time
 	     course expression experiment from Mulvey et al. 2015.
-Depends: R (>= 2.15), MSnbase
+Depends: R (>= 3.6.1), MSnbase
 Imports: Biobase, utils
 Suggests: pRoloc (>= 1.13.8), testthat
 License: GPL-2
