@@ -1,14 +1,59 @@
 library("MSnbase")
 library("pRoloc")
 
+csvfileA1 <- "../../inst/extdata/Shin2019ExpA1_RAWData.csv"
+csvfileA2 <- "../../inst/extdata/Shin2019ExpA2_RAWData.csv"
+csvfileA3 <- "../../inst/extdata/Shin2019ExpA3_RAWData.csv"
+csvfileB1 <- "../../inst/extdata/Shin2019ExpB1_RAWData.csv"
+csvfileB2 <- "../../inst/extdata/Shin2019ExpB2_RAWData.csv"
+csvfileB3 <- "../../inst/extdata/Shin2019ExpB3_RAWData.csv"
+csvfileC1 <- "../../inst/extdata/Shin2019ExpC1_RAWData.csv"
+csvfileC2 <- "../../inst/extdata/Shin2019ExpC2_RAWData.csv"
+csvfileC3 <- "../../inst/extdata/Shin2019ExpC3_RAWData.csv"
 
-Shin2019MitoControl <- readRDS("../../inst/extdata/Shin2019MitoCon.rds")
-Shin2019MitoGCC88 <- readRDS("../../inst/extdata/Shin2019MitoGCC88.rds")
-Shin2019MitoGol97 <- readRDS("../../inst/extdata/Shin2019MitoGol97.rds")
+markercsv <- read.csv(file = "../../inst/extdata/Shin2019newMarkers.csv")
 
-Shin2019MitoControl <- Shin2019MitoControl$ExpA
-Shin2019MitoGCC88 <- Shin2019MitoGCC88$ExpC
-Shin2019MitoGol97 <- Shin2019MitoGol97$ExpB
+csvfile <- c(csvfileC3, csvfileC2, csvfileC1, csvfileB3, csvfileB2, csvfileB1,
+             csvfileA1, csvfileA2, csvfileA3)
+
+csv <- read.csv(csvfile)
+
+
+Shin2019MitoControlrep1 <- readMSnSet2(file = csvfile[7], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoControlrep2 <- readMSnSet2(file = csvfile[8], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoControlrep3 <- readMSnSet2(file = csvfile[9], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoGcc88rep1 <- readMSnSet2(file = csvfile[1], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoGcc88rep2 <- readMSnSet2(file = csvfile[2], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoGcc88rep3 <- readMSnSet2(file = csvfile[3], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoGol97rep1 <- readMSnSet2(file = csvfile[4], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoGol97rep2 <- readMSnSet2(file = csvfile[5], ecol = 22:32, skip = 0, fnames = 1)
+Shin2019MitoGol97rep3 <- readMSnSet2(file = csvfile[6], ecol = 22:32, skip = 0, fnames = 1)
+
+Shin2019MitoControlrep1 <- filterNA(Shin2019MitoControlrep1)
+Shin2019MitoControlrep2 <- filterNA(Shin2019MitoControlrep2)
+Shin2019MitoControlrep3 <- filterNA(Shin2019MitoControlrep3)
+Shin2019MitoGcc88rep1 <- filterNA(Shin2019MitoGcc88rep1)
+Shin2019MitoGcc88rep2 <- filterNA(Shin2019MitoGcc88rep2)
+Shin2019MitoGcc88rep3 <- filterNA(Shin2019MitoGcc88rep3)
+Shin2019MitoGol97rep1 <- filterNA(Shin2019MitoGol97rep1)
+Shin2019MitoGol97rep2 <- filterNA(Shin2019MitoGol97rep2)
+Shin2019MitoGol97rep3 <- filterNA(Shin2019MitoGol97rep3)
+
+Shin2019MitoControlrep1 <- updateSampleNames(Shin2019MitoControlrep1, 1)
+Shin2019MitoControlrep2 <- updateSampleNames(Shin2019MitoControlrep2, 2)
+Shin2019MitoControlrep3 <- updateSampleNames(Shin2019MitoControlrep3, 3)
+Shin2019MitoGcc88rep1 <- updateSampleNames(Shin2019MitoGcc88rep1, 1)
+Shin2019MitoGcc88rep2 <- updateSampleNames(Shin2019MitoGcc88rep2, 2)
+Shin2019MitoGcc88rep3 <- updateSampleNames(Shin2019MitoGcc88rep3, 3)
+Shin2019MitoGol97rep1 <- updateSampleNames(Shin2019MitoGol97rep1, 1)
+Shin2019MitoGol97rep2 <- updateSampleNames(Shin2019MitoGol97rep2, 2)
+Shin2019MitoGol97rep3 <- updateSampleNames(Shin2019MitoGol97rep3, 3)
+
+Shin2019 <- MSnSetList(list(Shin2019MitoControlrep1, Shin2019MitoControlrep2, Shin2019MitoControlrep3,
+                       Shin2019MitoGcc88rep1, Shin2019MitoGcc88rep2, Shin2019MitoGcc88rep3,
+                       Shin2019MitoGol97rep1, Shin2019MitoGol97rep2, Shin2019MitoGol97rep3))
+
+Shin2019 <- lapply(Shin2019, function(x) normalise(x, "sum"))
 
 ## Experimental data to add
 experiment <- new("MIAPE",
@@ -47,63 +92,33 @@ experiment <- new("MIAPE",
 
 
 ## Expression data
-e1 <- exprs(Shin2019MitoControl)
-e2 <- exprs(Shin2019MitoGCC88)
-e3 <- exprs(Shin2019MitoGol97)
-
+e <- lapply(Shin2019, exprs)
 
 ## Experiment info
-toName <- paste0(colnames(e1)[1:33])
-colnames(e1) <- toName
-pd1 <- data.frame(toName,
-                  row.names=colnames(e1))  
-pd1 <- new("AnnotatedDataFrame", pd1)
-
-## Experiment info
-toName <- paste0(colnames(e2)[1:33])
-colnames(e2) <- toName
-pd2 <- data.frame(toName,
-                  row.names=colnames(e2))  
-pd2 <- new("AnnotatedDataFrame", pd2)
-
-
-## Experiment info
-toName <- paste0(colnames(e3)[1:33])
-colnames(e3) <- toName
-pd3 <- data.frame(toName,
-                  row.names=colnames(e3))  
-pd3 <- new("AnnotatedDataFrame", pd3)
-
+pd <- list(length = length(Shin2019))
+for (j in seq_along(Shin2019)) {
+  
+  toName <- paste0(colnames(e[[j]])[1:11])
+  colnames(e[[j]]) <- toName
+  pd[[j]] <- data.frame(toName,
+                    row.names=colnames(e[[j]]))  
+  pd[[j]] <- new("AnnotatedDataFrame", pd[[j]])
+  
+}
 
 ## feature data
-fd1 <- rownames(e1)
-fd1 <- as.data.frame(fd1)
-markerdata <- as.data.frame(fData(Shin2019MitoControl)$markers)
-rownames(markerdata) <- rownames(fData(Shin2019MitoControl)$markers)
-fd1$markers <- "unknown"
-rownames(fd1) <- rownames(fData(Shin2019MitoControl))
-fd1$markers[markerdata !=""] <- unlist(lapply(markerdata[markerdata !="",1], as.character))
-fd1 <- new("AnnotatedDataFrame", fd1)
-
-## feature data
-fd2 <- rownames(e2)
-fd2 <- as.data.frame(fd2)
-markerdata <- as.data.frame(fData(Shin2019MitoGCC88)$markers)
-rownames(markerdata) <- rownames(fData(Shin2019MitoGCC88)$markers)
-fd2$markers <- "unknown"
-rownames(fd2) <- rownames(fData(Shin2019MitoGCC88))
-fd2$markers[markerdata !=""] <- unlist(lapply(markerdata[markerdata !="",1], as.character))
-fd2 <- new("AnnotatedDataFrame", fd2)
-
-## feature data
-fd3 <- rownames(e3)
-fd3 <- as.data.frame(fd3)
-markerdata <- as.data.frame(fData(Shin2019MitoGol97)$markers)
-rownames(markerdata) <- rownames(fData(Shin2019MitoGol97)$markers)
-fd3$markers <- "unknown"
-rownames(fd3) <- rownames(fData(Shin2019MitoGol97))
-fd3$markers[markerdata !=""] <- unlist(lapply(markerdata[markerdata !="",1], as.character))
-fd3 <- new("AnnotatedDataFrame", fd3)
+fd <- list(length = length(Shin2019))
+for (j in seq_along(Shin2019)) {
+  fd[[j]] <- rownames(e[[j]])
+  fd[[j]] <- as.data.frame(fd[[j]])
+  markerdata <- as.data.frame(markercsv)
+  rownames(markerdata) <- markercsv[,1]
+  fd[[j]]$markers <- "unknown"
+  rownames(fd[[j]]) <- rownames(Shin2019[[j]])
+  fd[[j]][rownames(fd[[j]])[rownames(fd[[j]]) %in% rownames(markerdata)], "markers"] <-
+    markerdata[rownames(fd[[j]])[rownames(fd[[j]]) %in% rownames(markerdata)],2]
+  fd[[j]] <- new("AnnotatedDataFrame", fd[[j]])
+}
 
 process <- new("MSnProcess",
                processing=c(
@@ -111,56 +126,127 @@ process <- new("MSnProcess",
                  paste("median Normalisation")),
                normalised=TRUE)
 
-Shin2019MitoControl <- new("MSnSet",
-                       exprs = e1,
-                       phenoData = pd1,
-                       experimentData = experiment,
-                       featureData = fd1)
-
-Shin2019MitoGCC88 <- new("MSnSet",
-                       exprs = e2,
-                       phenoData = pd2,
-                       experimentData = experiment,
-                       featureData = fd2)
-
-Shin2019MitoGol97 <- new("MSnSet",
-                    exprs = e3,
-                    phenoData = pd3,
-                    experimentData = experiment,
-                    featureData = fd3)
+Shin2019MitoControlrep1 <- new("MSnSet",
+                               exprs = e[[1]],
+                               phenoData = pd[[1]],
+                               experimentData = experiment,
+                               featureData = fd[[1]])
+Shin2019MitoControlrep2 <- new("MSnSet",
+                               exprs = e[[2]],
+                               phenoData = pd[[2]],
+                               experimentData = experiment,
+                               featureData = fd[[2]])
+Shin2019MitoControlrep3 <- new("MSnSet",
+                               exprs = e[[3]],
+                               phenoData = pd[[3]],
+                               experimentData = experiment,
+                               featureData = fd[[3]])
+Shin2019MitoGcc88rep1 <- new("MSnSet",
+                             exprs = e[[4]],
+                             phenoData = pd[[4]],
+                             experimentData = experiment,
+                             featureData = fd[[4]])
+Shin2019MitoGcc88rep2 <- new("MSnSet",
+                             exprs = e[[5]],
+                             phenoData = pd[[5]],
+                             experimentData = experiment,
+                             featureData = fd[[5]])
+Shin2019MitoGcc88rep3 <- new("MSnSet",
+                             exprs = e[[6]],
+                             phenoData = pd[[6]],
+                             experimentData = experiment,
+                             featureData = fd[[6]])
+Shin2019MitoGol97rep1 <- new("MSnSet",
+                             exprs = e[[7]],
+                             phenoData = pd[[7]],
+                             experimentData = experiment,
+                             featureData = fd[[7]])
+Shin2019MitoGol97rep2 <- new("MSnSet",
+                             exprs = e[[8]],
+                             phenoData = pd[[8]],
+                             experimentData = experiment,
+                             featureData = fd[[8]])
+Shin2019MitoGol97rep3 <- new("MSnSet",
+                             exprs = e[[9]],
+                             phenoData = pd[[9]],
+                             experimentData = experiment,
+                             featureData = fd[[9]])
 
 ##
-plot2D(Shin2019MitoControl)
+plot2D(Shin2019MitoControlrep1)
 
 
 ## Phenodata
-pData(Shin2019MitoControl)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
-pData(Shin2019MitoControl)$replicate <- rep(c(1,2,3), each = 11)
+pData(Shin2019MitoControlrep1)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoControlrep1)$replicate <- rep(c(1), each = 11)
 
-pData(Shin2019MitoGCC88)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
-pData(Shin2019MitoGCC88)$replicate <- rep(c(1,2,3), each = 11)
+pData(Shin2019MitoControlrep2)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoControlrep2)$replicate <- rep(c(2), each = 11)
 
-pData(Shin2019MitoGol97)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
-pData(Shin2019MitoGol97)$replicate <- rep(c(1,2,3), each = 11)
+pData(Shin2019MitoControlrep3)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoControlrep3)$replicate <- rep(c(3), each = 11)
+
+pData(Shin2019MitoGcc88rep1)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoGcc88rep1)$replicate <- rep(c(1), each = 11)
+
+pData(Shin2019MitoGcc88rep2)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoGcc88rep2)$replicate <- rep(c(2), each = 11)
+
+pData(Shin2019MitoGcc88rep3)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoGcc88rep3)$replicate <- rep(c(3), each = 11)
+
+pData(Shin2019MitoGol97rep1)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoGol97rep1)$replicate <- rep(c(1), each = 11)
+
+pData(Shin2019MitoGol97rep2)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoGol97rep2)$replicate <- rep(c(2), each = 11)
+
+pData(Shin2019MitoGol97rep3)$fraction <- c("Nuc", "1000g", "3000g", "5000g", "9000g", "12000g", "15000g", "30000g", "79000g", "120000g", "SN")
+pData(Shin2019MitoGol97rep3)$replicate <- rep(c(3), each = 11)
 
 ## checks
-stopifnot(length(pData(Shin2019MitoControl)$replicate) == ncol(e1)) # check columns and experiments match
-stopifnot(length(pData(Shin2019MitoGCC88)$replicate) == ncol(e2)) # check columns and experiments match
-stopifnot(length(pData(Shin2019MitoGol97)$replicate) == ncol(e1)) # check columns and experiments match
+stopifnot(length(pData(Shin2019MitoControlrep1)$replicate) == ncol(e[[1]])) # check columns and experiments match
+stopifnot(length(pData(Shin2019MitoGcc88rep1)$replicate) == ncol(e[[4]])) # check columns and experiments match
+stopifnot(length(pData(Shin2019MitoGol97rep3)$replicate) == ncol(e[[9]])) # check columns and experiments match
 
-Shin2019MitoControl@processingData <- process
-Shin2019MitoGCC88@processingData <- process
-Shin2019MitoGol97@processingData <- process
-stopifnot(validObject(Shin2019MitoControl))
-stopifnot(validObject(Shin2019MitoGCC88))
-stopifnot(validObject(Shin2019MitoGol97))
+Shin2019MitoControlrep1@processingData <- process
+Shin2019MitoControlrep2@processingData <- process
+Shin2019MitoControlrep3@processingData <- process
+Shin2019MitoGcc88rep1@processingData <- process
+Shin2019MitoGcc88rep2@processingData <- process
+Shin2019MitoGcc88rep3@processingData <- process
+Shin2019MitoGol97rep1@processingData <- process
+Shin2019MitoGol97rep2@processingData <- process
+Shin2019MitoGol97rep3@processingData <- process
 
-save(Shin2019MitoControl, file="../../data/Shin2019MitoControl.rda",
+stopifnot(validObject(Shin2019MitoControlrep1))
+stopifnot(validObject(Shin2019MitoGcc88rep1))
+stopifnot(validObject(Shin2019MitoGol97rep1))
+
+save(Shin2019MitoControlrep1, file="../../data/Shin2019MitoControlrep1.rda",
      compress = "xz", compression_level = 9)
 
-save(Shin2019MitoGCC88, file="../../data/Shin2019MitoGCC88.rda",
+save(Shin2019MitoControlrep2, file="../../data/Shin2019MitoControlrep2.rda",
      compress = "xz", compression_level = 9)
 
-save(Shin2019MitoGol97, file="../../data/Shin2019MitoGol97.rda",
+save(Shin2019MitoControlrep3, file="../../data/Shin2019MitoControlrep3.rda",
+     compress = "xz", compression_level = 9)
+
+save(Shin2019MitoGcc88rep1, file="../../data/Shin2019MitoGcc88rep1.rda",
+     compress = "xz", compression_level = 9)
+
+save(Shin2019MitoGcc88rep2, file="../../data/Shin2019MitoGcc88rep2.rda",
+     compress = "xz", compression_level = 9)
+
+save(Shin2019MitoGcc88rep3, file="../../data/Shin2019MitoGcc88rep3.rda",
+     compress = "xz", compression_level = 9)
+
+save(Shin2019MitoGol97rep1, file="../../data/Shin2019MitoGol97rep1.rda",
+     compress = "xz", compression_level = 9)
+
+save(Shin2019MitoGol97rep2, file="../../data/Shin2019MitoGol97rep2.rda",
+     compress = "xz", compression_level = 9)
+
+save(Shin2019MitoGol97rep3, file="../../data/Shin2019MitoGol97rep3.rda",
      compress = "xz", compression_level = 9)
 

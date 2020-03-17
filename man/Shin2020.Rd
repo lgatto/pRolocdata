@@ -1,7 +1,13 @@
-\name{Shin2010}
-\alias{Shin2019MitoControl}
-\alias{Shin2019MitoGCC88}
-\alias{Shin2019MitoGol97}
+\name{Shin2020}
+\alias{Shin2019MitoControlrep1}
+\alias{Shin2019MitoControlrep2}
+\alias{Shin2019MitoControlrep3}
+\alias{Shin2019MitoGcc88rep1}
+\alias{Shin2019MitoGcc88rep2}
+\alias{Shin2019MitoGcc88rep3}
+\alias{Shin2019MitoGol97rep1}
+\alias{Shin2019MitoGol97rep2}
+\alias{Shin2019MitoGol97rep3}
 
 \docType{data}
 
@@ -29,9 +35,9 @@
 }
 
 \usage{
-  data("Shin2019MitoControl")
-  data("Shin2019MitoGCC88")
-  data("Shin2019MitoGol97")
+  data("Shin2019MitoControlrep1")
+  data("Shin2019MitoGcc88rep1")
+  data("Shin2019MitoGol97rep1")
 }
 
 \format{
@@ -42,18 +48,18 @@
 \references{
   
   \emph{Spatial proteomics defines the content of trafficking vesicles captured by golgin
-    tethers. John J.H. Shin, Oliver M. Crook, Alicia C. Borgeaud, Jérôme Cattin-Ortolá, Sew-Yeu Peak-
+    tethers. John J.H. Shin, Oliver M. Crook, Alicia C. Borgeaud, Jerome Cattin-Ortola, Sew-Yeu Peak-
       Chew, Jessica Chadwick, Kathryn S. Lilley, Sean Munro.}
 }
 
 \examples{
-  data(Shin2019MitoControl)
-  Shin2019MitoControl
-  pData(Shin2019MitoControl)
-  exprs(Shin2019MitoControl)[1:3,1:3]
+  data(Shin2019MitoControlrep1)
+  Shin2019MitoControlrep1
+  pData(Shin2019MitoControlrep1)
+  exprs(Shin2019MitoControlrep1)[1:3,1:3]
   
   library("pRoloc")
-  plot2D(Shin2019MitoControl, main = "Shin 2019 HeK 293T WT")
+  plot2D(Shin2019MitoControlrep1, main = "Shin 2019 HeK 293T WT")
 }
 
 \keyword{datasets}
