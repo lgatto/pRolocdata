@@ -43,7 +43,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 95 datasets available in
+Currently, there are 104 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -53,103 +53,112 @@ pRolocdata()
 ```
 
 
-|Data                   |Description                                                                                                      |
-|:----------------------|:----------------------------------------------------------------------------------------------------------------|
-|E14TG2aR               |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
-|E14TG2aS1              |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
-|E14TG2aS1goCC          |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
-|E14TG2aS1yLoc          |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
-|E14TG2aS2              |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
-|HEK293T2011            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
-|HEK293T2011goCC        |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
-|HEK293T2011hpa         |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
-|andreyev2010           |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009)             |
-|andreyev2010activ      |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009)             |
-|andreyev2010rest       |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009)             |
-|andy2011               |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
-|andy2011goCC           |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
-|andy2011hpa            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
-|at_chloro              |The AT_CHLORO data base                                                                                          |
-|baers2018              |Synechocystis spatial proteomics                                                                                 |
-|beltran2016HCMV120     |Data from Beltran et al. 2016                                                                                    |
-|beltran2016HCMV24      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016HCMV48      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016HCMV72      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016HCMV96      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016MOCK120     |Data from Beltran et al. 2016                                                                                    |
-|beltran2016MOCK24      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016MOCK48      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016MOCK72      |Data from Beltran et al. 2016                                                                                    |
-|beltran2016MOCK96      |Data from Beltran et al. 2016                                                                                    |
-|davies2018ap4b1        |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
-|davies2018ap4e1        |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
-|davies2018wt           |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
-|dunkley2006            |LOPIT data from Dunkley et al. (2006)                                                                            |
-|dunkley2006goCC        |LOPIT data from Dunkley et al. (2006)                                                                            |
-|fabre2015r1            |Data from Fabre et al. 2015                                                                                      |
-|fabre2015r2            |Data from Fabre et al. 2015                                                                                      |
-|foster2006             |PCP data from Foster et al. (2006)                                                                               |
-|groen2014cmb           |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
-|groen2014r1            |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
-|groen2014r1goCC        |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
-|groen2014r2            |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
-|groen2014r3            |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
-|hall2009               |LOPIT data from Hall et al. (2009)                                                                               |
-|havugimana2012         |Data from Havugimana et al. 2012                                                                                 |
-|hirst2018              |Data from Hirst et al. 2018                                                                                      |
-|hyperLOPIT2015         |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015goCC     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015ms2      |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015ms2psm   |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015ms3r1    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015ms3r1psm |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015ms3r2    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015ms3r2psm |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPIT2015ms3r3    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
-|hyperLOPITU2OS2017     |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
-|hyperLOPITU2OS2017b    |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
-|hyperLOPITU2OS2018     |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
-|itzhak2016helaCtrl     |Global, quantitative and dynamic mapping of protein subcellular localization                                     |
-|itzhak2016helaEgf      |Global, quantitative and dynamic mapping of protein subcellular localization                                     |
-|itzhak2016stcSILAC     |Data from Itzhak et al. (2016)                                                                                   |
-|itzhak2017             |Data from Itzhak et al. 2017                                                                                     |
-|itzhak2017markers      |Data from Itzhak et al. 2017                                                                                     |
-|kirkwood2013           |Data from Kirkwood et al. 2013.                                                                                  |
-|krahmer2018pcp         |Subcellular Reorganization in Diet-Induced Hepatic Steatosis                                                     |
-|krahmer2018phosphopcp  |Subcellular Reorganization in Diet-Induced Hepatic Steatosis                                                     |
-|kristensen2012r1       |Data from Kristensen et al. 2012                                                                                 |
-|kristensen2012r2       |Data from Kristensen et al. 2012                                                                                 |
-|kristensen2012r3       |Data from Kristensen et al. 2012                                                                                 |
-|lopimsSyn1             |LOPIMS data for the Synapter 2.0 paper                                                                           |
-|lopimsSyn2             |LOPIMS data for the Synapter 2.0 paper                                                                           |
-|lopimsSyn2_0frags      |LOPIMS data for the Synapter 2.0 paper                                                                           |
-|lopitdcU2OS2018        |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
-|mulvey2015             |Data from Mulvey et al. 2015                                                                                     |
-|mulvey2015norm         |Data from Mulvey et al. 2015                                                                                     |
-|nikolovski2012         |Meta-analysis from Nikolovski et al. (2012)                                                                      |
-|nikolovski2012imp      |Meta-analysis from Nikolovski et al. (2012)                                                                      |
-|nikolovski2014         |LOPIMS data from Nikolovski et al. (2014)                                                                        |
-|orre2019a431           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019h322           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019hcc827         |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019hcc827gef      |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019hcc827rep1     |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019hcc827rep2     |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019hcc827rep3     |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019mcf7           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|orre2019u251           |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
-|rodriguez2012r1        |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
-|rodriguez2012r2        |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
-|rodriguez2012r3        |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
-|stekhoven2014          |Data from Stekhoven et al. 2014                                                                                  |
-|tan2009r1              |LOPIT data from Tan et al. (2009)                                                                                |
-|tan2009r1goCC          |LOPIT data from Tan et al. (2009)                                                                                |
-|tan2009r2              |LOPIT data from Tan et al. (2009)                                                                                |
-|tan2009r3              |LOPIT data from Tan et al. (2009)                                                                                |
-|trotter2010            |LOPIT data sets used in Trotter et al. (2010)                                                                    |
-|trotter2010shallow     |LOPIT data sets used in Trotter et al. (2010)                                                                    |
-|trotter2010steep       |LOPIT data sets used in Trotter et al. (2010)                                                                    |
-|yeast2018              |Saccharomyces cerevisiae spatial proteomics (2018)                                                               |
+|Data                    |Description                                                                                                      |
+|:-----------------------|:----------------------------------------------------------------------------------------------------------------|
+|E14TG2aR                |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
+|E14TG2aS1               |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
+|E14TG2aS1goCC           |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
+|E14TG2aS1yLoc           |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
+|E14TG2aS2               |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
+|HEK293T2011             |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
+|HEK293T2011goCC         |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
+|HEK293T2011hpa          |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
+|Shin2019MitoControlrep1 |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoControlrep2 |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoControlrep3 |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoGcc88rep1   |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoGcc88rep2   |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoGcc88rep3   |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoGol97rep1   |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoGol97rep2   |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|Shin2019MitoGol97rep3   |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
+|andreyev2010            |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009)             |
+|andreyev2010activ       |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009)             |
+|andreyev2010rest        |Six sub-cellular fraction data from mouse macrophage-like RAW264.7 cells from Andreyev et al. (2009)             |
+|andy2011                |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
+|andy2011goCC            |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
+|andy2011hpa             |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
+|at_chloro               |The AT_CHLORO data base                                                                                          |
+|baers2018               |Synechocystis spatial proteomics                                                                                 |
+|beltran2016HCMV120      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV24       |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV48       |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV72       |Data from Beltran et al. 2016                                                                                    |
+|beltran2016HCMV96       |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK120      |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK24       |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK48       |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK72       |Data from Beltran et al. 2016                                                                                    |
+|beltran2016MOCK96       |Data from Beltran et al. 2016                                                                                    |
+|davies2018ap4b1         |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
+|davies2018ap4e1         |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
+|davies2018wt            |AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A         |
+|dunkley2006             |LOPIT data from Dunkley et al. (2006)                                                                            |
+|dunkley2006goCC         |LOPIT data from Dunkley et al. (2006)                                                                            |
+|fabre2015r1             |Data from Fabre et al. 2015                                                                                      |
+|fabre2015r2             |Data from Fabre et al. 2015                                                                                      |
+|foster2006              |PCP data from Foster et al. (2006)                                                                               |
+|groen2014cmb            |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
+|groen2014r1             |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
+|groen2014r1goCC         |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
+|groen2014r2             |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
+|groen2014r3             |LOPIT experiments on Arabidopsis thaliana roots, from Groen et al. (2014)                                        |
+|hall2009                |LOPIT data from Hall et al. (2009)                                                                               |
+|havugimana2012          |Data from Havugimana et al. 2012                                                                                 |
+|hirst2018               |Data from Hirst et al. 2018                                                                                      |
+|hyperLOPIT2015          |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015goCC      |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015ms2       |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015ms2psm    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015ms3r1     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015ms3r1psm  |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015ms3r2     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015ms3r2psm  |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPIT2015ms3r3     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016). |
+|hyperLOPITU2OS2017      |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
+|hyperLOPITU2OS2017b     |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
+|hyperLOPITU2OS2018      |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
+|itzhak2016helaCtrl      |Global, quantitative and dynamic mapping of protein subcellular localization                                     |
+|itzhak2016helaEgf       |Global, quantitative and dynamic mapping of protein subcellular localization                                     |
+|itzhak2016stcSILAC      |Data from Itzhak et al. (2016)                                                                                   |
+|itzhak2017              |Data from Itzhak et al. 2017                                                                                     |
+|itzhak2017markers       |Data from Itzhak et al. 2017                                                                                     |
+|kirkwood2013            |Data from Kirkwood et al. 2013.                                                                                  |
+|krahmer2018pcp          |Subcellular Reorganization in Diet-Induced Hepatic Steatosis                                                     |
+|krahmer2018phosphopcp   |Subcellular Reorganization in Diet-Induced Hepatic Steatosis                                                     |
+|kristensen2012r1        |Data from Kristensen et al. 2012                                                                                 |
+|kristensen2012r2        |Data from Kristensen et al. 2012                                                                                 |
+|kristensen2012r3        |Data from Kristensen et al. 2012                                                                                 |
+|lopimsSyn1              |LOPIMS data for the Synapter 2.0 paper                                                                           |
+|lopimsSyn2              |LOPIMS data for the Synapter 2.0 paper                                                                           |
+|lopimsSyn2_0frags       |LOPIMS data for the Synapter 2.0 paper                                                                           |
+|lopitdcU2OS2018         |2017 and 2018 hyperLOPIT on U2OS cells                                                                           |
+|mulvey2015              |Data from Mulvey et al. 2015                                                                                     |
+|mulvey2015norm          |Data from Mulvey et al. 2015                                                                                     |
+|nikolovski2012          |Meta-analysis from Nikolovski et al. (2012)                                                                      |
+|nikolovski2012imp       |Meta-analysis from Nikolovski et al. (2012)                                                                      |
+|nikolovski2014          |LOPIMS data from Nikolovski et al. (2014)                                                                        |
+|orre2019a431            |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019h322            |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827          |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827gef       |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827rep1      |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827rep2      |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019hcc827rep3      |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019mcf7            |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|orre2019u251            |SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization                                 |
+|rodriguez2012r1         |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
+|rodriguez2012r2         |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
+|rodriguez2012r3         |Spatial proteomics of human inducible goblet-like LS174T cells from Rodriguez-Pineiro et al. (2012)              |
+|stekhoven2014           |Data from Stekhoven et al. 2014                                                                                  |
+|tan2009r1               |LOPIT data from Tan et al. (2009)                                                                                |
+|tan2009r1goCC           |LOPIT data from Tan et al. (2009)                                                                                |
+|tan2009r2               |LOPIT data from Tan et al. (2009)                                                                                |
+|tan2009r3               |LOPIT data from Tan et al. (2009)                                                                                |
+|trotter2010             |LOPIT data sets used in Trotter et al. (2010)                                                                    |
+|trotter2010shallow      |LOPIT data sets used in Trotter et al. (2010)                                                                    |
+|trotter2010steep        |LOPIT data sets used in Trotter et al. (2010)                                                                    |
+|yeast2018               |Saccharomyces cerevisiae spatial proteomics (2018)                                                               |
 
 ### Loading data
 
