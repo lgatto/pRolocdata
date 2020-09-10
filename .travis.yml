@@ -2,7 +2,7 @@ language: r
 r: bioc-devel
 cache: packages
 sudo: true
-dist: trusty
+## dist: trusty
 
 apt_packages:
   - libnetcdf-dev
