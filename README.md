@@ -43,7 +43,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 104 datasets available in
+Currently, there are 108 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -55,6 +55,7 @@ pRolocdata()
 
 |Data                    |Description                                                                                                      |
 |:-----------------------|:----------------------------------------------------------------------------------------------------------------|
+|Barylyuk2020ToxoLopit   |Whole-cell spatial proteome of Toxoplasma: molecular anatomy of an apicomplexan cell                             |
 |E14TG2aR                |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
 |E14TG2aS1               |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
 |E14TG2aS1goCC           |LOPIT experiment on Mouse E14TG2a Embryonic Stem Cells from Breckels et al. (2016)                               |
@@ -63,6 +64,9 @@ pRolocdata()
 |HEK293T2011             |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |HEK293T2011goCC         |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
 |HEK293T2011hpa          |LOPIT experiment on Human Embryonic Kidney fibroblast HEK293T cells from Breckels et al. (2013)                  |
+|Kozik_con               |Small molecule enhancers of endosome-to-cytosol import augment anti-tumour immunity                              |
+|Kozik_pra               |Small molecule enhancers of endosome-to-cytosol import augment anti-tumour immunity                              |
+|Kozik_tam               |Small molecule enhancers of endosome-to-cytosol import augment anti-tumour immunity                              |
 |Shin2019MitoControlrep1 |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
 |Shin2019MitoControlrep2 |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
 |Shin2019MitoControlrep3 |Spatial proteomics defines the content of trafficking vesicles captured by golgin tethers                        |
