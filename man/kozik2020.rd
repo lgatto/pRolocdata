@@ -1,5 +1,7 @@
 \name{Kozik_con}
 \alias{Kozik_con}
+\alias{Kozik_pra}
+\alias{Kozik_tam}
 
 \docType{data}
 
@@ -32,7 +34,6 @@
   data("Kozik_con")
   data("Kozik_pra")
   data("Kozik_tam")
-  data("Kozik2020")
 }
 
 \format{
