@@ -1,9 +1,9 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.26.2
+Version: 1.27.1
 Author: Laurent Gatto, Oliver M. Crook and Lisa M. Breckels
-Maintainer: Laurent Gatto <lg390@cam.ac.uk>
+Maintainer: Laurent Gatto <laurent.gatto@uclouvain.be>
 Description: Mass-spectrometry based spatial proteomics data sets and
 	     protein complex separation data. Also contains the time
 	     course expression experiment from Mulvey et al. 2015.
