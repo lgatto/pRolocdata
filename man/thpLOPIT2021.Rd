@@ -185,6 +185,7 @@ data(psms_thpLOPIT_unstim_rep3_set2)
     by the \code{localisation.prob}. Proteins were assigned 
     the localisation predicted from \code{tagm.mcmc.allocation}
     if their \code{localisation.prob} was lower than .99 (1\% FDR)
+ }
 }
 
 \source{
