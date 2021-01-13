@@ -1,4 +1,5 @@
 \name{thpLOPIT_lps_mulvey2021}
+\alias{thpLOPIT_lps_mulvey2021}
 \alias{thpLOPIT_unstimulated_mulvey2021}
 
 \alias{thpLOPIT_unstimulated_rep1_mulvey2021}

@@ -1,5 +1,5 @@
 \name{lpsTimecourse_mulvey2021}
-
+\alias{lpsTimecourse_mulvey2021}
 \alias{lpsTimecourse_rep1_mulvey2021}
 \alias{lpsTimecourse_rep2_mulvey2021}
 \alias{lpsTimecourse_rep3_mulvey2021}
