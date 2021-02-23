@@ -71,10 +71,6 @@ data(psms_lpsTimecourse_rep3_mulvey2021)
   \url{http://www.bio.cam.ac.uk/proteomics/}.
 }
 
-\references{
-
-}
-
 \examples{
 data(lpsTimecourse_mulvey2021)
 lpsTimecourse_mulvey2021
