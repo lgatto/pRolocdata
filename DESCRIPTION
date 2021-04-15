@@ -1,12 +1,12 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.27.3
+Version: 1.29.1
 Author: Laurent Gatto, Oliver M. Crook and Lisa M. Breckels
 Maintainer: Laurent Gatto <laurent.gatto@uclouvain.be>
 Description: Mass-spectrometry based spatial proteomics data sets and
-	     protein complex separation data. Also contains the time
-	     course expression experiment from Mulvey et al. 2015.
+             protein complex separation data. Also contains the time
+             course expression experiment from Mulvey et al. 2015.
 Depends: R (>= 3.6.3), MSnbase
 Imports: Biobase, utils
 Suggests: pRoloc (>= 1.13.8), testthat
@@ -14,7 +14,7 @@ License: GPL-2
 BugReports: https://github.com/lgatto/pRolocdata/issues
 URL: https://github.com/lgatto/pRolocdata
 biocViews: ExperimentData, Homo_sapiens_Data, MassSpectrometryData,
-	   Arabidopsis_thaliana_Data, Drosophila_melanogaster_Data,
-	   Mus_musculus_Data, StemCell, Proteome
+           Arabidopsis_thaliana_Data, Drosophila_melanogaster_Data,
+           Mus_musculus_Data, StemCell, Proteome
 RoxygenNote: 6.1.1
 Encoding: UTF-8
