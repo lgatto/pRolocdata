@@ -1,3 +1,15 @@
+CHANGES IN VERSION 1.29.1
+-------------------------
+ o merge github master
+
+CHANGES IN VERSION 1.27.3
+-------------------------
+ o add THP-1 data from Mulvey and Breckels (2021)
+
+CHANGES IN VERSION 1.27.2
+-------------------------
+ o add data from Courtland et al. (2020)
+
 CHANGES IN VERSION 1.27.1
 -------------------------
  o add data from Kozik et al. (2020)
