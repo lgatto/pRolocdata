@@ -1,5 +1,6 @@
 \name{hyperLOPIT2015}
 \alias{hyperLOPIT2015}
+\alias{hyperLOPIT2015_se}
 \alias{hyperLOPIT2015ms3r1}
 \alias{hyperLOPIT2015ms3r2}
 \alias{hyperLOPIT2015ms3r3}
@@ -27,6 +28,7 @@
 
 \usage{
 data(hyperLOPIT2015)
+data(hyperLOPIT2015_se)
 data(hyperLOPIT2015ms3r1)
 data(hyperLOPIT2015ms3r2)
 data(hyperLOPIT2015ms3r3)
@@ -37,8 +39,11 @@ data(hyperLOPIT2015ms2psm)
 }
 
 \format{
-  The data is an instance of class \code{MSnSet} from package
-  \code{MSnbase}.
+
+  The data are an instance of class \code{MSnSet} from package
+  \code{MSnbase}. Those ending in \code{_se} are of class
+  \code{SummarizedExperiment}.
+
 }
 
 \details{
@@ -98,12 +103,16 @@ head(exprs(hyperLOPIT2015))
 
 data(hyperLOPIT2015ms3r1psm)
 x <- combineFeatures(hyperLOPIT2015ms3r1psm,
-		     groupBy = fData(hyperLOPIT2015ms3r1psm)$Protein.Group.Accession,
-		     fun = median)
+                     groupBy = fData(hyperLOPIT2015ms3r1psm)$Protein.Group.Accession,
+                     fun = median)
 library("pRoloc")
 par(mfrow = c(1, 2))
 plot2D(hyperLOPIT2015ms3r1psm, main = "PSM-level")
 plot2D(x, main = "Protein-level (using mean)")
+
+## SummarizedExperiment data
+library(SummarizedExperiment)
+data(hyperLOPIT2015_se)
 }
 
 \keyword{datasets}
