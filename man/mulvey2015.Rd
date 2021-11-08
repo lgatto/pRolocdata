@@ -1,6 +1,8 @@
 \name{mulvey2015}
 \alias{mulvey2015}
 \alias{mulvey2015norm}
+\alias{mulvey2015_se}
+\alias{mulvey2015norm_se}
 
 \docType{data}
 
@@ -20,7 +22,11 @@ data(mulvey2015norm)
 }
 
 \format{
-  The data is an instance of class \code{MSnSet} from package \code{MSnbase}.
+
+  The data are instances of class \code{MSnSet} from package
+  \code{MSnbase}. This ending with \code{_se} are of class
+  \code{SummarizedExperiment}.
+
 }
 
 \details{
@@ -56,11 +62,6 @@ data(mulvey2015norm)
 
 }
 
-\source{
-  Supporting Information on
-
-}
-
 \references{
 
   Mulvey CM, Schr\"oter C, Gatto L, Dikicioglu D, Fidaner IB,
@@ -77,6 +78,10 @@ plot2D(mulvey2015)
 
 data(mulvey2015norm)
 heatmap(exprs(mulvey2015))
+
+library(SummarizedExperiment)
+data(mulvey2015_se)
+mulvey2015_se
 }
 
 \keyword{datasets}
