@@ -233,7 +233,7 @@ load("../extdata/hlMCMCresults20180521.rda") ## hlMCMCresults20180521
 stopifnot(identical(rownames(hlMAPresults20180521), featureNames(hyperLOPIT2015)))
 stopifnot(identical(rownames(hlMCMCresults20180521), featureNames(hyperLOPIT2015)))
 
-## change type from character to numeric 
+## change type from character to numeric
 hlMCMCresults20180521$tagm.mcmc.probability <- as.numeric(hlMCMCresults20180521$tagm.mcmc.probability)
 ## Change convention for outlier so that markers have outlier of 0.
 hlMCMCresults20180521$tagm.mcmc.outlier <- 1 - hlMCMCresults20180521$tagm.mcmc.outlier
@@ -252,3 +252,8 @@ save(hyperLOPIT2015ms3r1, file = "../../data/hyperLOPIT2015ms3r1.RData", compres
 save(hyperLOPIT2015ms3r2, file = "../../data/hyperLOPIT2015ms3r2.RData", compress = "xz", compression_level = 9)
 save(hyperLOPIT2015ms3r3, file = "../../data/hyperLOPIT2015ms3r3.RData", compress = "xz", compression_level = 9)
 save(hyperLOPIT2015ms2, file = "../../data/hyperLOPIT2015ms2.RData", compress = "xz", compression_level = 9)
+
+
+library("SummarizedExperiment")
+hyperLOPIT2015_se <- as(hyperLOPIT2015, "SummarizedExperiment")
+save(hyperLOPIT2015_se, file = "../../data/hyperLOPIT2015_se.rda", compress = "xz", compression_level = 9)
