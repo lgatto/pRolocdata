@@ -2,6 +2,7 @@ CHANGES IN VERSION 1.33.1
 -------------------------
  o Add hyperLOPIT2015_se data
  o Add mulvey2015_se and mulvey2015norm_se data
+ o Regenerated README to include new datasets
 
 CHANGES IN VERSION 1.29.1
 -------------------------
@@ -41,7 +42,7 @@ CHANGES IN VERSION 1.21.1
 
 CHANGES IN VERSION 1.21.0
 -------------------------
- o New version for Bioc 3.ç (devel)
+ o New version for Bioc 3.9 (devel)
 
 CHANGES IN VERSION 1.20.0
 -------------------------
