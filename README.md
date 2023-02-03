@@ -43,7 +43,7 @@ library("pRolocdata")
 
 ### Available datasets
 
-Currently, there are 137 datasets available in
+Currently, there are 144 datasets available in
 `pRolocdata`. Use the `pRolocdata()` function to obtain a list of data
 names and their description.
 
@@ -113,6 +113,7 @@ pRolocdata()
 |havugimana2012                        |Data from Havugimana et al. 2012                                                                                               |
 |hirst2018                             |Data from Hirst et al. 2018                                                                                                    |
 |hyperLOPIT2015                        |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016).               |
+|hyperLOPIT2015_se                     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016).               |
 |hyperLOPIT2015goCC                    |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016).               |
 |hyperLOPIT2015ms2                     |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016).               |
 |hyperLOPIT2015ms2psm                  |Protein and PMS-level hyperLOPIT datasets on Mouse E14TG2a embryonic stem cells from Christoforou et al. (2016).               |
@@ -143,8 +144,14 @@ pRolocdata()
 |lpsTimecourse_rep1_mulvey2021         |Protein and PMS-level datasets from temporal abundance profiling experiments of THP-1 human leukaema cells stimulated with LPS |
 |lpsTimecourse_rep2_mulvey2021         |Protein and PMS-level datasets from temporal abundance profiling experiments of THP-1 human leukaema cells stimulated with LPS |
 |lpsTimecourse_rep3_mulvey2021         |Protein and PMS-level datasets from temporal abundance profiling experiments of THP-1 human leukaema cells stimulated with LPS |
+|moloneyTbBSF                          |Spatial proteomics datasets from two African trypanosome species                                                               |
+|moloneyTbPCF                          |Spatial proteomics datasets from two African trypanosome species                                                               |
+|moloneyTcBSF                          |Spatial proteomics datasets from two African trypanosome species                                                               |
+|moloneyTcPCF                          |Spatial proteomics datasets from two African trypanosome species                                                               |
 |mulvey2015                            |Data from Mulvey et al. 2015                                                                                                   |
+|mulvey2015_se                         |Data from Mulvey et al. 2015                                                                                                   |
 |mulvey2015norm                        |Data from Mulvey et al. 2015                                                                                                   |
+|mulvey2015norm_se                     |Data from Mulvey et al. 2015                                                                                                   |
 |nikolovski2012                        |Meta-analysis from Nikolovski et al. (2012)                                                                                    |
 |nikolovski2012imp                     |Meta-analysis from Nikolovski et al. (2012)                                                                                    |
 |nikolovski2014                        |LOPIMS data from Nikolovski et al. (2014)                                                                                      |
@@ -356,6 +363,8 @@ al. 2017*, and these files will be added to `pRolocdata` as three
    request](https://github.com/lgatto/pRolocdata).
 
 
-If you do not have the `R` expertise to prepare the data, send me an
-email at `lg390<AT>cam<dot>ac<dot>uk` with the source `csv` files and
-appropriate metadata and I will add it for you.
+If you do not have the `R` expertise to prepare the data, please
+[open an issue](https://github.com/lgatto/pRolocdata/issues) in the 
+`pRolocdata` Github repo or send me an email at 
+`laurent.gatto<AT>uclouvain<dot>be` with the source `csv`
+files and appropriate metadata and I will add it for you.

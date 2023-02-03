@@ -172,6 +172,8 @@ al. 2017*, and these files will be added to `pRolocdata` as three
    request](https://github.com/lgatto/pRolocdata).
 
 
-If you do not have the `R` expertise to prepare the data, send me an
-email at `lg390<AT>cam<dot>ac<dot>uk` with the source `csv` files and
-appropriate metadata and I will add it for you.
+If you do not have the `R` expertise to prepare the data, please
+[open an issue](https://github.com/lgatto/pRolocdata/issues) in the 
+`pRolocdata` Github repo or send me an email at 
+`laurent.gatto<AT>uclouvain<dot>be` with the source `csv`
+files and appropriate metadata and I will add it for you.
