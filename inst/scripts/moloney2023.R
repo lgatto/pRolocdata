@@ -110,17 +110,17 @@ moloneyTcPCF <- makeMSnSet(
 
 
 stopifnot(validObject(moloneyTbBSF))
-save(moloneyTbBSF, file = "../../data/moloneyTbBSF", 
+save(moloneyTbBSF, file = "../../data/moloneyTbBSF.RData", 
      compress = "xz", compression_level = 9)
 
 stopifnot(validObject(moloneyTcBSF))
-save(moloneyTbBSF, file = "../../data/moloneyTcBSF",
+save(moloneyTcBSF, file = "../../data/moloneyTcBSF.RData",
      compress = "xz", compression_level = 9)
 
 stopifnot(validObject(moloneyTbPCF))
-save(moloneyTbBSF, file = "../../data/moloneyTbPCF", 
+save(moloneyTbPCF, file = "../../data/moloneyTbPCF.RData", 
      compress = "xz", compression_level = 9)
 
 stopifnot(validObject(moloneyTcPCF))
-save(moloneyTbBSF, file = "../../data/moloneyTcPCF",
+save(moloneyTcPCF, file = "../../data/moloneyTcPCF.RData",
      compress = "xz", compression_level = 9)

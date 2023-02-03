@@ -21,7 +21,7 @@
 
 \usage{
 data(moloneyTbBSF)
-data(moloneyTbBSF)
+data(moloneyTbPCF)
 data(moloneyTcBSF)
 data(moloneyTcPCF)
 }
