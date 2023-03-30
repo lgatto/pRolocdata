@@ -144,6 +144,7 @@ data(moloneyTcPCF)
   moloneyTbBSF
   
   ## PCA plot of the data
+  library("pRoloc")
   plot2D(moloneyTbBSF, fcol = "tagm.map.localisation.prediction",
          main = "PCA plot map of T. Brucei bloodstream form")
          
