@@ -127,7 +127,7 @@ pRolocdata()
 |hyperLOPITU2OS2018                    |2017 and 2018 hyperLOPIT on U2OS cells                                                                                         |
 |itzhak2016helaCtrl                    |Global, quantitative and dynamic mapping of protein subcellular localization                                                   |
 |itzhak2016helaEgf                     |Global, quantitative and dynamic mapping of protein subcellular localization                                                   |
-|itzhak2016stcSILAC                    |Data from Itzhak et al. (2016)                                                                                                 |
+|itzhak2016stcSILAC                    |                                                                                                                               |
 |itzhak2017                            |Data from Itzhak et al. 2017                                                                                                   |
 |itzhak2017markers                     |Data from Itzhak et al. 2017                                                                                                   |
 |kirkwood2013                          |Data from Kirkwood et al. 2013.                                                                                                |
