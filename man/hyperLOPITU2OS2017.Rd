@@ -7,7 +7,7 @@
 
 \docType{data}
 
-\title{ 2017 and 2018 hyperLOPIT on U2OS cells }
+\title{2017 and 2018 hyperLOPIT on U2OS cells}
 
 \description{
 
@@ -90,7 +90,7 @@
     comparison to GO annotation and protein database annotation. The
     SVM score thresholds were set individually for each class so that
     the false discovery rate of the SVM classification was equal or
-    lower than 5\%.
+    lower than (5\%).
   }
 }
 
