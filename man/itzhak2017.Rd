@@ -13,7 +13,7 @@
   The data from Itzhal et al. 2017 defines a spatial map for mouse
   primary neurons. The data are composed of 5 spatial maps, each
   containing 6 differential centrifugation fraction (as described in
-  Itzhak et al. 2016, see \code{\link{itzhak2016}}).
+  Itzhak et al. 2016, see \code{\link{itzhak2016stcSILAC}}).
 
   The annotatied marker proteins are available in the
   \code{itzhak2017markers} dataset.

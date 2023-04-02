@@ -1,5 +1,4 @@
-\name{itzhak2016stcSILAC}
-\alias{itzhak2016}
+\name{itzhak2016}
 \alias{itzhak2016stcSILAC}
 
 \docType{data}
