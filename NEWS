@@ -1,3 +1,13 @@
+CHANGES IN VERSION 1.37.1
+-------------------------
+ o add data from Moloney et al. (2023)
+ o update syntax in the author field of description
+ o remove redundant alias for itzhak2016 
+
+CHANGES IN VERSION 1.37.0
+-------------------------
+ o new devel version for Bioc
+
 CHANGES IN VERSION 1.33.1
 -------------------------
  o Add hyperLOPIT2015_se data

@@ -1,9 +1,19 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.37.0
-Author: Laurent Gatto, Oliver M. Crook and Lisa M. Breckels
-Maintainer: Laurent Gatto <laurent.gatto@uclouvain.be>
+Version: 1.37.1
+Authors@R: c(person(given = "Laurent", family = "Gatto",
+                    email = "laurent.gatto@uclouvain.be",
+                    comment = c(ORCID = "0000-0002-1520-2268"),
+                    role = c("aut","cre")),
+             person(given = "Oliver", family ="Crook",
+                    email = "oliver.crook@stats.ox.ac.uk",
+                    comment = c(ORCID = "0000-0001-5669-8506"),
+                    role = "aut"),
+             person(given = "Lisa", family ="Breckels",
+                    email = "lms79@cam.ac.uk",
+                    comment = c(ORCID = "0000-0001-8918-7171"),
+                    role = "aut"))
 Description: Mass-spectrometry based spatial proteomics data sets and
              protein complex separation data. Also contains the time
              course expression experiment from Mulvey et al. 2015.
