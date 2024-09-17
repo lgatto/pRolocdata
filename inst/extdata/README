@@ -1,6 +1,10 @@
 Supplementary data files used to construct data sets -*- mode:org; -*-
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 * From Foster et al 2006
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 Supplemental data file from http://www.cell.com/supplemental/S0092-8674(06)00369-2
 
@@ -97,8 +101,8 @@ Organelle marker had a chi2 scores of 0 for the expected organelle, except where
 - ERGDV (ER/Golgi-derived vesicles): Vesicle docking protein - IPI00128071 [b]
 - Mito: ATP synthase beta chain, mitochondrial precursor - IPI00113801
 - Proteasome: Proteasome subunit beta type 1 - IPI00113845  [c]
-	      Proteasome subunit alpha type 6 - IPI00131845 [d]
-	      Proteasome subunit alpha type 7 - IPI00131406 [e]
+              Proteasome subunit alpha type 6 - IPI00131845 [d]
+              Proteasome subunit alpha type 7 - IPI00131406 [e]
 
 [a] Also chi2 of 0.048 for ERGDV
 [b] General vesicular transport factor p115 in UniProt,
@@ -108,6 +112,8 @@ Organelle marker had a chi2 scores of 0 for the expected organelle, except where
 [e] chi2 value of 0.0057 for proteasome
 
 * From Dunkley et al 2006
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 Supporting Information from http://www.pnas.org/content/103/17/6518/suppl/DC1
 
@@ -122,6 +128,8 @@ Table 3. Spreadsheet containing normalized reported ion intensities.
 This table has been converted to Dunkley2006.csv for easy input into R.
 
 * From Tan et al 2009
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 Supporting Information from http://pubs.acs.org/doi/suppl/10.1021/pr800866n
 
@@ -162,12 +170,17 @@ containing all names per protein.
 
 * From Ferro et al 2010
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 The file AT_CHLORO_table_120906.xls was email by Myriam Ferro to be
 included in the pRolocdata package. The first sheet (README) ws used
 to prepare feature annotation. The second sheet was converted to
 AT_CHLORO_table_120906.csv and used to generate the at_chloro MSnSet.
 
 * From Nikolovski 2012
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 Reformated manually and fixed column names
 
  - S1: Summary of the 1385 proteins observed at least twice in any of
@@ -177,6 +190,9 @@ Reformated manually and fixed column names
  - S3: List of the 12 novel putative GT families with their members
 
 * From Hall 2009
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 ** S1 - Complete protein-level iTRAQ quantitation values. Spreadshhet manually simplified and exported to csv.
 See supplementary file 1 for details about the design. The number below represebt fractions.
 
@@ -202,6 +218,8 @@ BD = membrane protein-enriched pellet and soluble/preripheral proteins
 
 * From Nikolovski et al 2014
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 Nikolovski N, Shliaha PV, Gatto L, Dupree P, Lilley KS. Label free
 protein quantification for plant Golgi protein localisation and
 abundance. Plant Physiol.  2014 Aug 13. pii: pp.114.245589. [Epub
@@ -218,12 +236,17 @@ ahead of print] PubMed PMID: 25122472.
   proteins classified as Golgi residents by SVM classification
 
 * Protein complexe separation profiles
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 - fabre2015r1 and r2
 - kristensen2012r1, r2, and r3
 - kirkwood2013
 - havugimana2012
 
 * From Itzhak et al 2016
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 > Daniel N Itzhak, Stefka Tyanova, Jürgen Cox and Georg HH
 > Borner. Global, quantitative and dynamic mapping of protein
@@ -239,6 +262,8 @@ is processed by the =inst/scripts/itzhak2016.R= file.
   =itzhak2016stcSILAC=.
 
 * From Stekhoven et al 2014
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 > Stekhoven DJ, Omasits U, Quebatte M, Dehio C, Ahrens
 > CH. Proteome-wide identification of predominant subcellular protein
@@ -273,6 +298,8 @@ File is =inst/extdata/mmc3.csv=, manually exported/formatted from
 [[http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S187439191400027X/1-s2.0-S187439191400027X-mmc3.xls/276834/html/S187439191400027X/c794b14eb9d2f6013eb18ce0f6693990/mmc3.xls][Supplementary table 4]].
 
 * From Andreyev et al 2010
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 > Andreyev AY, Shen Z, Guan Z, Ryan A, Fahy E, Subramaniam S, Raetz
 > CR, Briggs S, Dennis EA. Application of proteomic marker ensembles
@@ -317,6 +344,8 @@ See =inst/scripts/andreyev2010.R=
 
 * From Rodriguez-Pineiro et al 2012
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 > Rodríguez-Piñeiro AM, van der Post S, Johansson ME, Thomsson KA,
 > Nesvizhskii AI, Hansson GC. Proteomic study of the mucin granulae in
 > an intestinal goblet cell model. J Proteome Res. 2012 Mar
@@ -343,6 +372,9 @@ vesicles and their secretion.
 See =inst/script/rodriguez-pineiro2012.R=
 
 * Data from the Bioconductor pRoloc workflow
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 bpw-svmopt.rds
 This object is the result of a svmOptimisation on the Christoforou
 (2016) hyperLOPIT dataset.
@@ -365,6 +397,8 @@ MSnSet of GO CC terms generated from object hl from Bioc pRoloc
 workflow.
 * HyperLOPIT PMS-level data
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 The PSM-level cvs file are available in the =extdata= directory
 and have been processed as follows: imported =MSnSet= instances
 using =readMSnSet2=, PSMs with missing values were filtered out
@@ -376,6 +410,8 @@ based on the combined protein-level data =hyperLOPIT2015= and
 reporter tags are normalised using the ="sum"= method. The
 processing script is =scripts/hyperlopit2015psm.R=.
 * Synapter2 LOPIMS data
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 #+BEGIN_QUOTE
 Dear Laurent,
@@ -402,6 +438,8 @@ optimisation performed. Good luck with your analysis!
 
 See =inst/scripts/lopmissyn2.R=
 * U2OS hyperLOPIT data 2017
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 =hyperLOPIT_U2OS_201702.csv=
 
@@ -460,6 +498,8 @@ See =inst/scripts/lopmissyn2.R=
     lower than 5%.
 * From Beltran et al 2016
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 A Portrait of the Human Organelle Proteome In Space and Time during
 Cytomegalovirus Infection Pierre M. Jean Beltran, Rommel A. Mathias
 and Ileana M. Cristea. http://dx.doi.org/10.1016/j.cels.2016.08.012
@@ -497,6 +537,8 @@ Table S3. List of Refined Organelle Markers Used for Prediction of
 Subcellular Localization, Related to Figure 4.
 * From Hirst et al 2018
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 Reference: Role of the AP-5 adaptor protein complex in late
 endosome-to-Golgi retrieval. Hirst et al. 2018,
 https://doi.org/10.1371/journal.pbio.2004411.
@@ -511,6 +553,8 @@ a csv file.
 
 See the man page for more details.
 * From Itzhal et al 2017
+
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
 Itzhak DN, Davies C, Tyanova S, Mishra A, Williamson J, Antrobus R,
 Cox J, Weekes MP, Borner GHH. A Mass Spectrometry-Based Approach for
@@ -553,6 +597,8 @@ based machine learning.
 
 * From Krahmer et al. 2018
 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
 Krahmer, N., Najafi, B., Schueder, F., Quagliarini, F., Steger, M., Seitz, S.,
 Kasper, R., Salinas, F., Cox, J., Uhlenhaut, N.H. and Walther, T.C., 2018.
 Organellar proteomics and phospho-proteomics reveal subcellular reorganization
@@ -587,7 +633,9 @@ is provided within the MSnSet.
 
 * From Orre et al. 2019
 
-Lukas Minus Orre, Mattias Vesterlund, Yanbo Pan, Taner Arslan, Yafeng Zhu, 
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
+
+Lukas Minus Orre, Mattias Vesterlund, Yanbo Pan, Taner Arslan, Yafeng Zhu,
 Alejandro Fernandez Woodbridge, Oliver Frings, Erik Fredlund, and Janne Lehtio
 
 SubCellBarCode: Proteome-wide Mapping of Protein Localization and Relocalization
@@ -608,21 +656,26 @@ U251.csv
 
 TMT 10-plex quantification was used. Each 10-plex contains two replicates. This workflow
 uses isoelectric focusing so they gain additional converage of the proteome, however
-this acros 72 RP fraction and thus require alot of ms time. 
-
+this acros 72 RP fraction and thus require alot of ms time.
 
 * From Davies et al. 2018
 
-Davies, Alexandra K, Itzhak, Daniel N., Edgar, James R., Archuleta, Tara L., Hirst, Jennifer
-, Jackson, Lauren P., Robinson, Margaret S., Borner, Georg H. H.
+Files using in the scipts are archived at https://doi.org/10.14428/DVN/7DXJDB.
 
-AP-4 vesicles contribute to spatial control of autophagy via RUSC-dependent peripheral delivery of ATG9A
+Davies, Alexandra K, Itzhak, Daniel N., Edgar, James R., Archuleta,
+Tara L., Hirst, Jennifer , Jackson, Lauren P., Robinson, Margaret S.,
+Borner, Georg H. H.
 
+AP-4 vesicles contribute to spatial control of autophagy via
+RUSC-dependent peripheral delivery of ATG9A
 
-The file 41467_2018_6172_MOESM3_ESM was downloaded from supplementary material 1. This file was then converted
-to Daviesetal.csv
+The file 41467_2018_6172_MOESM3_ESM was downloaded from supplementary
+material 1. This file was then converted to Daviesetal.csv
 
-Each experiment contains two duplicates with 5 fractions. There are 3 experiment in total - a control wild type
-experiment and two futher knock-out experiments labelled ap4b1 and ap4e1 for the specific genes knocked out.
+Each experiment contains two duplicates with 5 fractions. There are 3
+experiment in total - a control wild type experiment and two futher
+knock-out experiments labelled ap4b1 and ap4e1 for the specific genes
+knocked out.
 
-Label-free quantitation is used. The data is row sum normalised manually.
+Label-free quantitation is used. The data is row sum normalised
+manually.
