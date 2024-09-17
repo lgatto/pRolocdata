@@ -1,3 +1,16 @@
+CHANGES IN VERSION 1.43.1
+-------------------------
+ o move content of inst/extdata to the pRolocdata dataverse
+   (https://dataverse.uclouvain.be/dataverse/pRolocdata).
+
+CHANGES IN VERSION 1.43.0
+-------------------------
+ o new devel version
+ 
+CHANGES IN VERSION 1.42.0
+-------------------------
+ o new release version
+ 
 CHANGES IN VERSION 1.37.1
 -------------------------
  o add data from Moloney et al. (2023)

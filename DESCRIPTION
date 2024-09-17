@@ -1,7 +1,7 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.43.0
+Version: 1.43.1
 Authors@R: c(person(given = "Laurent", family = "Gatto",
                     email = "laurent.gatto@uclouvain.be",
                     comment = c(ORCID = "0000-0002-1520-2268"),

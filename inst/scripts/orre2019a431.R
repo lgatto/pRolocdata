@@ -4,7 +4,8 @@ require("org.Hs.eg.db")
 require("UniProt.ws")
 
 
-csvfile <- "../../inst/extdata/A431.csv"
+## csvfile <- "../../inst/extdata/A431.csv"
+csvfile <- "../../inst/extdata/Orre2019.csv"
 csvfileMarker <- "../../inst/extdata/MarkersOrre2019.csv"
 csv <- read.csv(csvfile)
 makerData <- read.csv(csvfileMarker)
@@ -51,7 +52,7 @@ e <- exprs(A431)
 toName <- paste0(colnames(A431)[1:10])
 colnames(e) <- toName
 pd <- data.frame(toName,
-                 row.names=colnames(e))  
+                 row.names=colnames(e))
 pd <- new("AnnotatedDataFrame", pd)
 
 ## feature data
