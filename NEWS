@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.43.2
+-------------------------
+o add two files back to inst/extdata, needed for the pRoloc v01 and
+  v02 vignettes.
+
 CHANGES IN VERSION 1.43.1
 -------------------------
  o move content of inst/extdata to the pRolocdata dataverse
@@ -6,16 +11,16 @@ CHANGES IN VERSION 1.43.1
 CHANGES IN VERSION 1.43.0
 -------------------------
  o new devel version
- 
+
 CHANGES IN VERSION 1.42.0
 -------------------------
  o new release version
- 
+
 CHANGES IN VERSION 1.37.1
 -------------------------
  o add data from Moloney et al. (2023)
  o update syntax in the author field of description
- o remove redundant alias for itzhak2016 
+ o remove redundant alias for itzhak2016
 
 CHANGES IN VERSION 1.37.0
 -------------------------
