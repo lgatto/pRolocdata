@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.43.3
+-------------------------
+o Add [exprsFile|fdataFile|pdataFile].csv back to inst/extdata (needed
+  to MSnbase vignette).
+
 CHANGES IN VERSION 1.43.2
 -------------------------
 o add two files back to inst/extdata, needed for the pRoloc v01 and
