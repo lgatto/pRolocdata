@@ -1,7 +1,9 @@
 CHANGES IN VERSION 1.43.3
 -------------------------
-o Add [exprsFile|fdataFile|pdataFile].csv and Dunkley2006.csv.gz back
-  to inst/extdata (needed to MSnbase vignette).
+
+o Add [exprsFile|fdataFile|pdataFile].csv Dunkley2006.csv.gz and
+  hyperLOPIT-SIData-ms3-rep12-intersect.csv.gz back to inst/extdata
+  (needed to MSnbase vignette and tests).
 
 CHANGES IN VERSION 1.43.2
 -------------------------
