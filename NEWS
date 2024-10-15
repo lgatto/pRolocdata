@@ -1,7 +1,7 @@
 CHANGES IN VERSION 1.43.3
 -------------------------
-o Add [exprsFile|fdataFile|pdataFile].csv back to inst/extdata (needed
-  to MSnbase vignette).
+o Add [exprsFile|fdataFile|pdataFile].csv and Dunkley2006.csv.gz back
+  to inst/extdata (needed to MSnbase vignette).
 
 CHANGES IN VERSION 1.43.2
 -------------------------
