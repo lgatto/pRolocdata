@@ -1,11 +1,11 @@
 Package: pRolocdata
 Type: Package
 Title: Data accompanying the pRoloc package
-Version: 1.45.0
+Version: 1.45.1
 Authors@R: c(person(given = "Laurent", family = "Gatto",
                     email = "laurent.gatto@uclouvain.be",
                     comment = c(ORCID = "0000-0002-1520-2268"),
-                    role = c("aut","cre")),
+                    role = "aut"),
              person(given = "Oliver", family ="Crook",
                     email = "oliver.crook@stats.ox.ac.uk",
                     comment = c(ORCID = "0000-0001-5669-8506"),
@@ -13,7 +13,7 @@ Authors@R: c(person(given = "Laurent", family = "Gatto",
              person(given = "Lisa", family ="Breckels",
                     email = "lms79@cam.ac.uk",
                     comment = c(ORCID = "0000-0001-8918-7171"),
-                    role = "aut"))
+                    role = c("cre", "aut"))
 Description: Mass-spectrometry based spatial proteomics data sets and
              protein complex separation data. Also contains the time
              course expression experiment from Mulvey et al. 2015.
