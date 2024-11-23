@@ -13,7 +13,7 @@ Authors@R: c(person(given = "Laurent", family = "Gatto",
              person(given = "Lisa", family ="Breckels",
                     email = "lms79@cam.ac.uk",
                     comment = c(ORCID = "0000-0001-8918-7171"),
-                    role = c("cre", "aut"))
+                    role = c("cre", "aut")))
 Description: Mass-spectrometry based spatial proteomics data sets and
              protein complex separation data. Also contains the time
              course expression experiment from Mulvey et al. 2015.
